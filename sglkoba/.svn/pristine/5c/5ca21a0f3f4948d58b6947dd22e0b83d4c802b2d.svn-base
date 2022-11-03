@@ -1,0 +1,1 @@
+document.write('<tbody></tbody><tfoot><tr><td>TOTALES</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tfoot>');

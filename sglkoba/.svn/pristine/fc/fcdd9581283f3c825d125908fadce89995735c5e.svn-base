@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="fac_det" size="600,305" id="" metadata="uml2-1.0" initialized="true" scrolledY="-5" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.3/@sourceConnections.0" name="factura_detalleForm" location="15,150" size="286,255" id="facturacion.form/factura_detalleForm">
+    <children xsi:type="editmodel:CompartmentEditModel" size="144,216">
+      <children xsi:type="editmodel:AttributeEditModel" name="facdcantidad" id="facturacion.form/factura_detalleForm#facdcantidad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdcodsx" id="facturacion.form/factura_detalleForm#facdcodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdconceptodesc" id="facturacion.form/factura_detalleForm#facdconceptodesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdfactura" id="facturacion.form/factura_detalleForm#facdfactura"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdminimo" id="facturacion.form/factura_detalleForm#facdminimo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdobservacion" id="facturacion.form/factura_detalleForm#facdobservacion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdporcentaje" id="facturacion.form/factura_detalleForm#facdporcentaje"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdtipo" id="facturacion.form/factura_detalleForm#facdtipo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdvalorcomicion" id="facturacion.form/factura_detalleForm#facdvalorcomicion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdvalortotal" id="facturacion.form/factura_detalleForm#facdvalortotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdvalorunit" id="facturacion.form/factura_detalleForm#facdvalorunit"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="opcion" id="facturacion.form/factura_detalleForm#opcion"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="facturacion.form/factura_detalleForm-Standard::Instantiate->facturacion.control/gstfactura_detalle*facturacion.form/factura_detalleForm-Soyatec::Import->facturacion.control/gstfactura_detalle" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, import»" location="295,307" size="96,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-2.0" distanceFromWire="-17.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,147" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,157"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="facturacion.form/factura_detalleForm-Standard::Call->facturacion.entity/factura_detalle*facturacion.form/factura_detalleForm-Soyatec::Import->facturacion.entity/factura_detalle" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="559,420" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="82.0" distanceFromWire="12.999999999999964" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="130,255" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="126,255"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1 //@children.3/@sourceConnections.1 //@children.0/@sourceConnections.1" name="factura_detalle" location="745,66" size="229,255" id="facturacion.entity/factura_detalle">
+    <children xsi:type="editmodel:CompartmentEditModel" size="144,216">
+      <children xsi:type="editmodel:AttributeEditModel" name="facdcantidad" id="facturacion.entity/factura_detalle#facdcantidad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdcodsx" id="facturacion.entity/factura_detalle#facdcodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdconceptodesc" id="facturacion.entity/factura_detalle#facdconceptodesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdfactura" id="facturacion.entity/factura_detalle#facdfactura"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdminimo" id="facturacion.entity/factura_detalle#facdminimo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdobservacion" id="facturacion.entity/factura_detalle#facdobservacion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdporcentaje" id="facturacion.entity/factura_detalle#facdporcentaje"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdtipo" id="facturacion.entity/factura_detalle#facdtipo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdvalorcomicion" id="facturacion.entity/factura_detalle#facdvalorcomicion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdvalortotal" id="facturacion.entity/factura_detalle#facdvalortotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="facdvalorunit" id="facturacion.entity/factura_detalle#facdvalorunit"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="resumen" id="facturacion.entity/factura_detalle#resumen"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.2 //@children.0/@sourceConnections.0" name="gstfactura_detalle" location="390,140" size="286,265" id="facturacion.control/gstfactura_detalle" runTimeClassModel="getTotalPaginaslistafactura_detalle(Ljava.lang.String;Ljava.lang.String;),gstfactura_detalle(),eliminar(Ljava.lang.String;),crearfactura_detalle(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistafactura_detalle(),updatefactura_detalle(Lfacturacion.form.factura_detalleForm;),getfactura_detalle(Ljava.lang.String;),getlistafactura_detalle(Ljava.lang.String;),getfactura_detalle(Ljava.lang.String;Ljava.lang.String;),getlistafactura_detalle(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),updatefactura_detalle(Lfacturacion.entity.factura_detalle;),gstfactura_detalle(Ldb.beanConnector;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="197,216">
+      <children xsi:type="editmodel:MethodEditModel" name="gstfactura_detalle" id="facturacion.control/gstfactura_detalle#gstfactura_detalle()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstfactura_detalle" id="facturacion.control/gstfactura_detalle#gstfactura_detalle(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistafactura_detalle" id="facturacion.control/gstfactura_detalle#getlistafactura_detalle()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistafactura_detalle" id="facturacion.control/gstfactura_detalle#getlistafactura_detalle(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistafactura_detalle" id="facturacion.control/gstfactura_detalle#getlistafactura_detalle(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistafactura_detalle" id="facturacion.control/gstfactura_detalle#getTotalPaginaslistafactura_detalle(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="crearfactura_detalle" id="facturacion.control/gstfactura_detalle#crearfactura_detalle(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfactura_detalle" id="facturacion.control/gstfactura_detalle#getfactura_detalle(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatefactura_detalle" id="facturacion.control/gstfactura_detalle#updatefactura_detalle(Lfacturacion.entity.factura_detalle;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatefactura_detalle" id="facturacion.control/gstfactura_detalle#updatefactura_detalle(Lfacturacion.form.factura_detalleForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="facturacion.control/gstfactura_detalle#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfactura_detalle" id="facturacion.control/gstfactura_detalle#getfactura_detalle(Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.control/gstfactura_detalle-Standard::Call->facturacion.form/factura_detalleForm*facturacion.control/gstfactura_detalle-Soyatec::Import->facturacion.form/factura_detalleForm" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="315,255" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-1.0" distanceFromWire="-15.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,137" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,127"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.control/gstfactura_detalle-Standard::Call->facturacion.entity/factura_detalle*facturacion.control/gstfactura_detalle-Soyatec::Import->facturacion.entity/factura_detalle" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="680,239" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="1.0" distanceFromWire="-16.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,90" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,164"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="factura_detalleAction" location="300,0" size="303,67" id="facturacion.action/factura_detalleAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="facturacion.action/factura_detalleAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.action/factura_detalleAction-Standard::Call->facturacion.form/factura_detalleForm*facturacion.action/factura_detalleAction-Standard::Instantiate->facturacion.form/factura_detalleForm*facturacion.action/factura_detalleAction-Soyatec::Import->facturacion.form/factura_detalleForm" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, instantiate, import»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,10"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.action/factura_detalleAction-Soyatec::Import->facturacion.entity/factura_detalle" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" location="690,30" size="41,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="31.0" distanceFromWire="19.999999999999993" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="303,57" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.action/factura_detalleAction-Standard::Call->facturacion.control/gstfactura_detalle*facturacion.action/factura_detalleAction-Standard::Instantiate->facturacion.control/gstfactura_detalle*facturacion.action/factura_detalleAction-Soyatec::Import->facturacion.control/gstfactura_detalle" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.2/@children.2" label="//@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, instantiate, import»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="196,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="106,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

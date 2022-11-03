@@ -1,0 +1,546 @@
+﻿
+
+--- Koba crea funciones para obtener posicion en bodega, generar rotulo de estbas, dividir entradas para asignar posiciones agrupando cajas segun UMP x estibas
+CREATE OR REPLACE FUNCTION movimiento.obtiene_rotulo_estiba(_ingreso integer,_entrada integer,_producto integer) 
+  RETURNS character varying AS
+$BODY$--
+DECLARE 
+  _posicion character varying;
+  rec_pro RECORD;
+  rec_conf_bodega RECORD;
+  _primer_estante character varying;
+  _num integer;
+  _tot integer;
+BEGIN
+
+select fila into _num from (
+select row_number() over (partition by entcodingreso order by entposicion) as fila,entcodingreso,entcodsx,entposicion 
+from entrada 
+where entcodingreso = _ingreso
+and entcodproducto = _producto
+) as s1 where entcodsx = _entrada;
+
+select count(1) into _tot from entrada 
+where entcodingreso = _ingreso
+and entcodproducto = _producto;
+
+return _num || ' de ' || _tot;
+
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE;
+
+--=================================================================================================================================================================================
+
+DROP FUNCTION IF EXISTS  obtiene_posicion_libre(_bodega integer,_entrada integer,_producto integer, _entcantidad numeric)  ;
+
+CREATE OR REPLACE FUNCTION movimiento.obtiene_posicion_libre(_bodega integer,_entrada integer,_producto integer, _entcantidad numeric) 
+  RETURNS character varying AS
+$BODY$--
+DECLARE 
+  _posicion character varying;
+  rec_pro RECORD;
+  rec_conf_bodega RECORD;
+  _primer_estante character varying;
+BEGIN
+ raise notice '_bodega %,_entrada %,_producto %, _entcantidad %)',_bodega ,_entrada ,_producto , _entcantidad;
+  SELECT * INTO rec_pro FROM producto WHERE procodsx = _producto;
+  /*
+  IF rec_pro.procatoster IS NULL THEN
+    _primer_estante = 'D';
+  ELSE
+    SELECT catodescripcion INTO _primer_estante FROM categoria_oster WHERE catocodsx = rec_pro.procatoster;
+    IF NOT FOUND THEN
+      _primer_estante = 'D';
+    END IF;
+  END IF;
+*/
+  IF _entcantidad < rec_pro.prounimasterpac THEN -- si la estiba no esta completa se va para estante P en adelante   
+    _primer_estante = 'P';
+  END IF;  
+  SELECT *, cbestante||cbposicion as valor_posicion INTO rec_conf_bodega FROM config_bodega 
+	 WHERE cbbodega = _bodega 
+	 AND cbestado = 'AC' 
+	 AND cbentrada IS NULL
+	 AND cbproducto = rec_pro.promodelo
+	 --AND cbestante >= _primer_estante
+	 ORDER BY cbestante,cbnivel,cbposicion LIMIT 1;
+	 raise notice 'nueva pos %', rec_conf_bodega.valor_posicion;
+  IF FOUND THEN
+    UPDATE config_bodega set cbentrada = _entrada 
+      WHERE cbbodega = rec_conf_bodega.cbbodega
+      AND cbestante = rec_conf_bodega.cbestante
+      AND cbnivel = rec_conf_bodega.cbnivel
+      AND cbposicion = rec_conf_bodega.cbposicion
+      AND cbestado = rec_conf_bodega.cbestado
+      AND cbproducto = rec_pro.promodelo;
+      --AND cbcategoria = rec_pro.procategoria;
+    _posicion = rec_conf_bodega.valor_posicion;
+  ELSE
+    _posicion = '';--||_entrada;   
+  END IF;
+  RETURN _posicion;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE;
+--=================================================================================================================================================================================
+--- siver para arreglar datos ya creados en bd
+CREATE OR REPLACE FUNCTION movimiento.actualiza_posicion_en_bodega(_entrada integer) 
+  RETURNS void AS
+$BODY$--
+DECLARE 
+  _posicion character varying;
+  _bodega integer;
+  _estante character varying;
+  _entposicion character varying;
+  _nivel integer;
+  rec RECORD;
+BEGIN
+
+  SELECT entbodega, entposicion, substring(entposicion from 1 for 1), substring(entposicion from '....$'), substring(entposicion from '.$') ::integer
+  INTO _bodega, _entposicion, _estante, _posicion, _nivel FROM entrada WHERE entcodsx = _entrada;
+  IF _bodega IS NOT NULL AND _posicion IS NOT NULL AND char_length(_entposicion) = 5 THEN
+    SELECT * INTO rec FROM config_bodega 
+      WHERE cbbodega = _bodega
+      AND cbestante = _estante
+      AND cbnivel = _nivel
+      AND cbposicion = _posicion
+      AND cbestado = 'AC'; 
+    IF FOUND THEN
+      UPDATE config_bodega set cbentrada = _entrada 
+        WHERE cbbodega = _bodega
+        AND cbestante = _estante
+        AND cbnivel = _nivel
+        AND cbposicion = _posicion
+        AND cbestado = 'AC'; 
+     ELSE
+       RAISE EXCEPTION 'La posicion % esta ocupada o esta definida como tunel.',_entposicion;
+     END IF;
+  END IF;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE;
+  
+--=================================================================================================================================================================================
+-- trigger de funcionamiento permanente para mantener el mapa de bodega actualizado
+CREATE OR REPLACE FUNCTION movimiento.actualiza_posicion_en_bodega(_entrada integer,_bodega integer, _entposicion character varying) 
+  RETURNS void AS
+$BODY$--
+DECLARE 
+  _posicion character varying;
+  _estante character varying;
+  _nivel integer;
+  rec RECORD;
+BEGIN
+  raise notice '_entrada % _bodega % _entposicion % ',_entrada, _bodega, _entposicion;
+  IF _bodega IS NOT NULL AND _entrada IS NOT NULL AND char_length(_entposicion) = 5 THEN
+    SELECT substring(_entposicion from 1 for 1), substring(_entposicion from '....$'), substring(_entposicion from '.$') ::integer
+           INTO _estante, _posicion, _nivel;
+    SELECT * INTO rec FROM config_bodega 
+      WHERE cbbodega = _bodega
+      AND cbestante = _estante
+      AND cbnivel = _nivel
+      AND cbposicion = _posicion
+      AND cbestado = 'AC'; 
+    IF FOUND THEN
+      UPDATE config_bodega set cbentrada = _entrada 
+        WHERE cbbodega = _bodega
+        AND cbestante = _estante
+        AND cbnivel = _nivel
+        AND cbposicion = _posicion
+        AND cbestado = 'AC'; 
+     ELSE
+       RAISE EXCEPTION 'La posicion % no existe o esta definida como tunel.',_entposicion;
+     END IF;
+  END IF;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE;
+
+--=================================================================================================================================================================================
+
+CREATE OR REPLACE FUNCTION movimiento.libera_posicion_en_bodega(_bodega integer, _entposicion character varying ) 
+  RETURNS void AS  
+$BODY$--
+DECLARE 
+  _posicion character varying;
+  _estante character varying;
+  _nivel integer;
+BEGIN
+
+  IF _bodega IS NOT NULL AND _entposicion IS NOT NULL AND char_length(_entposicion) = 5 THEN
+    SELECT substring(_entposicion from 1 for 1), substring(_entposicion from '....$'), substring(_entposicion from '.$') ::integer
+           INTO _estante, _posicion, _nivel;
+    IF _bodega IS NOT NULL AND _posicion IS NOT NULL AND _nivel IS NOT NULL THEN
+       UPDATE config_bodega set cbentrada = NULL 
+        WHERE cbbodega = _bodega
+        AND cbestante = _estante
+        AND cbnivel = _nivel
+        AND cbposicion = _posicion; 
+    END IF;
+  END IF;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE;
+--=================================================================================================================================================================================
+
+CREATE OR REPLACE FUNCTION movimiento.valida_posicion_en_bodega(_bodega integer, _entposicion character varying ) 
+  RETURNS integer AS  -- 1 ES OK, 0 LA POSICION NO ES VALIDA
+$BODY$--
+DECLARE 
+  _posicion character varying;
+  _estante character varying;
+  _nivel integer;
+  rec RECORD;
+BEGIN
+  --raise notice '_bodega % _entposicion % ',_bodega, _entposicion;
+  IF _bodega IS NOT NULL AND _entposicion IS NOT NULL AND char_length(_entposicion) = 5 THEN
+    SELECT substring(_entposicion from 1 for 1), substring(_entposicion from '....$'), substring(_entposicion from '.$') ::integer
+           INTO _estante, _posicion, _nivel;
+    --raise notice 'estante % posicion % nivel %',_estante, _posicion, _nivel;
+    IF _bodega IS NOT NULL AND _posicion IS NOT NULL AND _nivel IS NOT NULL THEN
+      SELECT * INTO rec FROM config_bodega 
+        WHERE cbbodega = _bodega
+        AND cbestante = _estante
+        AND cbnivel = _nivel
+        AND cbposicion = _posicion
+        AND cbestado = 'AC'
+        AND cbentrada IS NULL; 
+      IF FOUND THEN
+        RETURN 1;
+      ELSE
+        RETURN 0;
+      END IF;
+    ELSE   
+      RETURN 0;
+    END IF;
+  ELSE
+    RETURN 1;
+  END IF;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE;
+--=================================================================================================================================================================================
+CREATE OR REPLACE FUNCTION movimiento.es_tunel(_bodega integer, _entposicion character varying ) 
+  RETURNS integer AS  -- 1 ES OK, 0 LA POSICION NO ES VALIDA
+$BODY$--
+DECLARE 
+  _posicion character varying;
+  _estante character varying;
+  _nivel integer;
+  rec RECORD;
+BEGIN
+  --raise notice '_bodega % _entposicion % ',_bodega, _entposicion;
+  IF _bodega IS NOT NULL AND _entposicion IS NOT NULL AND char_length(_entposicion) = 5 THEN
+    SELECT substring(_entposicion from 1 for 1), substring(_entposicion from '....$'), substring(_entposicion from '.$') ::integer
+           INTO _estante, _posicion, _nivel;
+    --raise notice 'estante % posicion % nivel %',_estante, _posicion, _nivel;
+    IF _bodega IS NOT NULL AND _posicion IS NOT NULL AND _nivel IS NOT NULL THEN
+      SELECT * INTO rec FROM config_bodega 
+        WHERE cbbodega = _bodega
+        AND cbestante = _estante
+        AND cbnivel = _nivel
+        AND cbposicion = _posicion
+        AND cbestado = 'IN'; 
+      IF FOUND THEN
+        RETURN 1;
+      ELSE
+        RETURN 0;
+      END IF;
+    ELSE   
+      RETURN 0;
+    END IF;
+  ELSE
+    RETURN 0;
+  END IF;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE;
+--=================================================================================================================================================================================
+
+CREATE OR REPLACE FUNCTION movimiento.entrada_x_estiba(_entcodingreso integer, _entcodproducto integer, _entbodega integer, _entposicion character varying,
+_entcantidad numeric(15,2), _entpesoneto numeric(15,2), _entpesonetototal numeric(15,2), _entpesobruto numeric(15,2),
+_entpesobrutototal numeric(15,2), _entsaldopesoneto numeric(15,2), _entsaldopesobruto numeric(15,2), _entsaldonac numeric(15,2),
+_entsaldosinnac numeric(15,2), _entvalor numeric(15,2), _entvalortotal numeric(15,2), _entsaldonacf numeric(15,2), 
+_entsaldosinnacf numeric(15,2), _entunidad character varying(3), _entlote integer, _lctrafcodsx integer)
+ RETURNS int AS
+
+$BODY$--
+DECLARE
+  _prounimasterpac numeric;
+  _nueva_entrada integer;
+  vlr integer;
+  _estibas integer;
+  _residuo numeric(15,2);
+
+BEGIN
+    vlr = 0;
+    
+    SELECT prounimasterpac, floor( _entcantidad/prounimasterpac)::integer , _entcantidad-(prounimasterpac*floor( _entcantidad/prounimasterpac))
+        INTO _prounimasterpac, _estibas, _residuo FROM producto WHERE procodsx = _entcodproducto;
+
+    WHILE _estibas > 0 LOOP
+    
+       INSERT INTO entrada (entcodsx,entcodingreso,entcodproducto,entbodega, entposicion,entcantidad,
+          entpesoneto,entpesonetototal,  entpesobruto, entpesobrutototal, entsaldopesoneto,
+          entsaldopesobruto,entsaldonac,entsaldosinnac, entvalor, entvalortotal, entfecha, entsaldonacf, entsaldosinnacf, entunidad, entlote) VALUES (
+	  DEFAULT,_entcodingreso, _entcodproducto, _entbodega, '', _prounimasterpac, 
+	  _entpesoneto, _prounimasterpac*_entpesoneto, _entpesobruto, _prounimasterpac*_entpesobruto, 0, 
+	  0, 0, 0, _entvalor, _prounimasterpac*_entvalor, 
+	  now(), 0, 0, _entunidad, _entlote) RETURNING entcodsx INTO _nueva_entrada;
+	_estibas = _estibas -1;
+
+	INSERT INTO lctraf_entrada VALUES (DEFAULT,_lctrafcodsx,_nueva_entrada);
+	
+    END LOOP;
+    
+    IF _residuo > 0 THEN
+
+      INSERT INTO entrada (entcodsx,entcodingreso,entcodproducto,entbodega, entposicion,entcantidad,entpesoneto,entpesonetototal, 
+	  entpesobruto, entpesobrutototal, entsaldopesoneto,entsaldopesobruto,entsaldonac,
+	  entsaldosinnac, entvalor, entvalortotal, entsaldonacf, entsaldosinnacf, entunidad, entlote) VALUES (
+	  DEFAULT, _entcodingreso, _entcodproducto, _entbodega, '', _residuo, 
+	  _entpesoneto, _residuo *_entpesoneto, 
+	  _entpesobruto, _residuo * _entpesobruto, 0,0,0,
+	  0, _entvalor, _residuo*_entvalor, 0, 0, _entunidad, _entlote) RETURNING entcodsx INTO _nueva_entrada;
+	  
+      INSERT INTO lctraf_entrada VALUES (DEFAULT,_lctrafcodsx,_nueva_entrada);
+    		  
+    END IF;
+
+    UPDATE lote_contenedor_trafico set lctrafingreso = 'S' where lctrafcodsx = _lctrafcodsx;
+RETURN vlr;
+
+EXCEPTION
+	  WHEN OTHERS THEN
+            RAISE EXCEPTION 'Error creando entrada. %', SQLERRM;
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+			
+--=================================================================================================================================================================================
+
+--Function: 
+/*
+DROP FUNCTION movimiento.entrada_x_estiba(_entcodingreso integer, _entcodproducto integer, _entbodega integer, _entposicion character varying,
+_entcantidad numeric(15,2), _entpesoneto numeric(15,2), _entpesonetototal numeric(15,2), _entpesobruto numeric(15,2),
+_entpesobrutototal numeric(15,2), _entsaldopesoneto numeric(15,2), _entsaldopesobruto numeric(15,2), _entsaldonac numeric(15,2),
+_entsaldosinnac numeric(15,2), _entvalor numeric(15,2), _entvalortotal numeric(15,2), _entsaldonacf numeric(15,2), 
+_entsaldosinnacf numeric(15,2), _entunidad character varying(3), _entlote integer);
+*/
+CREATE OR REPLACE FUNCTION movimiento.entrada_x_estiba(_entcodingreso integer, _entcodproducto integer, _entbodega integer, _entposicion character varying,
+_entcantidad numeric(15,2), _entpesoneto numeric(15,2), _entpesonetototal numeric(15,2), _entpesobruto numeric(15,2),
+_entpesobrutototal numeric(15,2), _entsaldopesoneto numeric(15,2), _entsaldopesobruto numeric(15,2), _entsaldonac numeric(15,2),
+_entsaldosinnac numeric(15,2), _entvalor numeric(15,2), _entvalortotal numeric(15,2), _entsaldonacf numeric(15,2), 
+_entsaldosinnacf numeric(15,2), _entunidad character varying(3), _entlote integer)
+ RETURNS int AS
+
+$BODY$--
+DECLARE
+  _prounimasterpac numeric;
+  _nueva_entrada integer;
+  vlr integer;
+  _estibas integer;
+  _residuo numeric(15,2);
+
+BEGIN
+    vlr = 0;
+    
+    SELECT prounimasterpac, floor( _entcantidad/prounimasterpac)::integer , _entcantidad-(prounimasterpac*floor( _entcantidad/prounimasterpac))
+        INTO _prounimasterpac, _estibas, _residuo FROM producto WHERE procodsx = _entcodproducto;
+
+    WHILE _estibas > 0 LOOP
+    
+       INSERT INTO entrada (entcodsx,entcodingreso,entcodproducto,entbodega, entposicion,entcantidad,
+          entpesoneto,entpesonetototal,  entpesobruto, entpesobrutototal, entsaldopesoneto,
+          entsaldopesobruto,entsaldonac,entsaldosinnac, entvalor, entvalortotal, entfecha, entsaldonacf, entsaldosinnacf, entunidad, entlote) VALUES (
+	  DEFAULT,_entcodingreso, _entcodproducto, _entbodega, '', _prounimasterpac, 
+	  _entpesoneto, _prounimasterpac*_entpesoneto, _entpesobruto, _prounimasterpac*_entpesobruto, 0, 
+	  0, 0, 0, _entvalor, _prounimasterpac*_entvalor, 
+	  now(), 0, 0, _entunidad, _entlote) RETURNING entcodsx INTO _nueva_entrada;
+	_estibas = _estibas -1;
+	
+    END LOOP;
+    
+    IF _residuo > 0 THEN
+
+      INSERT INTO entrada (entcodsx,entcodingreso,entcodproducto,entbodega, entposicion,entcantidad,entpesoneto,entpesonetototal, 
+	  entpesobruto, entpesobrutototal, entsaldopesoneto,entsaldopesobruto,entsaldonac,
+	  entsaldosinnac, entvalor, entvalortotal, entsaldonacf, entsaldosinnacf, entunidad, entlote) VALUES (
+	  DEFAULT, _entcodingreso, _entcodproducto, _entbodega, '', _residuo, 
+	  _entpesoneto, _residuo *_entpesoneto, 
+	  _entpesobruto, _residuo * _entpesobruto, 0,0,0,
+	  0, _entvalor, _residuo*_entvalor, 0, 0, _entunidad, _entlote) RETURNING entcodsx INTO _nueva_entrada;
+    		  
+    END IF;
+RETURN vlr;
+
+EXCEPTION
+	  WHEN OTHERS THEN
+            RAISE EXCEPTION 'Error creando entrada. %', SQLERRM;
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+			
+--=================================================================================================================================================================================
+
+-- Function: movimiento.tg_gstposicion_entrada()
+
+--
+ --DROP FUNCTION IF EXISTS movimiento.tg_gstposicion_entrada() cascade;
+
+DROP FUNCTION IF EXISTS movimiento.tg_gstposicion_entrada_before() cascade;
+ 
+CREATE OR REPLACE FUNCTION movimiento.tg_gstposicion_entrada_before()
+  RETURNS trigger AS
+$BODY$--
+DECLARE
+  _prounimasterpac numeric;
+  _posicion character varying;
+  _valida integer;
+BEGIN
+
+  IF TG_OP='INSERT' THEN
+    IF NEW.entposicion IS NULL OR NEW.entposicion = '' THEN
+       NEW.entposicion = movimiento.obtiene_posicion_libre(NEW.entbodega,NEW.entcodsx,NEW.entcodproducto,NEW.entcantidad);
+    ELSE
+       RAISE NOTICE 'Entro con posicion fija: %',NEW.entposicion;
+    END IF;
+    RETURN NEW;
+
+  ELSIF TG_OP='UPDATE' THEN
+    -- Se valida que la posicion este libre y no sea tunel
+    IF OLD.entposicion != NEW.entposicion THEN
+      _valida = movimiento.valida_posicion_en_bodega(NEW.entbodega, NEW.entposicion);---
+      IF _valida = 1 THEN -- es posicion valida
+         -- libera la posicion anterior y marca la nueva posicion como ocupada
+         PERFORM movimiento.libera_posicion_en_bodega(OLD.entbodega, OLD.entposicion);
+         PERFORM movimiento.actualiza_posicion_en_bodega(NEW.entcodsx,NEW.entbodega, NEW.entposicion);
+         RETURN NEW;
+      ELSE      
+         RAISE EXCEPTION 'La posicion % no es valida, esta ocupada o es un tunel', NEW.entposicion;
+      END IF;
+    ELSE
+      RETURN NEW;
+    END IF;
+  ELSIF TG_OP='DELETE' THEN
+  
+    UPDATE config_bodega set cbentrada = NULL 
+      WHERE cbentrada = OLD.entcodsx;
+    RETURN OLD;
+
+  ELSE
+  
+    RETURN NEW;
+    
+  END IF;
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-----------------------------------------------------------------------------------------------------------------------  
+DROP FUNCTION IF EXISTS movimiento.tg_gstposicion_entrada_after() cascade;
+ 
+CREATE OR REPLACE FUNCTION movimiento.tg_gstposicion_entrada_after()
+  RETURNS trigger AS
+$BODY$--
+DECLARE
+  _prounimasterpac numeric;
+  _posicion character varying;
+BEGIN
+
+  IF TG_OP='UPDATE' THEN
+    -- Si se consumio todo el saldo de la entrada la posicion queda libre
+    -- Ojo que se hace con los cambios de locacion, tambien libera entrada?
+    IF (NEW.entsaldonacf + NEW.entsaldosinnacf) = 0 THEN
+      UPDATE config_bodega set cbentrada = NULL 
+        WHERE cbentrada = NEW.entcodsx;
+    END IF;
+    
+    IF OLD.entposicion != NEW.entposicion THEN
+      -- se marca la nueva posicion en bodega
+      PERFORM movimiento.actualiza_posicion_en_bodega(NEW.entcodsx,NEW.entbodega, NEW.entposicion);
+    END IF;
+
+    RETURN NEW;
+    
+  ELSIF TG_OP='DELETE' THEN
+  
+    UPDATE config_bodega set cbentrada = NULL 
+      WHERE cbentrada = OLD.entcodsx;
+    RETURN OLD;
+
+  ELSE
+  
+    RETURN NEW;
+    
+  END IF;
+
+END;
+
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+
+-- 
+ALTER TABLE movimiento.entrada DROP CONSTRAINT  IF EXISTS  uq_entrada;
+/*
+ALTER TABLE movimiento.entrada
+    ADD CONSTRAINT uq_entrada UNIQUE (entcodingreso, entcodproducto, entbodega, entposicion)
+;
+
+*/
+-- 
+DROP TRIGGER IF EXISTS tg_gstposicion_entrada_ins ON movimiento.entrada;
+
+CREATE TRIGGER tg_gstposicion_entrada_ins
+    BEFORE INSERT 
+    ON movimiento.entrada
+    FOR EACH ROW
+    EXECUTE PROCEDURE movimiento.tg_gstposicion_entrada_before();
+
+-- 
+
+DROP TRIGGER  IF EXISTS tg_gstposicion_entrada_upd ON movimiento.entrada;
+
+DROP TRIGGER  IF EXISTS tg_gstposicion_entrada_upd_before ON movimiento.entrada;
+
+CREATE TRIGGER tg_gstposicion_entrada_upd_before
+    BEFORE UPDATE
+    ON movimiento.entrada
+    FOR EACH ROW
+    EXECUTE PROCEDURE movimiento.tg_gstposicion_entrada_before();
+    
+-- 
+DROP TRIGGER  IF EXISTS tg_gstposicion_entrada_upd_after ON movimiento.entrada;
+
+CREATE TRIGGER tg_gstposicion_entrada_upd_after
+    AFTER UPDATE
+    ON movimiento.entrada
+    FOR EACH ROW
+    EXECUTE PROCEDURE movimiento.tg_gstposicion_entrada_after();
+    
+-- 
+--=================================================================================================================================================================================
+
+DROP TRIGGER IF EXISTS tg_gstposicion_entrada_del ON movimiento.entrada;
+
+
+CREATE TRIGGER tg_gstposicion_entrada_del
+    AFTER DELETE
+    ON movimiento.entrada
+    FOR EACH ROW
+    EXECUTE PROCEDURE movimiento.tg_gstposicion_entrada_after();
+
+--=================================================================================================================================================================================
+    

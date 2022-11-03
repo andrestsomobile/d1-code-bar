@@ -1,0 +1,1 @@
+saldo de valor fob por empresa por documento

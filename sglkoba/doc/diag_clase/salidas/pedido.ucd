@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="pedido" size="600,290" id="" metadata="uml2-1.0" initialized="true" scrolledY="-20" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" name="pedidoAction" location="36,-15" size="225,67" id="pedido.action/pedidoAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="pedido.action/pedidoAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.action/pedidoAction-Standard::Call->pedido.control/gstpedido*pedido.action/pedidoAction-Standard::Instantiate->pedido.control/gstpedido*pedido.action/pedidoAction-Soyatec::Import->pedido.control/gstpedido" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call, instantiate»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="112,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="118,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.action/pedidoAction-Standard::Call->pedido.entity/pedido*pedido.action/pedidoAction-Soyatec::Import->pedido.entity/pedido" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" location="463,4" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="13.000000000000002" distanceFromWire="11.999999999999995" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="225,6" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,6"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.action/pedidoAction-Standard::Call->pedido.form/pedidoForm*pedido.action/pedidoAction-Standard::Instantiate->pedido.form/pedidoForm*pedido.action/pedidoAction-Soyatec::Import->pedido.form/pedidoForm" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.2/@children.2" label="//@children.0/@sourceConnections.2/@children.0" sourceEnd="//@children.0/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call, instantiate»" location="285,36" size="118,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="11.0" distanceFromWire="-10.999999999999998" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="225,48" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,18"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.3/@sourceConnections.1" name="gstpedido" location="30,75" size="238,481" id="pedido.control/gstpedido" runTimeClassModel="crearpedido(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),updatepedido(Lpedido.form.pedidoForm;),getlistapedidoByNacionalizacion(Ljava.lang.String;),eliminar(Ljava.lang.String;),getSaldoReservadoPedido(Ljava.lang.String;Ljava.lang.String;),getpedido(Ljava.lang.String;),getTotalPaginaslistapedido_despachar(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getpedido(Ljava.lang.String;Ljava.lang.String;),getlistapedidoByGuia(Ljava.lang.String;Ljava.lang.String;),gstpedido(),getpedidoByPicking(Ljava.lang.String;),getMasterPacksPedido(Ljava.lang.String;),getlistapedido(),getEmbarquePorPedido(Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistapedido(Ljava.lang.String;),updatepedido(Lpedido.entity.pedido;),getlistapedidoFinalizado(Ljava.lang.String;Ljava.lang.String;),gstpedido(Ldb.beanConnector;),getlistapedido(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistapedidoByIngreso(Ljava.lang.String;),getTotalPaginaslistapedido(Ljava.lang.String;Ljava.lang.String;),getlistapedido_despachar(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistapedido(Ljava.lang.String;Ljava.lang.String;),getVolumenPedidoMasterPacks(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="215,432">
+      <children xsi:type="editmodel:MethodEditModel" name="gstpedido" id="pedido.control/gstpedido#gstpedido()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstpedido" id="pedido.control/gstpedido#gstpedido(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistapedido" id="pedido.control/gstpedido#getlistapedido()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistapedido" id="pedido.control/gstpedido#getlistapedido(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistapedido" id="pedido.control/gstpedido#getTotalPaginaslistapedido(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="crearpedido" id="pedido.control/gstpedido#crearpedido(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getpedido" id="pedido.control/gstpedido#getpedido(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatepedido" id="pedido.control/gstpedido#updatepedido(Lpedido.entity.pedido;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatepedido" id="pedido.control/gstpedido#updatepedido(Lpedido.form.pedidoForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="pedido.control/gstpedido#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getpedido" id="pedido.control/gstpedido#getpedido(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getpedidoByPicking" id="pedido.control/gstpedido#getpedidoByPicking(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEmbarquePorPedido" id="pedido.control/gstpedido#getEmbarquePorPedido(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistapedido" id="pedido.control/gstpedido#getlistapedido(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistapedido" id="pedido.control/gstpedido#getTotalPaginaslistapedido(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistapedido_despachar" id="pedido.control/gstpedido#getlistapedido_despachar(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistapedido_despachar" id="pedido.control/gstpedido#getTotalPaginaslistapedido_despachar(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistapedidoByIngreso" id="pedido.control/gstpedido#getlistapedidoByIngreso(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistapedidoByNacionalizacion" id="pedido.control/gstpedido#getlistapedidoByNacionalizacion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistapedidoByGuia" id="pedido.control/gstpedido#getlistapedidoByGuia(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVolumenPedidoMasterPacks" id="pedido.control/gstpedido#getVolumenPedidoMasterPacks(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMasterPacksPedido" id="pedido.control/gstpedido#getMasterPacksPedido(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSaldoReservadoPedido" id="pedido.control/gstpedido#getSaldoReservadoPedido(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistapedidoFinalizado" id="pedido.control/gstpedido#getlistapedidoFinalizado(Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.control/gstpedido-Standard::Call->pedido.form/pedidoForm*pedido.control/gstpedido-Soyatec::Import->pedido.form/pedidoForm" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="238,240" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,300"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.control/gstpedido-Standard::Call->pedido.entity/pedido*pedido.control/gstpedido-Soyatec::Import->pedido.entity/pedido" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="238,415" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,490"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.0/@sourceConnections.1 //@children.1/@sourceConnections.1" name="pedido" location="705,0" size="181,597" id="pedido.entity/pedido">
+    <children xsi:type="editmodel:CompartmentEditModel" size="143,558">
+      <children xsi:type="editmodel:AttributeEditModel" name="pedcausal_hit" id="pedido.entity/pedido#pedcausal_hit"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedciudad" id="pedido.entity/pedido#pedciudad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedcliente" id="pedido.entity/pedido#pedcliente"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedcodsx" id="pedido.entity/pedido#pedcodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedcompania" id="pedido.entity/pedido#pedcompania"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="peddepartamento" id="pedido.entity/pedido#peddepartamento"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="peddescuento" id="pedido.entity/pedido#peddescuento"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="peddireccion" id="pedido.entity/pedido#peddireccion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedestado" id="pedido.entity/pedido#pedestado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfactura" id="pedido.entity/pedido#pedfactura"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfecha" id="pedido.entity/pedido#pedfecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfechacita" id="pedido.entity/pedido#pedfechacita"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfechasistema" id="pedido.entity/pedido#pedfechasistema"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfechavenc" id="pedido.entity/pedido#pedfechavenc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedguia" id="pedido.entity/pedido#pedguia"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedhora" id="pedido.entity/pedido#pedhora"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedhoracita" id="pedido.entity/pedido#pedhoracita"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pediva" id="pedido.entity/pedido#pediva"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pednumpedido" id="pedido.entity/pedido#pednumpedido"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedobservaciones" id="pedido.entity/pedido#pedobservaciones"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedordencompra" id="pedido.entity/pedido#pedordencompra"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedpesobruto" id="pedido.entity/pedido#pedpesobruto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedpesoneto" id="pedido.entity/pedido#pedpesoneto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedpicking" id="pedido.entity/pedido#pedpicking"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedporc_iva" id="pedido.entity/pedido#pedporc_iva"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedsubtotal" id="pedido.entity/pedido#pedsubtotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedsucursal" id="pedido.entity/pedido#pedsucursal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedtipo" id="pedido.entity/pedido#pedtipo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedtotal" id="pedido.entity/pedido#pedtotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedzona" id="pedido.entity/pedido#pedzona"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="resumen" id="pedido.entity/pedido#resumen"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.2 //@children.1/@sourceConnections.0" name="pedidoForm" location="405,15" size="208,669" id="pedido.form/pedidoForm">
+    <children xsi:type="editmodel:CompartmentEditModel" size="143,630">
+      <children xsi:type="editmodel:AttributeEditModel" name="ciudesc" id="pedido.form/pedidoForm#ciudesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="clidesc" id="pedido.form/pedidoForm#clidesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="depdesc" id="pedido.form/pedidoForm#depdesc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="opcion" id="pedido.form/pedidoForm#opcion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedcausal_hit" id="pedido.form/pedidoForm#pedcausal_hit"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedciudad" id="pedido.form/pedidoForm#pedciudad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedcliente" id="pedido.form/pedidoForm#pedcliente"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedcodsx" id="pedido.form/pedidoForm#pedcodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedcompania" id="pedido.form/pedidoForm#pedcompania"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="peddepartamento" id="pedido.form/pedidoForm#peddepartamento"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="peddescuento" id="pedido.form/pedidoForm#peddescuento"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="peddireccion" id="pedido.form/pedidoForm#peddireccion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedestado" id="pedido.form/pedidoForm#pedestado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfactura" id="pedido.form/pedidoForm#pedfactura"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfecha" id="pedido.form/pedidoForm#pedfecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfechacita" id="pedido.form/pedidoForm#pedfechacita"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfechasistema" id="pedido.form/pedidoForm#pedfechasistema"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedfechavenc" id="pedido.form/pedidoForm#pedfechavenc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedguia" id="pedido.form/pedidoForm#pedguia"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedhora" id="pedido.form/pedidoForm#pedhora"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedhoracita" id="pedido.form/pedidoForm#pedhoracita"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pediva" id="pedido.form/pedidoForm#pediva"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pednumpedido" id="pedido.form/pedidoForm#pednumpedido"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedobservaciones" id="pedido.form/pedidoForm#pedobservaciones"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedordencompra" id="pedido.form/pedidoForm#pedordencompra"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedpesobruto" id="pedido.form/pedidoForm#pedpesobruto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedpesoneto" id="pedido.form/pedidoForm#pedpesoneto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedpicking" id="pedido.form/pedidoForm#pedpicking"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedporc_iva" id="pedido.form/pedidoForm#pedporc_iva"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedsubtotal" id="pedido.form/pedidoForm#pedsubtotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedsucursal" id="pedido.form/pedidoForm#pedsucursal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedtipo" id="pedido.form/pedidoForm#pedtipo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedtotal" id="pedido.form/pedidoForm#pedtotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pedzona" id="pedido.form/pedidoForm#pedzona"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sucdesc" id="pedido.form/pedidoForm#sucdesc"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.form/pedidoForm-Standard::Call->pedido.entity/pedido*pedido.form/pedidoForm-Soyatec::Import->pedido.entity/pedido" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" location="630,285" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="2.0" distanceFromWire="13.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="208,290" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,305"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.form/pedidoForm-Standard::Call->pedido.control/gstpedido*pedido.form/pedidoForm-Standard::Instantiate->pedido.control/gstpedido*pedido.form/pedidoForm-Soyatec::Import->pedido.control/gstpedido" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call, instantiate»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,397" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="238,363"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

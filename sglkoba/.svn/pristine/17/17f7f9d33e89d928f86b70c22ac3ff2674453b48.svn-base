@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_fmm_estado" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4842178a-479c-48da-8920-fa42c1f6216b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select e.empresa_id,e.razon_social,f.formulario_id,t.codigo,t.operacion,est.descripcion,f.fecha_aprobado,f.fecha_ejecutado
+from tbformulario as f
+inner join tbtransaccion as t on t.transaccion_id = f.transaccion_id
+inner join tbempresa as e on e.empresa_id = f.empresa_id
+inner join tbestado_form as est on est.estado_form_id = f.estado_form_id]]>
+	</queryString>
+	<field name="empresa_id" class="java.lang.Integer"/>
+	<field name="razon_social" class="java.lang.String">
+		<fieldDescription><![CDATA[Razon social de la empresa]]></fieldDescription>
+	</field>
+	<field name="formulario_id" class="java.lang.Integer"/>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[Codigo del acuerdo]]></fieldDescription>
+	</field>
+	<field name="operacion" class="java.lang.String">
+		<fieldDescription><![CDATA[Si es una operacion de ingreso o de salida:
+(E) Entrada , (S) Salida]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[Descripción del acuerdo]]></fieldDescription>
+	</field>
+	<field name="fecha_aprobado" class="java.sql.Date">
+		<fieldDescription><![CDATA[Fecha de Aprobación]]></fieldDescription>
+	</field>
+	<field name="fecha_ejecutado" class="java.sql.Date">
+		<fieldDescription><![CDATA[Fecha de Cambio a estado ejecutado]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="795" height="92" backcolor="#006699" uuid="b67f6055-523a-4e0d-8ef9-b6401c203580"/>
+				<staticText>
+					<reportElement x="20" y="20" width="575" height="43" forecolor="#FFFFFF" uuid="285ccc4d-958f-4bb7-888d-3ec809449ac5"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte Formularios por Estado]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="ca22e2ec-1543-48da-b0a3-7b2e1a185276"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f52a0878-3ee4-405c-bda0-09552358a93c"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cod. Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="69" y="0" width="207" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="32fa554d-e5d9-4a2f-8634-872b4a90a4b9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="0" width="86" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6d8dafb6-873a-4cdb-ac9b-10d402ddffbb"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Formulario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="362" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d701f82e-2c05-440a-b9b6-bb52678952ca"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cod. Tran.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="431" y="0" width="101" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="846576ef-fa42-46de-9986-106beb160132"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="532" y="1" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9230a1e4-1289-4c9d-9b9e-239e17676dbd"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="683" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8aa50e67-e1d6-4f35-b864-7232fa7fc351"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ejecucion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="601" y="1" width="82" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8713a473-c474-49c8-af57-3af8dd86be26"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aprobacion]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="314" y="163" width="69" height="20" uuid="fa65bf4d-d04a-477c-86db-f36029f6d915"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="431" y="153" width="101" height="20" uuid="6055f7fd-cece-464f-9ebf-5933f0c6b259"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="2" y="0" width="69" height="20" uuid="3be0f057-fb44-4a52-b369-75c33aa636db"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="69" y="-1" width="207" height="20" uuid="7d2308f7-8d65-464a-9681-7033475b6d76"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{razon_social}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="-1" width="69" height="20" uuid="66ea1b75-f937-48fd-8021-37d379bf1804"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formulario_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="683" y="-2" width="69" height="20" uuid="830310e0-ac0a-45d2-9400-df89f81aa0e2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_ejecutado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="33">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="a8a666a0-8584-43ed-b156-f6e44d9ca8be"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="c676d5b6-c803-48dd-8336-d1c3e382c9ba"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="221667b4-a1a0-4e06-8804-ad320fd718d4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="555" y="17" width="69" height="20" uuid="5302d5f6-a8eb-4bd5-a501-77e04502ad12"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="647" y="17" width="69" height="20" uuid="57a5d82e-953f-4c7f-a615-78534aa00da8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_aprobado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

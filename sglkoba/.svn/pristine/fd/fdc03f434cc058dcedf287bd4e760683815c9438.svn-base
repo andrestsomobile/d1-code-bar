@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+    <head>
+        <title>SGL :: Sistema de Gestion Logistico -- KOBA Colombia S.A.S</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<link href="./disenno/templates/Movil/styles.css" rel="stylesheet" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+		<script type="text/javascript">
+			function sf() {//336CA1
+				document.validacionFrm.login.focus();
+			}
+		</script>
+    </head>
+    
+
+<%
+String miPuerto = request.getServerPort()+""; 
+String puertofijo = "909n";
+%>
+	<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" onload="sf()">
+
+
+        
+        <div class="container">
+
+
+	        <div class="row">
+	            <img src="./disenno/templates/Principal/images/index/logo.gif" class="img-fluid" width="100%" height="auto"></div>
+	        </div>
+	        <div class="row">
+	            <div class="col-md-12"> <img src="./disenno/templates/Principal/images/index/ktopbar.gif" class="img-fluid" width="100%" height="auto"></div>
+	        </div>
+	        <div class="row">
+	            <div class="col-md-12 well"><img src="./disenno/templates/Principal/images/index/bienvenida.png" class="img-fluid" width="100%" height="auto" ></div>
+	        </div>
+	        <form action="validacionAction.do" name="validacionFrm" method="post">
+	        	<input type="hidden" name="modo" value="movil" />
+		        <div class="row">
+		            <div class="col-md-12" align="center"><font color="#666666">Login:&nbsp;</font><input type="text" name="login" style="background-color: ffffff"></div>
+	   
+		        	<div class="col-md-12" align="center"><font color="#666666">Clave:&nbsp;</font><input type="password" name="clave" style="background-color: ffffff"></div>	
+	
+		        	<div class="col-md-12" align="center"><input type="submit" name="Submit" value="Ingresar"></div>
+		         </div>
+			</form>
+
+		</div>
+
+			
+		<footer>
+			<div class="container">
+    			<div class="row">
+					<div class="col-md-12s" align="center"> 
+						<p><small>
+						Desarrollado por Logical Sistemas S.A.S. <br>Sistemas Log&iacute;sticos Industriales <br>2019 
+						</small></p> 
+			    	</div>
+				</div>
+				<a href="./movil_off/descargas.jsp" target="_blank"> &nbsp;&nbsp;Descargas... </a> 
+			</div>
+		</footer>
+	
+	</body>
+</html>

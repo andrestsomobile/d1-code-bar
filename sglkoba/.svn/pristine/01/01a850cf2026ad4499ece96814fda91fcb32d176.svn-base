@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="usuario" size="600,305" description="" id="administracion" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.2/@sourceConnections.0" name="usuario" location="90,105" size="135,391" id="administracion.entity/usuario" runTimeClassModel="setusuclave(Ljava.lang.String;),setResumen(Ljava.lang.String;),getusumail(),usuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getResumen(),setusulogin(Ljava.lang.String;),getusuclave(),getusugrupo(),setusumail(Ljava.lang.String;),getusulogin(),getusunombre(),getusucompania(),setusugrupo(Ljava.lang.String;),setusucompania(Ljava.lang.String;),getusucodcliente(),setusunombre(Ljava.lang.String;),setusucodcliente(Ljava.lang.String;),getusucodsx(),setusucodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,162"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="112,342">
+      <children xsi:type="editmodel:MethodEditModel" name="usuario" id="administracion.entity/usuario#usuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusucodsx" id="administracion.entity/usuario#getusucodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusunombre" id="administracion.entity/usuario#getusunombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusulogin" id="administracion.entity/usuario#getusulogin()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusuclave" id="administracion.entity/usuario#getusuclave()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusumail" id="administracion.entity/usuario#getusumail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusugrupo" id="administracion.entity/usuario#getusugrupo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusucompania" id="administracion.entity/usuario#getusucompania()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusucodcliente" id="administracion.entity/usuario#getusucodcliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusucodsx" id="administracion.entity/usuario#setusucodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusunombre" id="administracion.entity/usuario#setusunombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusulogin" id="administracion.entity/usuario#setusulogin(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusuclave" id="administracion.entity/usuario#setusuclave(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusumail" id="administracion.entity/usuario#setusumail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusugrupo" id="administracion.entity/usuario#setusugrupo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusucompania" id="administracion.entity/usuario#setusucompania(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusucodcliente" id="administracion.entity/usuario#setusucodcliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="administracion.entity/usuario#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="administracion.entity/usuario#setResumen(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1 //@children.3/@sourceConnections.1" name="usuarioForm" location="555,105" size="159,427" id="administracion.form/usuarioForm" runTimeClassModel="setusuclave(Ljava.lang.String;),getusumail(),setusulogin(Ljava.lang.String;),getusuclave(),getusugrupo(),setusumail(Ljava.lang.String;),getusulogin(),getusunombre(),getopcion(),getusucompania(),llenar(Ladministracion.entity.usuario;),setusucompania(Ljava.lang.String;),setusugrupo(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setopcion(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getusucodcliente(),setusunombre(Ljava.lang.String;),getusucodsx(),setusucodcliente(Ljava.lang.String;),setusucodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,162"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="112,378">
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="administracion.form/usuarioForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="administracion.form/usuarioForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusucodsx" id="administracion.form/usuarioForm#getusucodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusunombre" id="administracion.form/usuarioForm#getusunombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusulogin" id="administracion.form/usuarioForm#getusulogin()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusuclave" id="administracion.form/usuarioForm#getusuclave()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusumail" id="administracion.form/usuarioForm#getusumail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusugrupo" id="administracion.form/usuarioForm#getusugrupo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusucompania" id="administracion.form/usuarioForm#getusucompania()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusucodcliente" id="administracion.form/usuarioForm#getusucodcliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusucodsx" id="administracion.form/usuarioForm#setusucodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusunombre" id="administracion.form/usuarioForm#setusunombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusulogin" id="administracion.form/usuarioForm#setusulogin(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusuclave" id="administracion.form/usuarioForm#setusuclave(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusumail" id="administracion.form/usuarioForm#setusumail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusugrupo" id="administracion.form/usuarioForm#setusugrupo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusucompania" id="administracion.form/usuarioForm#setusucompania(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setusucodcliente" id="administracion.form/usuarioForm#setusucodcliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="administracion.form/usuarioForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="administracion.form/usuarioForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="administracion.form/usuarioForm#llenar(Ladministracion.entity.usuario;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="administracion.form/usuarioForm-Standard::Call->administracion.entity/usuario*administracion.form/usuarioForm-Soyatec::Import->administracion.entity/usuario" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" location="368,300" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-9.0" distanceFromWire="7.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,195" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="135,195"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0" name="gstusuario" location="285,10" size="184,265" id="administracion.control/gstusuario" runTimeClassModel="getlistausuario(Ljava.lang.String;Ljava.lang.String;),validar(Ljava.lang.String;Ljava.lang.String;),eliminar(Ljava.lang.String;),updateusuario(Ladministracion.entity.usuario;),getTotalPaginaslistausuario(Ljava.lang.String;),gstusuario(),getusuario(Ljava.lang.String;),updateusuario(Ladministracion.form.usuarioForm;),getlistausuario(),crearusuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),gstusuario(Ldb.beanConnector;),getusuario_by_login(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="161,216">
+      <children xsi:type="editmodel:MethodEditModel" name="crearusuario" id="administracion.control/gstusuario#crearusuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="administracion.control/gstusuario#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistausuario" id="administracion.control/gstusuario#getTotalPaginaslistausuario(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistausuario" id="administracion.control/gstusuario#getlistausuario(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistausuario" id="administracion.control/gstusuario#getlistausuario()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusuario" id="administracion.control/gstusuario#getusuario(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getusuario_by_login" id="administracion.control/gstusuario#getusuario_by_login(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstusuario" id="administracion.control/gstusuario#gstusuario(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstusuario" id="administracion.control/gstusuario#gstusuario()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateusuario" id="administracion.control/gstusuario#updateusuario(Ladministracion.form.usuarioForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateusuario" id="administracion.control/gstusuario#updateusuario(Ladministracion.entity.usuario;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validar" id="administracion.control/gstusuario#validar(Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="administracion.control/gstusuario-Standard::Call->administracion.entity/usuario*administracion.control/gstusuario-Soyatec::Import->administracion.entity/usuario" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,180" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="135,85"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="administracion.control/gstusuario-Standard::Call->administracion.form/usuarioForm*administracion.control/gstusuario-Soyatec::Import->administracion.form/usuarioForm" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="184,160" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,65"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="usuarioAction" location="570,15" size="176,67" id="administracion.action/usuarioAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" location="310,53" id="administracion.action/usuarioAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="administracion.action/usuarioAction-Standard::Call->administracion.control/gstusuario*administracion.action/usuarioAction-Standard::Instantiate->administracion.control/gstusuario*administracion.action/usuarioAction-Soyatec::Import->administracion.control/gstusuario" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call, instantiate»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,33" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="184,38"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="administracion.action/usuarioAction-Standard::Call->administracion.form/usuarioForm*administracion.action/usuarioAction-Standard::Instantiate->administracion.form/usuarioForm*administracion.action/usuarioAction-Soyatec::Import->administracion.form/usuarioForm" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call, instantiate»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="71,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="86,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=0" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="nac" size="600,305" id="" metadata="uml2-1.0" initialized="true" scrolledY="-5" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" name="nacionalizacionAction" location="309,0" size="339,67" id="nacionalizacion.action/nacionalizacionAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="nacionalizacion.action/nacionalizacionAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="nacionalizacion.action/nacionalizacionAction-Standard::Call->nacionalizacion.control/gstnacionalizacion*nacionalizacion.action/nacionalizacionAction-Standard::Instantiate->nacionalizacion.control/gstnacionalizacion*nacionalizacion.action/nacionalizacionAction-Soyatec::Import->nacionalizacion.control/gstnacionalizacion" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, call, import»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="156,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="165,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="nacionalizacion.action/nacionalizacionAction-Standard::Call->nacionalizacion.form/nacionalizacionForm*nacionalizacion.action/nacionalizacionAction-Standard::Instantiate->nacionalizacion.form/nacionalizacionForm*nacionalizacion.action/nacionalizacionAction-Soyatec::Import->nacionalizacion.form/nacionalizacionForm" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, call, import»" location="682,21" size="118,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-21.0" distanceFromWire="65.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="339,26" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,6"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="nacionalizacion.action/nacionalizacionAction-Standard::Call->nacionalizacion.entity/nacionalizacion*nacionalizacion.action/nacionalizacionAction-Soyatec::Import->nacionalizacion.entity/nacionalizacion" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.2/@children.2" label="//@children.0/@sourceConnections.2/@children.0" sourceEnd="//@children.0/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,36" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="125,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.3/@sourceConnections.1" name="gstnacionalizacion" location="300,120" size="322,301" id="nacionalizacion.control/gstnacionalizacion" runTimeClassModel="getNumeroPackingsNacionalizacion(Ljava.lang.String;),eliminar(Ljava.lang.String;),updatenacionalizacion(Lnacionalizacion.form.nacionalizacionForm;),updatenacionalizacion(Lnacionalizacion.entity.nacionalizacion;),gstnacionalizacion(),getlistanacionalizacion(),getlistanacionalizacionByIngreso(Ljava.lang.String;),getSaldoReservadoNacionalizacion(Ljava.lang.String;),getnacionalizacion(Ljava.lang.String;),getnacionalizacion(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistanacionalizacion(Ljava.lang.String;Ljava.lang.String;),gstnacionalizacion(Ldb.beanConnector;),crearnacionalizacion(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistanacionalizacion(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="200,252">
+      <children xsi:type="editmodel:MethodEditModel" name="gstnacionalizacion" id="nacionalizacion.control/gstnacionalizacion#gstnacionalizacion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstnacionalizacion" id="nacionalizacion.control/gstnacionalizacion#gstnacionalizacion(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistanacionalizacion" id="nacionalizacion.control/gstnacionalizacion#getlistanacionalizacion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistanacionalizacion" id="nacionalizacion.control/gstnacionalizacion#getlistanacionalizacion(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistanacionalizacion" id="nacionalizacion.control/gstnacionalizacion#getTotalPaginaslistanacionalizacion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="crearnacionalizacion" id="nacionalizacion.control/gstnacionalizacion#crearnacionalizacion(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getnacionalizacion" id="nacionalizacion.control/gstnacionalizacion#getnacionalizacion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getnacionalizacion" id="nacionalizacion.control/gstnacionalizacion#getnacionalizacion(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatenacionalizacion" id="nacionalizacion.control/gstnacionalizacion#updatenacionalizacion(Lnacionalizacion.entity.nacionalizacion;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatenacionalizacion" id="nacionalizacion.control/gstnacionalizacion#updatenacionalizacion(Lnacionalizacion.form.nacionalizacionForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="nacionalizacion.control/gstnacionalizacion#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistanacionalizacionByIngreso" id="nacionalizacion.control/gstnacionalizacion#getlistanacionalizacionByIngreso(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSaldoReservadoNacionalizacion" id="nacionalizacion.control/gstnacionalizacion#getSaldoReservadoNacionalizacion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumeroPackingsNacionalizacion" id="nacionalizacion.control/gstnacionalizacion#getNumeroPackingsNacionalizacion(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="nacionalizacion.control/gstnacionalizacion-Standard::Call->nacionalizacion.form/nacionalizacionForm*nacionalizacion.control/gstnacionalizacion-Soyatec::Import->nacionalizacion.form/nacionalizacionForm" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="322,150" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,204"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="nacionalizacion.control/gstnacionalizacion-Standard::Call->nacionalizacion.entity/nacionalizacion*nacionalizacion.control/gstnacionalizacion-Soyatec::Import->nacionalizacion.entity/nacionalizacion" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,150" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="211,180"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1 //@children.3/@sourceConnections.0 //@children.0/@sourceConnections.2" name="nacionalizacion" location="15,90" size="211,381" id="nacionalizacion.entity/nacionalizacion">
+    <children xsi:type="editmodel:CompartmentEditModel" size="171,342">
+      <children xsi:type="editmodel:AttributeEditModel" name="naccodsx" id="nacionalizacion.entity/nacionalizacion#naccodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacconsec" id="nacionalizacion.entity/nacionalizacion#nacconsec"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacconseczfp" id="nacionalizacion.entity/nacionalizacion#nacconseczfp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacdeclaracion" id="nacionalizacion.entity/nacionalizacion#nacdeclaracion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacdosia" id="nacionalizacion.entity/nacionalizacion#nacdosia"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacempresa" id="nacionalizacion.entity/nacionalizacion#nacempresa"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacestado" id="nacionalizacion.entity/nacionalizacion#nacestado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacfecha" id="nacionalizacion.entity/nacionalizacion#nacfecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacfechadeclaracion" id="nacionalizacion.entity/nacionalizacion#nacfechadeclaracion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacfechaingresobodega" id="nacionalizacion.entity/nacionalizacion#nacfechaingresobodega"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacfob" id="nacionalizacion.entity/nacionalizacion#nacfob"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacingreso" id="nacionalizacion.entity/nacionalizacion#nacingreso"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacobservaciones" id="nacionalizacion.entity/nacionalizacion#nacobservaciones"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacpaginafinal" id="nacionalizacion.entity/nacionalizacion#nacpaginafinal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacpaginainicial" id="nacionalizacion.entity/nacionalizacion#nacpaginainicial"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacpesobruto" id="nacionalizacion.entity/nacionalizacion#nacpesobruto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacpesoneto" id="nacionalizacion.entity/nacionalizacion#nacpesoneto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nactipo" id="nacionalizacion.entity/nacionalizacion#nactipo"/>
+      <children xsi:type="editmodel:AttributeEditModel" targetConnections="//@children.3/@sourceConnections.0" name="resumen" id="nacionalizacion.entity/nacionalizacion#resumen"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1 //@children.1/@sourceConnections.0" name="nacionalizacionForm" location="705,66" size="262,381" id="nacionalizacion.form/nacionalizacionForm">
+    <children xsi:type="editmodel:CompartmentEditModel" size="171,342">
+      <children xsi:type="editmodel:AttributeEditModel" name="naccodsx" id="nacionalizacion.form/nacionalizacionForm#naccodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacconsec" id="nacionalizacion.form/nacionalizacionForm#nacconsec"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacconseczfp" id="nacionalizacion.form/nacionalizacionForm#nacconseczfp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacdeclaracion" id="nacionalizacion.form/nacionalizacionForm#nacdeclaracion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacdosia" id="nacionalizacion.form/nacionalizacionForm#nacdosia"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacempresa" id="nacionalizacion.form/nacionalizacionForm#nacempresa"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacestado" id="nacionalizacion.form/nacionalizacionForm#nacestado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacfecha" id="nacionalizacion.form/nacionalizacionForm#nacfecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacfechadeclaracion" id="nacionalizacion.form/nacionalizacionForm#nacfechadeclaracion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacfechaingresobodega" id="nacionalizacion.form/nacionalizacionForm#nacfechaingresobodega"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacfob" id="nacionalizacion.form/nacionalizacionForm#nacfob"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacingreso" id="nacionalizacion.form/nacionalizacionForm#nacingreso"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacobservaciones" id="nacionalizacion.form/nacionalizacionForm#nacobservaciones"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacpaginafinal" id="nacionalizacion.form/nacionalizacionForm#nacpaginafinal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacpaginainicial" id="nacionalizacion.form/nacionalizacionForm#nacpaginainicial"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacpesobruto" id="nacionalizacion.form/nacionalizacionForm#nacpesobruto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nacpesoneto" id="nacionalizacion.form/nacionalizacionForm#nacpesoneto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nactipo" id="nacionalizacion.form/nacionalizacionForm#nactipo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="opcion" id="nacionalizacion.form/nacionalizacionForm#opcion"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="nacionalizacion.form/nacionalizacionForm-Standard::Call->nacionalizacion.entity/nacionalizacion*nacionalizacion.form/nacionalizacionForm-Soyatec::Import->nacionalizacion.entity/nacionalizacion" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="114,381" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="103,16"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="nacionalizacion.form/nacionalizacionForm-Standard::Call->nacionalizacion.control/gstnacionalizacion*nacionalizacion.form/nacionalizacionForm-Standard::Instantiate->nacionalizacion.control/gstnacionalizacion*nacionalizacion.form/nacionalizacionForm-Soyatec::Import->nacionalizacion.control/gstnacionalizacion" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, call, import»" location="533,662" size="118,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="13.0" distanceFromWire="187.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="24,381" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="182,301"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

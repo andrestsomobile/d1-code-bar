@@ -1,0 +1,216 @@
+package reportes.util;
+
+import java.io.File;
+import java.util.Collection;
+import java.util.Iterator;
+
+import javax.servlet.http.HttpServletRequest;
+
+import jxl.Workbook;
+import jxl.write.Formula;
+import jxl.write.Label;
+import jxl.write.Number;
+import jxl.write.NumberFormat;
+import jxl.write.WritableCellFormat;
+import jxl.write.WritableFont;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import maestro.control.gstcompania;
+import maestro.entity.compania;
+import reportes.form.reportesForm;
+import db.GstTabla;
+import db.beanConnector;
+
+public class inventario_posicion_bodega extends Command {
+
+	public reporte rep = new reporte();
+	
+	public void execute(String ruta, HttpServletRequest request, reportesForm repfor) {
+
+		exportar(request, repfor);
+	}
+
+	private void exportar(HttpServletRequest request, reportesForm repfor) {
+		String ruta = request.getRealPath("") + File.separator + "uploads" + File.separator;
+		String nomarch = "InvPosicionBodega" + ".xls";
+		File archivo = new File(ruta, nomarch);
+		gstcompania gstcom = new gstcompania();	
+		String tipo_formato = repfor.getTipo_formato();
+		WritableFont letraT = new WritableFont(WritableFont.TAHOMA, 12, WritableFont.BOLD);
+		WritableCellFormat formatT = new WritableCellFormat(letraT);
+		WritableFont letra = new WritableFont(WritableFont.TAHOMA, 11, WritableFont.NO_BOLD);
+		WritableCellFormat format = new WritableCellFormat(letra);
+		NumberFormat numero = new jxl.write.NumberFormat ("#,##0");
+		WritableCellFormat formatonumero = new jxl.write.WritableCellFormat (numero);  
+		
+
+		
+		int renglon = 0;
+		int col = 0;
+		
+		try {
+			
+			rep.automatico_posicion_bodega(); // actualiza posiciones en bodega antes de generar el reporte
+			
+			WritableWorkbook book = Workbook.createWorkbook(archivo);
+			WritableSheet hoja = book.createSheet("InvPosicionBodega", 0); 
+			//Merge col[0-11]
+		    hoja.mergeCells(0, renglon, 13, renglon);
+			hoja.addCell(new Label(col,renglon++,"Inventario por Posicion Bodega", formatT));
+			hoja.mergeCells(0, renglon, 13, renglon);
+			
+				
+				renglon = renglon + 1;
+				Collection detalles = rep.detalle();
+				Iterator itdet = detalles.iterator();
+				
+				if (itdet.hasNext()) {
+			
+					col = 0;
+					hoja.addCell(new Label(col++, renglon, "Bodega", formatT));
+					hoja.addCell(new Label(col++, renglon, "Posicion", formatT));
+					hoja.addCell(new Label(col++, renglon, "Material", formatT));
+					hoja.addCell(new Label(col++, renglon, "Descripcion", formatT));
+					hoja.addCell(new Label(col++, renglon, "UMP", formatT));
+					hoja.addCell(new Label(col++, renglon, "Ump x Estiba", formatT));
+					hoja.addCell(new Label(col++, renglon, "Importacion", formatT));
+					hoja.addCell(new Label(col++, renglon, "Saldo NAC", formatT));
+					hoja.addCell(new Label(col++, renglon, "Saldo SNAC", formatT));
+					hoja.addCell(new Label(col++, renglon, "Estibas", formatT));
+					hoja.addCell(new Label(col++, renglon, "Lote", formatT));
+					hoja.addCell(new Label(col++, renglon, "Vencimiento Lote", formatT));
+					hoja.addCell(new Label(col++, renglon, "Estado", formatT));
+					hoja.addCell(new Label(col++, renglon, "Cod.Interno", formatT));
+					renglon++;
+					int reg_ini = renglon + 1;
+					while (itdet.hasNext()) {
+						col = 0;
+						Collection datosdet = (Collection) itdet.next();
+						Iterator datadet = datosdet.iterator();
+						String bodega =  (String) datadet.next();
+						String posicion =  (String) datadet.next();
+						String material =  (String) datadet.next();
+						String descripcion =  (String) datadet.next();
+						String proump =  (String) datadet.next();
+						String trafnumdta =  (String) datadet.next();
+						String ump_estiba =  (String) datadet.next();
+						String entcodsx =  (String) datadet.next();
+						String saldoNAC =  (String) datadet.next();
+						String saldoSNAC =  (String) datadet.next();
+						String estibas =  (String) datadet.next();
+						String lote =  (String) datadet.next();
+						String lote_vencimiento =  (String) datadet.next();
+						String estado =  (String) datadet.next();
+						String cbentrada =  (String) datadet.next();
+						String cbestante =  (String) datadet.next();
+						String cbnivel =  (String) datadet.next();
+						String cbposicion =  (String) datadet.next();
+						String entposicion =  (String) datadet.next();
+						
+						if (tipo_formato != null && tipo_formato.contentEquals("FORMATO")) {
+							saldoNAC = "";
+							saldoSNAC = "";
+							estibas = "";
+						}
+						
+						hoja.addCell(new Label(col++, renglon, bodega, format));
+						hoja.addCell(new Label(col++, renglon, posicion, format));
+						hoja.addCell(new Label(col++, renglon, material, format));
+						hoja.addCell(new Label(col++, renglon, descripcion, format));
+						hoja.addCell(new Label(col++, renglon, proump, format));
+						hoja.addCell(new Label(col++, renglon, ump_estiba, format));
+						hoja.addCell(new Label(col++, renglon, trafnumdta, format));
+						hoja.addCell(new Label(col++, renglon, saldoNAC, format));
+						hoja.addCell(new Label(col++, renglon, saldoSNAC, format));
+						hoja.addCell(new Label(col++, renglon, estibas, format));
+						hoja.addCell(new Label(col++, renglon, lote, format));
+						hoja.addCell(new Label(col++, renglon, lote_vencimiento, format));
+						hoja.addCell(new Label(col++, renglon, estado, format));
+						hoja.addCell(new Label(col++, renglon, entcodsx, format));
+						renglon++;
+					}
+
+				}
+				renglon++;
+			
+			book.write();
+			book.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	
+	public class reporte extends GstTabla {
+		
+		public reporte() {
+			db = new beanConnector();
+		}
+
+		public void automatico_posicion_bodega() {
+			String sql = "SELECT * FROM automatico_posiciones_bodega()";
+			getCampo(sql);
+		}
+		
+		public Collection detalle ()  {
+			/*String consulta_old = "select cbestante||cbposicion as posicionbodega, promodelo, prodescripcion, proump, trafnumdta, round(prounimasterpac,0) as ump_estiba, entcodsx, entposicion, Round(entsaldonac,0) as saldonac, Round(entsaldosinnac,0) as saldosnac, ltraflote,ltrafelaboracion, ltrafvencimiento,\r\n" + 
+					"case when cbestado = 'IN' then 'TUNEL' else (case when cbentrada is not null then 'OCUPADA' else 'LIBRE' end) end as tunel,cbentrada,cbestante, cbnivel, cbposicion\r\n" + 
+					"from config_bodega \r\n" + 
+					"left join entrada on entcodsx = cbentrada\r\n" + 
+					"left join producto on procodsx = entcodproducto \r\n" + 
+					"left join lote_trafico on ltrafcodsx = entlote\r\n" + 
+					"left join trafico on trafcodsx = ltrafnumtrafico\r\n" + 
+					"union all\r\n" + 
+					"select entposicion as posicionbodega, promodelo, prodescripcion, proump, trafnumdta, round(prounimasterpac,0) as ump_estiba, entcodsx, entposicion, Round(entsaldonac,0) as saldonac, Round(entsaldosinnac,0) as saldosnac, ltraflote,ltrafelaboracion, ltrafvencimiento,\r\n" + 
+					"'OTRAS' as tunel,cbentrada,cbestante, cbnivel, cbposicion\r\n" + 
+					"from entrada\r\n" + 
+					"inner join producto on procodsx = entcodproducto\r\n" + 
+					"left join config_bodega on cbentrada = entcodsx \r\n" + 
+					"left join lote_trafico on ltrafcodsx = entlote\r\n" + 
+					"left join trafico on trafcodsx = ltrafnumtrafico\r\n" + 
+					"where cbentrada is null and (entsaldonac+ entsaldosinnac) > 0\r\n" + 
+					"order by cbestante, cbnivel, cbposicion,entposicion";*/
+			String consulta = "select bodnombre,posicionbodega, promodelo, prodescripcion, proump, string_agg(distinct trafnumdta::text,',') as trafnumdta, ump_estiba, \r\n" + 
+					"string_agg(distinct entcodsx::text,',') as entcodsx,sum(saldonac) as saldonac, sum(saldosnac) as saldosnac, Round((sum(saldonac)+sum(saldosnac))/ump_estiba,0) as estibas, string_agg(distinct ltraflote,',') as ltraflote,\r\n" + 
+					"string_agg(distinct to_char(ltrafvencimiento,'YYYY-MM-DD')::text,',') as ltrafvencimiento,  string_agg(distinct tunel::text,',') as estado, string_agg(distinct cbentrada::text,',') as cbentrada,\r\n" + 
+					"cbestante, cbnivel, cbposicion,entposicion\r\n" + 
+					"\r\n" + 
+					" from (\r\n" + 
+					" \r\n" + 
+					"select cbbodega as bod, cbestante||cbposicion as posicionbodega, promodelo, prodescripcion, proump, trafnumdta, round(prounimasterpac,0) as ump_estiba, entcodsx,entposicion,\r\n" + 
+					" Round(entsaldonac,0) as saldonac, Round(entsaldosinnac,0) as saldosnac, ltraflote, ltrafvencimiento,\r\n" + 
+					"case when cbestado = 'IN' then 'TUNEL' else (case when cbentrada is not null then 'OCUPADA' else 'LIBRE' end) end as tunel,cbentrada,cbestante, cbnivel, cbposicion\r\n" + 
+					"from config_bodega \r\n" + 
+					"left join entrada on entcodsx = cbentrada\r\n" + 
+					"left join producto on procodsx = entcodproducto \r\n" + 
+					"left join lote_trafico on ltrafcodsx = entlote\r\n" + 
+					"left join trafico on trafcodsx = ltrafnumtrafico\r\n" + 
+					//"where cbentrada is not null and (entsaldonac+ entsaldosinnac) > 0\r\n" + 
+					
+					"union all\r\n" + 
+					"select entbodega as bod,entposicion as posicionbodega, promodelo, prodescripcion, proump, trafnumdta, round(prounimasterpac,0) as ump_estiba, entcodsx, entposicion,\r\n" + 
+					"Round(entsaldonac,0) as saldonac, Round(entsaldosinnac,0) as saldosnac, ltraflote, ltrafvencimiento,\r\n" + 
+					"case when entcodsx in (select reentradafin from reubicacion) then 'UNIFICACION' else 'OTRAS' end as tunel,cbentrada,cbestante, cbnivel, cbposicion\r\n" + 
+					"from entrada\r\n" + 
+					"inner join producto on procodsx = entcodproducto\r\n" + 
+					"left join config_bodega on cbentrada = entcodsx \r\n" + 
+					"left join lote_trafico on ltrafcodsx = entlote\r\n" + 
+					"left join trafico on trafcodsx = ltrafnumtrafico\r\n" + 
+					"where cbentrada is null and (entsaldonac+ entsaldosinnac) > 0\r\n" + 
+
+					//"order by cbestante, cbnivel, cbposicion,entposicion\r\n" + 
+					") as s1\r\n" + 
+					"left join bodega on bodcodsx = bod\r\n" + 
+					"group by bodnombre, posicionbodega, promodelo, prodescripcion,proump,ump_estiba,cbestante, cbnivel, cbposicion,entposicion\r\n" + 
+					"order by bodnombre,\r\n" + 
+					"case when (case when substring(entposicion from '.$') ~ E'^\\\\d+$' then substring(entposicion from '.$')::integer  else 0 end)  > 0\r\n" + 
+					"then left(entposicion,1) || case when substring(entposicion from '.$') ~ E'^\\\\d+$' then substring(entposicion from '.$')::integer  else 0 end || right(entposicion,-2)\r\n" + 
+					"else 'ZZZZ'||posicionbodega end";
+			
+			
+			return getListaDeListas(consulta);
+		}
+		
+	}
+		
+}

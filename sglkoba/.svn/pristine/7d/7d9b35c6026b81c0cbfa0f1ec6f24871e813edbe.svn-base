@@ -1,0 +1,1 @@
+﻿ALTER TABLE ingreso ADD COLUMN ingtipoasignacion character varying;

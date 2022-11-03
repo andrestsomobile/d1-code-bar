@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clay-model clay-version="1.2.0">
+<database-model alias="" author="" begin-script="" end-script="" name="packing_picking" remarks="" sql-dialect-id="jp.azzurri.clay.model.physical.dialect.Postgre_7_3_Dialect" version="1.0">
+<database-model-description></database-model-description>
+<schema-list>
+<schema alias="" name="movimiento" remarks="">
+<schema-description></schema-description>
+<domain-list/>
+<table-list>
+<table alias="" name="packing" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="338" y="2"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('movimiento.packing_packcodsx_seq'::text)" mandatory="true" name="packcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="packempresa" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="packfecha" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="93" name="TIMESTAMP" selected-variant-pattern="TIMESTAMP(%p)">
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p)"/>
+<variant type-name-pattern="TIMESTAMP"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="packobservaciones" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="packestado" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_packing" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="packcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index alias="" name="pk_packing" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="packcodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table alias="" name="packing_detalle" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="4" y="2"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('movimiento.packing_detalle_packdcodsx_seq'::text)" mandatory="true" name="packdcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="packdpacking" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="packdproducto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_packd" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="packdcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="fk_packd_packing" on-delete="CASCADE" on-update="RESTRICT" referenced-key="pk_packing" referenced-table="packing" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="packdpacking" referenced-key-column-name="packcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index alias="" name="pk_packd" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="packdcodsx" sort="ASC"/>
+</index>
+<index alias="" name="uq_packing_det" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="packdpacking" sort="ASC"/>
+<index-column name="packdproducto" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table alias="" name="packing_detalle_posicion" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="38" y="168"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('movimiento.packing_detalle_posicion_packpcodsx_seq'::text)" mandatory="true" name="packpcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="packppackingdet" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2" decimal-digits="0" default-value="" mandatory="true" name="packpbodega" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="5" literal-prefix="'" literal-suffix="'" name="INT2" selected-variant-pattern="INT2">
+<variant type-name-pattern="INT2"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="packpposicion" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="packpcantidad" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="packpentrada" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="false" name="packpnacdetalle" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="packpsaldo" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_packp" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="packpcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="fk_pack_posicion_detalle" on-delete="CASCADE" on-update="RESTRICT" referenced-key="pk_packd" referenced-table="packing_detalle" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="packppackingdet" referenced-key-column-name="packdcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index alias="" name="pk_packp" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="packpcodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table alias="" name="pedido" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="730" y="184"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('movimiento.pedido_pedcodsx_seq'::text)" mandatory="true" name="pedcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pedcompania" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="pednumpedido" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="pedordencompra" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="pedguia" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pedfechasistema" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="93" name="TIMESTAMP" selected-variant-pattern="TIMESTAMP(%p)">
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p)"/>
+<variant type-name-pattern="TIMESTAMP"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="" mandatory="true" name="pedfecha" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="91" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="" mandatory="false" name="pedfechavenc" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="91" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="" mandatory="false" name="pedfechacita" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="91" name="DATE" selected-variant-pattern="DATE">
+<variant type-name-pattern="DATE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="false" name="pedhoracita" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="92" literal-prefix="'" literal-suffix="'" name="TIME" selected-variant-pattern="TIME(%p)">
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIME(%p)"/>
+<variant type-name-pattern="TIME"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIME(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIME(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pedcliente" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pedsucursal" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="peddireccion" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pedciudad" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="peddepartamento" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="pedobservaciones" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="" mandatory="true" name="pedbodega" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="pedfactura" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="pedestado" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="pedsubtotal" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="pediva" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="peddescuento" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="pedtotal" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="pedtipo" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="false" name="pedpicking" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_pedido" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="pedcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="fk_pedido_picking" on-delete="RESTRICT" on-update="RESTRICT" referenced-key="pk_picking" referenced-table="picking" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="pedpicking" referenced-key-column-name="pickcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index alias="" name="pk_pedido" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="pedcodsx" sort="ASC"/>
+</index>
+<index alias="" name="uq_pedido" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="pedcompania" sort="ASC"/>
+<index-column name="pednumpedido" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table alias="" name="picking" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="750" y="4"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('movimiento.picking_pickcodsx_seq'::text)" mandatory="true" name="pickcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pickfecha" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="93" name="TIMESTAMP" selected-variant-pattern="TIMESTAMP(%p)">
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p)"/>
+<variant type-name-pattern="TIMESTAMP"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pickempresa" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pickcodpacking" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="pickobservaciones" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="pickestado" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_picking" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="pickcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="fk_picking_packing" on-delete="RESTRICT" on-update="RESTRICT" referenced-key="pk_packing" referenced-table="packing" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="pickcodpacking" referenced-key-column-name="packcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index alias="" name="pk_picking" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="pickcodsx" sort="ASC"/>
+</index>
+<index alias="" name="uq_packing" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="pickfecha" sort="ASC"/>
+<index-column name="pickempresa" sort="ASC"/>
+<index-column name="pickcodpacking" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table alias="" name="picking_detalle" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="401" y="163"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('movimiento.picking_detalle_pickdcodsx_seq'::text)" mandatory="true" name="pickdcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pickdcodpicking" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pickdproducto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="pickdvalorunit" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pf_picking" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="pickdcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="fk_pickid_picking" on-delete="CASCADE" on-update="RESTRICT" referenced-key="pk_picking" referenced-table="picking" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="pickdcodpicking" referenced-key-column-name="pickcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index alias="" name="pf_picking" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="pickdcodsx" sort="ASC"/>
+</index>
+<index alias="" name="uq_picking_det" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="pickdcodpicking" sort="ASC"/>
+<index-column name="pickdproducto" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table alias="" name="picking_detalle_packing" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="133" y="410"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('movimiento.picking_detalle_packing_pickpcodsx_seq'::text)" mandatory="true" name="pickpcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pickppickingdetalle" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="pickppackingdet" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="pickpcantidad" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_picking_pack" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="pickpcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="fk_pickp_packing" on-delete="RESTRICT" on-update="RESTRICT" referenced-key="pk_packp" referenced-table="packing_detalle_posicion" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="pickppackingdet" referenced-key-column-name="packpcodsx"/>
+</foreign-key>
+<foreign-key alias="" name="fk_pickp_detalle" on-delete="CASCADE" on-update="RESTRICT" referenced-key="pf_picking" referenced-table="picking_detalle" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="pickppickingdetalle" referenced-key-column-name="pickdcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index alias="" name="pk_picking_pack" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="pickpcodsx" sort="ASC"/>
+</index>
+<index alias="" name="fki_pickp_detalle" remarks="" unique="false">
+<index-description></index-description>
+<index-column name="pickppickingdetalle" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table alias="" name="referencia_pedido" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="393" y="357"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('movimiento.referencia_pedido_refpcodsx_seq'::text)" mandatory="true" name="refpcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="refpnumpedido" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="refpproducto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="refpbodega" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="refpposicion" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="refpcantidad" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="refpvalorunit" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="refpvalortotal" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="refpentrada" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="false" name="refpnacdetalle" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="refpsaldo" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="refppesoneto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="refppesobruto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_refp" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="refpcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="fk_refp_pedido" on-delete="CASCADE" on-update="RESTRICT" referenced-key="pk_pedido" referenced-table="pedido" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="refpnumpedido" referenced-key-column-name="pedcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index alias="" name="pk_refp" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="refpcodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+</clay-model>
