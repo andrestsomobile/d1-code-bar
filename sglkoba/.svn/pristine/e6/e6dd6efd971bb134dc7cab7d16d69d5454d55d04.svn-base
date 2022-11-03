@@ -1,0 +1,99 @@
+<script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+<style>
+input {
+  font-size: 20px;
+  height:50px;
+}
+.imagediv {
+	float:left;
+    margin-top:50px;
+}
+.imagediv .showonhover {
+	background:red;
+	padding:20px;
+	opacity:0.9;
+	color:white;
+	width: 100%;
+	display:block;	
+	text-align:center;
+	cursor:pointer;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".showonhover").click(function(){
+		$("#selectfile").trigger('click');
+	});
+});
+
+
+var input = document.querySelector('input[type=file]'); // see Example 4
+
+input.onchange = function () {
+var file = input.files[0];
+
+drawOnCanvas(file);   // see Example 6
+displayAsImage(file); // see Example 7
+};
+
+function drawOnCanvas(file) {
+var reader = new FileReader();
+
+reader.onload = function (e) {
+var dataURL = e.target.result,
+    c = document.querySelector('canvas'), // see Example 4
+    ctx = c.getContext('2d'),
+    img = new Image();
+
+img.onload = function() {
+  c.width = img.width;
+  c.height = img.height;
+  ctx.drawImage(img, 0, 0);
+};
+
+img.src = dataURL;
+};
+
+reader.readAsDataURL(file);
+}
+
+function displayAsImage(file) {
+var imgURL = URL.createObjectURL(file),
+  img = document.createElement('img');
+
+img.onload = function() {
+URL.revokeObjectURL(imgURL);
+};
+
+img.src = imgURL;
+document.body.appendChild(img);
+}
+
+$("#upfile1").click(function () {
+$("#file1").trigger('click');
+});
+$("#upfile2").click(function () {
+$("#file2").trigger('click');
+});
+$("#upfile3").click(function () {
+$("#file3").trigger('click');
+});
+</script>
+
+<h2>Change the Plain
+	<input id="files-upload" type="file" multiple>
+  </p></h2>
+
+
+<h3>To an image "click on the image below"</h3>
+<input type="file" id="file1" name="image" accept="image/*" capture style="display:none"/>
+<img src="http://macgroup.org/blog/wp-content/uploads/2011/10/iphone-camera-icon-150x150.jpg" id="upfile1" style="cursor:pointer" />
+</p>
+
+<div align="left" class="imagediv">
+     <span>Or click here</span> 
+            <span class="visibleimg"></span>
+            <span class="showonhover">Choose Files</span>
+            <input id="selectfile" type="file" name="" style="display: none;" />
+</div>
+ 

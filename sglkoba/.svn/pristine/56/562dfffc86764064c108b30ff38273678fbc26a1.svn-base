@@ -1,0 +1,135 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"
+	import="administracion.control.gstpermiso, ingreso.control.*,ingreso.entity.*,java.util.*,util.*, maestro.entity.*, maestro.control.*"%>
+<html>
+
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+
+<script type="text/javascript">
+
+function modificarLoteEntrada(codsx) {
+	var ltrafvencimiento = document.getElementById("ltrafvencimiento_"+codsx);
+	var nuevoLote = document.getElementById("entlote_"+codsx);
+	if(confirm('Se cambiara el lote de esta posicion y la fecha de vencimiento del lote seleccionado, esta seguro de realizar estos cambios?')) {
+		window.location = "lote_traficoAction.do?opcion=modificarLoteEntrada&codsx="+codsx+"&nuevafecha="+ltrafvencimiento.value+"&nuevolote="+nuevoLote.value;
+	}
+}
+
+</script>
+
+<%
+gstlote_trafico glote_trafico = new gstlote_trafico();
+gsttrafico gtrafico = new gsttrafico();
+gstproducto gpro = new gstproducto();
+gstentrada gent = new gstentrada();
+gent.setMaxfilas(20);
+	
+String param = request.getParameter("param"); 
+String pag = request.getParameter("pag");   
+
+Collection lista = gent.getlistaentrada_cambiolote(pag, param);
+request.setAttribute("lista", lista);
+
+String hoy = Fecha.getFecha();
+
+%>
+<div class="titulo">Relacion de Entradas </div>
+<br>
+
+<table align='center'  width='90%' border='0' cellspacing='0' cellpading='0' > 
+ 	<Tr> 
+ 		<td align='right'> 	 
+ 			<form method='post' action=''> 
+ 			    <p>  Buscar por Posicion/Material/Lote: 
+ 				<input type='text' name='param' value='<%=param==null ? "" : param %>'> 
+ 				<input type='submit' name='buscar' value='Buscar'> 
+ 			</form> 
+ 		</td>
+ 	</Tr>
+ </table> 
+
+<table align='center' width='90%' border='0' cellspacing='0' cellpading='0' class="tabla_listas">
+	<tr>
+		<th>Material(*)</th>
+		<th>Posicion(*)</th>
+		<th>Importaci&oacute;n</th>
+	    <th>Saldo Nac</th>
+		<th>Saldo SNac</th>
+		<th>Lote(*)</th>
+		<th>Nuevo Lote</th>
+		<th>Fecha Vencimiento</th>
+		<th>Opci&oacute;n</th>
+	    <form name="miforma" action="">
+		<logic:iterate id="temp" name="lista" type="entrada">
+		    <%
+		      trafico traf = null;
+		      lote_trafico lt = null;
+		      producto pro = gpro.getproducto(temp.getentcodproducto());
+		      if (temp != null && temp.getentlote() != null ) {
+		    	  lt = glote_trafico.getlote_trafico(temp.getentlote());
+		      }
+		      if (lt != null) {
+		    	  traf = gtrafico.gettrafico(lt.getLtrafnumtrafico());
+		      }
+		      String estilo_lote = "";
+		      boolean vencido = false;
+		      if (lt.getLtrafvencimiento() != null) {
+		    	  vencido = Fecha.compararfechas(lt.getLtrafvencimiento(),hoy);
+		      }
+		      if (vencido) {
+		      	estilo_lote += " bgcolor= '#FFFF00' ";
+		      }
+		      Collection listalotes = glote_trafico.getlistalote_trafico(traf.gettrafcodsx(),temp.getentcodproducto());
+		      Iterator itlotes = listalotes.iterator();
+		    %>
+			<tr align='center' <%=estilo_lote%>>
+				<td nowrap><%=pro.getpromodelo()%></td>
+				<td><%=temp.getentposicion()%></td>
+				<td nowrap><%=traf != null && traf.gettrafnumdta() != null ? traf.gettrafnumdta() : ""%>&nbsp;</td>
+				<td><%=temp.getentsaldonac()%></td>
+				<td><%=temp.getentsaldosinnac()%></td>
+				<td><%=lt.getLtraflote()%></td>
+				<td><select id="entlote_<%=temp.getentcodsx()%>" onchange="">
+        
+			         <%
+			
+						while (itlotes.hasNext()) {
+						  lote_trafico _lote = (lote_trafico)itlotes.next();
+						  boolean seleccionado = false;
+						  if (_lote.getLtrafcodsx().equals(lt.getLtrafcodsx())) {
+							  seleccionado = true;
+						  }
+			
+			         %>
+                     <OPTION VALUE="<%=_lote.getLtrafcodsx()%>" <%=seleccionado?"selected":""%> ><%=_lote.getLtraflote() %></OPTION> 
+					 <%
+					    }
+					 %>				
+				
+				
+				
+				<td nowrap><input type="text" id="ltrafvencimiento_<%=temp.getentcodsx()%>" size="10" value = "<%=lt.getLtrafvencimiento() != null ? Fecha.limpiar(lt.getLtrafvencimiento()):"&nbsp;" %>"  />
+					<a href="javascript:show_calendar('miforma.ltrafvencimiento_<%=temp.getentcodsx()%>');">
+				    <img src="./disenno/images/calendar.gif" class="lupita"> </a>
+				</td>
+				<td>
+					<a href='javascript:modificarLoteEntrada(<%=temp.getentcodsx()%>)'> 
+          			<img src="./disenno/images/mover.png" border="0" width="15" heigth="15" ></a>
+				</td>
+			</tr>
+		</logic:iterate>
+		</form>
+</table>
+
+
+<% 	
+ String url_no = "lote_traficoAction.do?opcion=modificarLoteEntrada&param=" + (param==null?"":param); 
+ String url = "main.jsp?app=ingreso&modulo=lote_trafico_vencimiento_posicion&param=" + (param==null?"":param); 
+ int paginas = gent.getTotallistaentrada_cambiolote(param); 
+%> 
+ <%@ taglib uri="/WEB-INF/Paginador.tld" prefix="p" %> 
+ <p:paginar  actual="<%= pag %>"   total="<%= (paginas) %>" url="<%= url %>"   /> 
+ <br>Los campos con (*) son de busqueda

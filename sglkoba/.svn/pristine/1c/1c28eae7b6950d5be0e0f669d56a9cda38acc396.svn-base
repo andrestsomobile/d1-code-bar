@@ -1,0 +1,107 @@
+ <%@page import="ingreso.entity.lote_trafico"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
+ pageEncoding="ISO-8859-1" import="ingreso.control.*,ingreso.entity.*,java.util.*, administracion.control.gstpermiso,ingreso.form.ingresoForm"%> 
+ <html> 
+
+ <%@ taglib uri="/WEB-INF/struts-logic.tld"  prefix="logic"%> 
+
+ <%@ taglib uri="/WEB-INF/struts-html.tld"  prefix="html"%>
+
+<script type="text/javascript">
+//alert("param " + param);
+function reubicarPosicion(codsx,tipo,param,pag) {
+	var entposicion = document.getElementById("entposicion_"+codsx);
+	var entqty = document.getElementById("entqty_"+codsx);
+	window.location = "reubicacionAction.do?opcion=reubicacion_movil&reentradaor="+codsx+"&tipo="+tipo+"&nuevapos="+entposicion.value+"&recantidad="+entqty.value+"&param_movil="+param+"&pag_movil="+pag;
+}
+
+</script>
+<%   
+gstentrada gentrada = new gstentrada(); 
+gsttrafico gtraf = new gsttrafico();
+gentrada.setMaxfilas(10);  
+maestro.control.gstbodega gbod = new maestro.control.gstbodega();
+String tipo_movil = (String)request.getAttribute("tipo_movil");
+String param_movil = (String)request.getAttribute("param_movil");
+String pag_movil = (String)request.getAttribute("pag_movil");
+String tipo = tipo_movil != null && !tipo_movil.equals("") && !tipo_movil.equals("null") ? tipo_movil : request.getParameter("tipo"); 
+String param = param_movil != null && !param_movil.equals("") && !param_movil.equals("null") ? param_movil : request.getParameter("param"); 
+String pag = pag_movil != null && !pag_movil.equals("") && !pag_movil.equals("null") ? pag_movil : request.getParameter("pag");   
+gstlote_trafico glt = new gstlote_trafico();
+
+Collection lista = gentrada.getlistaentrada_reubicacion_movil(pag, param, tipo); 
+request.setAttribute("lista", lista); 
+boolean tramite =  true ;
+boolean escritura = gstpermiso.getEscritura(session, "movil", "reubicacion.jsp");
+String ingcodsx= "1";
+%> 
+ <div class=""> Reubicacion por Cantidad - (1) Bodega Importados </div> 
+ <br> 
+ 
+<table align='center'  width='90%' border='0' cellspacing='0' cellpading='0' > 
+ 	<Tr> 
+ 	<td align='center'>
+ 	 	<form method='post' action='main_movil.jsp?app=movil&modulo=reubicacion'> 	 	
+ 		<select name="tipo" > 
+ 			<option value="NACIONALIZADO" <%= tipo != null && tipo.equals("NACIONALIZADO") ? "selected" : ""%>>NACIONALIZADO</option> 
+      		<option value="NO NACIONALIZADO" <%= tipo != null && tipo.equals("NO NACIONALIZADO") ? "selected" : ""%>>NO NACIONALIZADO</option> 
+      	</select>
+  		 <input type='text' name='param' value='<%=param==null ? "" : param %>' style="background-color: white;color:black" onkeyup="javascript:this.value=this.value.toUpperCase();"> 
+		 <input type='submit' name='buscar' value='Buscar' style="background-color: white;color:black"> 
+		</form> 
+ </table> 
+<table align='center' width='99%' border='1' cellspacing='0' cellpading='0' class=""> 
+ 	<tr>  
+	 <th> Material(*)
+	 <th> Descripcion
+	 <th> Importacion(*)
+	 <th> Lote(*)
+	 <th> Vencimiento
+	 <th> Cantidad
+	 <th> UMP
+	 <th> Saldo
+	 <th> Cantidad a Reubicar
+	 <th> Posicion(*)
+	 
+ 
+ <logic:iterate id="temp" name="lista" type="entrada" >
+ <tr align='center'>
+ <%
+ maestro.entity.producto prod = new maestro.control.gstproducto().getproducto( temp.getentcodproducto());
+ maestro.entity.bodega bod = gbod.getbodega( temp.getEntbodega());
+ trafico traf = null;
+ lote_trafico lt = null;
+if (temp.getentlote() != null) {
+	lt = glt.getlote_trafico(temp.getentlote());
+	 traf = gtraf.gettrafico(lt.getLtrafnumtrafico());
+}
+
+ %>  
+ <td>  <%= prod.getpromodelo() %>
+ <td>  <%= prod.getprodescripcion() %>      
+ <td>  <%= traf != null && traf.gettrafnumdta() != null ? traf.gettrafnumdta() : "SIN DEFINIR" %>
+ <td>  <%= lt != null && lt.getLtraflote() != null ? lt.getLtraflote() : "SIN DEFINIR" %>
+ <td>  <%= lt != null && lt.getLtrafvencimiento() != null ? lt.getLtrafvencimiento() : "SIN DEFINIR" %>
+ <td>  <%= temp.getentcantidad() %>
+ <td>  <%= prod.getProump() %>
+ <td>  <%= tipo != null && tipo.equals("NACIONALIZADO") ? temp.getentsaldonac() : temp.getentsaldosinnac() %>
+ <form name="miforma" action="">
+ <td nowrap="nowrap">
+ 		  <input type="text"  id="entqty_<%= temp.getentcodsx() %>" size='10' value="<%= tipo != null && tipo.equals("NACIONALIZADO") ? temp.getentsaldonac() : temp.getentsaldosinnac() %>" style="background-color: white;color:black">
+ <td nowrap="nowrap">
+          <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" id="entposicion_<%= temp.getentcodsx() %>" size='10' value="<%= temp.getentposicion() %>" style="background-color: white;color:black" >
+          <a href="javascript:reubicarPosicion(<%= temp.getentcodsx()%>,'<%=tipo%>','<%=param%>','<%=pag%>')"> 
+          	<img src="./disenno/images/mover.png" border="0" width="15" heigth="15" >
+          </a>
+ </form>
+
+
+ </logic:iterate>
+  </table> 
+	 <% 
+	 String url = "main_movil.jsp?app=movil&modulo=reubicacion"+ "&param=" + (param==null?"":param); 
+ int paginas = gentrada.getTotallistaentrada_reubicacion_movil(param,tipo); 
+ %> 
+ <%@ taglib uri="/WEB-INF/Paginador.tld" prefix="p" %> 
+ <p:paginar  actual="<%= pag %>"   total="<%= (paginas) %>" url="<%= url %>"   /> 
+ <br>Los campos con (*) son de busqueda

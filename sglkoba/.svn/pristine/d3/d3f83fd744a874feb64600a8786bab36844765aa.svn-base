@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="reporte_packing"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="792"
+		 pageHeight="612"
+		 columnWidth="732"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="AllSectionsNoDetail"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="sql" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="cad_params" isForPrompting="false" class="java.lang.String"/>
+	<queryString><![CDATA[select * from reporte_packing]]></queryString>
+
+	<field name="comcodsx" class="java.lang.Integer"/>
+	<field name="comnombre" class="java.lang.String"/>
+	<field name="packcodsx" class="java.lang.Integer"/>
+	<field name="fecha" class="java.sql.Timestamp"/>
+	<field name="packobservaciones" class="java.lang.String"/>
+	<field name="packpesoneto" class="java.math.BigDecimal"/>
+	<field name="packpesobruto" class="java.math.BigDecimal"/>
+	<field name="promodelo" class="java.lang.String"/>
+	<field name="prodescripcion" class="java.lang.String"/>
+	<field name="packdpesoneto" class="java.math.BigDecimal"/>
+	<field name="packdpesobruto" class="java.math.BigDecimal"/>
+	<field name="packdcantidad" class="java.math.BigDecimal"/>
+	<field name="bodnombre" class="java.lang.String"/>
+	<field name="packpposicion" class="java.lang.String"/>
+	<field name="packpcantidad" class="java.math.BigDecimal"/>
+	<field name="packppesoneto" class="java.math.BigDecimal"/>
+	<field name="packppesobruto" class="java.math.BigDecimal"/>
+	<field name="packppesonetototal" class="java.math.BigDecimal"/>
+	<field name="packppesobrutototal" class="java.math.BigDecimal"/>
+
+
+		<group  name="comcodsx" >
+			<groupExpression><![CDATA[$F{comcodsx}]]></groupExpression>
+			<groupHeader>
+			<band height="23"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="0"
+						width="96"
+						height="23"
+						forecolor="#000000"
+						backcolor="#336CA1"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="16"/>
+					</textElement>
+				<text><![CDATA[Compania]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="96"
+						y="0"
+						width="98"
+						height="23"
+						forecolor="#000000"
+						backcolor="#336CA1"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$F{comcodsx}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="194"
+						y="0"
+						width="531"
+						height="23"
+						forecolor="#000000"
+						backcolor="#336CA1"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="12" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{comnombre}]]></textFieldExpression>
+				</textField>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="5"  isSplitAllowed="true" >
+				<line direction="BottomUp">
+					<reportElement
+						x="1"
+						y="2"
+						width="727"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="packcodsx" >
+			<groupExpression><![CDATA[$F{packcodsx}]]></groupExpression>
+			<groupHeader>
+			<band height="46"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="0"
+						width="96"
+						height="23"
+						forecolor="#000000"
+						backcolor="#8FBEE8"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+				<text><![CDATA[Packing]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="96"
+						y="0"
+						width="98"
+						height="23"
+						forecolor="#000000"
+						backcolor="#8FBEE8"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$F{packcodsx}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="194"
+						y="0"
+						width="98"
+						height="23"
+						forecolor="#000000"
+						backcolor="#8FBEE8"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+				<text><![CDATA[fecha]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="390"
+						y="0"
+						width="98"
+						height="23"
+						forecolor="#000000"
+						backcolor="#8FBEE8"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+				<text><![CDATA[Observ.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="23"
+						width="96"
+						height="23"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+				<text><![CDATA[Peso Neto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="194"
+						y="23"
+						width="98"
+						height="23"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+				<text><![CDATA[Peso Bruto]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="292"
+						y="0"
+						width="98"
+						height="23"
+						forecolor="#000000"
+						backcolor="#8FBEE8"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{fecha}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="488"
+						y="0"
+						width="235"
+						height="23"
+						forecolor="#000000"
+						backcolor="#8FBEE8"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{packobservaciones}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="96"
+						y="23"
+						width="98"
+						height="23"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{packpesoneto}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="292"
+						y="23"
+						width="98"
+						height="23"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{packpesobruto}]]></textFieldExpression>
+				</textField>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="4"  isSplitAllowed="true" >
+				<line direction="BottomUp">
+					<reportElement
+						x="1"
+						y="1"
+						width="727"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="promodelo" >
+			<groupExpression><![CDATA[$F{promodelo}]]></groupExpression>
+			<groupHeader>
+			<band height="51"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="0"
+						width="96"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13"/>
+					</textElement>
+				<text><![CDATA[Modelo]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="96"
+						y="0"
+						width="143"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{promodelo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="17"
+						width="96"
+						height="17"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13"/>
+					</textElement>
+				<text><![CDATA[Peso N]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="194"
+						y="17"
+						width="98"
+						height="17"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13"/>
+					</textElement>
+				<text><![CDATA[Peso Bruto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="390"
+						y="17"
+						width="98"
+						height="17"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13"/>
+					</textElement>
+				<text><![CDATA[Cantidad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="389"
+						y="34"
+						width="48"
+						height="17"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Bodega]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="437"
+						y="34"
+						width="48"
+						height="17"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Posicion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="485"
+						y="34"
+						width="48"
+						height="17"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Cant]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="533"
+						y="34"
+						width="77"
+						height="17"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Peso N Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="610"
+						y="34"
+						width="71"
+						height="17"
+						forecolor="#000000"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Peso B Total]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="337"
+						y="0"
+						width="390"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{prodescripcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="96"
+						y="17"
+						width="98"
+						height="17"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{packdpesoneto}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="292"
+						y="17"
+						width="98"
+						height="17"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{packdpesobruto}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="488"
+						y="17"
+						width="112"
+						height="17"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="12" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{packdcantidad}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="239"
+						y="0"
+						width="98"
+						height="17"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="staticText-2"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="13"/>
+					</textElement>
+				<text><![CDATA[Descripcion]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="43"  isSplitAllowed="true" >
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="42"
+						width="726"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="3"
+						width="718"
+						height="2"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="0"
+						y="0"
+						width="725"
+						height="27"
+						key="staticText-1"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center">
+						<font size="18"/>
+					</textElement>
+				<text><![CDATA[Packing's de Mercancia]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="27"
+						width="725"
+						height="15"
+						key="textField-1"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{cad_params}]]></textFieldExpression>
+				</textField>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="13"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="0"
+						width="48"
+						height="13"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{bodnombre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="437"
+						y="0"
+						width="48"
+						height="13"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{packpposicion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="485"
+						y="0"
+						width="48"
+						height="13"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{packpcantidad}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="533"
+						y="0"
+						width="77"
+						height="13"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{packppesonetototal}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="610"
+						y="0"
+						width="71"
+						height="13"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{packppesobrutototal}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="25"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="520"
+						y="4"
+						width="170"
+						height="19"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="693"
+						y="4"
+						width="36"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="3"
+						width="728"
+						height="0"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="6"
+						width="209"
+						height="19"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

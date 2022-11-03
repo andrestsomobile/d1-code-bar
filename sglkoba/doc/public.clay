@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clay-model clay-version="1.2.0">
+<database-model name="public" alias="" remarks="" author="" version="1.0" sql-dialect-id="jp.azzurri.clay.model.physical.dialect.Postgre_7_3_Dialect" begin-script="" end-script="">
+<database-model-description/>
+<schema-list>
+<schema name="public" alias="" remarks="">
+<schema-description/>
+<domain-list/>
+<table-list>
+<table name="averia" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="1081" y="293" width="-1" height="-1"/>
+<column-list>
+<column name="avecodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.averia_avecodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="avedescripcion" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="averia_pkey" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="avecodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="averia_avedescripcion_key" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="avedescripcion" sort="ASC"/>
+</index>
+<index name="averia_pkey" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="avecodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="bodega" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="263" y="354" width="-1" height="-1"/>
+<column-list>
+<column name="bodcodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.bodega_bodcodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="bodnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="boddesc" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="bodurlplano" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pd_bodega" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="bodcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="pd_bodega" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="bodcodsx" sort="ASC"/>
+</index>
+<index name="uq_bodega" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="bodnombre" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="categoria" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="1051" y="13" width="-1" height="-1"/>
+<column-list>
+<column name="catcodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.categoria_catcodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="catcodpadre" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="catdescripcion" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="catcodcompania" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="catnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="categoria_pkey" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="catcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="$1" alias="" remarks="" referenced-table-schema="public" referenced-table="compania" referenced-key="compania_pkey" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="catcodcompania" referenced-key-column-name="comcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="categoria_catcategoria_key" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="catnombre" sort="ASC"/>
+</index>
+<index name="categoria_pkey" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="catcodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="causal" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="1079" y="424" width="-1" height="-1"/>
+<column-list>
+<column name="caucodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.causal_caucodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="caudesc" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="cauresponsable" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="causnota" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="causdocsoporte" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_causal" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="caucodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="pk_causal" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="caucodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="causal_hit" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="1100" y="347" width="-1" height="-1"/>
+<column-list>
+<column name="cauhcodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.causal_hit_cauhcodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="cauhdesc" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="cauresp" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_causalhit" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="cauhcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="pk_causalhit" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="cauhcodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="ciudad" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="7" y="7" width="-1" height="-1"/>
+<column-list>
+<column name="ciucodigo" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="ciunombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="ciudepto" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_ciudad" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="ciucodigo"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="fk_ciu_dpto" alias="" remarks="" referenced-table-schema="public" referenced-table="departamento" referenced-key="pk_departamento" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="ciudepto" referenced-key-column-name="depcodigo"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="pk_ciudad" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="ciucodigo" sort="ASC"/>
+</index>
+<index name="uq_ciudad_codigo" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="ciucodigo" sort="ASC"/>
+</index>
+<index name="uq_nombre" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="ciunombre" sort="ASC"/>
+<index-column name="ciudepto" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="cliente" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="428" y="250" width="-1" height="-1"/>
+<column-list>
+<column name="clicodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.cliente_clicodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="clinombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="clinit" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="clidireccion" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="clitelefono" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="cliciudad" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="clicontacto" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="climail" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="cliobservacion" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="clicodcompania" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="cliente_pkey" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="clicodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="$1" alias="" remarks="" referenced-table-schema="public" referenced-table="compania" referenced-key="compania_pkey" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="clicodcompania" referenced-key-column-name="comcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="cliente_clinit_key" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="clinit" sort="ASC"/>
+</index>
+<index name="cliente_clinombre_key" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="clinombre" sort="ASC"/>
+</index>
+<index name="cliente_pkey" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="clicodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="compania" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="767" y="29" width="-1" height="-1"/>
+<column-list>
+<column name="comcodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.compania_comcodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="comdireccion" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="comnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="comfax" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="comciudad" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="comemail" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="comgerente" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="comcontacto" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="comcargo" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="comtelefono" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="compania_pkey" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="comcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="compania_comnombre_key" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="comnombre" sort="ASC"/>
+</index>
+<index name="compania_pkey" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="comcodsx" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="departamento" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="212" y="149" width="-1" height="-1"/>
+<column-list>
+<column name="depcodigo" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="depnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="depzona" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_departamento" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="depcodigo"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="fk_depto_zona" alias="" remarks="" referenced-table-schema="public" referenced-table="zona" referenced-key="pk_zona" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="depzona" referenced-key-column-name="zoncodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="pk_departamento" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="depcodigo" sort="ASC"/>
+</index>
+<index name="uq_cod" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="depcodigo" sort="ASC"/>
+</index>
+<index name="uq_depto" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="depnombre" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="empleado" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="36" y="439" width="-1" height="-1"/>
+<column-list>
+<column name="empcodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.empleado_empcodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="empnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="empcedula" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="empmail" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="empcargo" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pd_empleado" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="empcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="pd_empleado" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="empcodsx" sort="ASC"/>
+</index>
+<index name="uq_ced" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="empcedula" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="empresa" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="1090" y="178" width="-1" height="-1"/>
+<column-list>
+<column name="empcodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.empresa_empcodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="empnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="empdireccion" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="emptelefono" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="empnit" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="empdescripcion" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_empresa" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="empcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="pk_empresa" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="empcodsx" sort="ASC"/>
+</index>
+<index name="uq_empresa" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="empnit" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="flete" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="251" y="4" width="-1" height="-1"/>
+<column-list>
+<column name="flecodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.flete_flecodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="fleciudad" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="fletransportadora" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="flevalor" alias="" remarks="" mandatory="true" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="fledias" alias="" remarks="" mandatory="true" column-size="2" decimal-digits="0" default-value="0" auto-increment="false">
+<column-description/>
+<data-type name="INT2" jdbc-type="5" selected-variant-pattern="INT2" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="INT2"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_flete" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="flecodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="fk_flete_ciudad" alias="" remarks="" referenced-table-schema="public" referenced-table="ciudad" referenced-key="pk_ciudad" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="fleciudad" referenced-key-column-name="ciucodigo"/>
+</foreign-key>
+<foreign-key name="fk_flete_transportador" alias="" remarks="" referenced-table-schema="public" referenced-table="transportadora" referenced-key="pk_transp" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="fletransportadora" referenced-key-column-name="transpcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="pk_flete" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="flecodsx" sort="ASC"/>
+</index>
+<index name="uq_flete_ciudad_transp" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="fleciudad" sort="ASC"/>
+<index-column name="fletransportadora" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="grupo" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="478" y="477" width="-1" height="-1"/>
+<column-list>
+<column name="gcodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.grupo_gcodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="gnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_grupo" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="gcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="pk_grupo" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="gcodsx" sort="ASC"/>
+</index>
+<index name="uq_grupo" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="gnombre" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="permiso" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="229" y="444" width="-1" height="-1"/>
+<column-list>
+<column name="percodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.permiso_percodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="pergrupo" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="perapp" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="permodulo" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="peracceso" alias="" remarks="" mandatory="true" column-size="2" decimal-digits="0" default-value="0" auto-increment="false">
+<column-description/>
+<data-type name="INT2" jdbc-type="5" selected-variant-pattern="INT2" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="INT2"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_permiso" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="percodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="fk_grupo" alias="" remarks="" referenced-table-schema="public" referenced-table="grupo" referenced-key="pk_grupo" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="pergrupo" referenced-key-column-name="gcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="pk_permiso" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="percodsx" sort="ASC"/>
+</index>
+<index name="uq_permiso" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="pergrupo" sort="ASC"/>
+<index-column name="perapp" sort="ASC"/>
+<index-column name="permodulo" sort="ASC"/>
+</index>
+<index name="idx_perapp" alias="" remarks="" unique="false">
+<index-description/>
+<index-column name="perapp" sort="ASC"/>
+</index>
+<index name="idx_pergrupo" alias="" remarks="" unique="false">
+<index-description/>
+<index-column name="pergrupo" sort="ASC"/>
+</index>
+<index name="idx_permiso" alias="" remarks="" unique="false">
+<index-description/>
+<index-column name="pergrupo" sort="ASC"/>
+<index-column name="perapp" sort="ASC"/>
+<index-column name="permodulo" sort="ASC"/>
+<index-column name="peracceso" sort="ASC"/>
+</index>
+<index name="idx_permodulo" alias="" remarks="" unique="false">
+<index-description/>
+<index-column name="permodulo" sort="ASC"/>
+</index>
+<index name="ix_peracceso" alias="" remarks="" unique="false">
+<index-description/>
+<index-column name="peracceso" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="producto" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="872" y="240" width="-1" height="-1"/>
+<column-list>
+<column name="procodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.producto_procodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="procodigocia" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="prodescripcion" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="procategoria" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="promodelo" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="prosubpartida" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="proean" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="procodbarra" alias="" remarks="" mandatory="false" column-size="1" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="CHAR" jdbc-type="1" selected-variant-pattern="CHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="CHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="progarantia" alias="" remarks="" mandatory="false" column-size="1" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="CHAR" jdbc-type="1" selected-variant-pattern="CHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="CHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="prokiloreal" alias="" remarks="" mandatory="true" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="provolumen" alias="" remarks="" mandatory="true" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="prokilovolumen" alias="" remarks="" mandatory="false" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="prouniempaque" alias="" remarks="" mandatory="true" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="prokvuniempaque" alias="" remarks="" mandatory="false" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="provoluniempaque" alias="" remarks="" mandatory="false" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="prounimasterpac" alias="" remarks="" mandatory="true" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="prokvmasterpack" alias="" remarks="" mandatory="false" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+<column name="propesobmp" alias="" remarks="" mandatory="false" column-size="15" decimal-digits="2" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="NUMERIC" jdbc-type="2" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC(%p,%s)" precision-variable="%p" precision-min="1" precision-max="38" scale-variable="%s" scale-min="-84" scale-max="127"/>
+<variant type-name-pattern="NUMERIC"/>
+<variant type-name-pattern="NUMERIC(%p)" precision-variable="%p" precision-min="1" precision-max="38"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="producto_pkey" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="procodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="$2" alias="" remarks="" referenced-table-schema="public" referenced-table="categoria" referenced-key="categoria_pkey" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="procategoria" referenced-key-column-name="catcodsx"/>
+</foreign-key>
+<foreign-key name="$1" alias="" remarks="" referenced-table-schema="public" referenced-table="compania" referenced-key="compania_pkey" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="procodigocia" referenced-key-column-name="comcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="producto_pkey" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="procodsx" sort="ASC"/>
+</index>
+<index name="uq_producto" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="procodigocia" sort="ASC"/>
+<index-column name="promodelo" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="sucursal" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="23" y="257" width="-1" height="-1"/>
+<column-list>
+<column name="succodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.sucursal_succodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="succodcliente" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="sucnit" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="sucnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="succiudad" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="sucdepartamento" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="succontacto" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="succargo" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="sucemail" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="sucdireccion" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="suctelefono" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="sucursal_pkey" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="succodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="fk_suc_ciudad" alias="" remarks="" referenced-table-schema="public" referenced-table="ciudad" referenced-key="pk_ciudad" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="succiudad" referenced-key-column-name="ciucodigo"/>
+</foreign-key>
+<foreign-key name="$1" alias="" remarks="" referenced-table-schema="public" referenced-table="cliente" referenced-key="cliente_pkey" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="succodcliente" referenced-key-column-name="clicodsx"/>
+</foreign-key>
+<foreign-key name="vk_suc_depto" alias="" remarks="" referenced-table-schema="public" referenced-table="departamento" referenced-key="pk_departamento" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="sucdepartamento" referenced-key-column-name="depcodigo"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="sucursal_pkey" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="succodsx" sort="ASC"/>
+</index>
+<index name="sucursal_succodcliente_key" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="succodcliente" sort="ASC"/>
+<index-column name="succontacto" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="transportadora" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="588" y="0" width="-1" height="-1"/>
+<column-list>
+<column name="transpcodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.transportadora_transpcodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="transpnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="transpdireccion" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="transptel" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="transpmail" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="transpcontacto" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_transp" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="transpcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="pk_transp" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="transpcodsx" sort="ASC"/>
+</index>
+<index name="uq_trans_nombre" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="transpnombre" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="usuario" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="703" y="394" width="-1" height="-1"/>
+<column-list>
+<column name="usucodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.usuario_usucodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="usunombre" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="usulogin" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="usuclave" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="usumail" alias="" remarks="" mandatory="false" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+<column name="usugrupo" alias="" remarks="" mandatory="true" column-size="8" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="usucompania" alias="" remarks="" mandatory="false" column-size="8" decimal-digits="0" default-value="0" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column name="usucodcliente" alias="" remarks="" mandatory="false" column-size="8" decimal-digits="0" default-value="0" auto-increment="false">
+<column-description/>
+<data-type name="INT8" jdbc-type="-5" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_usuario" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="usucodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key name="fk_cia_clientes" alias="" remarks="" referenced-table-schema="public" referenced-table="cliente" referenced-key="cliente_pkey" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="usucodcliente" referenced-key-column-name="clicodsx"/>
+</foreign-key>
+<foreign-key name="fk_cia_usuario" alias="" remarks="" referenced-table-schema="public" referenced-table="compania" referenced-key="compania_pkey" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="usucompania" referenced-key-column-name="comcodsx"/>
+</foreign-key>
+<foreign-key name="fk_grupo_usuario" alias="" remarks="" referenced-table-schema="public" referenced-table="grupo" referenced-key="pk_grupo" on-update="RESTRICT" on-delete="RESTRICT" source-multiplicity="0..*" target-multiplicity="1" source-entity-role="" target-entity-role="" source-relationship-type="" target-relationship-type="">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="usugrupo" referenced-key-column-name="gcodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index name="pk_usuario" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="usucodsx" sort="ASC"/>
+</index>
+<index name="uq_login" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="usulogin" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table name="zona" alias="" remarks="">
+<table-description/>
+<table-figure-bounds x="478" y="118" width="-1" height="-1"/>
+<column-list>
+<column name="zoncodsx" alias="" remarks="" mandatory="true" column-size="4" decimal-digits="0" default-value="nextval('public.zona_zoncodsx_seq'::text)" auto-increment="false">
+<column-description/>
+<data-type name="INT4" jdbc-type="4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column name="zonnombre" alias="" remarks="" mandatory="true" column-size="0" decimal-digits="0" default-value="" auto-increment="false">
+<column-description/>
+<data-type name="VARCHAR" jdbc-type="12" selected-variant-pattern="VARCHAR(%n)" literal-prefix="'" literal-suffix="'">
+<variant type-name-pattern="VARCHAR(%n)" precision-variable="%n" precision-min="1" precision-max="2147483647"/>
+</data-type>
+</column>
+</column-list>
+<primary-key name="pk_zona" alias="" remarks="">
+<primary-key-description/>
+<primary-key-column name="zoncodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index name="pk_zona" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="zoncodsx" sort="ASC"/>
+</index>
+<index name="uq_zona" alias="" remarks="" unique="true">
+<index-description/>
+<index-column name="zonnombre" sort="ASC"/>
+</index>
+</index-list>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+</clay-model>

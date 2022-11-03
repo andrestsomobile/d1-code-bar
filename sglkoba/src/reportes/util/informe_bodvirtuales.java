@@ -1,0 +1,153 @@
+package reportes.util;
+
+import java.io.File;
+import java.util.Collection;
+import java.util.Iterator;
+
+import javax.servlet.http.HttpServletRequest;
+
+import administracion.entity.usuario;
+import jxl.Workbook;
+import jxl.write.Formula;
+import jxl.write.Label;
+import jxl.write.Number;
+import jxl.write.NumberFormat;
+import jxl.write.WritableCellFormat;
+import jxl.write.WritableFont;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import maestro.control.gstcompania;
+import maestro.entity.compania;
+import reportes.form.reportesForm;
+import db.GstTabla;
+import db.beanConnector;
+
+public class informe_bodvirtuales extends Command {
+
+	public reporte rep = new reporte();
+	
+	public void execute(String ruta, HttpServletRequest request, reportesForm repfor) {
+		exportar(request, repfor);
+	}
+
+	private void exportar(HttpServletRequest request, reportesForm repfor) {
+		String ruta = request.getRealPath("") + File.separator + "uploads" + File.separator;
+		String nomarch = "Informe_BodegasVirtuales" + ".xls";
+		File archivo = new File(ruta, nomarch);
+		WritableFont letra = new WritableFont(WritableFont.ARIAL, 11, WritableFont.NO_BOLD);
+		WritableCellFormat format = new WritableCellFormat(letra);
+		
+		usuario usu = (usuario)request.getSession(true).getAttribute("usuario");
+		String grupo = usu.getusugrupo();
+		
+		String vectorTit[] = {
+				"Compañia",
+				"Fecha",
+				"Importacion",
+				"Proveedor",
+				"Material",
+				"Ump X Estiba",
+				"Cantidad Ingreso",	
+				"Lote",
+				"Vencimiento Lote",	
+				"Cant. Contenedor", 
+				"Tipo Contenedor", 
+				"UMP Esperadas", 
+				"UMP Recibidas", 
+				"Averias Recibidas", 
+				"Averias Recuperadas", 
+				"Averias Totales",
+				"Transportador",	
+				"Placa",	
+				"Eta Real Cedi",
+				"Recibe Logistica"
+				};
+		
+		
+		int renglon = 0;
+		int col = 0;
+		try {
+			WritableWorkbook book = Workbook.createWorkbook(archivo);
+			WritableSheet hoja = book.createSheet("Informe_BodegasVirtuales", 0);
+			hoja.addCell(new Label(0,renglon++,"INFORME BODEGAS VIRTUALES", format));
+			hoja.addCell(new Label(0,renglon,"Fechas Seleccionadas:", format));
+			hoja.addCell(new Label(1,renglon++,repfor.getFecha_ini() + " a " + repfor.getFecha_fin(), format));
+
+			for(int i = 0; i < vectorTit.length; i++){
+				hoja.addCell(new Label(col++, renglon, vectorTit[i], format));
+			}
+			Collection registros = null;
+			if (grupo != null && grupo.equals("7")) {
+				registros = rep.informe_bodvirtuales(repfor.getFecha_ini(), repfor.getFecha_fin());
+			} else {
+				registros = rep.informe_bodvirtuales("dn_"+ usu.getusucodsx() , repfor.getFecha_ini(), repfor.getFecha_fin());
+			}
+			Iterator it = registros.iterator();			
+			while (it.hasNext()) {
+				renglon++;
+				col = 0;
+				Collection datos = (Collection) it.next();
+				Iterator data = datos.iterator();
+				while (data.hasNext()) {
+					String val =  (String) data.next();
+					hoja.addCell(new Label(col++, renglon, val, format));
+				}
+			}
+	
+			book.write();
+			book.close();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+	}
+	
+	public class reporte extends GstTabla {
+		
+		public reporte() {
+			db = new beanConnector();
+		}
+
+	
+		public Collection informe_bodvirtuales (String fecha_ini, String fecha_fin)  {
+			
+			if(fecha_ini!=null && fecha_ini.indexOf(" ")==-1) fecha_ini += " 00:00:00";
+			if(fecha_fin!=null && fecha_fin.indexOf(" ")==-1) fecha_fin+= " 23:59:59";
+			
+			String consulta = "SELECT comnombre, dnifecha, dniimportacion, \r\n" + 
+					"       dniproveedor, promodelo, dniumpestiba, dnicantidad, dnilote, \r\n" + 
+					"       dnifechavencimiento, dnicantcontenedor, dnitipocontenedor, dniumpesperadas, \r\n" + 
+					"       dniumprecibidas, dniaveriasrecibidas, dniaveriasrecuperadas, \r\n" + 
+					"       dniaveriastotales, transpnombre, dniplaca, dnietarealcedi, \r\n" + 
+					"       dnirecibelogistica\r\n" + 
+					"       from distnal_ingreso\r\n" + 
+					" inner join compania on comcodsx = dnicompania\r\n" + 
+					" inner join producto on procodsx = dniproducto\r\n" + 
+					" inner join transportadora on transpcodsx = dnitransportadora\r\n" + 
+					"where dnietarealcedi between '" + fecha_ini + "' and '" + fecha_fin + "'\r\n" + 
+					"order by 1 ";
+			return getListaDeListas(consulta);
+		}
+		
+		public Collection informe_bodvirtuales (String usuario, String fecha_ini, String fecha_fin)  {
+			
+			if(fecha_ini!=null && fecha_ini.indexOf(" ")==-1) fecha_ini += " 00:00:00";
+			if(fecha_fin!=null && fecha_fin.indexOf(" ")==-1) fecha_fin+= " 23:59:59";
+			
+			String consulta = "SELECT comnombre, dnifecha, dniimportacion, \r\n" + 
+					"       dniproveedor, promodelo, dniumpestiba, dnicantidad, dnilote, \r\n" + 
+					"       dnifechavencimiento, dnicantcontenedor, dnitipocontenedor, dniumpesperadas, \r\n" + 
+					"       dniumprecibidas, dniaveriasrecibidas, dniaveriasrecuperadas, \r\n" + 
+					"       dniaveriastotales, transpnombre, dniplaca, dnietarealcedi, \r\n" + 
+					"       dnirecibelogistica\r\n" + 
+					"       from distnal_ingreso\r\n" + 
+					" inner join compania on comcodsx = dnicompania\r\n" + 
+					" inner join producto on procodsx = dniproducto\r\n" + 
+					" inner join transportadora on transpcodsx = dnitransportadora\r\n" + 
+					"where dnietarealcedi between '" + fecha_ini + "' and '" + fecha_fin + "'\r\n" + 
+					"order by 1 ";
+			return getListaDeListas(consulta);
+		}
+		
+	}
+		
+}

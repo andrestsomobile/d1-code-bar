@@ -1,0 +1,252 @@
+package distrinal.entity;
+
+public class distnal_despacho {
+
+	private String dndcodsx;
+
+	private String dndcodigocargue;
+
+	private String dndcompania;
+
+	private String dndpedido;
+
+	private String dndpetra;
+
+	private String dndfechavencimiento;
+
+	private String dndsucursal;
+
+	private String dnddireccion;
+
+	private String dndproducto;
+
+	private String dndcantidad;
+
+	private String dndvalorunit;
+
+	private String dndvalorfactunit;
+
+	private String dndtransportadora;
+
+	private String dndplaca;
+
+	private String dndtipoveh;
+
+	private String dhdcostoflete;
+
+	private String dndjustflete;
+
+	private String dndfechaflete;
+
+	private String dndfechaalistamiento;
+
+	private String dndfechadespacho;
+
+	private String dndfechaentrega;
+
+	private String resumen;
+
+	public distnal_despacho(String dndcodsx, String dndcodigocargue, String dndcompania, String dndpedido, String dndpetra, String dndfechavencimiento, String dndsucursal, String dnddireccion, String dndproducto, String dndcantidad, String dndvalorunit, String dndvalorfactunit,
+			String dndtransportadora, String dndplaca, String dndtipoveh, String dhdcostoflete, String dndjustflete, String dndfechaflete, String dndfechaalistamiento, String dndfechadespacho, String dndfechaentrega, String resumen) {
+		super();
+		this.dndcodsx = dndcodsx;
+		this.dndcodigocargue = dndcodigocargue;
+		this.dndcompania = dndcompania;
+		this.dndpedido = dndpedido;
+		this.dndpetra = dndpetra;
+		this.dndfechavencimiento = dndfechavencimiento;
+		this.dndsucursal = dndsucursal;
+		this.dnddireccion = dnddireccion;
+		this.dndproducto = dndproducto;
+		this.dndcantidad = dndcantidad;
+		this.dndvalorunit = dndvalorunit;
+		this.dndvalorfactunit = dndvalorfactunit;
+		this.dndtransportadora = dndtransportadora;
+		this.dndplaca = dndplaca;
+		this.dndtipoveh = dndtipoveh;
+		this.dhdcostoflete = dhdcostoflete;
+		this.dndjustflete = dndjustflete;
+		this.dndfechaflete = dndfechaflete;
+		this.dndfechaalistamiento = dndfechaalistamiento;
+		this.dndfechadespacho = dndfechadespacho;
+		this.dndfechaentrega = dndfechaentrega;
+		this.resumen = resumen;
+	}
+
+	public String getDndcodsx() {
+		return dndcodsx;
+	}
+
+	public void setDndcodsx(String dndcodsx) {
+		this.dndcodsx = dndcodsx;
+	}
+
+	public String getDndcodigocargue() {
+		return dndcodigocargue;
+	}
+
+	public void setDndcodigocargue(String dndcodigocargue) {
+		this.dndcodigocargue = dndcodigocargue;
+	}
+
+	public String getDndcompania() {
+		return dndcompania;
+	}
+
+	public void setDndcompania(String dndcompania) {
+		this.dndcompania = dndcompania;
+	}
+
+	public String getDndpedido() {
+		return dndpedido;
+	}
+
+	public void setDndpedido(String dndpedido) {
+		this.dndpedido = dndpedido;
+	}
+
+	public String getDndpetra() {
+		return dndpetra;
+	}
+
+	public void setDndpetra(String dndpetra) {
+		this.dndpetra = dndpetra;
+	}
+
+	public String getDndfechavencimiento() {
+		return dndfechavencimiento;
+	}
+
+	public void setDndfechavencimiento(String dndfechavencimiento) {
+		this.dndfechavencimiento = dndfechavencimiento;
+	}
+
+	public String getDndsucursal() {
+		return dndsucursal;
+	}
+
+	public void setDndsucursal(String dndsucursal) {
+		this.dndsucursal = dndsucursal;
+	}
+
+	public String getDnddireccion() {
+		return dnddireccion;
+	}
+
+	public void setDnddireccion(String dnddireccion) {
+		this.dnddireccion = dnddireccion;
+	}
+
+	public String getDndproducto() {
+		return dndproducto;
+	}
+
+	public void setDndproducto(String dndproducto) {
+		this.dndproducto = dndproducto;
+	}
+
+	public String getDndcantidad() {
+		return dndcantidad;
+	}
+
+	public void setDndcantidad(String dndcantidad) {
+		this.dndcantidad = dndcantidad;
+	}
+
+	public String getDndvalorunit() {
+		return dndvalorunit;
+	}
+
+	public void setDndvalorunit(String dndvalorunit) {
+		this.dndvalorunit = dndvalorunit;
+	}
+
+	public String getDndvalorfactunit() {
+		return dndvalorfactunit;
+	}
+
+	public void setDndvalorfactunit(String dndvalorfactunit) {
+		this.dndvalorfactunit = dndvalorfactunit;
+	}
+
+	public String getDndtransportadora() {
+		return dndtransportadora;
+	}
+
+	public void setDndtransportadora(String dndtransportadora) {
+		this.dndtransportadora = dndtransportadora;
+	}
+
+	public String getDndplaca() {
+		return dndplaca;
+	}
+
+	public void setDndplaca(String dndplaca) {
+		this.dndplaca = dndplaca;
+	}
+
+	public String getDndtipoveh() {
+		return dndtipoveh;
+	}
+
+	public void setDndtipoveh(String dndtipoveh) {
+		this.dndtipoveh = dndtipoveh;
+	}
+
+	public String getDhdcostoflete() {
+		return dhdcostoflete;
+	}
+
+	public void setDhdcostoflete(String dhdcostoflete) {
+		this.dhdcostoflete = dhdcostoflete;
+	}
+
+	public String getDndjustflete() {
+		return dndjustflete;
+	}
+
+	public void setDndjustflete(String dndjustflete) {
+		this.dndjustflete = dndjustflete;
+	}
+
+	public String getDndfechaflete() {
+		return dndfechaflete;
+	}
+
+	public void setDndfechaflete(String dndfechaflete) {
+		this.dndfechaflete = dndfechaflete;
+	}
+
+	public String getDndfechaalistamiento() {
+		return dndfechaalistamiento;
+	}
+
+	public void setDndfechaalistamiento(String dndfechaalistamiento) {
+		this.dndfechaalistamiento = dndfechaalistamiento;
+	}
+
+	public String getDndfechadespacho() {
+		return dndfechadespacho;
+	}
+
+	public void setDndfechadespacho(String dndfechadespacho) {
+		this.dndfechadespacho = dndfechadespacho;
+	}
+
+	public String getDndfechaentrega() {
+		return dndfechaentrega;
+	}
+
+	public void setDndfechaentrega(String dndfechaentrega) {
+		this.dndfechaentrega = dndfechaentrega;
+	}
+
+	public String getResumen() {
+		return resumen;
+	}
+
+	public void setResumen(String resumen) {
+		this.resumen = resumen;
+	}
+
+}

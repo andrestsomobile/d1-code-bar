@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="fac_almacenamiento" size="600,305" id="" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.5/@sourceConnections.3" name="almacenamientoForm" location="345,330" size="298,29" id="facturacion.form/almacenamientoForm" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="122,144"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.form/almacenamientoForm-Standard::Call->facturacion.entity/almacenamiento*facturacion.form/almacenamientoForm-Soyatec::Import->facturacion.entity/almacenamiento" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="642,358" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-1.0" distanceFromWire="-21.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="298,14" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,14"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.form/almacenamientoForm-Standard::Instantiate->facturacion.control/gstalmacenamiento*facturacion.form/almacenamientoForm-Soyatec::Import->facturacion.control/gstalmacenamiento" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, import»" location="475,248" size="96,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-1.0000000000000002" distanceFromWire="25.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="203,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="53,29"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.3/@sourceConnections.1 //@children.5/@sourceConnections.4" name="almacenamiento" location="705,330" size="271,29" id="facturacion.entity/almacenamiento" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="122,126"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.5/@sourceConnections.2" name="factura" location="105,240" size="208,29" id="facturacion.entity/factura" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="154,396"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1 //@children.5/@sourceConnections.0" name="gstalmacenamiento" location="495,149" size="298,29" id="facturacion.control/gstalmacenamiento" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.control/gstalmacenamiento-Standard::Call->facturacion.form/almacenamientoForm*facturacion.control/gstalmacenamiento-Soyatec::Import->facturacion.form/almacenamientoForm" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="565,268" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="21.0" distanceFromWire="28.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="223,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.control/gstalmacenamiento-Standard::Call->facturacion.entity/almacenamiento*facturacion.control/gstalmacenamiento-Soyatec::Import->facturacion.entity/almacenamiento" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="750,210" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-37.0" distanceFromWire="33.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="253,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="43,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.1" name="gstfactura" location="30,15" size="235,29" id="facturacion.control/gstfactura" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.control/gstfactura-Standard::Call->facturacion.entity/factura*facturacion.control/gstfactura-Soyatec::Import->facturacion.entity/factura" source="//@children.4" target="//@children.2" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="154,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="79,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="almacenamientoAction" location="448,15" size="315,29" id="facturacion.action/almacenamientoAction" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.action/almacenamientoAction-Standard::Call->facturacion.control/gstalmacenamiento*facturacion.action/almacenamientoAction-Standard::Instantiate->facturacion.control/gstalmacenamiento*facturacion.action/almacenamientoAction-Soyatec::Import->facturacion.control/gstalmacenamiento" source="//@children.5" target="//@children.3" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, instantiate, import»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="180,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="133,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="facturacion.action/almacenamientoAction-Standard::Call->facturacion.control/gstfactura*facturacion.action/almacenamientoAction-Soyatec::Import->facturacion.control/gstfactura" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,14" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="235,14"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="facturacion.action/almacenamientoAction-Standard::Call->facturacion.entity/factura*facturacion.action/almacenamientoAction-Soyatec::Import->facturacion.entity/factura" source="//@children.5" target="//@children.2" targetEnd="//@children.5/@sourceConnections.2/@children.2" label="//@children.5/@sourceConnections.2/@children.0" sourceEnd="//@children.5/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="390,156" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="13.999999999999998" distanceFromWire="-40.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="13,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="208,16"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="facturacion.action/almacenamientoAction-Standard::Call->facturacion.form/almacenamientoForm*facturacion.action/almacenamientoAction-Standard::Instantiate->facturacion.form/almacenamientoForm*facturacion.action/almacenamientoAction-Soyatec::Import->facturacion.form/almacenamientoForm" source="//@children.5" target="//@children.0" targetEnd="//@children.5/@sourceConnections.3/@children.2" label="//@children.5/@sourceConnections.3/@children.0" sourceEnd="//@children.5/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, instantiate, import»" location="480,105" size="118,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="66.0" distanceFromWire="75.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="24,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="130,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="facturacion.action/almacenamientoAction-Standard::Call->facturacion.entity/almacenamiento*facturacion.action/almacenamientoAction-Soyatec::Import->facturacion.entity/almacenamiento" source="//@children.5" target="//@children.1" targetEnd="//@children.5/@sourceConnections.4/@children.2" label="//@children.5/@sourceConnections.4/@children.0" sourceEnd="//@children.5/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="780,23" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="1.0" distanceFromWire="-9.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="315,6" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="152,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

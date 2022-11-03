@@ -1,0 +1,9 @@
+
+select repefecha, 'ALISTAMIENTO', empnombre, repehoin, repehofi
+, rpdtire
+,to_char(  ( repefecha || ' ' || max(repehoin) ) ::timestamp without time zone   - ( repefecha || ' ' || min(repehoin) )::timestamp without time zone , 'HH24, MI:SS') as tiempo
+,* 
+from registro_pedido_detalle
+inner join registro_pedido on repecodsx = rpdregped
+inner join empleado on empcodsx = repeempleado
+where repefecha > '2021-08-01'

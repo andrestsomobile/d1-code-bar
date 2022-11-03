@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="despacho_pedido" size="940,586" id="" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" name="despacho_pedidoAction" location="510,32" size="293,29" id="pedido.action/despacho_pedidoAction">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.action/despacho_pedidoAction-Standard::Call->pedido.entity/despacho_pedido*pedido.action/despacho_pedidoAction-Soyatec::Import->pedido.entity/despacho_pedido" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,19" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="19,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.action/despacho_pedidoAction-Standard::Call->pedido.form/despacho_pedidoForm*pedido.action/despacho_pedidoAction-Standard::Instantiate->pedido.form/despacho_pedidoForm*pedido.action/despacho_pedidoAction-Soyatec::Import->pedido.form/despacho_pedidoForm" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call, instantiate»" location="628,83" size="118,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-38.0" distanceFromWire="55.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="122,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="152,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.action/despacho_pedidoAction-Standard::Call->pedido.control/gstdespacho_pedido*pedido.action/despacho_pedidoAction-Standard::Instantiate->pedido.control/gstdespacho_pedido*pedido.action/despacho_pedidoAction-Soyatec::Import->pedido.control/gstdespacho_pedido" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.2/@children.2" label="//@children.0/@sourceConnections.2/@children.0" sourceEnd="//@children.0/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call, instantiate»" location="450,60" size="118,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="0.9999999999999999" distanceFromWire="-16.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="50,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="266,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.action/despacho_pedidoAction-Standard::Call->pedido.control/gestionSaldos" source="//@children.0" target="//@children.4" targetEnd="//@children.0/@sourceConnections.3/@children.2" label="//@children.0/@sourceConnections.3/@children.0" sourceEnd="//@children.0/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call»" location="802,143" size="28,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-24.0" distanceFromWire="23.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="283,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="235,2"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.2 //@children.3/@sourceConnections.1 //@children.4/@sourceConnections.0" name="gstdespacho_pedido" location="195,105" size="276,29" id="pedido.control/gstdespacho_pedido">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.control/gstdespacho_pedido-Standard::Call->pedido.entity/despacho_pedido*pedido.control/gstdespacho_pedido-Soyatec::Import->pedido.entity/despacho_pedido" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,15" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="159,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.control/gstdespacho_pedido-Standard::Call->pedido.form/despacho_pedidoForm*pedido.control/gstdespacho_pedido-Soyatec::Import->pedido.form/despacho_pedidoForm" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" location="418,164" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-12.0" distanceFromWire="-7.999999999999998" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="238,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.1/@sourceConnections.0 //@children.0/@sourceConnections.0 //@children.4/@sourceConnections.1" name="despacho_pedido" location="75,223" size="249,29" id="pedido.entity/despacho_pedido" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="160,144"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1 //@children.1/@sourceConnections.1" name="despacho_pedidoForm" location="480,195" size="276,29" id="pedido.form/despacho_pedidoForm" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="160,108"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.form/despacho_pedidoForm-Standard::Call->pedido.entity/despacho_pedido*pedido.form/despacho_pedidoForm-Soyatec::Import->pedido.entity/despacho_pedido*pedido.form/despacho_pedidoForm->pedido.entity/despacho_pedido" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" location="388,210" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-11.0" distanceFromWire="-71.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="249,10"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.form/despacho_pedidoForm-Standard::Instantiate->pedido.control/gstdespacho_pedido*pedido.form/despacho_pedidoForm-Soyatec::Import->pedido.control/gstdespacho_pedido" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, instantiate»" location="520,105" size="96,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="47.0" distanceFromWire="6.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="94,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="276,19"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.3" name="gestionSaldos" location="390,285" size="235,29" id="pedido.control/gestionSaldos" runTimeClassModel="gprod,resp,gent,gnacdet,db,grefp,gped,respuesta">
+    <children xsi:type="editmodel:CompartmentEditModel" size="190,144"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.control/gestionSaldos-Standard::Call->pedido.control/gstdespacho_pedido*pedido.control/gestionSaldos-Soyatec::Import->pedido.control/gstdespacho_pedido" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" location="375,255" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-30.0" distanceFromWire="-24.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,1" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="168,29"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.control/gestionSaldos-Standard::Call->pedido.entity/despacho_pedido*pedido.control/gestionSaldos-Soyatec::Import->pedido.entity/despacho_pedido" source="//@children.4" target="//@children.2" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import, call»" location="267,284" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,13" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="123,29"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.control/gestionSaldos-Standard::Call->pedido.control/gstpedido" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call»" size="28,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="196,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="38,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.control/gestionSaldos-Standard::Call->pedido.control/gstreferencia_pedido" source="//@children.4" target="//@children.6" targetEnd="//@children.4/@sourceConnections.3/@children.2" label="//@children.4/@sourceConnections.3/@children.0" sourceEnd="//@children.4/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call»" size="28,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="147,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="87,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="pedido.control/gestionSaldos-Standard::Call->pedido.control/gstreferencia_despacho" source="//@children.4" target="//@children.7" targetEnd="//@children.4/@sourceConnections.4/@children.2" label="//@children.4/@sourceConnections.4/@children.0" sourceEnd="//@children.4/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call»" size="28,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,19" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="297,20"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.control/gestionSaldos-Standard::Call->pedido.entity/referencia_despacho" source="//@children.4" target="//@children.8" targetEnd="//@children.4/@sourceConnections.5/@children.2" label="//@children.4/@sourceConnections.5/@children.0" sourceEnd="//@children.4/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call»" size="28,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="7,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="262,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.2" name="gstpedido" location="548,360" size="208,29" id="pedido.control/gstpedido">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.3" name="gstreferencia_pedido" location="450,450" size="280,29" id="pedido.control/gstreferencia_pedido">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.4" name="gstreferencia_despacho" location="15,345" size="297,29" id="pedido.control/gstreferencia_despacho">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="pedido.control/gstreferencia_despacho-Standard::Call->pedido.entity/referencia_despacho" source="//@children.7" target="//@children.8" targetEnd="//@children.7/@sourceConnections.0/@children.2" label="//@children.7/@sourceConnections.0/@children.0" sourceEnd="//@children.7/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call»" size="28,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="208,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="88,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.5 //@children.7/@sourceConnections.0" name="referencia_despacho" location="135,465" size="270,29" id="pedido.entity/referencia_despacho" runTimeClassModel="refdpesoneto,refddespacho_pedido,refdvalor,refdproducto,refdcant,refdpesobruto,refdcodsx">
+    <children xsi:type="editmodel:CompartmentEditModel" size="159,126"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

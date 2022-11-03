@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clay-model clay-version="1.2.0">
+<database-model alias="" author="" begin-script="" end-script="" name="nacionalizacion" remarks="" sql-dialect-id="jp.azzurri.clay.model.physical.dialect.Postgre_7_3_Dialect" version="1.0">
+<database-model-description></database-model-description>
+<schema-list>
+<schema alias="" name="movimiento" remarks="">
+<schema-description></schema-description>
+<domain-list/>
+<table-list>
+<table alias="" name="nacionalizacion" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="80" y="120"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('nacionalizacion_naccodsx_seq'::regclass)" mandatory="true" name="naccodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="nacempresa" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="nacfecha" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="93" name="TIMESTAMP" selected-variant-pattern="TIMESTAMP(%p)">
+<variant type-name-pattern="TIMESTAMP"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p)"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="nacingreso" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="nacestado" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="nacdeclaracion" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="nacfechadeclaracion" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="93" name="TIMESTAMP" selected-variant-pattern="TIMESTAMP(%p)">
+<variant type-name-pattern="TIMESTAMP"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p)"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="nacfechaingresobodega" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="93" name="TIMESTAMP" selected-variant-pattern="TIMESTAMP(%p)">
+<variant type-name-pattern="TIMESTAMP"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p)"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="nacpaginainicial" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="nacpaginafinal" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="nacdosia" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="nacobservaciones" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="false" name="nactipo" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="12" literal-prefix="'" literal-suffix="'" name="VARCHAR" selected-variant-pattern="VARCHAR(%n)">
+<variant precision-max="2147483647" precision-min="1" precision-variable="%n" type-name-pattern="VARCHAR(%n)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nacpesoneto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nacpesobruto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nacfob" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="-1" decimal-digits="0" default-value="" mandatory="false" name="resumen" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_nacionalizacion" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="naccodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list>
+<index alias="" name="pk_nacionalizacion" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="naccodsx" sort="ASC"/>
+</index>
+<index alias="" name="uq_nacionalizacion" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="nacempresa" sort="ASC"/>
+<index-column name="nacfecha" sort="ASC"/>
+<index-column name="nacingreso" sort="ASC"/>
+</index>
+</index-list>
+</table>
+<table alias="" name="nacionalizacion_detalle" remarks="">
+<table-description></table-description>
+<table-figure-bounds height="-1" width="-1" x="631" y="211"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('nacionalizacion_detalle_nadcodsx_seq'::regclass)" mandatory="true" name="nadcodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="nadcodnac" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="8" decimal-digits="0" default-value="" mandatory="true" name="nadentrada" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="nadcantidad" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="true" name="nadsaldo" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nadpesoneto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nadpesonetototal" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nadpesobruto" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nadpesobrutototal" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nadfob" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="15" decimal-digits="2" default-value="" mandatory="false" name="nadfobtotal" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="2" name="NUMERIC" selected-variant-pattern="NUMERIC(%p,%s)">
+<variant type-name-pattern="NUMERIC"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" type-name-pattern="NUMERIC(%p)"/>
+<variant precision-max="38" precision-min="1" precision-variable="%p" scale-max="127" scale-min="-84" scale-variable="%s" type-name-pattern="NUMERIC(%p,%s)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="4" decimal-digits="0" default-value="nextval('nacionalizacion_naccodsx_seq'::regclass)" mandatory="true" name="naccodsx" remarks="">
+<column-description></column-description>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="pk_nad" remarks="">
+<primary-key-description></primary-key-description>
+<primary-key-column name="nadcodsx"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_nacionalizacion_detalle_1" on-delete="" on-update="" referenced-key="pk_nacionalizacion" referenced-table="nacionalizacion" referenced-table-schema="movimiento" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-description></foreign-key-description>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="naccodsx" referenced-key-column-name="naccodsx"/>
+</foreign-key>
+</foreign-key-list>
+<index-list>
+<index alias="" name="pk_nad" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="nadcodsx" sort="ASC"/>
+</index>
+<index alias="" name="uq_nacionalizacion_detalle" remarks="" unique="true">
+<index-description></index-description>
+<index-column name="nadcodnac" sort="ASC"/>
+<index-column name="nadentrada" sort="ASC"/>
+</index>
+</index-list>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+</clay-model>

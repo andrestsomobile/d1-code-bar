@@ -1,0 +1,251 @@
+<%@page import="maestro.entity.transportadora"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"
+	import="administracion.control.gstpermiso,pedido.control.*,pedido.entity.*,maestro.control.*,maestro.entity.compania,java.util.*"%>
+<html>
+
+<%
+	gstTableroControl control = new gstTableroControl();
+	Collection lista = null;
+	String codigoTransp = request.getParameter("codigoTransp");
+	String codpedido = request.getParameter("codpedido");
+	System.out.println("adicionar carga a pedido " +codpedido);
+	if (codpedido != null ) {
+		control.crea_pedido_carga(codpedido);
+	}
+	int total_kv = 0;
+	int pendiente_kv = 0;
+	if (codigoTransp != null && !codigoTransp.equals("0") && !codigoTransp.equals("") && !codigoTransp.equals("null")) {
+		total_kv = control.total_kv(codigoTransp);
+		pendiente_kv = total_kv-control.total_kvc(codigoTransp);
+	}
+	lista = control.pendientes_despacho(codigoTransp);
+
+%>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- <meta http-equiv="refresh" content="60">  -->
+<script src="../../../disenno/editablegrid/editablegrid-2.0.1.js"></script>
+<link rel="stylesheet" href="../../../disenno/editablegrid/editablegrid-2.0.1.css" type="text/css" media="screen">
+
+<!-- include javascript and css files for jQuery, needed for the datepicker and autocomplete extensions -->
+<script src="../../../disenno/editablegrid/extensions/jquery/jquery-1.6.4.min.js"></script>
+<script src="../../../disenno/editablegrid/extensions/jquery/jquery-ui-1.8.16.custom.min.js"></script>
+<link rel="stylesheet" href="../../../disenno/editablegrid/extensions/jquery/jquery-ui-1.8.16.custom.css" type="text/css" media="screen">
+
+<!-- include javascript and css files for the autocomplete extension -->
+<script src="../../../disenno/editablegrid/extensions/autocomplete/autocomplete.js"></script>
+<link rel="stylesheet"	href="../../../disenno/editablegrid/extensions/autocomplete/autocomplete.css"	type="text/css" media="screen">
+
+<script src="pendientes_despacho.js"></script> 
+<link rel="stylesheet" type="text/css" media="all" href="./metro.css">
+
+<script>
+			window.onload = function() {
+				editableGridPD = new EditableGrid("PendientesDespacho", {
+					enableSort: false, // true is the default, set it to false if you don't want sorting to be enabled
+					editmode: "static", // change this to "fixed" to test out editorzone, and to "static" to get the old-school mode
+					editorzoneid: "", // will be used only if editmode is set to "fixed"
+					allowSimultaneousEdition: true,
+					pageSize: 2000
+				});
+
+				// we build and load the metadata in Javascript
+				editableGridPD.load({ metadata: [
+					{ name: "transportadora", datatype: "string", editable: false },
+					{ name: "ciudad", datatype: "string", editable: false },
+					{ name: "cliente", datatype: "string", editable: false },
+					{ name: "guia", datatype: "string", editable: false },
+					{ name: "pedido", datatype: "string", editable: false },
+					{ name: "observaciones", datatype: "string", editable: false},
+					{ name: "alistamiento", datatype: "string", editable: false },
+					{ name: "pcanumcarga", datatype: "string", editable: false },
+					{ name: "estado", datatype: "string", editable: false},
+					{ name: "ud", datatype: "string", editable: false},
+					{ name: "mp", datatype: "string", editable: false },
+					{ name: "kv", datatype: "string", editable: false},
+					{ name: "pb", datatype: "string", editable: false}
+					//{ name: "pcannumcarga", datatype: "string", editable: false}
+				]});
+
+				// then we attach to the HTML table and render it
+				editableGridPD.attachToHTMLTable('htmlgrid');
+				editableGridPD.renderGrid();
+				editableGridPD.initializeGrid();
+			} 
+
+			function setTransp(campo) {
+				window.location = window.location.pathname + '?codigoTransp='+campo.value;
+			}			
+			
+			function cargar() {
+				var ped = $("input[name='codpedido']").val();
+				var transp = $("#lista_transp").val();
+				window.location = window.location.pathname + '?codigoTransp='+transp+'&codpedido='+ped;
+			}
+			
+</script>		
+</head>
+<body>
+	<br>
+	<div class="titulo"> <h1 align="center">PEDIDOS PARA DESPACHO </h1></div> 
+	<br>
+	
+	<div align="right" class="header">
+		<a href="../tablero_control.jsp" ><img src="./images/regresar.png" width="50" height="50"></a>
+	</div>
+	<div align="center" class="header">
+		<a href="pendientes_despacho.jsp" ><img src="./images/actualizar.png" width="40" height="40"></a> 
+	</div>
+	<br>	
+	<div align="center">
+		<table border="0" cellpadding="0" cellspacing="0" style="font-size:8pt"> 
+			<tr><td>
+				<SCRIPT language="JavaScript" type="text/javascript"><!-- 
+				function addZero(i) { if (i < 10) {i = "0" + i; } return i;}
+				var hoy=new Date(document.lastModified); 
+				document.write("Ultima Actualizacion " + addZero(hoy.getHours())  +":" + addZero(hoy.getMinutes()) + ":" + addZero(hoy.getSeconds())); 
+				// --> 
+				</SCRIPT> 
+			</td></tr> 
+		</table> 
+	</div>
+	<br>
+	
+	<div align="center" class="header" style='font-size:10pt'>
+		<!-- Grid filter -->
+		<input type='hidden' name='codigoTransp' >
+		<label for="transpcontrol">Transportadora: </label> 
+		<select id="lista_transp" name="lista_transp" onchange="setTransp(this)">
+		<%
+		Collection lsttransp = control.transp_pendientes_despacho(); 
+		if (lsttransp.isEmpty()) {
+		%>
+		<option value="0">No hay Transportadoras Registradas</option>
+		<%
+		} else {
+		%>
+		<option value="">Seleccione Transportadora..</option>
+		<option value="0" >-- Todas --</option>
+		<%							
+		Iterator ite=lsttransp.iterator();
+		while (ite.hasNext()) { 
+			transportadora et = (transportadora)ite.next();
+			String es_selected = "";
+			es_selected = et.gettranspcodsx().equals(codigoTransp) ? "selected='selected'" : "";
+		%>
+		<option <%=es_selected%> value="<%=et.gettranspcodsx()%>"><%=et.gettranspnombre() %></option>					
+		<%	}
+		}%>
+		</select>
+		
+		<bold>	
+		
+		<label for="total_kv">Total KV = <%=total_kv %>  PENDIENTE KV = <%=pendiente_kv %> </label>
+		</bold>
+		
+		<br><br>
+		<label for="filter">Filtrar</label> 
+		<input type="text" id="filter" value="" /> 
+		
+		
+		<label for="codpedido">Pedido :</label> 
+<%-- 		<input type="text" id="codpedido" name='codpedido' value='<%=codpedido != null && !codpedido.equals("null")?codpedido:""%>' /> --%>
+		<input type="text" id="codpedido" name='codpedido'  />  
+		<button id="btncargar" type="button" onclick="cargar()" title='Cargar Pedido' ><img src='./images/carga_ok.jpg' width='25' height='25' border='0'></button> 
+	</div> 
+	
+	<!--  Number of rows per page and bars in chart -->
+	<div id="pagecontrol" style='font-size:10pt'>
+		<label for="pagecontrol">Registros por Pagina: </label> 
+		<select id="pagesize" name="pagesize">
+			<option value="2000">2000</option>
+			<option value="5000">5000</option>
+			<option value="1000000000">Todos</option>
+			<option value="2000">2000</option>
+		</select>
+	</div>
+	<br>
+	
+	<!-- Paginator control -->
+	<div id="paginator" style='font-size:10pt'></div>
+
+	
+	<!-- Edition zone (to demonstrate the "fixed" editor mode) -->
+	<div id="edition"></div>
+	
+	<div id="tablecontent" style='font-size:10pt'>
+	 
+	 <table id="htmlgrid" class="testgrid" align='center' width='80%' border='1' cellspacing='2' cellpading='0' style='font-size:10pt'>
+ 		<tr>
+ 			<th>TRANSPORTADORA</th>	
+ 			<th>CIUDAD</th>
+ 			<th>CLIENTE</th>
+ 			<th>GUIA</th>	
+ 			<th>PEDIDO</th>	
+ 			<th>OBSERVACIONES</th>
+ 			<th>ALISTAMIENTO</th>			
+ 			<th>ESTADO</th>
+ 			<th>UD</th>		
+ 			<th>MP</th>	
+ 			<th>KV</th>	
+ 			<th>PB</th>	
+ 				
+ 		</tr>	
+ 		<% 
+			Iterator it = lista.iterator();
+			while (it.hasNext()) { %>
+				<tr align='center'> <%
+				Collection datos = (Collection) it.next();
+				Iterator det = datos.iterator();
+				while (det.hasNext()) {
+					String transp = (String) det.next(); 
+					String ciudad = (String) det.next(); 
+					String cliente = (String) det.next(); 
+					String guia = (String) det.next(); 
+					String pedido = (String) det.next(); 
+					String observ = (String) det.next(); 
+					String alist = (String) det.next(); 
+					String estado = (String) det.next();
+					String ud = (String) det.next(); 
+					String mp = (String) det.next(); 
+					String kv = (String) det.next(); 
+					String pb = (String) det.next(); 
+					String carga = (String) det.next(); 
+					String estilo_estado = " bgcolor=";
+					String estilo_pedido = " bgcolor=";
+					if (estado!= null && estado.equalsIgnoreCase("PENDIENTE")) estilo_estado += "'#FF0000'";
+					if (estado!= null && estado.equalsIgnoreCase("EN ALISTAMIENTO")) estilo_estado += "'#FFFF00'";
+					if (estado!= null && estado.equalsIgnoreCase("LISTO PARA CARGUE")) estilo_estado += "'#00FF00'";
+					int cant = 0;
+					if (carga!= null ) cant = Integer.parseInt(carga);
+					if (cant == 1) estilo_pedido += "'#00FF00'";
+					if (cant > 1) estilo_pedido += "'#FF0000'";
+              	%>
+              	<td> <%= transp %> </td>
+              	<td> <%= ciudad %> </td>
+              	<td> <%= cliente %> </td>
+              	<td> <%= guia %> </td>
+              	<td <%= estilo_pedido%> > <%= pedido %> </td>
+              	<td> <%= observ %> </td>
+              	<td> <%= alist %> </td>
+              	<td <%=estilo_estado%>> <%= estado %> </td>
+              	<td> <%= ud %> </td>
+              	<td> <%= mp %> </td>
+              	<td> <%= kv %> </td>
+              	<td> <%= pb %> </td>
+				
+				<%}%>
+				</tr>
+			<%}%>
+			
+
+	</table> 
+  </div>
+
+  <!-- Feedback message zone -->
+  <div id="message"></div>
+
+</body>
+</html>

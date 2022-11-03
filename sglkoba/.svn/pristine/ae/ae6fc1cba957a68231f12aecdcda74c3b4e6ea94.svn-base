@@ -1,0 +1,31 @@
+ipservidor = 172.27.6.8
+puerto = 5432
+basedatos = sglkoba
+
+--ipservidor = localhost
+--puerto = 5433
+--basedatos = koba20210404
+--basedatos = sglkoba
+usuario = userkoba
+password = sanapi96
+ruta_upload = uploads
+ruta_pdf = pdf
+correoclientesvarios = soporte@sli.com.co
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

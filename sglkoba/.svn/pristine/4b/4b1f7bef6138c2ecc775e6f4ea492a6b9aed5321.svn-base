@@ -1,0 +1,12 @@
+_ipservidor = 172.27.6.8
+_puerto = 5432
+
+ipservidor = localhost
+puerto = 5433
+basedatos = koba4
+usuario = userkoba
+password = sanapi96
+ruta_upload = uploads
+ruta_pdf = pdf
+correoclientesvarios = soporte@sli.com.co
+

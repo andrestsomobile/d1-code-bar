@@ -1,0 +1,136 @@
+
+
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		    pageEncoding="ISO-8859-1" import =" java.util.*, pedido.control.*, pedido.entity.*, pedido.form.* " %>  
+
+		<html> 
+		<%@taglib prefix="html" uri="/WEB-INF/struts-html.tld" %> 
+ <%@ taglib uri="/WEB-INF/struts-logic.tld"  prefix="logic"%> 
+
+<% 
+ 
+gstdespacho gdesp = new gstdespacho();
+gstpedido gped = new gstpedido();
+gstdespacho_pedido gdesp_ped = new gstdespacho_pedido();
+gstreferencia_despacho gref_desp = new gstreferencia_despacho();
+
+maestro.control.gstcompania gcomp = new maestro.control.gstcompania();
+maestro.control.gsttransportadora gtransp = new maestro.control.gsttransportadora();
+maestro.control.gstproducto gprod = new maestro.control.gstproducto();
+String despcodsx = request.getParameter("despcodsx");
+
+despacho desp = gdesp.getdespacho(despcodsx);
+
+administracion.entity.empresa emp = new administracion.control.gstempresa().getempresa("4");
+%>
+
+<table align="center" border="0">
+<tr>
+	<td> <img src="./disenno/images/logo.gif" width="120" height="120">
+	<td align="center"><b> CONSOLIDADO DE PRODUCTOS POR NACIONALIZACION / EMBARQUE <br><br><br> 	
+<%= emp.getempnombre() %>	 <br>
+<%= emp.getempdireccion() %><br>
+NIT <%= emp.getempnit() %>
+</b>
+<td><%= desp.getdespfecha() %>
+</table>
+
+		<br> 
+		
+<table align="center" border="0" width='100%' cellpadding="3" cellspacing="0" class="tabla_resumen"> 
+
+  <tr> 
+    <td>Consecutivo Despacho
+    <td><%= desp.getdespcodsx() %>
+    <td>Empresa
+    <td><%=  gcomp.getcompania(desp.getdespempresa()).getcomnombre() %>
+  <tr> 
+    <td>Fecha 
+    <td><%= desp.getdespfecha() %>
+    <td>&nbsp;
+    <td>&nbsp;
+  <tr> 
+    <td>Empresa Transp
+    <td> <%= gtransp.gettransportadora( desp.getdesptransportadora()).gettranspnombre() %>
+    <td>Placa Vehiculo
+    <td><%= desp.getdespplaca() %>
+  <tr> 
+    <td>Cedula
+    <td><%= desp.getdespcedcond() %>
+    <td>Nombre Cond
+    <td><%= desp.getdespnombrecond() %>
+  <tr> 
+    <td>Observacion
+    <td><%= desp.getdespobservacion() %> &nbsp;
+    <td>Notificacion ZFP
+    <td><%=desp.getDespnotifzfp() %>
+    
+    
+</table>
+<br>
+	<table align="center" border="0" width='100%' cellpadding="3" cellspacing="0" class="tabla_resumen">  
+<tr><th>Tipo
+	<th>Consecutivo FMM ZF Nac 
+	<th>Consecutivo IT JDE
+	<th>Embarque 
+	<th>Material 
+	<th>Descripcion 
+	<th>Cantidad 
+	<th>Subtotal
+	<th>Peso 
+
+
+<%
+Collection info = gdesp.getListaConsolidado(despcodsx);
+Iterator ite = info.iterator();
+
+%>
+
+	<% 
+	java.math.BigDecimal ctotal = java.math.BigDecimal.ZERO;
+	java.math.BigDecimal vtotal = java.math.BigDecimal.ZERO;
+	java.math.BigDecimal ptotal = java.math.BigDecimal.ZERO;
+
+	while(ite.hasNext()) {
+		Collection datos = (Collection)ite.next();
+		Iterator data = datos.iterator();
+		String modelo = (String)data.next();
+		String desc = (String)data.next();
+		String tipo = (String)data.next();
+		String consec = (String)data.next();
+		String conseczfp = (String)data.next();
+		String embarque = (String)data.next();
+		String documento = (String)data.next();
+		String ingconse = (String)data.next();
+		String ingconseczfp = (String)data.next();
+		String cant = (String)data.next();
+		String valor = (String)data.next();
+		String peso = (String)data.next();
+		
+		vtotal = util.Math.sumar_bigdecimal( vtotal.toPlainString(), valor);
+		ptotal = util.Math.sumar_bigdecimal( ptotal.toPlainString(), peso);
+		ctotal = util.Math.sumar_bigdecimal( ctotal.toPlainString(), cant);
+
+		
+	%>
+	<tr>
+		<td> <%=tipo %>
+		<td> <%= consec %>&nbsp;
+		<td> <%= conseczfp %>&nbsp;
+		<td> <%= embarque %>&nbsp;
+		<td> <%= modelo %>
+		<td> <%= desc %>
+		<td align="right"> <%= util.JhFormat.getFormatedNumber( cant) %>
+		<td align="right"> <%= util.JhFormat.getFormatedNumber( valor )%>
+		<td align="right"> <%= util.JhFormat.getFormatedNumber( peso )%>
+<% } %>
+<tr>
+	<td colspan="6">Total General
+	<td align="right"><%= util.JhFormat.getFormatedNumber(  ctotal.toPlainString() )%>
+	<td align="right"><%= util.JhFormat.getFormatedNumber(  vtotal.toPlainString() )%>
+	<td align="right"><%= util.JhFormat.getFormatedNumber(  ptotal.toPlainString() ) %>
+</table>	
+<br>	
+	
+	
+</html> 

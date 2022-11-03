@@ -1,0 +1,176 @@
+ <%@page import="ingreso.entity.lote_trafico"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
+ pageEncoding="ISO-8859-1" import="ingreso.control.*,ingreso.entity.*,java.util.*, administracion.control.gstpermiso,ingreso.form.ingresoForm"%> 
+ <html> 
+
+ <%@ taglib uri="/WEB-INF/struts-logic.tld"  prefix="logic"%> 
+ <%@ taglib uri="/WEB-INF/struts-html.tld"  prefix="html"%>
+
+<% 
+gstentrada gentrada = new gstentrada(); 
+String lctrafcodsx = request.getParameter("lctrafcodsx");
+Collection lista = gentrada.getIdentificacionEstibas_x_lote(lctrafcodsx); 
+%> 
+
+<head>
+  <meta charset="UTF-8">
+
+	<script src="files/movil/jquery.min.js"></script>
+	<script src="files/movil/qrcode.js"></script> 
+
+	<style type="text/css">
+	@media screen {
+	  	#codigoQR{
+		  width: 70px;
+		  height: 70px;
+		  margin-top: 1mm;
+		  border: 2px solid #eee;
+		}
+		#tabla_print {
+	        background-color: white;
+	        width: 10px;
+		  	height: 10px;
+	        font-size: 10px;
+	        line-height: 10px;
+	    }
+ 	} 
+	
+ 	@media print { 
+ 	
+
+	    @page {
+		size: auto landscape;
+		margin: 0%;
+		} 
+		@page {
+			size: 4in 6in landscape;  /* width height */
+			margin: 0%;
+		}
+		table {
+			page-break-after:always;
+		}
+		ul, img, table {
+			page-break-inside: avoid;
+		}
+
+		#tabla_print {
+	        background-color: white;
+	        width: 99%;
+		  	height: 99%;
+/* 	        font-size: 2cm;  */
+/*  	        line-height: 2cm;  */
+	    }
+
+	}		
+
+	</style>
+
+</head>
+
+
+<body>
+
+
+ <div class="titulo"> Generar Codigos QR  </div> 
+
+ <br> 
+
+ 
+
+
+
+  <% 
+  int salto = 0;
+  for (Object data : lista) {
+	ArrayList<String> info = (ArrayList<String>) data;
+	String promodelo = info.get(0);
+	String prodescripcion = info.get(1);
+	String ltraflote = info.get(2);
+	String ingfecha = info.get(3);
+	String ltrafvencimiento = info.get(4);
+	String prounimasterpac  = info.get(5);
+	String trafnumdta = info.get(6);
+	String ltrafcodsx = info.get(7);
+	String etk = info.get(8);
+	String qr1 = "{"
+			+ "PLU:" + promodelo 
+			+ ",DESCRIPCION:" + prodescripcion
+			+ ",LOTE:" + ltraflote
+			+ ",F.INGRESO:" + ingfecha
+			+ ",F.VENCIMIENTO:" + ltrafvencimiento
+			+ ",UMP x ESTIBA:" + prounimasterpac
+			+ ",IMPORTACION:" + trafnumdta
+			+ ",SX:" + ltrafcodsx
+			+	"}";
+	String qr = "{"
+			+ promodelo 
+			+ "," + prodescripcion
+			+ "," + ltraflote
+			+ "," + ingfecha
+			+ "," + ltrafvencimiento
+			+ "," + prounimasterpac
+			+ "," + trafnumdta
+			+ "," + ltrafcodsx
+			+	"}";
+			
+	int qty = Integer.parseInt(etk);
+	//for (int i = 0; i < qty; i++) {
+  %>
+ <div id='div_print'>
+  <table id="tabla_print" style="page-break-after: always;" align='center' border='1' cellspacing='0' cellpading='0' width="10cm" heigth="15cm" >
+	  <tr><td width="15%" >PLU:</td><td width=""><%=promodelo %></td>
+	  	  <td  width="40%" rowspan="7" valign="middle"  style="no-repeat;" id="codigoQR_<%=qr%>"></td>
+	  </tr>
+	  <tr><td width="15%" >DESCRIPCI&Oacute;N:</td><td width=""><%=prodescripcion %></td></tr>
+	  <tr><td width="15%" >LOTE:</td><td width=""><%=ltraflote %></td></tr>
+	  <tr><td width="15%" >F.INGRESO:</td><td width="" nowrap="nowrap"><%=ingfecha %></td></tr>
+	  <tr><td width="15%" >F.VENC.:</td width="" nowrap="nowrap"><td><%=ltrafvencimiento %></td></tr>
+	  <tr><td width="15%" >UMPxESTIBA:</td><td width=""><%=prounimasterpac %></td></tr>
+	  <tr><td width="15%" >IMPORTACI&Oacute;N:</td><td width=""><%=trafnumdta %></td></tr>	  
+  </table>   
+</div>
+
+<h3 align="center">Nota: Debe imprimir <%= qty %> etiquetas para marcar las estibas</h3>
+  <%
+  	//}
+  }
+  %>
+
+
+</body>
+
+</html>
+ 
+
+<script type="text/javascript">
+function PrintElem(elem)
+{
+    var mywindow = window.open('', 'PRINT', 'height=650,width=850');
+
+    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+    mywindow.document.write('</head><body>');
+    mywindow.document.write(document.getElementById(elem).innerHTML);
+    mywindow.document.write('</body></html>'); 
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10*/
+
+    mywindow.print();
+
+    return true;
+}
+
+function imprimir() {
+	PrintElem('div_print');
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("[id^=codigoQR_]").each(function(){
+		var qr =$(this).attr('id');
+		var miCodigoQR = new QRCode(this);
+		miCodigoQR.makeCode(qr);
+	});
+  
+});
+</script>

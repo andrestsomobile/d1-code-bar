@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="ref_trafico" size="548,357" id="" metadata="uml2-1.0" initialized="true" scrolledX="-5" scrolledY="-5" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.1 //@children.2/@sourceConnections.0" name="referencia_traficoForm" location="0,105" size="211,291" id="ingreso.form/referencia_traficoForm">
+    <children xsi:type="editmodel:CompartmentEditModel" size="156,252">
+      <children xsi:type="editmodel:AttributeEditModel" name="opcion" id="ingreso.form/referencia_traficoForm#opcion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftcantidad" id="ingreso.form/referencia_traficoForm#reftcantidad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftciftotal" id="ingreso.form/referencia_traficoForm#reftciftotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftcifunit" id="ingreso.form/referencia_traficoForm#reftcifunit"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftcodsx" id="ingreso.form/referencia_traficoForm#reftcodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftfobtotal" id="ingreso.form/referencia_traficoForm#reftfobtotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftfobunit" id="ingreso.form/referencia_traficoForm#reftfobunit"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftmpacks" id="ingreso.form/referencia_traficoForm#reftmpacks"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftnumfacturatrafico" id="ingreso.form/referencia_traficoForm#reftnumfacturatrafico"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftpesobruto" id="ingreso.form/referencia_traficoForm#reftpesobruto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftpesobrutototal" id="ingreso.form/referencia_traficoForm#reftpesobrutototal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftpesoneto" id="ingreso.form/referencia_traficoForm#reftpesoneto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftpesonetototal" id="ingreso.form/referencia_traficoForm#reftpesonetototal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftproducto" id="ingreso.form/referencia_traficoForm#reftproducto"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.form/referencia_traficoForm-Standard::Call->ingreso.entity/referencia_trafico*ingreso.form/referencia_traficoForm-Soyatec::Import->ingreso.entity/referencia_trafico" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="465,435" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="63.0" distanceFromWire="14.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,291" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="97,282"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.form/referencia_traficoForm-Standard::Instantiate->ingreso.control/gstreferencia_trafico*ingreso.form/referencia_traficoForm-Soyatec::Import->ingreso.control/gstreferencia_trafico" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, import»" size="96,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="148,291" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,183"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1 //@children.0/@sourceConnections.0 //@children.3/@sourceConnections.2" name="referencia_trafico" location="690,139" size="196,282" id="ingreso.entity/referencia_trafico">
+    <children xsi:type="editmodel:CompartmentEditModel" size="156,234">
+      <children xsi:type="editmodel:AttributeEditModel" name="reftcantidad" id="ingreso.entity/referencia_trafico#reftcantidad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftciftotal" id="ingreso.entity/referencia_trafico#reftciftotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftcifunit" id="ingreso.entity/referencia_trafico#reftcifunit"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftcodsx" id="ingreso.entity/referencia_trafico#reftcodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftfobtotal" id="ingreso.entity/referencia_trafico#reftfobtotal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftfobunit" id="ingreso.entity/referencia_trafico#reftfobunit"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftmpacks" id="ingreso.entity/referencia_trafico#reftmpacks"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftnumfacturatrafico" id="ingreso.entity/referencia_trafico#reftnumfacturatrafico"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftpesobruto" id="ingreso.entity/referencia_trafico#reftpesobruto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftpesobrutototal" id="ingreso.entity/referencia_trafico#reftpesobrutototal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftpesoneto" id="ingreso.entity/referencia_trafico#reftpesoneto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftpesonetototal" id="ingreso.entity/referencia_trafico#reftpesonetototal"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reftproducto" id="ingreso.entity/referencia_trafico#reftproducto"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.0/@sourceConnections.1" name="gstreferencia_trafico" location="347,120" size="279,301" id="ingreso.control/gstreferencia_trafico" runTimeClassModel="updatereferencia_trafico(Lingreso.form.referencia_traficoForm;),eliminar(Ljava.lang.String;),getlistareferencia_trafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),crearreferencia_trafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getreferencia_trafico(Ljava.lang.String;),getlistareferencia_traficoByTrafico(Ljava.lang.String;),gstreferencia_trafico(),gstreferencia_trafico(Ldb.beanConnector;),getTotalReferencias(Ljava.lang.String;),getlistareferencia_trafico(),updatereferencia_trafico(Lingreso.entity.referencia_trafico;),getTotalPaginaslistareferencia_trafico(Ljava.lang.String;Ljava.lang.String;),getlistareferencia_trafico(Ljava.lang.String;),getreferencia_traficoUqKey(Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="212,252">
+      <children xsi:type="editmodel:MethodEditModel" name="gstreferencia_trafico" id="ingreso.control/gstreferencia_trafico#gstreferencia_trafico()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstreferencia_trafico" id="ingreso.control/gstreferencia_trafico#gstreferencia_trafico(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistareferencia_trafico" id="ingreso.control/gstreferencia_trafico#getlistareferencia_trafico()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistareferencia_trafico" id="ingreso.control/gstreferencia_trafico#getlistareferencia_trafico(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistareferencia_trafico" id="ingreso.control/gstreferencia_trafico#getlistareferencia_trafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalReferencias" id="ingreso.control/gstreferencia_trafico#getTotalReferencias(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" targetConnections="//@children.0/@sourceConnections.1" name="getTotalPaginaslistareferencia_trafico" id="ingreso.control/gstreferencia_trafico#getTotalPaginaslistareferencia_trafico(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="crearreferencia_trafico" id="ingreso.control/gstreferencia_trafico#crearreferencia_trafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getreferencia_trafico" id="ingreso.control/gstreferencia_trafico#getreferencia_trafico(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getreferencia_traficoUqKey" id="ingreso.control/gstreferencia_trafico#getreferencia_traficoUqKey(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatereferencia_trafico" id="ingreso.control/gstreferencia_trafico#updatereferencia_trafico(Lingreso.entity.referencia_trafico;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatereferencia_trafico" id="ingreso.control/gstreferencia_trafico#updatereferencia_trafico(Lingreso.form.referencia_traficoForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="ingreso.control/gstreferencia_trafico#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistareferencia_traficoByTrafico" id="ingreso.control/gstreferencia_trafico#getlistareferencia_traficoByTrafico(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.control/gstreferencia_trafico-Standard::Call->ingreso.form/referencia_traficoForm*ingreso.control/gstreferencia_trafico-Soyatec::Import->ingreso.form/referencia_traficoForm" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" location="250,105" size="63,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="78.0" distanceFromWire="-2.9999999999998486" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,138" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="210,17"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ingreso.control/gstreferencia_trafico-Standard::Call->ingreso.entity/referencia_trafico*ingreso.control/gstreferencia_trafico-Soyatec::Import->ingreso.entity/referencia_trafico" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="279,160" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,141"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="referencia_traficoAction" location="330,0" size="296,67" id="ingreso.action/referencia_traficoAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="ingreso.action/referencia_traficoAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ingreso.action/referencia_traficoAction-Standard::Call->ingreso.control/gstreferencia_trafico*ingreso.action/referencia_traficoAction-Standard::Instantiate->ingreso.control/gstreferencia_trafico*ingreso.action/referencia_traficoAction-Soyatec::Import->ingreso.control/gstreferencia_trafico" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, call, import»" location="495,75" size="118,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="-11.0" distanceFromWire="68.0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="156,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.action/referencia_traficoAction-Standard::Call->ingreso.form/referencia_traficoForm*ingreso.action/referencia_traficoAction-Standard::Instantiate->ingreso.form/referencia_traficoForm*ingreso.action/referencia_traficoAction-Soyatec::Import->ingreso.form/referencia_traficoForm" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, call, import»" location="137,14" size="118,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="6.0" distanceFromWire="5.999999999999999" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,16" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.action/referencia_traficoAction-Soyatec::Import->ingreso.entity/referencia_trafico" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.2/@children.2" label="//@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" location="720,27" size="41,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="30.0" distanceFromWire="-8.000000000000007" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="296,26" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="105,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

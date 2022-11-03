@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+<tlibversion>1.1</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>Hidden panel</shortname>
+<uri>http://www.servletsuite.com/servlets/hiddenpaneltag</uri>
+<info>hidden panel taglib</info>
+
+<tag>
+<name>hiddenPanel</name>
+<tagclass>com.cj.hpanel.HiddenPanelTag</tagclass>
+<bodycontent>JSP</bodycontent>
+<info>hidden panel</info>
+
+<attribute>
+<name>text</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+<attribute>
+<name>visible</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+<attribute>
+<name>openedImage</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+<attribute>
+<name>closedImage</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+<attribute>
+<name>idPanel</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+<attribute>
+<name>style</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+<attribute>
+<name>className</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+</tag>
+
+
+</taglib>

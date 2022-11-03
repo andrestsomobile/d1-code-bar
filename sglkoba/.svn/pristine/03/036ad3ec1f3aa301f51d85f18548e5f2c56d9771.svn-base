@@ -1,0 +1,86 @@
+package util;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.TimerTask;
+
+import db.GstTabla;
+import db.beanConnector;
+
+public class TareaLotesVencidos extends TimerTask {
+	
+	public TareaLotesVencidos() {
+	}
+	
+	public void run() {
+		System.out.println(">>>>>>>TareaLotesVencidos<<<<<<<");
+		gstnotificacionLV gst = new gstnotificacionLV();
+		gstenviarmail gem = new gstenviarmail();
+		String dia = Fecha.getDia(Fecha.getFechaSinHora());
+		try {
+			Collection arreglo = gst.getlistaPendientesFacturar(dia);
+			String correo = gst.getCorreo();
+			String asunto = "Alerta Vencimiento Lotes";
+			String mensaje = "Revise la informaci&oacute;n de saldos que se anexa a continuaci&oacute;n para verificar si debe registrar facturaci&oacute;n mensual a estos documentos. <br><br> ";
+			mensaje = mensaje + "<table style=\"font-family:arial, helvetica, sans;font-size:70%;align=center; padding: 8px; background: #e8edff;border-bottom: 1px solid #fff; color: #669; border-top: 1px solid transparent;\" >";
+			if (arreglo != null && !arreglo.isEmpty()) {
+				mensaje = mensaje + "<tr><th>Cliente</th><th>No. Ingreso</th><th>Documento</th><th>Fecha Ingreso</th><th>Saldo Bultos</th></tr>";
+				Iterator iterador=arreglo.iterator();
+				while(iterador.hasNext()) {
+					ArrayList arrOfArr=(ArrayList)iterador.next();
+					Iterator iterador2=arrOfArr.iterator();
+					while(iterador2.hasNext()){ 
+						String fila = (String)iterador2. next();
+						mensaje = mensaje + fila;
+					}
+				}
+			} else {
+				mensaje = mensaje + "<tr><td>No hay datos para revisar</td></tr>";
+			}
+			mensaje = mensaje + "</table>";
+			gem.crea(correo, asunto, mensaje);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	/**
+	 * Subclase para manejar la tabla public.enviarmail
+	 */
+	private class gstnotificacionLV extends GstTabla {
+		
+		public gstnotificacionLV() {
+			this.db = new beanConnector();
+		}
+
+		public Collection getlistaVencimientoLotes(String dia) {
+			String consulta = "select " +
+					"'<tr><td>'|| ltraflote " +
+					"||'</td><td>'||ecvcodsx " +
+						"||'</td><td>'||ecvfecha " +
+						"||'</td><td>'||coalesce(ecvbultos,0) - sum(coalesce(scvbultos,0)) " +
+						"||'</td></tr>' " +
+						"from entradacv " + 
+						"left join salidacv on scvcodentradacv = ecvcodsx  and scvestado = 'FINALIZADO' " +  
+						"left join despachocv on scvcoddespachocv = dcvcodsx and dcvestado = 'FINALIZADO' " + 
+						"inner join compania on comcodsx = ecvcodcia " + 
+						"where ecvestado = 'FINALIZADO' " +  
+						"group by ecvcodcia,comnombre,ecvcodsx,ecvdocumento,ecvfecha,ecvbultos " +
+						"having coalesce(ecvbultos,0) - sum(coalesce(scvbultos,0)) > 0 " +
+						"AND date_part('DAY',ecvfecha) = " + dia + " " +
+						"order by ecvcodcia,ecvcodsx";
+			return getListaDeListas(consulta);
+		}
+		
+		public String getCorreo() throws SQLException {
+			String consulta = "select cfvalor from config where cfnombre = 'notifica_facturacion_clientes_varios'";
+			return getCampo(consulta);
+		}
+	}
+	
+	
+}

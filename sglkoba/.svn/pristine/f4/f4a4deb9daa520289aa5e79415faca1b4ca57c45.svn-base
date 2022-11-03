@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="fact_trafico" size="548,357" id="" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.2/@sourceConnections.1" name="factura_traficoForm" location="30,317" size="258,111" id="ingreso.form/factura_traficoForm">
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="ftrafcodsx" id="ingreso.form/factura_traficoForm#ftrafcodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ftrafnumfactura" id="ingreso.form/factura_traficoForm#ftrafnumfactura"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ftrafnumtrafico" id="ingreso.form/factura_traficoForm#ftrafnumtrafico"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="opcion" id="ingreso.form/factura_traficoForm#opcion"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.form/factura_traficoForm-Standard::Call->ingreso.entity/factura_trafico*ingreso.form/factura_traficoForm-Soyatec::Import->ingreso.entity/factura_trafico" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="105,111" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="103,93"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.form/factura_traficoForm-Standard::Instantiate->ingreso.control/gstfactura_trafico*ingreso.form/factura_traficoForm-Soyatec::Import->ingreso.control/gstfactura_trafico" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, import»" size="96,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="162,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,192"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.0/@sourceConnections.0 //@children.3/@sourceConnections.2" name="factura_trafico" location="675,352" size="226,93" id="ingreso.entity/factura_trafico">
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="ftrafcodsx" id="ingreso.entity/factura_trafico#ftrafcodsx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ftrafnumfactura" id="ingreso.entity/factura_trafico#ftrafnumfactura"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ftrafnumtrafico" id="ingreso.entity/factura_trafico#ftrafnumtrafico"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1 //@children.3/@sourceConnections.1" name="gstfactura_trafico" location="345,180" size="258,265" id="ingreso.control/gstfactura_trafico" runTimeClassModel="getfactura_trafico(Ljava.lang.String;Ljava.lang.String;),getlistafactura_trafico(Ljava.lang.String;),eliminar(Ljava.lang.String;),getTotalPaginaslistafactura_trafico(Ljava.lang.String;Ljava.lang.String;),gstfactura_trafico(),crearfactura_trafico(Ljava.lang.String;Ljava.lang.String;),gstfactura_trafico(Ldb.beanConnector;),getlistafactura_trafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),updatefactura_trafico(Lingreso.form.factura_traficoForm;),updatefactura_trafico(Lingreso.entity.factura_trafico;),getfactura_trafico(Ljava.lang.String;),getlistafactura_trafico()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="197,216">
+      <children xsi:type="editmodel:MethodEditModel" name="gstfactura_trafico" id="ingreso.control/gstfactura_trafico#gstfactura_trafico()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstfactura_trafico" id="ingreso.control/gstfactura_trafico#gstfactura_trafico(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistafactura_trafico" id="ingreso.control/gstfactura_trafico#getlistafactura_trafico()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistafactura_trafico" id="ingreso.control/gstfactura_trafico#getlistafactura_trafico(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistafactura_trafico" id="ingreso.control/gstfactura_trafico#getlistafactura_trafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistafactura_trafico" id="ingreso.control/gstfactura_trafico#getTotalPaginaslistafactura_trafico(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="crearfactura_trafico" id="ingreso.control/gstfactura_trafico#crearfactura_trafico(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfactura_trafico" id="ingreso.control/gstfactura_trafico#getfactura_trafico(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatefactura_trafico" id="ingreso.control/gstfactura_trafico#updatefactura_trafico(Lingreso.entity.factura_trafico;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatefactura_trafico" id="ingreso.control/gstfactura_trafico#updatefactura_trafico(Lingreso.form.factura_traficoForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="ingreso.control/gstfactura_trafico#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfactura_trafico" id="ingreso.control/gstfactura_trafico#getfactura_trafico(Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ingreso.control/gstfactura_trafico-Standard::Call->ingreso.entity/factura_trafico*ingreso.control/gstfactura_trafico-Soyatec::Import->ingreso.entity/factura_trafico" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="258,218" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,46"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.control/gstfactura_trafico-Standard::Call->ingreso.form/factura_traficoForm*ingreso.control/gstfactura_trafico-Soyatec::Import->ingreso.form/factura_traficoForm" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,23" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="118,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="factura_traficoAction" location="315,15" size="275,67" id="ingreso.action/factura_traficoAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="ingreso.action/factura_traficoAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.action/factura_traficoAction-Standard::Call->ingreso.form/factura_traficoForm*ingreso.action/factura_traficoAction-Standard::Instantiate->ingreso.form/factura_traficoForm*ingreso.action/factura_traficoAction-Soyatec::Import->ingreso.form/factura_traficoForm" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, call, import»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,57" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="21,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ingreso.action/factura_traficoAction-Standard::Call->ingreso.control/gstfactura_trafico*ingreso.action/factura_traficoAction-Standard::Instantiate->ingreso.control/gstfactura_trafico*ingreso.action/factura_traficoAction-Soyatec::Import->ingreso.control/gstfactura_trafico" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate, call, import»" size="118,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="152,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="122,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ingreso.action/factura_traficoAction-Standard::Call->ingreso.entity/factura_trafico*ingreso.action/factura_traficoAction-Soyatec::Import->ingreso.entity/factura_trafico" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.2/@children.2" label="//@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«call, import»" size="63,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="275,26" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="88,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

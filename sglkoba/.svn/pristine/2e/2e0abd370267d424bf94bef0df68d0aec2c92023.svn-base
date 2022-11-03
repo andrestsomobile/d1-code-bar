@@ -1,0 +1,24 @@
+{
+  "cols": [
+        {"id":"","label":"Info................","pattern":"","type":"string"},
+        {"id":"","label":"Cantidad","pattern":"","type":"number"}
+      ],
+  "rows": [
+        {"c":[{"v":"Despachos En Tramite","f":null},{"v":2,"f":null}]},
+        {"c":[{"v":"Despachos Finalizados","f":null},{"v":2,"f":null}]},
+        {"c":[{"v":"Pedidos Despachados","f":null},{"v":5,"f":null}]},
+        {"c":[{"v":"Pedidos En Tramite","f":null},{"v":0,"f":null}]},
+        {"c":[{"v":"Pedidos Finalizados","f":null},{"v":45,"f":null}]},
+        {"c":[{"v":"Pedidos en Alistamiento","f":null},{"v":11,"f":null}]}
+
+      ]
+}
+
+
+
+
+
+
+
+
+

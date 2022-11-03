@@ -1,0 +1,348 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <data-sources />
+  <form-beans>
+     
+<form-bean name="centrocostoForm" type="maestro.form.centrocostoForm" />
+<form-bean name="companiaForm" type="maestro.form.companiaForm" />
+<form-bean name="grupoForm" type="administracion.form.grupoForm" />
+<form-bean name="permisoForm" type="administracion.form.permisoForm" />
+<form-bean name="categoriaForm" type="maestro.form.categoriaForm" />
+<form-bean name="clienteForm" type="maestro.form.clienteForm" />
+<form-bean name="productoForm" type="maestro.form.productoForm" />
+<form-bean name="sucursalForm" type="maestro.form.sucursalForm" />
+<form-bean name="ciudadForm" type="maestro.form.ciudadForm" />
+<form-bean name="departamentoForm" type="maestro.form.departamentoForm" />
+<form-bean name="zonaForm" type="maestro.form.zonaForm" />
+<form-bean name="transportadoraForm" type="maestro.form.transportadoraForm" />
+<form-bean name="usuarioForm" type="administracion.form.usuarioForm" />
+<form-bean name="empleadoForm" type="maestro.form.empleadoForm" />
+<form-bean name="bodegaForm" type="maestro.form.bodegaForm" />
+<form-bean name="empresaForm" type="administracion.form.empresaForm" />
+<form-bean name="fleteForm" type="maestro.form.fleteForm" />
+<form-bean name="tipoproductoForm" type="maestro.form.tipoproductoForm" />
+<form-bean name="traficoForm" type="ingreso.form.traficoForm" />
+<form-bean name="contenedor_traficoForm" type="ingreso.form.contenedor_traficoForm" />
+<form-bean name="factura_traficoForm" type="ingreso.form.factura_traficoForm" />
+<form-bean name="referencia_traficoForm" type="ingreso.form.referencia_traficoForm" />
+<form-bean name="ingresoForm" type="ingreso.form.ingresoForm" />
+<form-bean name="entradaForm" type="ingreso.form.entradaForm" />
+<form-bean name="saldos_posicionForm" type="reportes.form.saldos_posicionForm" />
+<form-bean name="nacionalizacionForm" type="nacionalizacion.form.nacionalizacionForm" />
+<form-bean name="nacionalizacion_detalleForm" type="nacionalizacion.form.nacionalizacion_detalleForm" />
+<form-bean name="reubicacionForm" type="ingreso.form.reubicacionForm" />
+<form-bean name="pedidoForm" type="pedido.form.pedidoForm" />
+<form-bean name="referencia_pedidoForm" type="pedido.form.referencia_pedidoForm" />
+<form-bean name="packingForm" type="pedido.form.packingForm" />
+<form-bean name="packing_detalleForm" type="pedido.form.packing_detalleForm" />
+<form-bean name="pickingForm" type="pedido.form.pickingForm" />
+<form-bean name="picking_detalleForm" type="pedido.form.picking_detalleForm" />
+<form-bean name="despachoForm" type="pedido.form.despachoForm" />
+<form-bean name="despacho_pedidoForm" type="pedido.form.despacho_pedidoForm" />
+<form-bean name="referencia_despachoForm" type="pedido.form.referencia_despachoForm" />
+<form-bean name="referencia_despacho_serialForm" type="pedido.form.referencia_despacho_serialForm" />
+<form-bean name="reportesForm" type="reportes.form.reportesForm" />
+<form-bean name="causalForm" type="maestro.form.causalForm" />
+<form-bean name="averiaForm" type="averias.form.averiaForm" />
+<form-bean name="ajusteForm" type="administracion.form.ajusteForm" />
+<form-bean name="reparacionForm" type="averias.form.reparacionForm" />
+<form-bean name="conceptoForm" type="facturacion.form.conceptoForm" />
+<form-bean name="concepto_clienteForm" type="facturacion.form.concepto_clienteForm" />
+<form-bean name="facturaForm" type="facturacion.form.facturaForm" />
+<form-bean name="factura_detalleForm" type="facturacion.form.factura_detalleForm" />
+<form-bean name="factura_automaticaForm" type="facturacion.form.factura_automaticaForm" />
+<form-bean name="proformaForm" type="facturacion.form.proformaForm" />
+<form-bean name="causal_hitForm" type="maestro.form.causal_hitForm" />
+<form-bean name="configFacturacionForm" type="facturacion.form.configFacturacionForm" />
+<form-bean name="alistamientoForm" type="facturacion.form.alistamientoForm" />
+<form-bean name="almacenamientoForm" type="facturacion.form.almacenamientoForm" />
+<form-bean name="faqForm" type="ayuda.form.faqForm" />
+<form-bean name="novedad_pedidoForm" type="pedido.form.novedad_pedidoForm" />
+<form-bean name="producto_clienteForm" type="maestro.form.producto_clienteForm" />
+<form-bean name="reparacion_detalleForm" type="averias.form.reparacion_detalleForm" />
+<form-bean name="numfacturaForm" type="facturacion.form.numfacturaForm" />
+<form-bean name="conffacturaForm" type="facturacion.form.conffacturaForm" />
+</form-beans>
+
+  <global-exceptions />
+  
+  <global-forwards />
+  <action-mappings>
+  
+    <action path="/subirDespieceAction" type="ingreso.action.subirDespieceAction" name="fileForm" scope="request" input="/main.jsp?app=ingreso&amp;modulo=subirDespiece">
+   <forward name="subirDespiece" path="/main.jsp?app=ingreso&amp;modulo=subirDespiece" redirect="false" />
+  </action>
+  
+  <action path="/fileAction" type="pedido.action.fileAction" name="fileForm" scope="request" input="/main.jsp?app=pedido&amp;modulo=subir">
+   <forward name="subir" path="/main.jsp?app=pedido&amp;modulo=subir" redirect="false" />
+  </action>
+  <action path="/companiaAction" type="maestro.action.companiaAction" name="companiaForm" scope="request" input="/main.jsp?app=maestro&amp;modulo=compania_datos">
+   <forward name="compania" path="/main.jsp?app=maestro&amp;modulo=compania" redirect="false" />
+   <forward name="compania_datos" path="/main.jsp?app=maestro&amp;modulo=compania_datos" redirect="false" />
+  </action>
+ <action path="/grupoAction" type="administracion.action.grupoAction" name="grupoForm" scope="request" input="/main.jsp?app=administracion&amp;modulo=grupo_datos">
+<forward name="grupo" path="/main.jsp?app=administracion&amp;modulo=grupo" redirect="false" />
+<forward name="grupo_datos" path="/main.jsp?app=administracion&amp;modulo=grupo_datos" redirect="false" />
+</action>
+<action path="/permisoAction" type="administracion.action.permisoAction" name="permisoForm" scope="request" input="/main.jsp?app=administracion&amp;modulo=permiso_datos">
+<forward name="permiso_datos" path="/main.jsp?app=administracion&amp;modulo=permiso_datos" redirect="false" />
+<forward name="permiso" path="/main.jsp?app=administracion&amp;modulo=permiso" redirect="false" />
+</action>
+  
+  <action path="/validacionAction" type="util.validacionAction">
+  	<forward name="index" path="/index.jsp" redirect="false" />
+  	<forward name="main" path="/main.jsp" redirect="false" />
+</action>
+  
+  <action path="/centrocostoAction" type="maestro.action.centrocostoAction" name="centrocostoForm" input="/main.jsp?app=maestro&amp;modulo=centrocosto_datos" scope="request">
+<forward name="centrocosto_datos" path="/main.jsp?app=maestro&amp;modulo=centrocosto_datos" redirect="false" />
+<forward name="centrocosto" path="/main.jsp?app=maestro&amp;modulo=centrocosto" redirect="false" />
+</action>
+  <action path="/categoriaAction" type="maestro.action.categoriaAction" name="categoriaForm" input="/main.jsp?app=maestro&amp;modulo=categoria_datos" scope="request">
+<forward name="categoria_datos" path="/main.jsp?app=maestro&amp;modulo=categoria_datos" redirect="false" />
+<forward name="categoria" path="/main.jsp?app=maestro&amp;modulo=categoria" redirect="false" />
+</action>
+<action path="/clienteAction" type="maestro.action.clienteAction" name="clienteForm" input="/main.jsp?app=maestro&amp;modulo=cliente_datos" scope="request">
+<forward name="cliente_datos" path="/main.jsp?app=maestro&amp;modulo=cliente_datos" redirect="false" />
+<forward name="cliente" path="/main.jsp?app=maestro&amp;modulo=cliente" redirect="false" />
+</action>
+<action path="/tipoproductoAction" type="maestro.action.tipoproductoAction" name="tipoproductoForm" input="/main.jsp?app=maestro&amp;modulo=tipoproducto_datos" scope="request">
+<forward name="tipoproducto_datos" path="/main.jsp?app=maestro&amp;modulo=tipoproducto_datos" redirect="false" />
+<forward name="tipoproducto" path="/main.jsp?app=maestro&amp;modulo=tipoproducto" redirect="false" />
+</action>
+<action path="/productoAction" type="maestro.action.productoAction" name="productoForm" input="/main.jsp?app=maestro&amp;modulo=producto_datos" scope="request">
+<forward name="producto_datos" path="/main.jsp?app=maestro&amp;modulo=producto_datos" redirect="false" />
+<forward name="producto" path="/main.jsp?app=maestro&amp;modulo=producto" redirect="false" />
+</action>
+<action path="/sucursalAction" type="maestro.action.sucursalAction" name="sucursalForm" input="/main.jsp?app=maestro&amp;modulo=sucursal_datos" scope="request">
+<forward name="sucursal_datos" path="/main.jsp?app=maestro&amp;modulo=sucursal_datos" redirect="false" />
+<forward name="sucursal" path="/main.jsp?app=maestro&amp;modulo=sucursal" redirect="false" />
+</action>
+<action path="/ciudadAction" type="maestro.action.ciudadAction" name="ciudadForm" input="/main.jsp?app=maestro&amp;modulo=ciudad_datos" scope="request">
+<forward name="ciudad_datos" path="/main.jsp?app=maestro&amp;modulo=ciudad_datos" redirect="false" />
+<forward name="ciudad" path="/main.jsp?app=maestro&amp;modulo=ciudad" redirect="false" />
+</action>
+<action path="/departamentoAction" type="maestro.action.departamentoAction" name="departamentoForm" input="/main.jsp?app=maestro&amp;modulo=departamento_datos" scope="request">
+<forward name="departamento_datos" path="/main.jsp?app=maestro&amp;modulo=departamento_datos" redirect="false" />
+<forward name="departamento" path="/main.jsp?app=maestro&amp;modulo=departamento" redirect="false" />
+</action>
+<action path="/zonaAction" type="maestro.action.zonaAction" name="zonaForm" input="/main.jsp?app=maestro&amp;modulo=zona_datos" scope="request">
+<forward name="zona_datos" path="/main.jsp?app=maestro&amp;modulo=zona_datos" redirect="false" />
+<forward name="zona" path="/main.jsp?app=maestro&amp;modulo=zona" redirect="false" />
+</action>
+<action path="/transportadoraAction" type="maestro.action.transportadoraAction" name="transportadoraForm" input="/main.jsp?app=maestro&amp;modulo=transportadora_datos" scope="request">
+<forward name="transportadora_datos" path="/main.jsp?app=maestro&amp;modulo=transportadora_datos" redirect="false" />
+<forward name="transportadora" path="/main.jsp?app=maestro&amp;modulo=transportadora" redirect="false" />
+</action>
+<action path="/usuarioAction" type="administracion.action.usuarioAction" name="usuarioForm" input="/main.jsp?app=administracion&amp;modulo=usuario_datos" scope="request">
+<forward name="usuario_datos" path="/main.jsp?app=administracion&amp;modulo=usuario_datos" redirect="false" />
+<forward name="usuario" path="/main.jsp?app=administracion&amp;modulo=usuario" redirect="false" />
+</action>
+<action path="/empleadoAction" type="maestro.action.empleadoAction" name="empleadoForm" input="/main.jsp?app=maestro&amp;modulo=empleado_datos" scope="request">
+<forward name="empleado_datos" path="/main.jsp?app=maestro&amp;modulo=empleado_datos" redirect="false" />
+<forward name="empleado" path="/main.jsp?app=maestro&amp;modulo=empleado" redirect="false" />
+</action>
+<action path="/bodegaAction" type="maestro.action.bodegaAction" name="bodegaForm" input="/main.jsp?app=maestro&amp;modulo=bodega_datos" scope="request">
+<forward name="bodega_datos" path="/main.jsp?app=maestro&amp;modulo=bodega_datos" redirect="false" />
+<forward name="bodega" path="/main.jsp?app=maestro&amp;modulo=bodega" redirect="false" />
+</action>
+<action path="/empresaAction" type="administracion.action.empresaAction" name="empresaForm" input="/main.jsp?app=administracion&amp;modulo=empresa_datos" scope="request">
+<forward name="empresa_datos" path="/main.jsp?app=administracion&amp;modulo=empresa_datos" redirect="false" />
+<forward name="empresa" path="/main.jsp?app=administracion&amp;modulo=empresa" redirect="false" />
+</action>
+<action path="/fleteAction" type="maestro.action.fleteAction" name="fleteForm" input="/main.jsp?app=maestro&amp;modulo=flete_datos" scope="request">
+<forward name="flete_datos" path="/main.jsp?app=maestro&amp;modulo=flete_datos" redirect="false" />
+<forward name="flete" path="/main.jsp?app=maestro&amp;modulo=flete" redirect="false" />
+</action>
+<action path="/traficoAction" type="ingreso.action.traficoAction" name="traficoForm" input="/main.jsp?app=ingreso&amp;modulo=trafico_datos" scope="request">
+<forward name="trafico" path="/main.jsp?app=ingreso&amp;modulo=trafico" redirect="false" />
+<forward name="trafico_datos" path="/main.jsp?app=ingreso&amp;modulo=trafico_datos" redirect="false" />
+<forward name="contenedor_trafico" path="/main.jsp?app=ingreso&amp;modulo=contenedor_trafico" redirect="false" />
+</action>
+<action path="/contenedor_traficoAction" type="ingreso.action.contenedor_traficoAction" name="contenedor_traficoForm" input="/main.jsp?app=ingreso&amp;modulo=contenedor_trafico_datos" scope="request">
+<forward name="contenedor_trafico" path="/main.jsp?app=ingreso&amp;modulo=contenedor_trafico" redirect="false" />
+<forward name="contenedor_trafico_datos" path="/main.jsp?app=ingreso&amp;modulo=contenedor_trafico_datos" redirect="false" />
+</action>
+<action path="/factura_traficoAction" type="ingreso.action.factura_traficoAction" name="factura_traficoForm" scope="request" input="/main.jsp?app=ingreso&amp;modulo=factura_trafico_datos">
+<forward name="factura_trafico" path="/main.jsp?app=ingreso&amp;modulo=factura_trafico" redirect="false" />
+<forward name="factura_trafico_datos" path="/main.jsp?app=ingreso&amp;modulo=factura_trafico_datos" redirect="false" />
+</action>
+<action path="/referencia_traficoAction" type="ingreso.action.referencia_traficoAction" name="referencia_traficoForm" input="/main.jsp?app=ingreso&amp;modulo=referencia_trafico_datos" scope="request">
+<forward name="referencia_trafico" path="/main.jsp?app=ingreso&amp;modulo=referencia_trafico" redirect="false" />
+<forward name="referencia_trafico_datos" path="/main.jsp?app=ingreso&amp;modulo=referencia_trafico_datos" redirect="false" />
+<forward name="factura_trafico" path="/main.jsp?app=ingreso&amp;modulo=factura_trafico" redirect="false" />
+</action>
+<action path="/ingresoAction" type="ingreso.action.ingresoAction" name="ingresoForm" input="/main.jsp?app=ingreso&amp;modulo=ingreso_datos" scope="request">
+<forward name="ingreso" path="/main.jsp?app=ingreso&amp;modulo=ingreso" redirect="false" />
+<forward name="ingreso_datos" path="/main.jsp?app=ingreso&amp;modulo=ingreso_datos" redirect="false" />
+</action>
+<action path="/entradaAction" type="ingreso.action.entradaAction" name="entradaForm" input="/main.jsp?app=ingreso&amp;modulo=entrada_datos" scope="request">
+<forward name="entrada" path="/main.jsp?app=ingreso&amp;modulo=entrada" redirect="false" />
+<forward name="entrada_datos" path="/main.jsp?app=ingreso&amp;modulo=entrada_datos" redirect="false" />
+<forward name="ingreso_datos" path="/main.jsp?app=ingreso&amp;modulo=ingreso_datos">
+</forward>
+</action>
+<action path="/saldos_posicionAction" type="reportes.action.saldos_posicionAction" name="saldos_posicionForm" input="/main.jsp?app=reportes&amp;modulo=saldos_posicion" scope="request">
+<forward name="saldos_posicion" path="/main.jsp?app=reportes&amp;modulo=saldos_posicion" redirect="false" />
+</action>
+<action path="/nacionalizacionAction" type="nacionalizacion.action.nacionalizacionAction" name="nacionalizacionForm" input="/main.jsp?app=nacionalizacion&amp;modulo=nacionalizacion_datos" scope="request">
+<forward name="nacionalizacion" path="/main.jsp?app=nacionalizacion&amp;modulo=nacionalizacion" redirect="false" />
+<forward name="nacionalizacion_datos" path="/main.jsp?app=nacionalizacion&amp;modulo=nacionalizacion_datos" redirect="false" />
+</action>
+<action path="/nacionalizacion_detalleAction" type="nacionalizacion.action.nacionalizacion_detalleAction" name="nacionalizacion_detalleForm" input="/main.jsp?app=nacionalizacion&amp;modulo=nacionalizacion_detalle_datos" scope="request">
+<forward name="nacionalizacion_datos" path="/main.jsp?app=nacionalizacion&amp;modulo=nacionalizacion_datos" redirect="false" />
+</action>
+<action path="/reubicacionAction" type="ingreso.action.reubicacionAction" name="reubicacionForm" input="/main.jsp?app=ingreso&amp;modulo=reubicacion_datos" scope="request">
+<forward name="reubicacion" path="/main.jsp?app=ingreso&amp;modulo=reubicacion" redirect="false" />
+<forward name="reubicacion_datos" path="/main.jsp?app=ingreso&amp;modulo=reubicacion_datos" redirect="false" />
+</action>
+<action path="/pedidoAction" type="pedido.action.pedidoAction" name="pedidoForm" input="/main.jsp?app=pedido&amp;modulo=pedido_datos" scope="request">
+<forward name="pedido" path="/main.jsp?app=pedido&amp;modulo=pedido" redirect="false" />
+<forward name="pedido_datos" path="/main.jsp?app=pedido&amp;modulo=pedido_datos" redirect="false" />
+</action>
+<action path="/referencia_pedidoAction" type="pedido.action.referencia_pedidoAction" name="referencia_pedidoForm" input="/main.jsp?app=pedido&amp;modulo=referencia_pedido" scope="request">
+<forward name="referencia_pedido" path="/main.jsp?app=pedido&amp;modulo=referencia_pedido" redirect="false" />
+<forward name="referencia_pedido_datos" path="/main.jsp?app=pedido&amp;modulo=referencia_pedido_datos" redirect="false" />
+</action>
+<action path="/packingAction" type="pedido.action.packingAction" name="packingForm" input="/main.jsp?app=pedido&amp;modulo=packing_datos" scope="request">
+<forward name="packing" path="/main.jsp?app=pedido&amp;modulo=packing" redirect="false" /><forward name="packing_datos" path="/main.jsp?app=pedido&amp;modulo=packing_datos" redirect="false" />
+</action>
+<action path="/packing_detalleAction" type="pedido.action.packing_detalleAction" name="packing_detalleForm" input="/main.jsp?app=pedido&amp;modulo=packing_detalle_datos" scope="request">
+<forward name="packing_detalle" path="/main.jsp?app=pedido&amp;modulo=packing_detalle" redirect="false" />
+<forward name="packing_detalle_datos" path="/main.jsp?app=pedido&amp;modulo=packing_detalle_datos" redirect="false" />
+<forward name="packing_datos" path="/main.jsp?app=pedido&amp;modulo=packing_datos" redirect="false" />
+</action>
+<action path="/pickingAction" type="pedido.action.pickingAction" name="pickingForm" input="/main.jsp?app=pedido&amp;modulo=picking_datos" scope="request">
+<forward name="picking" path="/main.jsp?app=pedido&amp;modulo=picking" redirect="false" />
+<forward name="picking_datos" path="/main.jsp?app=pedido&amp;modulo=picking_datos" redirect="false" />
+<forward name="pedido_datos" path="/main.jsp?app=pedido&amp;modulo=pedido" redirect="false" />
+</action>
+<action path="/picking_detalleAction" type="pedido.action.picking_detalleAction" name="picking_detalleForm" input="/main.jsp?app=pedido&amp;modulo=picking_detalle_datos" scope="request">
+<forward name="picking_detalle" path="/main.jsp?app=pedido&amp;modulo=picking_detalle" redirect="false" />
+<forward name="picking_detalle_datos" path="/main.jsp?app=pedido&amp;modulo=picking_detalle_datos" redirect="false" />
+<forward name="picking_datos" path="/main.jsp?app=pedido&amp;modulo=picking_datos" redirect="false" />
+</action>
+<action path="/despachoAction" type="pedido.action.despachoAction" name="despachoForm" input="/main.jsp?app=pedido&amp;modulo=despacho_datos" scope="request">
+<forward name="despacho" path="/main.jsp?app=pedido&amp;modulo=despacho" redirect="false" />
+<forward name="despacho_datos" path="/main.jsp?app=pedido&amp;modulo=despacho_datos" redirect="false" />
+</action>
+<action path="/despacho_pedidoAction" type="pedido.action.despacho_pedidoAction" name="despacho_pedidoForm" input="/main.jsp?app=pedido&amp;modulo=despacho_pedido" scope="request">
+<forward name="despacho_pedido" path="/main.jsp?app=pedido&amp;modulo=despacho_pedido" redirect="false" />
+<forward name="despacho_pedido_datos" path="/main.jsp?app=pedido&amp;modulo=despacho_pedido_datos" redirect="false" />
+<forward name="despacho_datos" path="/main.jsp?app=pedido&amp;modulo=despacho_datos" redirect="false" />
+</action>
+<action path="/referencia_despachoAction" type="pedido.action.referencia_despachoAction" name="referencia_despachoForm" input="/main.jsp?app=pedido&amp;modulo=referencia_despacho" scope="request">
+<forward name="referencia_despacho" path="/main.jsp?app=pedido&amp;modulo=referencia_despacho" redirect="false" />
+<forward name="referencia_despacho_datos" path="/main.jsp?app=pedido&amp;modulo=referencia_despacho_datos" redirect="false" />
+</action>
+<action path="/referencia_despacho_serialAction" type="pedido.action.referencia_despacho_serialAction" name="referencia_despacho_serialForm" input="/main.jsp?app=pedido&amp;modulo=referencia_despacho_serial" scope="request">
+<forward name="referencia_despacho_serial" path="/main.jsp?app=pedido&amp;modulo=referencia_despacho_serial" redirect="false" />
+</action>
+<action path="/reportesAction" type="reportes.action.reportesAction" name="reportesForm" scope="request" input="/main.jsp?app=reportes">
+<forward name="saldos_referencia" path="/main.jsp?app=reportes&amp;modulo=saldos_referencia&amp;tipo=inventarios" redirect="false" />
+<forward name="movimientos" path="/main.jsp?app=reportes&amp;modulo=movimientos&amp;tipo=operaciones" redirect="false" />
+<forward name="despachos" path="/main.jsp?app=reportes&amp;modulo=despachos&amp;tipo=operaciones" redirect="false" />
+<forward name="devoluciones" path="/main.jsp?app=reportes&amp;modulo=devoluciones&amp;tipo=operaciones" redirect="false" />
+<forward name="modelos_embarque" path="/main.jsp?app=reportes&amp;modulo=modelos_embarque&amp;tipo=operaciones" redirect="false" />
+<forward name="nacionalizaciones" path="/main.jsp?app=reportes&amp;modulo=nacionalizaciones&amp;tipo=operaciones" redirect="false" />
+<forward name="viewer" path="/files/reportes/viewer.jsp" redirect="false" />
+</action>
+<action path="/causalAction" type="maestro.action.causalAction" name="causalForm" input="/main.jsp?app=maestro&amp;modulo=causal_datos" scope="request">
+<forward name="causal" path="/main.jsp?app=maestro&amp;modulo=causal" redirect="false" />
+<forward name="causal_datos" path="/main.jsp?app=maestro&amp;modulo=causal_datos" redirect="false" />
+</action>
+<action path="/averiaAction" type="averias.action.averiaAction" name="averiaForm" scope="request" input="/main.jsp?app=averias&amp;modulo=averia_datos">
+<forward name="averia" path="/main.jsp?app=averias&amp;modulo=averia" redirect="false" />
+<forward name="averia_datos" path="/main.jsp?app=averias&amp;modulo=averia_datos" redirect="false" />
+</action>
+<action path="/ajusteAction" type="administracion.action.ajusteAction" name="ajusteForm" input="/main.jsp?app=administracion&amp;modulo=ajuste_datos" scope="request">
+<forward name="ajuste" path="/main.jsp?app=administracion&amp;modulo=ajuste" redirect="false" />
+<forward name="ajuste_datos" path="/main.jsp?app=administracion&amp;modulo=ajuste_datos" redirect="false" />
+</action>
+<action path="/reparacionAction" type="averias.action.reparacionAction" name="reparacionForm" input="/main.jsp?app=averias&amp;modulo=reparacion_datos" scope="request">
+<forward name="reparacion" path="/main.jsp?app=averias&amp;modulo=reparacion" redirect="false" />
+<forward name="reparacion_datos" path="/main.jsp?app=averias&amp;modulo=reparacion_datos" redirect="false" />
+<forward name="pedido_datos" path="/main.jsp?app=pedido&amp;modulo=pedido_datos" redirect="false" />
+</action>
+<action path="/conceptoAction" type="facturacion.action.conceptoAction" name="conceptoForm" input="/main.jsp?app=facturacion&amp;modulo=concepto" scope="request">
+<forward name="concepto" path="/main.jsp?app=facturacion&amp;modulo=concepto" redirect="false" />
+<forward name="concepto_datos" path="/main.jsp?app=facturacion&amp;modulo=concepto_datos" redirect="false" />
+</action>
+<action path="/concepto_clienteAction" type="facturacion.action.concepto_clienteAction" name="concepto_clienteForm" input="/main.jsp?app=facturacion&amp;modulo=concepto_cliente_datos" scope="request">
+<forward name="concepto_cliente" path="/main.jsp?app=facturacion&amp;modulo=concepto_cliente" redirect="false" />
+<forward name="concepto_cliente_datos" path="/main.jsp?app=facturacion&amp;modulo=concepto_cliente_datos" redirect="false" />
+</action>
+<action path="/facturaAction" type="facturacion.action.facturaAction" name="facturaForm" input="/main.jsp?app=facturacion&amp;modulo=factura_datos" scope="request">
+<forward name="factura" path="/main.jsp?app=facturacion&amp;modulo=factura" redirect="false" />
+<forward name="factura_datos" redirect="false" path="/main.jsp?app=facturacion&amp;modulo=factura_datos" />
+</action>
+<action path="/factura_detalleAction" type="facturacion.action.factura_detalleAction" name="factura_detalleForm" scope="request" input="/main.jsp?app=facturacion&amp;modulo=factura_detalle_datos">
+<forward name="factura_detalle" path="/main.jsp?app=facturacion&amp;modulo=factura_detalle" redirect="false" />
+<forward name="factura_detalle_datos" path="/main.jsp?app=facturacion&amp;modulo=factura_detalle_datos" redirect="false" />
+</action>
+<action path="/factura_automaticaAction" type="facturacion.action.factura_automaticaAction" name="factura_automaticaForm" input="/main.jsp?app=facturacion&amp;modulo=factura_automatica" scope="request">
+<forward name="factura" path="/main.jsp?app=facturacion&amp;modulo=factura" redirect="false" />
+<forward name="factura_automatica" path="/main.jsp?app=facturacion&amp;modulo=factura_automatica" redirect="false" />
+<forward name="factura_automatica_alistamiento" path="/main.jsp?app=facturacion&amp;modulo=factura_automatica_alistamiento" redirect="false" />
+<forward name="factura_automatica_almacenamiento" path="/main.jsp?app=facturacion&amp;modulo=factura_automatica_almacenamiento" redirect="false" />
+<forward name="factura_automatica_proforma" path="/main.jsp?app=facturacion&amp;modulo=factura_automatica_proforma" redirect="false" />
+<forward name="factura_datos" path="/main.jsp?app=facturacion&amp;modulo=factura_datos" redirect="false" />
+</action>
+<action path="/proformaAction" type="facturacion.action.proformaAction" name="proformaForm" input="/main.jsp?app=facturacion&amp;modulo=proforma_datos" scope="request">
+<forward name="proforma" path="/main.jsp?app=facturacion&amp;modulo=proforma" redirect="false" />
+<forward name="proforma_datos" path="/main.jsp?app=facturacion&amp;modulo=proforma_datos" redirect="false" />
+<forward name="factura_datos" path="/main.jsp?app=facturacion&amp;modulo=factura_datos" redirect="false" />
+</action>
+<action path="/causal_hitAction" type="maestro.action.causal_hitAction" name="causal_hitForm" input="/main.jsp?app=maestro&amp;modulo=causal_hit_datos" scope="request">
+<forward name="causal_hit" path="/main.jsp?app=maestro&amp;modulo=causal_hit" redirect="false" />
+<forward name="causal_hit_datos" path="/main.jsp?app=maestro&amp;modulo=causal_hit_datos" redirect="false" />
+</action>
+<action path="/configFacturacionAction" type="facturacion.action.configFacturacionAction" name="configFacturacionForm" input="/main.jsp?app=facturacion&amp;modulo=config_impuestos" scope="request">
+<forward name="config_impuestos" path="/main.jsp?app=facturacion&amp;modulo=config_impuestos" redirect="false" />
+</action>
+<action path="/alistamientoAction" type="facturacion.action.alistamientoAction" name="alistamientoForm" input="/main.jsp?app=facturacion&amp;modulo=alistamiento_datos" scope="request">
+<forward name="alistamiento" path="/main.jsp?app=facturacion&amp;modulo=alistamiento" redirect="false" />
+<forward name="alistamiento_datos" path="/main.jsp?app=facturacion&amp;modulo=alistamiento_datos" redirect="false" />
+<forward name="factura_datos" path="/main.jsp?app=facturacion&amp;modulo=factura_datos" redirect="false" />
+</action>
+<action path="/almacenamientoAction" type="facturacion.action.almacenamientoAction" name="almacenamientoForm" scope="request" input="/main.jsp?app=facturacion&amp;modulo=almacenamiento_datos">
+<forward name="almacenamiento_datos" path="/main.jsp?app=facturacion&amp;modulo=almacenamiento_datos" redirect="false" />
+<forward name="almacenamiento" path="/main.jsp?app=facturacion&amp;modulo=almacenamiento" redirect="false" />
+<forward name="factura_datos" path="/main.jsp?app=facturacion&amp;modulo=factura_datos" redirect="false" />
+</action>
+<action path="/faqAction" type="ayuda.action.faqAction" name="faqForm" input="/main.jsp?app=ayuda&amp;modulo=faq" scope="request">
+<forward name="faq" path="/main.jsp?app=ayuda&amp;modulo=faq" redirect="false" />
+<forward name="faq_datos" path="/main.jsp?app=ayuda&amp;modulo=faq_datos" redirect="false" />
+</action>
+<action path="/causal_pedidoAction" type="pedido.action.causal_pedidoAction">
+<forward name="causal_pedido" path="/main.jsp?app=pedido&amp;modulo=causal_pedido" redirect="false" />
+</action>
+<action path="/novedad_pedidoAction" type="pedido.action.novedad_pedidoAction" name="novedad_pedidoForm" input="/main.jsp?app=pedido&amp;modulo=novedad_pedido_datos" scope="request">
+<forward name="novedad_pedido" path="/main.jsp?app=pedido&amp;modulo=novedad_pedido" redirect="false" />
+<forward name="novedad_pedido_datos" path="/main.jsp?app=pedido&amp;modulo=novedad_pedido_datos" redirect="false" />
+</action>
+<action path="/producto_clienteAction" type="maestro.action.producto_clienteAction" name="producto_clienteForm" input="/main.jsp?app=maestro&amp;modulo=producto_cliente_datos" scope="request">
+<forward name="producto_cliente" path="/main.jsp?app=maestro&amp;modulo=producto_cliente" redirect="false" />
+<forward name="producto_cliente_datos" path="/main.jsp?app=maestro&amp;modulo=producto_cliente_datos" redirect="false" />
+</action>
+  	<action path="/reparacion_detalleAction" type="averias.action.reparacion_detalleAction" name="reparacion_detalleForm" input="/main.jsp?app=averias&amp;modulo=reparacion_datos" scope="request">
+  		<forward name="reparacion_detalle" path="/main.jsp?app=averias&amp;modulo=reparacion_detalle" redirect="false">
+  		</forward>
+<forward name="reparacion_datos" path="/main.jsp?app=averias&amp;modulo=reparacion_datos" redirect="false" />
+<forward name="reparacion_detalle_datos" path="/main.jsp?app=averias&amp;modulo=reparacion_detalle_datos" redirect="false" />
+<forward name="pedido_datos" path="/main.jsp?app=pedido&amp;modulo=pedido_datos" redirect="false" />
+  	</action>
+<action path="/numfacturaAction" type="facturacion.action.numfacturaAction" name="numfacturaForm" scope="request" input="/main.jsp?app=facturacion&amp;modulo=numfactura_datos">
+<forward name="numfactura" path="/main.jsp?app=facturacion&amp;modulo=numfactura" redirect="false" />
+<forward name="numfactura_datos" path="/main.jsp?app=facturacion&amp;modulo=numfactura_datos" redirect="false" />
+</action>
+
+<action path="/conffacturaAction" type="facturacion.action.conffacturaAction" name="conffacturaForm" scope="request" input="/main.jsp?app=facturacion&amp;modulo=conffactura_datos">
+<forward name="conffactura" path="/main.jsp?app=facturacion&amp;modulo=conffactura" redirect="false" />
+<forward name="conffactura_datos" path="/main.jsp?app=facturacion&amp;modulo=conffactura_datos" redirect="false" />
+</action>
+</action-mappings>
+  
+<message-resources parameter="ApplicationResources" null="true" />
+
+</struts-config>

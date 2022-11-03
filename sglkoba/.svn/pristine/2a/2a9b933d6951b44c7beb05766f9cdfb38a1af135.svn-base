@@ -1,0 +1,1257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="maestro" size="600,305" id="" metadata="uml2-1.0" initialized="true" zoom="0.5" tag="1000" key="32303037303132322073676C2F70616C69746F">
+  <children xsi:type="editmodel:ClassEditModel" name="averiaForm" location="1662,1167" size="211,211" id="maestro.form/averiaForm" runTimeClassModel="getopcion(),getavecodsx(),llenar(Lmaestro.entity.averia;),setavedescripcion(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getavedescripcion(),setopcion(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setavecodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,162">
+      <children xsi:type="editmodel:MethodEditModel" name="getavecodsx" id="maestro.form/averiaForm#getavecodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getavedescripcion" id="maestro.form/averiaForm#getavedescripcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/averiaForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/averiaForm#llenar(Lmaestro.entity.averia;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/averiaForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setavecodsx" id="maestro.form/averiaForm#setavecodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setavedescripcion" id="maestro.form/averiaForm#setavedescripcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/averiaForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/averiaForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="bodegaForm" location="1875,1203" size="219,283" id="maestro.form/bodegaForm" runTimeClassModel="setbodcodsx(Ljava.lang.String;),setbodnombre(Ljava.lang.String;),llenar(Lmaestro.entity.bodega;),getbodurlplano(),getbodcodsx(),getopcion(),setboddesc(Ljava.lang.String;),setbodurlplano(Ljava.lang.String;),getboddesc(),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getbodnombre(),setopcion(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,234">
+      <children xsi:type="editmodel:MethodEditModel" name="getbodcodsx" id="maestro.form/bodegaForm#getbodcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getboddesc" id="maestro.form/bodegaForm#getboddesc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getbodnombre" id="maestro.form/bodegaForm#getbodnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getbodurlplano" id="maestro.form/bodegaForm#getbodurlplano()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/bodegaForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/bodegaForm#llenar(Lmaestro.entity.bodega;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/bodegaForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setbodcodsx" id="maestro.form/bodegaForm#setbodcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setboddesc" id="maestro.form/bodegaForm#setboddesc(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setbodnombre" id="maestro.form/bodegaForm#setbodnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setbodurlplano" id="maestro.form/bodegaForm#setbodurlplano(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/bodegaForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/bodegaForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="categoriaForm" location="2020,564" size="231,355" id="maestro.form/categoriaForm" runTimeClassModel="setDesc(Ljava.lang.String;),llenar(Lmaestro.entity.categoria;),getcatnombre(),setcatdescripcion(Ljava.lang.String;),getcatcodpadre(),setcatcodpadre(Ljava.lang.String;),getcatcodcompania(),setcatcodcompania(Ljava.lang.String;),getopcion(),setcatcodsx(Ljava.lang.String;),getcatcodsx(),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getcatdescripcion(),setopcion(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getDesc(),setcatnombre(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,306">
+      <children xsi:type="editmodel:MethodEditModel" name="getDesc" id="maestro.form/categoriaForm#getDesc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatcodcompania" id="maestro.form/categoriaForm#getcatcodcompania()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatcodpadre" id="maestro.form/categoriaForm#getcatcodpadre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatcodsx" id="maestro.form/categoriaForm#getcatcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatdescripcion" id="maestro.form/categoriaForm#getcatdescripcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatnombre" id="maestro.form/categoriaForm#getcatnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/categoriaForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/categoriaForm#llenar(Lmaestro.entity.categoria;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/categoriaForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDesc" id="maestro.form/categoriaForm#setDesc(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatcodcompania" id="maestro.form/categoriaForm#setcatcodcompania(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatcodpadre" id="maestro.form/categoriaForm#setcatcodpadre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatcodsx" id="maestro.form/categoriaForm#setcatcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatdescripcion" id="maestro.form/categoriaForm#setcatdescripcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatnombre" id="maestro.form/categoriaForm#setcatnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/categoriaForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/categoriaForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="causal_hitForm" location="4035,564" size="235,247" id="maestro.form/causal_hitForm" runTimeClassModel="llenar(Lmaestro.entity.causal_hit;),getopcion(),setcauresp(Ljava.lang.String;),getcauhcodsx(),setcauhcodsx(Ljava.lang.String;),getcauhdesc(),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setopcion(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setcauhdesc(Ljava.lang.String;),getcauresp()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,198">
+      <children xsi:type="editmodel:MethodEditModel" name="getcauhcodsx" id="maestro.form/causal_hitForm#getcauhcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcauhdesc" id="maestro.form/causal_hitForm#getcauhdesc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcauresp" id="maestro.form/causal_hitForm#getcauresp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/causal_hitForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/causal_hitForm#llenar(Lmaestro.entity.causal_hit;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/causal_hitForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcauhcodsx" id="maestro.form/causal_hitForm#setcauhcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcauhdesc" id="maestro.form/causal_hitForm#setcauhdesc(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcauresp" id="maestro.form/causal_hitForm#setcauresp(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/causal_hitForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/causal_hitForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="causalForm" location="90,189" size="212,319" id="maestro.form/causalForm" runTimeClassModel="setcaudesc(Ljava.lang.String;),setcausdocsoporte(Ljava.lang.String;),setcaucodsx(Ljava.lang.String;),getcauresponsable(),llenar(Lmaestro.entity.causal;),setcauresponsable(Ljava.lang.String;),getopcion(),getcausdocsoporte(),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setopcion(Ljava.lang.String;),getcausnota(),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getcaudesc(),setcausnota(Ljava.lang.String;),getcaucodsx()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,270">
+      <children xsi:type="editmodel:MethodEditModel" name="getcaucodsx" id="maestro.form/causalForm#getcaucodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcaudesc" id="maestro.form/causalForm#getcaudesc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcauresponsable" id="maestro.form/causalForm#getcauresponsable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcausdocsoporte" id="maestro.form/causalForm#getcausdocsoporte()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcausnota" id="maestro.form/causalForm#getcausnota()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/causalForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/causalForm#llenar(Lmaestro.entity.causal;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/causalForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcaucodsx" id="maestro.form/causalForm#setcaucodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcaudesc" id="maestro.form/causalForm#setcaudesc(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcauresponsable" id="maestro.form/causalForm#setcauresponsable(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcausdocsoporte" id="maestro.form/causalForm#setcausdocsoporte(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcausnota" id="maestro.form/causalForm#setcausnota(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/causalForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/causalForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ciudadForm" location="3179,564" size="214,247" id="maestro.form/ciudadForm" runTimeClassModel="getciudepto(),getopcion(),setciudepto(Ljava.lang.String;),setciucodigo(Ljava.lang.String;),setciunombre(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),llenar(Lmaestro.entity.ciudad;),setopcion(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getciucodigo(),getciunombre()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,198">
+      <children xsi:type="editmodel:MethodEditModel" name="getciucodigo" id="maestro.form/ciudadForm#getciucodigo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getciudepto" id="maestro.form/ciudadForm#getciudepto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getciunombre" id="maestro.form/ciudadForm#getciunombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/ciudadForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/ciudadForm#llenar(Lmaestro.entity.ciudad;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/ciudadForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setciucodigo" id="maestro.form/ciudadForm#setciucodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setciudepto" id="maestro.form/ciudadForm#setciudepto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setciunombre" id="maestro.form/ciudadForm#setciunombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/ciudadForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/ciudadForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="clienteForm" location="4226,813" size="214,535" id="maestro.form/clienteForm" runTimeClassModel="setclidireccion(Ljava.lang.String;),setclitelefono(Ljava.lang.String;),getclicodsx(),getclidireccion(),setclicodcompania(Ljava.lang.String;),setclicodsx(Ljava.lang.String;),getcliobservacion(),getcliciudad(),getclicodcompania(),setclinombre(Ljava.lang.String;),setclicontacto(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setClicodigo(Ljava.lang.String;),getClicodigo(),getclitelefono(),getclinombre(),getclinit(),setcliobservacion(Ljava.lang.String;),setclimail(Ljava.lang.String;),llenar(Lmaestro.entity.cliente;),getopcion(),getclimail(),setclinit(Ljava.lang.String;),setcliciudad(Ljava.lang.String;),getclicontacto(),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setopcion(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,486">
+      <children xsi:type="editmodel:MethodEditModel" name="getClicodigo" id="maestro.form/clienteForm#getClicodigo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcliciudad" id="maestro.form/clienteForm#getcliciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclicodcompania" id="maestro.form/clienteForm#getclicodcompania()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclicodsx" id="maestro.form/clienteForm#getclicodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclicontacto" id="maestro.form/clienteForm#getclicontacto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclidireccion" id="maestro.form/clienteForm#getclidireccion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclimail" id="maestro.form/clienteForm#getclimail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclinit" id="maestro.form/clienteForm#getclinit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclinombre" id="maestro.form/clienteForm#getclinombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcliobservacion" id="maestro.form/clienteForm#getcliobservacion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclitelefono" id="maestro.form/clienteForm#getclitelefono()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/clienteForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/clienteForm#llenar(Lmaestro.entity.cliente;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/clienteForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setClicodigo" id="maestro.form/clienteForm#setClicodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcliciudad" id="maestro.form/clienteForm#setcliciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclicodcompania" id="maestro.form/clienteForm#setclicodcompania(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclicodsx" id="maestro.form/clienteForm#setclicodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclicontacto" id="maestro.form/clienteForm#setclicontacto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclidireccion" id="maestro.form/clienteForm#setclidireccion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclimail" id="maestro.form/clienteForm#setclimail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclinit" id="maestro.form/clienteForm#setclinit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclinombre" id="maestro.form/clienteForm#setclinombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcliobservacion" id="maestro.form/clienteForm#setcliobservacion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclitelefono" id="maestro.form/clienteForm#setclitelefono(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/clienteForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/clienteForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="companiaForm" location="2427,564" size="234,535" id="maestro.form/companiaForm" runTimeClassModel="getComnit(),getcomcargo(),getcomtelefono(),getcomgerente(),setcomgerente(Ljava.lang.String;),setcomciudad(Ljava.lang.String;),getcomnombre(),setcomcargo(Ljava.lang.String;),getcomciudad(),setcomtelefono(Ljava.lang.String;),getcomemail(),setcomfax(Ljava.lang.String;),getcomcodsx(),setcomcontacto(Ljava.lang.String;),getcomfax(),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setComnit(Ljava.lang.String;),getcomdireccion(),llenar(Lmaestro.entity.compania;),getopcion(),setcomemail(Ljava.lang.String;),setcomdireccion(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setcomnombre(Ljava.lang.String;),setopcion(Ljava.lang.String;),setcomcodsx(Ljava.lang.String;),getcomcontacto()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,486">
+      <children xsi:type="editmodel:MethodEditModel" name="getComnit" id="maestro.form/companiaForm#getComnit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomcargo" id="maestro.form/companiaForm#getcomcargo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomciudad" id="maestro.form/companiaForm#getcomciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomcodsx" id="maestro.form/companiaForm#getcomcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomcontacto" id="maestro.form/companiaForm#getcomcontacto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomdireccion" id="maestro.form/companiaForm#getcomdireccion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomemail" id="maestro.form/companiaForm#getcomemail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomfax" id="maestro.form/companiaForm#getcomfax()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomgerente" id="maestro.form/companiaForm#getcomgerente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomnombre" id="maestro.form/companiaForm#getcomnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomtelefono" id="maestro.form/companiaForm#getcomtelefono()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/companiaForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/companiaForm#llenar(Lmaestro.entity.compania;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/companiaForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setComnit" id="maestro.form/companiaForm#setComnit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomcargo" id="maestro.form/companiaForm#setcomcargo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomciudad" id="maestro.form/companiaForm#setcomciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomcodsx" id="maestro.form/companiaForm#setcomcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomcontacto" id="maestro.form/companiaForm#setcomcontacto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomdireccion" id="maestro.form/companiaForm#setcomdireccion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomemail" id="maestro.form/companiaForm#setcomemail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomfax" id="maestro.form/companiaForm#setcomfax(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomgerente" id="maestro.form/companiaForm#setcomgerente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomnombre" id="maestro.form/companiaForm#setcomnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomtelefono" id="maestro.form/companiaForm#setcomtelefono(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/companiaForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/companiaForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="departamentoForm" location="4272,564" size="260,247" id="maestro.form/departamentoForm" runTimeClassModel="getopcion(),llenar(Lmaestro.entity.departamento;),getdepzona(),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getdepcodigo(),setopcion(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getdepnombre(),setdepnombre(Ljava.lang.String;),setdepzona(Ljava.lang.String;),setdepcodigo(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,198">
+      <children xsi:type="editmodel:MethodEditModel" name="getdepcodigo" id="maestro.form/departamentoForm#getdepcodigo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdepnombre" id="maestro.form/departamentoForm#getdepnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdepzona" id="maestro.form/departamentoForm#getdepzona()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/departamentoForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/departamentoForm#llenar(Lmaestro.entity.departamento;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/departamentoForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setdepcodigo" id="maestro.form/departamentoForm#setdepcodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setdepnombre" id="maestro.form/departamentoForm#setdepnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setdepzona" id="maestro.form/departamentoForm#setdepzona(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/departamentoForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/departamentoForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="empleadoForm" location="2942,564" size="235,319" id="maestro.form/empleadoForm" runTimeClassModel="setempcargo(Ljava.lang.String;),getempnombre(),getempcodsx(),setempcodsx(Ljava.lang.String;),setempnombre(Ljava.lang.String;),getempcargo(),getempcedula(),getopcion(),setempmail(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getempmail(),setopcion(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),llenar(Lmaestro.entity.empleado;),setempcedula(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,270">
+      <children xsi:type="editmodel:MethodEditModel" name="getempcargo" id="maestro.form/empleadoForm#getempcargo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempcedula" id="maestro.form/empleadoForm#getempcedula()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempcodsx" id="maestro.form/empleadoForm#getempcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempmail" id="maestro.form/empleadoForm#getempmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempnombre" id="maestro.form/empleadoForm#getempnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/empleadoForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/empleadoForm#llenar(Lmaestro.entity.empleado;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/empleadoForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempcargo" id="maestro.form/empleadoForm#setempcargo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempcedula" id="maestro.form/empleadoForm#setempcedula(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempcodsx" id="maestro.form/empleadoForm#setempcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempmail" id="maestro.form/empleadoForm#setempmail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempnombre" id="maestro.form/empleadoForm#setempnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/empleadoForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/empleadoForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="fleteForm" location="3395,564" size="199,319" id="maestro.form/fleteForm" runTimeClassModel="setfledias(Ljava.lang.String;),getfletransportadora(),setflevalor(Ljava.lang.String;),getflevalor(),getopcion(),llenar(Lmaestro.entity.flete;),getflecodsx(),setfletransportadora(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setopcion(Ljava.lang.String;),getfleciudad(),getfledias(),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setfleciudad(Ljava.lang.String;),setflecodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,270">
+      <children xsi:type="editmodel:MethodEditModel" name="getfleciudad" id="maestro.form/fleteForm#getfleciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getflecodsx" id="maestro.form/fleteForm#getflecodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfledias" id="maestro.form/fleteForm#getfledias()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfletransportadora" id="maestro.form/fleteForm#getfletransportadora()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getflevalor" id="maestro.form/fleteForm#getflevalor()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/fleteForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/fleteForm#llenar(Lmaestro.entity.flete;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/fleteForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setfleciudad" id="maestro.form/fleteForm#setfleciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setflecodsx" id="maestro.form/fleteForm#setflecodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setfledias" id="maestro.form/fleteForm#setfledias(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setfletransportadora" id="maestro.form/fleteForm#setfletransportadora(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setflevalor" id="maestro.form/fleteForm#setflevalor(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/fleteForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/fleteForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="producto_clienteForm" location="2663,564" size="277,499" id="maestro.form/producto_clienteForm" runTimeClassModel="setProdescripcion(Ljava.lang.String;),setproctag(Ljava.lang.String;),getprocean(),getprocodbarra(),llenar(Lmaestro.entity.producto_cliente;),setprocodbarra(Ljava.lang.String;),setprocproducto(Ljava.lang.String;),getprocproducto(),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setproccliente(Ljava.lang.String;),setprocnumcodigobarra(Ljava.lang.String;),setproccodsx(Ljava.lang.String;),getPromodelo(),getProdescripcion(),getprocgarantia(),setprocgarantia(Ljava.lang.String;),setprocean(Ljava.lang.String;),getproctag(),getprocnumcodigobarra(),getproccliente(),getopcion(),setPromodelo(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getproccodsx(),setopcion(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="145,450">
+      <children xsi:type="editmodel:MethodEditModel" name="getProdescripcion" id="maestro.form/producto_clienteForm#getProdescripcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPromodelo" id="maestro.form/producto_clienteForm#getPromodelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/producto_clienteForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproccliente" id="maestro.form/producto_clienteForm#getproccliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproccodsx" id="maestro.form/producto_clienteForm#getproccodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocean" id="maestro.form/producto_clienteForm#getprocean()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocgarantia" id="maestro.form/producto_clienteForm#getprocgarantia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocnumcodigobarra" id="maestro.form/producto_clienteForm#getprocnumcodigobarra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocodbarra" id="maestro.form/producto_clienteForm#getprocodbarra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocproducto" id="maestro.form/producto_clienteForm#getprocproducto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproctag" id="maestro.form/producto_clienteForm#getproctag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/producto_clienteForm#llenar(Lmaestro.entity.producto_cliente;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/producto_clienteForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProdescripcion" id="maestro.form/producto_clienteForm#setProdescripcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPromodelo" id="maestro.form/producto_clienteForm#setPromodelo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/producto_clienteForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setproccliente" id="maestro.form/producto_clienteForm#setproccliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setproccodsx" id="maestro.form/producto_clienteForm#setproccodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocean" id="maestro.form/producto_clienteForm#setprocean(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocgarantia" id="maestro.form/producto_clienteForm#setprocgarantia(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocnumcodigobarra" id="maestro.form/producto_clienteForm#setprocnumcodigobarra(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocodbarra" id="maestro.form/producto_clienteForm#setprocodbarra(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocproducto" id="maestro.form/producto_clienteForm#setprocproducto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setproctag" id="maestro.form/producto_clienteForm#setproctag(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/producto_clienteForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="productoForm" location="3806,564" size="227,931" id="maestro.form/productoForm" runTimeClassModel="setProcodigobarra(Ljava.lang.String;),setProvolmasterpac(Ljava.lang.String;),setProobservacion(Ljava.lang.String;),getprocodbarra(),getProobservacion(),setpropesobmp(Ljava.lang.String;),setprokilovolumen(Ljava.lang.String;),getproean(),getprounimasterpac(),getprokvmasterpack(),getProestado(),getopcion(),getprodescripcion(),setprokvmasterpack(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setopcion(Ljava.lang.String;),llenar(Lmaestro.entity.producto;),getprouniempaque(),getprokilovolumen(),setprovoluniempaque(Ljava.lang.String;),setprocategoria(Ljava.lang.String;),setpromodelo(Ljava.lang.String;),setprokvuniempaque(Ljava.lang.String;),setprokiloreal(Ljava.lang.String;),setprosubpartida(Ljava.lang.String;),getprosubpartida(),getprogarantia(),getprovoluniempaque(),setprocodbarra(Ljava.lang.String;),setprouniempaque(Ljava.lang.String;),setprovolumen(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getprocategoria(),setProestado(Ljava.lang.String;),getprocodigocia(),getprocodsx(),getprokvuniempaque(),setprocodsx(Ljava.lang.String;),getProvolmasterpac(),setprocodigocia(Ljava.lang.String;),setprogarantia(Ljava.lang.String;),getpropesobmp(),getprovolumen(),getpromodelo(),getprokiloreal(),setproean(Ljava.lang.String;),getProcodigobarra(),setprounimasterpac(Ljava.lang.String;),setprodescripcion(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="133,882">
+      <children xsi:type="editmodel:MethodEditModel" name="getProcodigobarra" id="maestro.form/productoForm#getProcodigobarra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProestado" id="maestro.form/productoForm#getProestado()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProobservacion" id="maestro.form/productoForm#getProobservacion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProvolmasterpac" id="maestro.form/productoForm#getProvolmasterpac()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/productoForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocategoria" id="maestro.form/productoForm#getprocategoria()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocodbarra" id="maestro.form/productoForm#getprocodbarra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocodigocia" id="maestro.form/productoForm#getprocodigocia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocodsx" id="maestro.form/productoForm#getprocodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprodescripcion" id="maestro.form/productoForm#getprodescripcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproean" id="maestro.form/productoForm#getproean()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprogarantia" id="maestro.form/productoForm#getprogarantia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprokiloreal" id="maestro.form/productoForm#getprokiloreal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprokilovolumen" id="maestro.form/productoForm#getprokilovolumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprokvmasterpack" id="maestro.form/productoForm#getprokvmasterpack()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprokvuniempaque" id="maestro.form/productoForm#getprokvuniempaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getpromodelo" id="maestro.form/productoForm#getpromodelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getpropesobmp" id="maestro.form/productoForm#getpropesobmp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprosubpartida" id="maestro.form/productoForm#getprosubpartida()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprouniempaque" id="maestro.form/productoForm#getprouniempaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprounimasterpac" id="maestro.form/productoForm#getprounimasterpac()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprovolumen" id="maestro.form/productoForm#getprovolumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprovoluniempaque" id="maestro.form/productoForm#getprovoluniempaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/productoForm#llenar(Lmaestro.entity.producto;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/productoForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProcodigobarra" id="maestro.form/productoForm#setProcodigobarra(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProestado" id="maestro.form/productoForm#setProestado(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProobservacion" id="maestro.form/productoForm#setProobservacion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProvolmasterpac" id="maestro.form/productoForm#setProvolmasterpac(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/productoForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocategoria" id="maestro.form/productoForm#setprocategoria(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocodbarra" id="maestro.form/productoForm#setprocodbarra(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocodigocia" id="maestro.form/productoForm#setprocodigocia(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocodsx" id="maestro.form/productoForm#setprocodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprodescripcion" id="maestro.form/productoForm#setprodescripcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setproean" id="maestro.form/productoForm#setproean(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprogarantia" id="maestro.form/productoForm#setprogarantia(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprokiloreal" id="maestro.form/productoForm#setprokiloreal(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprokilovolumen" id="maestro.form/productoForm#setprokilovolumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprokvmasterpack" id="maestro.form/productoForm#setprokvmasterpack(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprokvuniempaque" id="maestro.form/productoForm#setprokvuniempaque(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setpromodelo" id="maestro.form/productoForm#setpromodelo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setpropesobmp" id="maestro.form/productoForm#setpropesobmp(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprosubpartida" id="maestro.form/productoForm#setprosubpartida(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprouniempaque" id="maestro.form/productoForm#setprouniempaque(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprounimasterpac" id="maestro.form/productoForm#setprounimasterpac(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprovolumen" id="maestro.form/productoForm#setprovolumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprovoluniempaque" id="maestro.form/productoForm#setprovoluniempaque(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/productoForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="sucursalForm" location="3024,1101" size="223,571" id="maestro.form/sucursalForm" runTimeClassModel="getsucnit(),setsuccodcliente(Ljava.lang.String;),getsuctelefono(),getsucdepartamento(),setsuctelefono(Ljava.lang.String;),getsucdireccion(),setsuccodsx(Ljava.lang.String;),getsuccargo(),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setsuccontacto(Ljava.lang.String;),setsucdireccion(Ljava.lang.String;),setsucemail(Ljava.lang.String;),getsucnombre(),getsuccodsx(),getsuccontacto(),setsucnombre(Ljava.lang.String;),getsuccodcliente(),setsucnit(Ljava.lang.String;),setSuccodigo(Ljava.lang.String;),getsucemail(),llenar(Lmaestro.entity.sucursal;),setsucciudad(Ljava.lang.String;),getopcion(),setsucdepartamento(Ljava.lang.String;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),getSuccodigo(),setopcion(Ljava.lang.String;),setsuccargo(Ljava.lang.String;),getsucciudad()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,522">
+      <children xsi:type="editmodel:MethodEditModel" name="getSuccodigo" id="maestro.form/sucursalForm#getSuccodigo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/sucursalForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuccargo" id="maestro.form/sucursalForm#getsuccargo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucciudad" id="maestro.form/sucursalForm#getsucciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuccodcliente" id="maestro.form/sucursalForm#getsuccodcliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuccodsx" id="maestro.form/sucursalForm#getsuccodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuccontacto" id="maestro.form/sucursalForm#getsuccontacto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucdepartamento" id="maestro.form/sucursalForm#getsucdepartamento()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucdireccion" id="maestro.form/sucursalForm#getsucdireccion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucemail" id="maestro.form/sucursalForm#getsucemail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucnit" id="maestro.form/sucursalForm#getsucnit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucnombre" id="maestro.form/sucursalForm#getsucnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuctelefono" id="maestro.form/sucursalForm#getsuctelefono()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/sucursalForm#llenar(Lmaestro.entity.sucursal;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/sucursalForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSuccodigo" id="maestro.form/sucursalForm#setSuccodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/sucursalForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuccargo" id="maestro.form/sucursalForm#setsuccargo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucciudad" id="maestro.form/sucursalForm#setsucciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuccodcliente" id="maestro.form/sucursalForm#setsuccodcliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuccodsx" id="maestro.form/sucursalForm#setsuccodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuccontacto" id="maestro.form/sucursalForm#setsuccontacto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucdepartamento" id="maestro.form/sucursalForm#setsucdepartamento(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucdireccion" id="maestro.form/sucursalForm#setsucdireccion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucemail" id="maestro.form/sucursalForm#setsucemail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucnit" id="maestro.form/sucursalForm#setsucnit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucnombre" id="maestro.form/sucursalForm#setsucnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuctelefono" id="maestro.form/sucursalForm#setsuctelefono(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/sucursalForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="transportadoraForm" location="1754,777" size="264,355" id="maestro.form/transportadoraForm" runTimeClassModel="gettransptel(),gettranspdireccion(),gettranspcodsx(),gettranspmail(),settranspcontacto(Ljava.lang.String;),settranspdireccion(Ljava.lang.String;),settransptel(Ljava.lang.String;),getopcion(),llenar(Lmaestro.entity.transportadora;),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),settranspmail(Ljava.lang.String;),gettranspcontacto(),setopcion(Ljava.lang.String;),gettranspnombre(),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),settranspcodsx(Ljava.lang.String;),settranspnombre(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,306">
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/transportadoraForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspcodsx" id="maestro.form/transportadoraForm#gettranspcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspcontacto" id="maestro.form/transportadoraForm#gettranspcontacto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspdireccion" id="maestro.form/transportadoraForm#gettranspdireccion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspmail" id="maestro.form/transportadoraForm#gettranspmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspnombre" id="maestro.form/transportadoraForm#gettranspnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettransptel" id="maestro.form/transportadoraForm#gettransptel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/transportadoraForm#llenar(Lmaestro.entity.transportadora;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/transportadoraForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/transportadoraForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspcodsx" id="maestro.form/transportadoraForm#settranspcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspcontacto" id="maestro.form/transportadoraForm#settranspcontacto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspdireccion" id="maestro.form/transportadoraForm#settranspdireccion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspmail" id="maestro.form/transportadoraForm#settranspmail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspnombre" id="maestro.form/transportadoraForm#settranspnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settransptel" id="maestro.form/transportadoraForm#settransptel(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/transportadoraForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="zonaForm" location="1754,564" size="202,211" id="maestro.form/zonaForm" runTimeClassModel="llenar(Lmaestro.entity.zona;),getopcion(),setzonnombre(Ljava.lang.String;),getzonnombre(),getzoncodsx(),validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;),setopcion(Ljava.lang.String;),setzoncodsx(Ljava.lang.String;),reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,162">
+      <children xsi:type="editmodel:MethodEditModel" name="getopcion" id="maestro.form/zonaForm#getopcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getzoncodsx" id="maestro.form/zonaForm#getzoncodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getzonnombre" id="maestro.form/zonaForm#getzonnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="llenar" id="maestro.form/zonaForm#llenar(Lmaestro.entity.zona;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="maestro.form/zonaForm#reset(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setopcion" id="maestro.form/zonaForm#setopcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setzoncodsx" id="maestro.form/zonaForm#setzoncodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setzonnombre" id="maestro.form/zonaForm#setzonnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validate" id="maestro.form/zonaForm#validate(Lorg.apache.struts.action.ActionMapping;Ljavax.servlet.http.HttpServletRequest;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="averia" location="1550,492" size="184,139" id="maestro.entity/averia" runTimeClassModel="setavedescripcion(Ljava.lang.String;),getavecodsx(),getavedescripcion(),averia(Ljava.lang.String;Ljava.lang.String;),setavecodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,90">
+      <children xsi:type="editmodel:MethodEditModel" name="averia" id="maestro.entity/averia#averia(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getavecodsx" id="maestro.entity/averia#getavecodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getavedescripcion" id="maestro.entity/averia#getavedescripcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setavecodsx" id="maestro.entity/averia#setavecodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setavedescripcion" id="maestro.entity/averia#setavedescripcion(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="bodega" location="0,912" size="192,247" id="maestro.entity/bodega" runTimeClassModel="getbodcodsx(),bodega(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),setbodcodsx(Ljava.lang.String;),setboddesc(Ljava.lang.String;),setResumen(Ljava.lang.String;),setbodurlplano(Ljava.lang.String;),getResumen(),getboddesc(),getbodnombre(),setbodnombre(Ljava.lang.String;),getbodurlplano()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,198">
+      <children xsi:type="editmodel:MethodEditModel" name="bodega" id="maestro.entity/bodega#bodega(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/bodega#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getbodcodsx" id="maestro.entity/bodega#getbodcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getboddesc" id="maestro.entity/bodega#getboddesc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getbodnombre" id="maestro.entity/bodega#getbodnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getbodurlplano" id="maestro.entity/bodega#getbodurlplano()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/bodega#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setbodcodsx" id="maestro.entity/bodega#setbodcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setboddesc" id="maestro.entity/bodega#setboddesc(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setbodnombre" id="maestro.entity/bodega#setbodnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setbodurlplano" id="maestro.entity/bodega#setbodurlplano(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="categoria" location="1456,1581" size="204,283" id="maestro.entity/categoria" runTimeClassModel="setResumen(Ljava.lang.String;),getcatnombre(),getResumen(),getcatcodpadre(),setcatdescripcion(Ljava.lang.String;),setcatcodpadre(Ljava.lang.String;),getcatcodcompania(),setcatcodcompania(Ljava.lang.String;),setcatcodsx(Ljava.lang.String;),getcatcodsx(),categoria(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getcatdescripcion(),setcatnombre(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,234">
+      <children xsi:type="editmodel:MethodEditModel" name="categoria" id="maestro.entity/categoria#categoria(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/categoria#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatcodcompania" id="maestro.entity/categoria#getcatcodcompania()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatcodpadre" id="maestro.entity/categoria#getcatcodpadre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatcodsx" id="maestro.entity/categoria#getcatcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatdescripcion" id="maestro.entity/categoria#getcatdescripcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcatnombre" id="maestro.entity/categoria#getcatnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/categoria#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatcodcompania" id="maestro.entity/categoria#setcatcodcompania(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatcodpadre" id="maestro.entity/categoria#setcatcodpadre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatcodsx" id="maestro.entity/categoria#setcatcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatdescripcion" id="maestro.entity/categoria#setcatdescripcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcatnombre" id="maestro.entity/categoria#setcatnombre(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="causal_hit" location="1316,705" size="208,211" id="maestro.entity/causal_hit" runTimeClassModel="setcauresp(Ljava.lang.String;),setResumen(Ljava.lang.String;),getcauhcodsx(),getcauhdesc(),setcauhcodsx(Ljava.lang.String;),causal_hit(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getResumen(),getcauresp(),setcauhdesc(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,162">
+      <children xsi:type="editmodel:MethodEditModel" name="causal_hit" id="maestro.entity/causal_hit#causal_hit(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/causal_hit#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcauhcodsx" id="maestro.entity/causal_hit#getcauhcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcauhdesc" id="maestro.entity/causal_hit#getcauhdesc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcauresp" id="maestro.entity/causal_hit#getcauresp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/causal_hit#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcauhcodsx" id="maestro.entity/causal_hit#setcauhcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcauhdesc" id="maestro.entity/causal_hit#setcauhdesc(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcauresp" id="maestro.entity/causal_hit#setcauresp(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="causal" location="3249,1101" size="185,283" id="maestro.entity/causal" runTimeClassModel="setcausdocsoporte(Ljava.lang.String;),setcaudesc(Ljava.lang.String;),setResumen(Ljava.lang.String;),getResumen(),setcaucodsx(Ljava.lang.String;),getcauresponsable(),causal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),setcauresponsable(Ljava.lang.String;),getcausdocsoporte(),getcausnota(),getcaudesc(),setcausnota(Ljava.lang.String;),getcaucodsx()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,234">
+      <children xsi:type="editmodel:MethodEditModel" name="causal" id="maestro.entity/causal#causal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/causal#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcaucodsx" id="maestro.entity/causal#getcaucodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcaudesc" id="maestro.entity/causal#getcaudesc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcauresponsable" id="maestro.entity/causal#getcauresponsable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcausdocsoporte" id="maestro.entity/causal#getcausdocsoporte()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcausnota" id="maestro.entity/causal#getcausnota()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/causal#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcaucodsx" id="maestro.entity/causal#setcaucodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcaudesc" id="maestro.entity/causal#setcaudesc(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcauresponsable" id="maestro.entity/causal#setcauresponsable(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcausdocsoporte" id="maestro.entity/causal#setcausdocsoporte(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcausnota" id="maestro.entity/causal#setcausnota(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ciudad" location="2329,1152" size="187,211" id="maestro.entity/ciudad" runTimeClassModel="getciudepto(),setciudepto(Ljava.lang.String;),setResumen(Ljava.lang.String;),ciudad(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),setciunombre(Ljava.lang.String;),setciucodigo(Ljava.lang.String;),getResumen(),getciunombre(),getciucodigo()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,162">
+      <children xsi:type="editmodel:MethodEditModel" name="ciudad" id="maestro.entity/ciudad#ciudad(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/ciudad#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getciucodigo" id="maestro.entity/ciudad#getciucodigo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getciudepto" id="maestro.entity/ciudad#getciudepto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getciunombre" id="maestro.entity/ciudad#getciunombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/ciudad#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setciucodigo" id="maestro.entity/ciudad#setciucodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setciudepto" id="maestro.entity/ciudad#setciudepto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setciunombre" id="maestro.entity/ciudad#setciunombre(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="cliente" location="1221,1131" size="187,499" id="maestro.entity/cliente" runTimeClassModel="setclitelefono(Ljava.lang.String;),setclidireccion(Ljava.lang.String;),getclicodsx(),getclidireccion(),cliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),setclicodcompania(Ljava.lang.String;),setclicodsx(Ljava.lang.String;),getcliobservacion(),getcliciudad(),getclicodcompania(),setclinombre(Ljava.lang.String;),setclicontacto(Ljava.lang.String;),getClicodigo(),setClicodigo(Ljava.lang.String;),getclitelefono(),getclinombre(),setResumen(Ljava.lang.String;),getResumen(),getclinit(),setcliobservacion(Ljava.lang.String;),setclimail(Ljava.lang.String;),getclimail(),setclinit(Ljava.lang.String;),getclicontacto(),setcliciudad(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,450">
+      <children xsi:type="editmodel:MethodEditModel" name="cliente" id="maestro.entity/cliente#cliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getClicodigo" id="maestro.entity/cliente#getClicodigo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/cliente#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcliciudad" id="maestro.entity/cliente#getcliciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclicodcompania" id="maestro.entity/cliente#getclicodcompania()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclicodsx" id="maestro.entity/cliente#getclicodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclicontacto" id="maestro.entity/cliente#getclicontacto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclidireccion" id="maestro.entity/cliente#getclidireccion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclimail" id="maestro.entity/cliente#getclimail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclinit" id="maestro.entity/cliente#getclinit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclinombre" id="maestro.entity/cliente#getclinombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcliobservacion" id="maestro.entity/cliente#getcliobservacion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getclitelefono" id="maestro.entity/cliente#getclitelefono()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setClicodigo" id="maestro.entity/cliente#setClicodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/cliente#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcliciudad" id="maestro.entity/cliente#setcliciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclicodcompania" id="maestro.entity/cliente#setclicodcompania(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclicodsx" id="maestro.entity/cliente#setclicodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclicontacto" id="maestro.entity/cliente#setclicontacto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclidireccion" id="maestro.entity/cliente#setclidireccion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclimail" id="maestro.entity/cliente#setclimail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclinit" id="maestro.entity/cliente#setclinit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclinombre" id="maestro.entity/cliente#setclinombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcliobservacion" id="maestro.entity/cliente#setcliobservacion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setclitelefono" id="maestro.entity/cliente#setclitelefono(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="compania" location="3436,1101" size="207,499" id="maestro.entity/compania" runTimeClassModel="getcomcargo(),getComnit(),getcomtelefono(),getcomgerente(),setcomgerente(Ljava.lang.String;),setcomciudad(Ljava.lang.String;),getcomnombre(),setcomcargo(Ljava.lang.String;),getcomciudad(),setcomtelefono(Ljava.lang.String;),getcomemail(),setcomfax(Ljava.lang.String;),setcomcontacto(Ljava.lang.String;),getcomcodsx(),getcomfax(),setComnit(Ljava.lang.String;),setResumen(Ljava.lang.String;),getcomdireccion(),getResumen(),compania(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),setcomemail(Ljava.lang.String;),setcomdireccion(Ljava.lang.String;),setcomnombre(Ljava.lang.String;),setcomcodsx(Ljava.lang.String;),getcomcontacto()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,450">
+      <children xsi:type="editmodel:MethodEditModel" name="compania" id="maestro.entity/compania#compania(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getComnit" id="maestro.entity/compania#getComnit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/compania#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomcargo" id="maestro.entity/compania#getcomcargo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomciudad" id="maestro.entity/compania#getcomciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomcodsx" id="maestro.entity/compania#getcomcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomcontacto" id="maestro.entity/compania#getcomcontacto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomdireccion" id="maestro.entity/compania#getcomdireccion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomemail" id="maestro.entity/compania#getcomemail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomfax" id="maestro.entity/compania#getcomfax()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomgerente" id="maestro.entity/compania#getcomgerente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomnombre" id="maestro.entity/compania#getcomnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcomtelefono" id="maestro.entity/compania#getcomtelefono()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setComnit" id="maestro.entity/compania#setComnit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/compania#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomcargo" id="maestro.entity/compania#setcomcargo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomciudad" id="maestro.entity/compania#setcomciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomcodsx" id="maestro.entity/compania#setcomcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomcontacto" id="maestro.entity/compania#setcomcontacto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomdireccion" id="maestro.entity/compania#setcomdireccion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomemail" id="maestro.entity/compania#setcomemail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomfax" id="maestro.entity/compania#setcomfax(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomgerente" id="maestro.entity/compania#setcomgerente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomnombre" id="maestro.entity/compania#setcomnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setcomtelefono" id="maestro.entity/compania#setcomtelefono(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="departamento" location="1236,918" size="233,211" id="maestro.entity/departamento" runTimeClassModel="setResumen(Ljava.lang.String;),getdepzona(),departamento(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getdepcodigo(),getResumen(),getdepnombre(),setdepnombre(Ljava.lang.String;),setdepcodigo(Ljava.lang.String;),setdepzona(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,162">
+      <children xsi:type="editmodel:MethodEditModel" name="departamento" id="maestro.entity/departamento#departamento(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/departamento#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdepcodigo" id="maestro.entity/departamento#getdepcodigo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdepnombre" id="maestro.entity/departamento#getdepnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdepzona" id="maestro.entity/departamento#getdepzona()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/departamento#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setdepcodigo" id="maestro.entity/departamento#setdepcodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setdepnombre" id="maestro.entity/departamento#setdepnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setdepzona" id="maestro.entity/departamento#setdepzona(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="empleado" location="3596,564" size="208,283" id="maestro.entity/empleado" runTimeClassModel="setempcargo(Ljava.lang.String;),setResumen(Ljava.lang.String;),getempnombre(),getempcodsx(),setempcodsx(Ljava.lang.String;),getResumen(),setempnombre(Ljava.lang.String;),getempcargo(),getempcedula(),setempmail(Ljava.lang.String;),empleado(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getempmail(),setempcedula(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,234">
+      <children xsi:type="editmodel:MethodEditModel" name="empleado" id="maestro.entity/empleado#empleado(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/empleado#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempcargo" id="maestro.entity/empleado#getempcargo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempcedula" id="maestro.entity/empleado#getempcedula()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempcodsx" id="maestro.entity/empleado#getempcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempmail" id="maestro.entity/empleado#getempmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempnombre" id="maestro.entity/empleado#getempnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/empleado#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempcargo" id="maestro.entity/empleado#setempcargo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempcedula" id="maestro.entity/empleado#setempcedula(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempcodsx" id="maestro.entity/empleado#setempcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempmail" id="maestro.entity/empleado#setempmail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setempnombre" id="maestro.entity/empleado#setempnombre(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="flete" location="2253,564" size="172,283" id="maestro.entity/flete" runTimeClassModel="setResumen(Ljava.lang.String;),setfledias(Ljava.lang.String;),getResumen(),flete(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getfletransportadora(),setflevalor(Ljava.lang.String;),getflevalor(),getflecodsx(),setfletransportadora(Ljava.lang.String;),getfleciudad(),getfledias(),setfleciudad(Ljava.lang.String;),setflecodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,234">
+      <children xsi:type="editmodel:MethodEditModel" name="flete" id="maestro.entity/flete#flete(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/flete#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfleciudad" id="maestro.entity/flete#getfleciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getflecodsx" id="maestro.entity/flete#getflecodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfledias" id="maestro.entity/flete#getfledias()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getfletransportadora" id="maestro.entity/flete#getfletransportadora()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getflevalor" id="maestro.entity/flete#getflevalor()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/flete#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setfleciudad" id="maestro.entity/flete#setfleciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setflecodsx" id="maestro.entity/flete#setflecodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setfledias" id="maestro.entity/flete#setfledias(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setfletransportadora" id="maestro.entity/flete#setfletransportadora(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setflevalor" id="maestro.entity/flete#setflevalor(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="producto_cliente" location="2745,1101" size="250,355" id="maestro.entity/producto_cliente" runTimeClassModel="producto_cliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getprocgarantia(),setprocgarantia(Ljava.lang.String;),setprocean(Ljava.lang.String;),getproctag(),getprocean(),getprocnumcodigobarra(),setproctag(Ljava.lang.String;),getproccliente(),getprocodbarra(),setprocodbarra(Ljava.lang.String;),getproccodsx(),setprocproducto(Ljava.lang.String;),getprocproducto(),setproccliente(Ljava.lang.String;),setprocnumcodigobarra(Ljava.lang.String;),setproccodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="145,306">
+      <children xsi:type="editmodel:MethodEditModel" name="getproccliente" id="maestro.entity/producto_cliente#getproccliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproccodsx" id="maestro.entity/producto_cliente#getproccodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocean" id="maestro.entity/producto_cliente#getprocean()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocgarantia" id="maestro.entity/producto_cliente#getprocgarantia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocnumcodigobarra" id="maestro.entity/producto_cliente#getprocnumcodigobarra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocodbarra" id="maestro.entity/producto_cliente#getprocodbarra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocproducto" id="maestro.entity/producto_cliente#getprocproducto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproctag" id="maestro.entity/producto_cliente#getproctag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="producto_cliente" id="maestro.entity/producto_cliente#producto_cliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setproccliente" id="maestro.entity/producto_cliente#setproccliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setproccodsx" id="maestro.entity/producto_cliente#setproccodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocean" id="maestro.entity/producto_cliente#setprocean(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocgarantia" id="maestro.entity/producto_cliente#setprocgarantia(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocnumcodigobarra" id="maestro.entity/producto_cliente#setprocnumcodigobarra(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocodbarra" id="maestro.entity/producto_cliente#setprocodbarra(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocproducto" id="maestro.entity/producto_cliente#setprocproducto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setproctag" id="maestro.entity/producto_cliente#setproctag(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="producto" location="2543,1101" size="200,895" id="maestro.entity/producto" runTimeClassModel="getprouniempaque(),getprokilovolumen(),setprovoluniempaque(Ljava.lang.String;),setprocategoria(Ljava.lang.String;),setProcodigobarra(Ljava.lang.String;),setprokvuniempaque(Ljava.lang.String;),setpromodelo(Ljava.lang.String;),setProvolmasterpac(Ljava.lang.String;),setprokiloreal(Ljava.lang.String;),setprosubpartida(Ljava.lang.String;),setProobservacion(Ljava.lang.String;),getprocodbarra(),getprosubpartida(),getprogarantia(),getprovoluniempaque(),getProobservacion(),setprocodbarra(Ljava.lang.String;),setpropesobmp(Ljava.lang.String;),setprouniempaque(Ljava.lang.String;),setprokilovolumen(Ljava.lang.String;),getproean(),getprocategoria(),setprovolumen(Ljava.lang.String;),setProestado(Ljava.lang.String;),getprocodsx(),getprocodigocia(),getprokvuniempaque(),setResumen(Ljava.lang.String;),setprocodsx(Ljava.lang.String;),getProvolmasterpac(),getResumen(),setprocodigocia(Ljava.lang.String;),getprounimasterpac(),setprogarantia(Ljava.lang.String;),getprokvmasterpack(),getpropesobmp(),getprovolumen(),getpromodelo(),setproean(Ljava.lang.String;),getprokiloreal(),getProcodigobarra(),getProestado(),getprodescripcion(),setprokvmasterpack(Ljava.lang.String;),setprounimasterpac(Ljava.lang.String;),producto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),setprodescripcion(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="133,846">
+      <children xsi:type="editmodel:MethodEditModel" name="getProcodigobarra" id="maestro.entity/producto#getProcodigobarra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProestado" id="maestro.entity/producto#getProestado()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProobservacion" id="maestro.entity/producto#getProobservacion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProvolmasterpac" id="maestro.entity/producto#getProvolmasterpac()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/producto#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocategoria" id="maestro.entity/producto#getprocategoria()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocodbarra" id="maestro.entity/producto#getprocodbarra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocodigocia" id="maestro.entity/producto#getprocodigocia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprocodsx" id="maestro.entity/producto#getprocodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprodescripcion" id="maestro.entity/producto#getprodescripcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproean" id="maestro.entity/producto#getproean()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprogarantia" id="maestro.entity/producto#getprogarantia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprokiloreal" id="maestro.entity/producto#getprokiloreal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprokilovolumen" id="maestro.entity/producto#getprokilovolumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprokvmasterpack" id="maestro.entity/producto#getprokvmasterpack()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprokvuniempaque" id="maestro.entity/producto#getprokvuniempaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getpromodelo" id="maestro.entity/producto#getpromodelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getpropesobmp" id="maestro.entity/producto#getpropesobmp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprosubpartida" id="maestro.entity/producto#getprosubpartida()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprouniempaque" id="maestro.entity/producto#getprouniempaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprounimasterpac" id="maestro.entity/producto#getprounimasterpac()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprovolumen" id="maestro.entity/producto#getprovolumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getprovoluniempaque" id="maestro.entity/producto#getprovoluniempaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="producto" id="maestro.entity/producto#producto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProcodigobarra" id="maestro.entity/producto#setProcodigobarra(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProestado" id="maestro.entity/producto#setProestado(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProobservacion" id="maestro.entity/producto#setProobservacion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProvolmasterpac" id="maestro.entity/producto#setProvolmasterpac(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/producto#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocategoria" id="maestro.entity/producto#setprocategoria(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocodbarra" id="maestro.entity/producto#setprocodbarra(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocodigocia" id="maestro.entity/producto#setprocodigocia(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprocodsx" id="maestro.entity/producto#setprocodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprodescripcion" id="maestro.entity/producto#setprodescripcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setproean" id="maestro.entity/producto#setproean(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprogarantia" id="maestro.entity/producto#setprogarantia(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprokiloreal" id="maestro.entity/producto#setprokiloreal(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprokilovolumen" id="maestro.entity/producto#setprokilovolumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprokvmasterpack" id="maestro.entity/producto#setprokvmasterpack(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprokvuniempaque" id="maestro.entity/producto#setprokvuniempaque(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setpromodelo" id="maestro.entity/producto#setpromodelo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setpropesobmp" id="maestro.entity/producto#setpropesobmp(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprosubpartida" id="maestro.entity/producto#setprosubpartida(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprouniempaque" id="maestro.entity/producto#setprouniempaque(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprounimasterpac" id="maestro.entity/producto#setprounimasterpac(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprovolumen" id="maestro.entity/producto#setprovolumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setprovoluniempaque" id="maestro.entity/producto#setprovoluniempaque(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="sucursal" location="4186,1887" size="196,535" id="maestro.entity/sucursal" runTimeClassModel="getsucnit(),setsuccodcliente(Ljava.lang.String;),getsuctelefono(),getsucdepartamento(),setsuctelefono(Ljava.lang.String;),getsucdireccion(),setsuccodsx(Ljava.lang.String;),getsuccargo(),setsuccontacto(Ljava.lang.String;),setsucdireccion(Ljava.lang.String;),setsucemail(Ljava.lang.String;),getsucnombre(),sucursal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getsuccodsx(),getsuccontacto(),setResumen(Ljava.lang.String;),getResumen(),setsucnombre(Ljava.lang.String;),getsuccodcliente(),setsucnit(Ljava.lang.String;),setSuccodigo(Ljava.lang.String;),getsucemail(),setsucciudad(Ljava.lang.String;),setsucdepartamento(Ljava.lang.String;),getSuccodigo(),setsuccargo(Ljava.lang.String;),getsucciudad()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,486">
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/sucursal#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSuccodigo" id="maestro.entity/sucursal#getSuccodigo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuccargo" id="maestro.entity/sucursal#getsuccargo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucciudad" id="maestro.entity/sucursal#getsucciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuccodcliente" id="maestro.entity/sucursal#getsuccodcliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuccodsx" id="maestro.entity/sucursal#getsuccodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuccontacto" id="maestro.entity/sucursal#getsuccontacto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucdepartamento" id="maestro.entity/sucursal#getsucdepartamento()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucdireccion" id="maestro.entity/sucursal#getsucdireccion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucemail" id="maestro.entity/sucursal#getsucemail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucnit" id="maestro.entity/sucursal#getsucnit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucnombre" id="maestro.entity/sucursal#getsucnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsuctelefono" id="maestro.entity/sucursal#getsuctelefono()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/sucursal#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSuccodigo" id="maestro.entity/sucursal#setSuccodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuccargo" id="maestro.entity/sucursal#setsuccargo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucciudad" id="maestro.entity/sucursal#setsucciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuccodcliente" id="maestro.entity/sucursal#setsuccodcliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuccodsx" id="maestro.entity/sucursal#setsuccodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuccontacto" id="maestro.entity/sucursal#setsuccontacto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucdepartamento" id="maestro.entity/sucursal#setsucdepartamento(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucdireccion" id="maestro.entity/sucursal#setsucdireccion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucemail" id="maestro.entity/sucursal#setsucemail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucnit" id="maestro.entity/sucursal#setsucnit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsucnombre" id="maestro.entity/sucursal#setsucnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setsuctelefono" id="maestro.entity/sucursal#setsuctelefono(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sucursal" id="maestro.entity/sucursal#sucursal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="transportadora" location="4384,1887" size="237,319" id="maestro.entity/transportadora" runTimeClassModel="gettransptel(),setResumen(Ljava.lang.String;),gettranspcodsx(),getResumen(),gettranspmail(),gettranspdireccion(),settranspcontacto(Ljava.lang.String;),settranspdireccion(Ljava.lang.String;),transportadora(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),settransptel(Ljava.lang.String;),settranspmail(Ljava.lang.String;),gettranspcontacto(),gettranspnombre(),settranspnombre(Ljava.lang.String;),settranspcodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,270">
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/transportadora#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspcodsx" id="maestro.entity/transportadora#gettranspcodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspcontacto" id="maestro.entity/transportadora#gettranspcontacto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspdireccion" id="maestro.entity/transportadora#gettranspdireccion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspmail" id="maestro.entity/transportadora#gettranspmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettranspnombre" id="maestro.entity/transportadora#gettranspnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettransptel" id="maestro.entity/transportadora#gettransptel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/transportadora#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspcodsx" id="maestro.entity/transportadora#settranspcodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspcontacto" id="maestro.entity/transportadora#settranspcontacto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspdireccion" id="maestro.entity/transportadora#settranspdireccion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspmail" id="maestro.entity/transportadora#settranspmail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settranspnombre" id="maestro.entity/transportadora#settranspnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="settransptel" id="maestro.entity/transportadora#settransptel(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="transportadora" id="maestro.entity/transportadora#transportadora(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="unidad" location="3218,1941" size="188,139" id="maestro.entity/unidad" runTimeClassModel="setunicod(Ljava.lang.String;),getunicod(),getunidesc(),setunidesc(Ljava.lang.String;),unidad(Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="83,90">
+      <children xsi:type="editmodel:MethodEditModel" name="getunicod" id="maestro.entity/unidad#getunicod()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getunidesc" id="maestro.entity/unidad#getunidesc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setunicod" id="maestro.entity/unidad#setunicod(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setunidesc" id="maestro.entity/unidad#setunidesc(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="unidad" id="maestro.entity/unidad#unidad(Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="zona" location="1550,315" size="175,175" id="maestro.entity/zona" runTimeClassModel="setResumen(Ljava.lang.String;),setzonnombre(Ljava.lang.String;),zona(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getzoncodsx(),getzonnombre(),getResumen(),setzoncodsx(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,126">
+      <children xsi:type="editmodel:MethodEditModel" name="getResumen" id="maestro.entity/zona#getResumen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getzoncodsx" id="maestro.entity/zona#getzoncodsx()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getzonnombre" id="maestro.entity/zona#getzonnombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResumen" id="maestro.entity/zona#setResumen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setzoncodsx" id="maestro.entity/zona#setzoncodsx(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setzonnombre" id="maestro.entity/zona#setzonnombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="zona" id="maestro.entity/zona#zona(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstaveria" location="479,234" size="211,229" id="maestro.control/gstaveria" runTimeClassModel="gstaveria(),gstaveria(Ldb.beanConnector;),getaveria(Ljava.lang.String;),updateaveria(Lmaestro.entity.averia;),eliminar(Ljava.lang.String;),getTotalPaginaslistaaveria(Ljava.lang.String;),updateaveria(Lmaestro.form.averiaForm;),crearaveria(Ljava.lang.String;),getlistaaveria(Ljava.lang.String;Ljava.lang.String;),getlistaaveria()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="155,180">
+      <children xsi:type="editmodel:MethodEditModel" name="crearaveria" id="maestro.control/gstaveria#crearaveria(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstaveria#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaaveria" id="maestro.control/gstaveria#getTotalPaginaslistaaveria(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getaveria" id="maestro.control/gstaveria#getaveria(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaaveria" id="maestro.control/gstaveria#getlistaaveria(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaaveria" id="maestro.control/gstaveria#getlistaaveria()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstaveria" id="maestro.control/gstaveria#gstaveria()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstaveria" id="maestro.control/gstaveria#gstaveria(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateaveria" id="maestro.control/gstaveria#updateaveria(Lmaestro.entity.averia;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateaveria" id="maestro.control/gstaveria#updateaveria(Lmaestro.form.averiaForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstbodega" location="1095,591" size="219,247" id="maestro.control/gstbodega" runTimeClassModel="getbodega_by_ukey(Ljava.lang.String;),gstbodega(),crearbodega(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),eliminar(Ljava.lang.String;),getbodega(Ljava.lang.String;),updatebodega(Lmaestro.entity.bodega;),gstbodega(Ldb.beanConnector;),getlistabodega(),getTotalPaginaslistabodega(Ljava.lang.String;),getlistabodega(Ljava.lang.String;Ljava.lang.String;),updatebodega(Lmaestro.form.bodegaForm;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="161,198">
+      <children xsi:type="editmodel:MethodEditModel" name="crearbodega" id="maestro.control/gstbodega#crearbodega(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstbodega#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistabodega" id="maestro.control/gstbodega#getTotalPaginaslistabodega(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getbodega" id="maestro.control/gstbodega#getbodega(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getbodega_by_ukey" id="maestro.control/gstbodega#getbodega_by_ukey(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistabodega" id="maestro.control/gstbodega#getlistabodega()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistabodega" id="maestro.control/gstbodega#getlistabodega(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstbodega" id="maestro.control/gstbodega#gstbodega()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstbodega" id="maestro.control/gstbodega#gstbodega(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatebodega" id="maestro.control/gstbodega#updatebodega(Lmaestro.form.bodegaForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatebodega" id="maestro.control/gstbodega#updatebodega(Lmaestro.entity.bodega;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstcategoria" location="2096,1203" size="231,319" id="maestro.control/gstcategoria" runTimeClassModel="getTotalPaginaslistacategoria(Ljava.lang.String;Ljava.lang.String;),getcategoria_by_ukey(Ljava.lang.String;Ljava.lang.String;),eliminar(Ljava.lang.String;),updatecategoria(Lmaestro.entity.categoria;),getlistacategoria(Ljava.lang.String;Ljava.lang.String;),gstcategoria(),getPromedioAlistamiento(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistacategoria(Ljava.lang.String;),getlistacategoria(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),updatecategoria(Lmaestro.form.categoriaForm;),gstcategoria(Ldb.beanConnector;),getlistacategoria(Ljava.lang.String;),getcategoria(Ljava.lang.String;),crearcategoria(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistacategoria()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="170,270">
+      <children xsi:type="editmodel:MethodEditModel" name="crearcategoria" id="maestro.control/gstcategoria#crearcategoria(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstcategoria#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPromedioAlistamiento" id="maestro.control/gstcategoria#getPromedioAlistamiento(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistacategoria" id="maestro.control/gstcategoria#getTotalPaginaslistacategoria(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistacategoria" id="maestro.control/gstcategoria#getTotalPaginaslistacategoria(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcategoria" id="maestro.control/gstcategoria#getcategoria(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcategoria_by_ukey" id="maestro.control/gstcategoria#getcategoria_by_ukey(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacategoria" id="maestro.control/gstcategoria#getlistacategoria()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacategoria" id="maestro.control/gstcategoria#getlistacategoria(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacategoria" id="maestro.control/gstcategoria#getlistacategoria(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacategoria" id="maestro.control/gstcategoria#getlistacategoria(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcategoria" id="maestro.control/gstcategoria#gstcategoria()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcategoria" id="maestro.control/gstcategoria#gstcategoria(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecategoria" id="maestro.control/gstcategoria#updatecategoria(Lmaestro.entity.categoria;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecategoria" id="maestro.control/gstcategoria#updatecategoria(Lmaestro.form.categoriaForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstcausal_hit" location="2171,921" size="235,229" id="maestro.control/gstcausal_hit" runTimeClassModel="getTotalPaginaslistacausal_hit(Ljava.lang.String;),getcausal_hit(Ljava.lang.String;),gstcausal_hit(),gstcausal_hit(Ldb.beanConnector;),eliminar(Ljava.lang.String;),crearcausal_hit(Ljava.lang.String;Ljava.lang.String;),getlistacausal_hit(),getlistacausal_hit(Ljava.lang.String;Ljava.lang.String;),updatecausal_hit(Lmaestro.form.causal_hitForm;),updatecausal_hit(Lmaestro.entity.causal_hit;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="174,180">
+      <children xsi:type="editmodel:MethodEditModel" name="crearcausal_hit" id="maestro.control/gstcausal_hit#crearcausal_hit(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstcausal_hit#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistacausal_hit" id="maestro.control/gstcausal_hit#getTotalPaginaslistacausal_hit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcausal_hit" id="maestro.control/gstcausal_hit#getcausal_hit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacausal_hit" id="maestro.control/gstcausal_hit#getlistacausal_hit(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacausal_hit" id="maestro.control/gstcausal_hit#getlistacausal_hit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcausal_hit" id="maestro.control/gstcausal_hit#gstcausal_hit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcausal_hit" id="maestro.control/gstcausal_hit#gstcausal_hit(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecausal_hit" id="maestro.control/gstcausal_hit#updatecausal_hit(Lmaestro.form.causal_hitForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecausal_hit" id="maestro.control/gstcausal_hit#updatecausal_hit(Lmaestro.entity.causal_hit;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstcausal" location="2329,1365" size="212,229" id="maestro.control/gstcausal" runTimeClassModel="getlistacausal(Ljava.lang.String;Ljava.lang.String;),eliminar(Ljava.lang.String;),getcausal(Ljava.lang.String;),getlistacausal(),getTotalPaginaslistacausal(Ljava.lang.String;),updatecausal(Lmaestro.entity.causal;),gstcausal(),gstcausal(Ldb.beanConnector;),crearcausal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),updatecausal(Lmaestro.form.causalForm;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="157,180">
+      <children xsi:type="editmodel:MethodEditModel" name="crearcausal" id="maestro.control/gstcausal#crearcausal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstcausal#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistacausal" id="maestro.control/gstcausal#getTotalPaginaslistacausal(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcausal" id="maestro.control/gstcausal#getcausal(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacausal" id="maestro.control/gstcausal#getlistacausal(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacausal" id="maestro.control/gstcausal#getlistacausal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcausal" id="maestro.control/gstcausal#gstcausal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcausal" id="maestro.control/gstcausal#gstcausal(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecausal" id="maestro.control/gstcausal#updatecausal(Lmaestro.entity.causal;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecausal" id="maestro.control/gstcausal#updatecausal(Lmaestro.form.causalForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstciudad" location="3720,1887" size="227,337" id="maestro.control/gstciudad" runTimeClassModel="gstciudad(),getciudad_by_ukeyCodigo(Ljava.lang.String;),gstciudad(Ldb.beanConnector;),getciudad(Ljava.lang.String;),getTotalPaginaslistaciudadConDepto(Ljava.lang.String;),eliminar(Ljava.lang.String;),crearciudad(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistaciudad(),getlistaciudadByDepto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistaciudad(Ljava.lang.String;Ljava.lang.String;),updateciudad(Lmaestro.entity.ciudad;),updateciudad(Lmaestro.form.ciudadForm;),getTotalPaginaslistaciudad(Ljava.lang.String;),getciudad_by_ukeyNombre(Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistaciudadByDepto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistaciudadConDepto(Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="204,288">
+      <children xsi:type="editmodel:MethodEditModel" name="crearciudad" id="maestro.control/gstciudad#crearciudad(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstciudad#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaciudad" id="maestro.control/gstciudad#getTotalPaginaslistaciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaciudadByDepto" id="maestro.control/gstciudad#getTotalPaginaslistaciudadByDepto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaciudadConDepto" id="maestro.control/gstciudad#getTotalPaginaslistaciudadConDepto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getciudad" id="maestro.control/gstciudad#getciudad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getciudad_by_ukeyCodigo" id="maestro.control/gstciudad#getciudad_by_ukeyCodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getciudad_by_ukeyNombre" id="maestro.control/gstciudad#getciudad_by_ukeyNombre(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaciudad" id="maestro.control/gstciudad#getlistaciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaciudad" id="maestro.control/gstciudad#getlistaciudad(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaciudadByDepto" id="maestro.control/gstciudad#getlistaciudadByDepto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaciudadConDepto" id="maestro.control/gstciudad#getlistaciudadConDepto(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstciudad" id="maestro.control/gstciudad#gstciudad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstciudad" id="maestro.control/gstciudad#gstciudad(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateciudad" id="maestro.control/gstciudad#updateciudad(Lmaestro.entity.ciudad;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateciudad" id="maestro.control/gstciudad#updateciudad(Lmaestro.form.ciudadForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstcliente" location="2982,1743" size="234,337" id="maestro.control/gstcliente" runTimeClassModel="eliminar(Ljava.lang.String;),getlistacliente(Ljava.lang.String;Ljava.lang.String;),updatecliente(Lmaestro.form.clienteForm;),getTotalPaginaslistaclienteByEmpresa(Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistacliente(Ljava.lang.String;),crearcliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistaclienteByEmpresa(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistacliente(),gstcliente(Ldb.beanConnector;),getcliente(Ljava.lang.String;),getlistaclienteByCliente(Ljava.lang.String;),gstcliente(),updatecliente(Lmaestro.entity.cliente;),getcliente_by_ukeyNit(Ljava.lang.String;),getlistacliente(Ljava.lang.String;),getcliente_by_ukeyNombre(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="211,288">
+      <children xsi:type="editmodel:MethodEditModel" name="crearcliente" id="maestro.control/gstcliente#crearcliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstcliente#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistacliente" id="maestro.control/gstcliente#getTotalPaginaslistacliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaclienteByEmpresa" id="maestro.control/gstcliente#getTotalPaginaslistaclienteByEmpresa(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcliente" id="maestro.control/gstcliente#getcliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcliente_by_ukeyNit" id="maestro.control/gstcliente#getcliente_by_ukeyNit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcliente_by_ukeyNombre" id="maestro.control/gstcliente#getcliente_by_ukeyNombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacliente" id="maestro.control/gstcliente#getlistacliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacliente" id="maestro.control/gstcliente#getlistacliente(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacliente" id="maestro.control/gstcliente#getlistacliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaclienteByCliente" id="maestro.control/gstcliente#getlistaclienteByCliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaclienteByEmpresa" id="maestro.control/gstcliente#getlistaclienteByEmpresa(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcliente" id="maestro.control/gstcliente#gstcliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcliente" id="maestro.control/gstcliente#gstcliente(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecliente" id="maestro.control/gstcliente#updatecliente(Lmaestro.entity.cliente;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecliente" id="maestro.control/gstcliente#updatecliente(Lmaestro.form.clienteForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstcompania" location="1472,918" size="234,247" id="maestro.control/gstcompania" runTimeClassModel="getlistacompania(Ljava.lang.String;Ljava.lang.String;),getcompania(Ljava.lang.String;),gstcompania(),eliminar(Ljava.lang.String;),gstcompania(Ldb.beanConnector;),updatecompania(Lmaestro.entity.compania;),getTotalPaginaslistacompania(Ljava.lang.String;),updatecompania(Lmaestro.form.companiaForm;),crearcompania(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistacompania(),getcompania_by_ukey(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="171,198">
+      <children xsi:type="editmodel:MethodEditModel" name="crearcompania" id="maestro.control/gstcompania#crearcompania(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstcompania#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistacompania" id="maestro.control/gstcompania#getTotalPaginaslistacompania(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcompania" id="maestro.control/gstcompania#getcompania(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getcompania_by_ukey" id="maestro.control/gstcompania#getcompania_by_ukey(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacompania" id="maestro.control/gstcompania#getlistacompania()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistacompania" id="maestro.control/gstcompania#getlistacompania(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcompania" id="maestro.control/gstcompania#gstcompania()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstcompania" id="maestro.control/gstcompania#gstcompania(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecompania" id="maestro.control/gstcompania#updatecompania(Lmaestro.form.companiaForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatecompania" id="maestro.control/gstcompania#updatecompania(Lmaestro.entity.compania;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstdepartamento" location="3218,1674" size="260,265" id="maestro.control/gstdepartamento" runTimeClassModel="updatedepartamento(Lmaestro.form.departamentoForm;),getdepartamento_by_ukeyCodigo(Ljava.lang.String;),getdepartamento(Ljava.lang.String;),eliminar(Ljava.lang.String;),updatedepartamento(Lmaestro.entity.departamento;),getTotalPaginaslistadepartamento(Ljava.lang.String;),getdepartamento_by_ukeyNombre(Ljava.lang.String;),creardepartamento(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),gstdepartamento(),getlistadepartamento(),gstdepartamento(Ldb.beanConnector;),getlistadepartamento(Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="195,216">
+      <children xsi:type="editmodel:MethodEditModel" name="creardepartamento" id="maestro.control/gstdepartamento#creardepartamento(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstdepartamento#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistadepartamento" id="maestro.control/gstdepartamento#getTotalPaginaslistadepartamento(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdepartamento" id="maestro.control/gstdepartamento#getdepartamento(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdepartamento_by_ukeyCodigo" id="maestro.control/gstdepartamento#getdepartamento_by_ukeyCodigo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdepartamento_by_ukeyNombre" id="maestro.control/gstdepartamento#getdepartamento_by_ukeyNombre(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistadepartamento" id="maestro.control/gstdepartamento#getlistadepartamento(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistadepartamento" id="maestro.control/gstdepartamento#getlistadepartamento()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstdepartamento" id="maestro.control/gstdepartamento#gstdepartamento()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstdepartamento" id="maestro.control/gstdepartamento#gstdepartamento(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatedepartamento" id="maestro.control/gstdepartamento#updatedepartamento(Lmaestro.entity.departamento;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatedepartamento" id="maestro.control/gstdepartamento#updatedepartamento(Lmaestro.form.departamentoForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstempleado" location="3949,1887" size="235,247" id="maestro.control/gstempleado" runTimeClassModel="getempleado(Ljava.lang.String;),getlistaempleado(Ljava.lang.String;Ljava.lang.String;),eliminar(Ljava.lang.String;),gstempleado(Ldb.beanConnector;),updateempleado(Lmaestro.entity.empleado;),gstempleado(),getempleado_by_ukey(Ljava.lang.String;),updateempleado(Lmaestro.form.empleadoForm;),getlistaempleado(),getTotalPaginaslistaempleado(Ljava.lang.String;),crearempleado(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="171,198">
+      <children xsi:type="editmodel:MethodEditModel" name="crearempleado" id="maestro.control/gstempleado#crearempleado(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstempleado#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaempleado" id="maestro.control/gstempleado#getTotalPaginaslistaempleado(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempleado" id="maestro.control/gstempleado#getempleado(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getempleado_by_ukey" id="maestro.control/gstempleado#getempleado_by_ukey(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaempleado" id="maestro.control/gstempleado#getlistaempleado()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaempleado" id="maestro.control/gstempleado#getlistaempleado(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstempleado" id="maestro.control/gstempleado#gstempleado(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstempleado" id="maestro.control/gstempleado#gstempleado()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateempleado" id="maestro.control/gstempleado#updateempleado(Lmaestro.entity.empleado;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateempleado" id="maestro.control/gstempleado#updateempleado(Lmaestro.form.empleadoForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstflete" location="1349,456" size="199,247" id="maestro.control/gstflete" runTimeClassModel="getflete(Ljava.lang.String;),gstflete(),updateflete(Lmaestro.form.fleteForm;),updateflete(Lmaestro.entity.flete;),eliminar(Ljava.lang.String;),crearflete(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getflete_by_ukey(Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistaflete(Ljava.lang.String;),gstflete(Ldb.beanConnector;),getlistaflete(),getlistaflete(Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="146,198">
+      <children xsi:type="editmodel:MethodEditModel" name="crearflete" id="maestro.control/gstflete#crearflete(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstflete#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaflete" id="maestro.control/gstflete#getTotalPaginaslistaflete(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getflete" id="maestro.control/gstflete#getflete(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getflete_by_ukey" id="maestro.control/gstflete#getflete_by_ukey(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaflete" id="maestro.control/gstflete#getlistaflete()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaflete" id="maestro.control/gstflete#getlistaflete(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstflete" id="maestro.control/gstflete#gstflete()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstflete" id="maestro.control/gstflete#gstflete(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateflete" id="maestro.control/gstflete#updateflete(Lmaestro.form.fleteForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateflete" id="maestro.control/gstflete#updateflete(Lmaestro.entity.flete;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstproducto_cliente" location="1736,315" size="277,247" id="maestro.control/gstproducto_cliente" runTimeClassModel="getlistaproducto_cliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),updateproducto_cliente(Lmaestro.entity.producto_cliente;),updateproducto_cliente(Lmaestro.form.producto_clienteForm;),crearproducto_cliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),eliminar(Ljava.lang.String;),getlistaproducto_cliente(),getproducto_cliente(Ljava.lang.String;Ljava.lang.String;),gstproducto_cliente(Ldb.beanConnector;),getproducto_cliente(Ljava.lang.String;),gstproducto_cliente(),getTotalPaginaslistaproducto_cliente(Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="205,198">
+      <children xsi:type="editmodel:MethodEditModel" name="crearproducto_cliente" id="maestro.control/gstproducto_cliente#crearproducto_cliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstproducto_cliente#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaproducto_cliente" id="maestro.control/gstproducto_cliente#getTotalPaginaslistaproducto_cliente(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaproducto_cliente" id="maestro.control/gstproducto_cliente#getlistaproducto_cliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaproducto_cliente" id="maestro.control/gstproducto_cliente#getlistaproducto_cliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproducto_cliente" id="maestro.control/gstproducto_cliente#getproducto_cliente(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproducto_cliente" id="maestro.control/gstproducto_cliente#getproducto_cliente(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstproducto_cliente" id="maestro.control/gstproducto_cliente#gstproducto_cliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstproducto_cliente" id="maestro.control/gstproducto_cliente#gstproducto_cliente(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateproducto_cliente" id="maestro.control/gstproducto_cliente#updateproducto_cliente(Lmaestro.form.producto_clienteForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateproducto_cliente" id="maestro.control/gstproducto_cliente#updateproducto_cliente(Lmaestro.entity.producto_cliente;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstproducto" location="3480,1674" size="238,409" id="maestro.control/gstproducto" runTimeClassModel="getTotalPaginaslistaproducto(Ljava.lang.String;),getTotalListadoProductosPacking(Ljava.lang.String;Ljava.lang.String;),getlistaproductoConSaldo(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistaproducto(Ljava.lang.String;Ljava.lang.String;),crearproducto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),eliminar(Ljava.lang.String;),getlistaproducto(),getlistaproductoByTrafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),gstproducto(),updateproducto(Lmaestro.entity.producto;),getproducto(Ljava.lang.String;),updateproducto(Lmaestro.form.productoForm;),getproductoByUk(Ljava.lang.String;Ljava.lang.String;),gstproducto(Ldb.beanConnector;),getlistaproducto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistaproductoConSaldo(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistaproducto(Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistaproductoByTrafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getlistaRangoProducto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getListadoProductosPacking(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="215,360">
+      <children xsi:type="editmodel:MethodEditModel" name="crearproducto" id="maestro.control/gstproducto#crearproducto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstproducto#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getListadoProductosPacking" id="maestro.control/gstproducto#getListadoProductosPacking(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalListadoProductosPacking" id="maestro.control/gstproducto#getTotalListadoProductosPacking(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaproducto" id="maestro.control/gstproducto#getTotalPaginaslistaproducto(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaproducto" id="maestro.control/gstproducto#getTotalPaginaslistaproducto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaproductoByTrafico" id="maestro.control/gstproducto#getTotalPaginaslistaproductoByTrafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaproductoConSaldo" id="maestro.control/gstproducto#getTotalPaginaslistaproductoConSaldo(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaRangoProducto" id="maestro.control/gstproducto#getlistaRangoProducto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaproducto" id="maestro.control/gstproducto#getlistaproducto(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaproducto" id="maestro.control/gstproducto#getlistaproducto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaproducto" id="maestro.control/gstproducto#getlistaproducto(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaproductoByTrafico" id="maestro.control/gstproducto#getlistaproductoByTrafico(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaproductoConSaldo" id="maestro.control/gstproducto#getlistaproductoConSaldo(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproducto" id="maestro.control/gstproducto#getproducto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getproductoByUk" id="maestro.control/gstproducto#getproductoByUk(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstproducto" id="maestro.control/gstproducto#gstproducto(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstproducto" id="maestro.control/gstproducto#gstproducto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateproducto" id="maestro.control/gstproducto#updateproducto(Lmaestro.entity.producto;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateproducto" id="maestro.control/gstproducto#updateproducto(Lmaestro.form.productoForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstsucursal" location="2745,1527" size="235,265" id="maestro.control/gstsucursal" runTimeClassModel="getTotalPaginaslistasucursal(Ljava.lang.String;Ljava.lang.String;),gstsucursal(Ldb.beanConnector;),crearsucursal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getTotalPaginaslistasucursalByCliente(Ljava.lang.String;Ljava.lang.String;),getlistasucursal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),eliminar(Ljava.lang.String;),getlistasucursal(),getsucursal(Ljava.lang.String;),gstsucursal(),updatesucursal(Lmaestro.form.sucursalForm;),getlistasucursalByCliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),updatesucursal(Lmaestro.entity.sucursal;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="212,216">
+      <children xsi:type="editmodel:MethodEditModel" name="crearsucursal" id="maestro.control/gstsucursal#crearsucursal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstsucursal#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistasucursal" id="maestro.control/gstsucursal#getTotalPaginaslistasucursal(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistasucursalByCliente" id="maestro.control/gstsucursal#getTotalPaginaslistasucursalByCliente(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistasucursal" id="maestro.control/gstsucursal#getlistasucursal(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistasucursal" id="maestro.control/gstsucursal#getlistasucursal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistasucursalByCliente" id="maestro.control/gstsucursal#getlistasucursalByCliente(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getsucursal" id="maestro.control/gstsucursal#getsucursal(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstsucursal" id="maestro.control/gstsucursal#gstsucursal(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstsucursal" id="maestro.control/gstsucursal#gstsucursal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatesucursal" id="maestro.control/gstsucursal#updatesucursal(Lmaestro.entity.sucursal;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatesucursal" id="maestro.control/gstsucursal#updatesucursal(Lmaestro.form.sucursalForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gsttransportadora" location="829,384" size="264,247" id="maestro.control/gsttransportadora" runTimeClassModel="gettransportadora(Ljava.lang.String;),gsttransportadora(),updatetransportadora(Lmaestro.entity.transportadora;),creartransportadora(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),updatetransportadora(Lmaestro.form.transportadoraForm;),getlistatransportadora(),eliminar(Ljava.lang.String;),getTotalPaginaslistatransportadora(Ljava.lang.String;),getlistatransportadora(Ljava.lang.String;Ljava.lang.String;),gettransportadora_by_ukey(Ljava.lang.String;),gsttransportadora(Ldb.beanConnector;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="197,198">
+      <children xsi:type="editmodel:MethodEditModel" name="creartransportadora" id="maestro.control/gsttransportadora#creartransportadora(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gsttransportadora#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistatransportadora" id="maestro.control/gsttransportadora#getTotalPaginaslistatransportadora(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistatransportadora" id="maestro.control/gsttransportadora#getlistatransportadora()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistatransportadora" id="maestro.control/gsttransportadora#getlistatransportadora(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettransportadora" id="maestro.control/gsttransportadora#gettransportadora(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gettransportadora_by_ukey" id="maestro.control/gsttransportadora#gettransportadora_by_ukey(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gsttransportadora" id="maestro.control/gsttransportadora#gsttransportadora(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gsttransportadora" id="maestro.control/gsttransportadora#gsttransportadora()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatetransportadora" id="maestro.control/gsttransportadora#updatetransportadora(Lmaestro.entity.transportadora;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatetransportadora" id="maestro.control/gsttransportadora#updatetransportadora(Lmaestro.form.transportadoraForm;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstunidad" location="3720,1674" size="215,211" id="maestro.control/gstunidad" runTimeClassModel="getunidad(Ljava.lang.String;),getTotalPaginaslistaunidad(Ljava.lang.String;),eliminar(Ljava.lang.String;),gstunidad(),getlistaunidad(),updateunidad(Lmaestro.entity.unidad;),gstunidad(Ldb.beanConnector;),getlistaunidad(Ljava.lang.String;Ljava.lang.String;),crearunidad(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="157,162">
+      <children xsi:type="editmodel:MethodEditModel" name="crearunidad" id="maestro.control/gstunidad#crearunidad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstunidad#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistaunidad" id="maestro.control/gstunidad#getTotalPaginaslistaunidad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaunidad" id="maestro.control/gstunidad#getlistaunidad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistaunidad" id="maestro.control/gstunidad#getlistaunidad(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getunidad" id="maestro.control/gstunidad#getunidad(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstunidad" id="maestro.control/gstunidad#gstunidad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstunidad" id="maestro.control/gstunidad#gstunidad(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateunidad" id="maestro.control/gstunidad#updateunidad(Lmaestro.entity.unidad;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="gstzona" location="1550,633" size="202,247" id="maestro.control/gstzona" runTimeClassModel="updatezona(Lmaestro.entity.zona;),getzona_by_ukey(Ljava.lang.String;),getlistazona(),updatezona(Lmaestro.form.zonaForm;),eliminar(Ljava.lang.String;),getzona(Ljava.lang.String;),getlistazona(Ljava.lang.String;Ljava.lang.String;),crearzona(Ljava.lang.String;),getTotalPaginaslistazona(Ljava.lang.String;),gstzona(),gstzona(Ldb.beanConnector;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,198">
+      <children xsi:type="editmodel:MethodEditModel" name="crearzona" id="maestro.control/gstzona#crearzona(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminar" id="maestro.control/gstzona#eliminar(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalPaginaslistazona" id="maestro.control/gstzona#getTotalPaginaslistazona(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistazona" id="maestro.control/gstzona#getlistazona()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getlistazona" id="maestro.control/gstzona#getlistazona(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getzona" id="maestro.control/gstzona#getzona(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getzona_by_ukey" id="maestro.control/gstzona#getzona_by_ukey(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstzona" id="maestro.control/gstzona#gstzona()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="gstzona" id="maestro.control/gstzona#gstzona(Ldb.beanConnector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatezona" id="maestro.control/gstzona#updatezona(Lmaestro.form.zonaForm;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updatezona" id="maestro.control/gstzona#updatezona(Lmaestro.entity.zona;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="averiaAction" location="1410,1236" size="228,67" id="maestro.action/averiaAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/averiaAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="bodegaAction" location="225,836" size="236,67" id="maestro.action/bodegaAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/bodegaAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="categoriaAction" location="1410,1167" size="248,67" id="maestro.action/categoriaAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/categoriaAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="causal_hitAction" location="1095,522" size="252,67" id="maestro.action/causal_hitAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/causal_hitAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="causalAction" location="2982,1674" size="229,67" id="maestro.action/causalAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/causalAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ciudadAction" location="829,705" size="231,67" id="maestro.action/ciudadAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/ciudadAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="clienteAction" location="1410,1443" size="231,67" id="maestro.action/clienteAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/clienteAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="companiaAction" location="1410,1374" size="251,67" id="maestro.action/companiaAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/companiaAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="departamentoAction" location="2745,1458" size="277,67" id="maestro.action/departamentoAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/departamentoAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="empleadoAction" location="1095,384" size="252,67" id="maestro.action/empleadoAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/empleadoAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="fleteAction" location="1115,315" size="216,67" id="maestro.action/fleteAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/fleteAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="producto_clienteAction" location="1875,1134" size="294,67" id="maestro.action/producto_clienteAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/producto_clienteAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="productoAction" location="1410,1305" size="244,67" id="maestro.action/productoAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/productoAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="sucursalAction" location="1410,1512" size="240,67" id="maestro.action/sucursalAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/sucursalAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="transportadoraAction" location="829,315" size="281,67" id="maestro.action/transportadoraAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/transportadoraAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="zonaAction" location="1095,453" size="219,67" id="maestro.action/zonaAction" runTimeClassModel="execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="maestro.action/zonaAction#execute(Lorg.apache.struts.action.ActionMapping;Lorg.apache.struts.action.ActionForm;Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true"/>
+</editmodel:ClassDiagramEditModel>
