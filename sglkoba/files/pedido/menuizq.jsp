@@ -72,6 +72,13 @@ if(despcodsx!=null && !despcodsx.equals("") ) {
 <% } %>
 
 <% } %>
+
+<% if( gper.verIzquierdo(grupo, "pedido", "subir_valor_unitario.jsp") ) { %>
+<tr > 
+	<td>&nbsp;</td>
+		<td><a href="main.jsp?app=pedido&modulo=subir_valor_unitario">  :: Cargar Valor Unitario </a> 
+<% } %>
+
     <tr  >
       <td>&nbsp;</td>
       <td ><a href="main.jsp?app=pedido&amp;modulo=subir">Subir Archivo</a></td>

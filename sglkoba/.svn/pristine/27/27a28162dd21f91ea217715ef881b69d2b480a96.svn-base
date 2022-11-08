@@ -1,9 +1,0 @@
-ipservidor = localhost
-basedatos = koba4
-usuario = userkoba
-password = sanapi96
-puerto = 5433
-ruta_upload = uploads
-ruta_pdf = pdf
-correoclientesvarios = soporte@sli.com.co
-

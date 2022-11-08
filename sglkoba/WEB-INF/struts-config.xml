@@ -527,8 +527,8 @@
    <forward name="subir_ingreso" path="/main.jsp?app=distrinal&amp;modulo=subir_ingreso" redirect="false" />
 </action>
 
-<action path="/subirDespachoDistrinalAction" type="distrinal.action.subirDespachoDistrinalAction" name="fileForm" scope="request" input="/main.jsp?app=distrinal&amp;modulo=subir_despacho">
-   <forward name="subir_despacho" path="/main.jsp?app=distrinal&amp;modulo=subir_despacho" redirect="false" />
+<action path="/subir_valor_unitario" type="registro.fotografico.action.SubirValorUnitarioAction" name="fileForm" scope="request" input="/main.jsp?app=pedido&amp;modulo=subir_valor_unitario">
+   <forward name="subir_valor_unitario" path="/main.jsp?app=pedido&amp;modulo=subir_valor_unitario" redirect="false" />
 </action>
 
 <action path="/registro_almacenamientoAction" type="registro.action.registro_almacenamientoAction" name="registro_almacenamientoForm" input="/main.jsp?app=movil&amp;modulo=default" scope="request">
@@ -537,6 +537,10 @@
    <forward name="reubicacion" path="/main.jsp?app=movil&amp;modulo=reubicacion" redirect="false" />
    <forward name="descargue" path="/main.jsp?app=movil&amp;modulo=descargue" redirect="false" />
    <forward name="descargue_qr" path="/main.jsp?app=movil&amp;modulo=descargue_qr" redirect="false" />
+</action>
+
+<action path="/subirDespachoDistrinalAction" type="distrinal.action.subirDespachoDistrinalAction" name="fileForm" scope="request" input="/main.jsp?app=distrinal&amp;modulo=subir_despacho">
+   <forward name="subir_despacho" path="/main.jsp?app=distrinal&amp;modulo=subir_despacho" redirect="false" />
 </action>
 
 </action-mappings>
