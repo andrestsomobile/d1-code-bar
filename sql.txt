@@ -1,0 +1,1 @@
+insert into permiso values(74, 1, 'pedido', 'subir_valor_unitario.jsp', 3, '74 PEDIDO SUBIR_VALOR_UNITARIO.JSP ADMINISTRADORES')
