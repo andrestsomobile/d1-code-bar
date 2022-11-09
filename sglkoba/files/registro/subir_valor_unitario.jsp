@@ -122,7 +122,7 @@ function Guardar()
 <table >
 	<tr>
 		<%@include file="compania.jsp"%> 
-		<td><a href="files/registro/MODELOVALORUNITARIO.txt" download="files/registro/MODELOVALORUNITARIO.txt">Archivo modelo de valor unitario</a>
+		<td><a href="files/registro/MODELOVALORUNITARIO.xls" download="files/registro/MODELOVALORUNITARIO.xls">Archivo modelo de valor unitario</a>
 	</tr>
 </table>
 </html:form>
@@ -205,7 +205,7 @@ request.setAttribute("lista", lista);
 <tr>
     <th>Id
 	<th>Fecha Cargue
-	<th>Compañia
+	<th>Compaï¿½ia
 	<th>Archivo
 	<th>Opcion
 </tr>
