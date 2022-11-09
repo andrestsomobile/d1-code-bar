@@ -6,3 +6,6 @@ alter table public.producto add provalorunitario numeric;
 alter table public.producto add audcodigocargue numeric;
 
 alter table auditoriacargue alter column acinconsistencias type character varying(1500);
+
+
+alter table referencia_pedido add column refpvalordeclarado numeric;

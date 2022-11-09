@@ -553,8 +553,19 @@ public final class fileAction extends Action {
 												count = gpedestado.getPedidoCountEstado(pedcompania, pednumpedido, pedestadofin);
 												if (count == 1) {
 													try {
-														grefp.crearreferencia_pedido(pedcodsx, procodsx, ent.getEntbodega(), ent.getentposicion(), saldo_ent.toPlainString(), valorunit, total.toPlainString(), ent.getentcodsx(), nacdetalle, saldo_ent.toPlainString(), ent.getentpesoneto(), ent
-																.getentpesobruto(), neto.toPlainString(), bruto.toPlainString(), valorfacunit, totalfac.toPlainString());
+														Double uniEmpaque = Double.parseDouble(pro.getprouniempaque());
+														Double uniPac = Double.parseDouble(pro.getprounimasterpac());
+														Double valorUnitario = 1.0;
+														
+														if(pro.getProvalorunitario() != null && !pro.getProvalorunitario().isEmpty()) {
+															valorUnitario = Double.parseDouble(pro.getProvalorunitario());
+														}
+														
+														Double valorDeclarado = (uniEmpaque * uniPac) * valorUnitario;
+														grefp.crearreferenciaPedidoValorDeclarado(pedcodsx, procodsx, ent.getEntbodega(), ent.getentposicion(), saldo_ent.toPlainString(), valorunit, total.toPlainString(), ent.getentcodsx(), nacdetalle, saldo_ent.toPlainString(), ent.getentpesoneto(), ent
+																.getentpesobruto(), neto.toPlainString(), 
+																bruto.toPlainString(), valorfacunit,
+																totalfac.toPlainString(), valorDeclarado.toString());
 														procesado _procesado = new procesado(pednumpedido, promodelo, pro.getprodescripcion(), saldo_ent.intValue());
 														listaprocesados.add(_procesado);
 													} catch (SQLException e) {
