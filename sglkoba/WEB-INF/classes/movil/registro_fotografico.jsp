@@ -328,8 +328,8 @@ a.vClass:link {color: blue;}
 
  <tr>
   	  <td nowrap="nowrap"><img width="100px" height="auto" alt="" src="<%=ruta_ver + File.separator + f.getName() %>"> 
-      <td nowrap="nowrap"><%=ruta_ver + File.separator + f.getName() %>
-      <td nowrap="nowrap"><%= getServletContext().getRealPath("//") + File.separator + ruta_pdf + File.separator + tipoAdjunto + File.separator + clave + File.separator %> Kb
+      <td nowrap="nowrap"><%=ruta_ver + File.separator + f.getName()%>
+      <td nowrap="nowrap"><%= ( f.length() / 1000) %> Kb
       <td nowrap="nowrap"><%= new Date( f.lastModified() )%>
       <td nowrap="nowrap"><a href='main_movil.jsp?app=movil&modulo=registro_fotografico&clave=<%=clave%>&eliminararchivo=ok&nombrearchivo=<%=f.getName() %>'>Eliminar</a>
  </tr>

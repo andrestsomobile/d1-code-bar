@@ -205,9 +205,9 @@ request.setAttribute("lista", lista);
 <tr>
     <th>Id
 	<th>Fecha Cargue
-	<th>Compa�ia
+	<th>Compa&ntilde;ia
 	<th>Archivo
-	<th>Opcion
+	<th>Errores
 </tr>
 
 	<logic:iterate id="temp" name="lista" type="auditoriacargue">
@@ -220,6 +220,7 @@ request.setAttribute("lista", lista);
 		 <td>  <%= temp.getAcfechainicio()%>
 		 <td>  <%= comp.getcomnombre()%>
 		 <td>  <%= temp.getAcarchivo()%>
+		 <td>  <%= temp.getAcinconsistencias() %>
 		</tr>
 	</logic:iterate>
 </table>

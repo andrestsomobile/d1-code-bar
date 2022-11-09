@@ -21,20 +21,11 @@ import administracion.entity.usuario;
 import auditoria.control.gstauditoriacargue;
 import auditoria.entity.auditoriacargue;
 import db.beanConnector;
-import distrinal.control.gstdistnal_despacho;
 import jxl.Cell;
-import jxl.CellType;
-import jxl.NumberCell;
 import jxl.Sheet;
 import jxl.Workbook;
-import maestro.control.gstcliente;
 import maestro.control.gstproducto;
-import maestro.control.gstsucursal;
-import maestro.control.gsttransportadora;
-import maestro.entity.cliente;
 import maestro.entity.producto;
-import maestro.entity.sucursal;
-import maestro.entity.transportadora;
 import util.Fecha;
 
 public final class SubirValorUnitarioAction extends Action {
@@ -46,7 +37,6 @@ public final class SubirValorUnitarioAction extends Action {
 		
 		String mensaje = "";
 		String destino = "subir_valor_unitario";
-		gstdistnal_despacho control = new gstdistnal_despacho();
 		gstauditoriacargue gaud = new gstauditoriacargue();		
 
 		// OPCION DE delete:
@@ -55,7 +45,6 @@ public final class SubirValorUnitarioAction extends Action {
 			try {
 				auditoriacargue aud = gaud.getauditoriacargue(codsx);
 				gaud.updateauditoriacargue(codsx, aud.getAccodcia(), aud.getAcactividad(), aud.getAcfechainicio(), Fecha.getFecha(), "ELIMINADO");
-				control.eliminardistnal_despacho(codsx);
 				mensaje = "Registro borrado con exito";
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
@@ -120,9 +109,10 @@ public final class SubirValorUnitarioAction extends Action {
 		String actividad = "SubirValorUnitario";
 		String fechaaud = Fecha.getFecha();
 		File archivoproceso = new File(ruta_archivo);
+		int auccodsx = 0;
 		try {
 
-			int auccodsx = gaud.crearauditoriacargue(codcia, actividad, fechaaud, "Iniciando...", accodusuario, archivoproceso.getName());
+			auccodsx = gaud.crearauditoriacargue(codcia, actividad, fechaaud, "Iniciando...", accodusuario, archivoproceso.getName());
 		
 			Workbook book = Workbook.getWorkbook(archivoproceso);
 			Sheet hoja = book.getSheet(0); 
@@ -159,6 +149,23 @@ public final class SubirValorUnitarioAction extends Action {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			inconsistencias.add("Error en archivo. " + ex.getMessage());
+		}
+		String fechafinaud = Fecha.getFecha();
+		try {
+			String observacion = "Finalizado...";
+			String error = "";
+			if(inconsistencias != null && inconsistencias.size() > 0) {
+				observacion = "Error...";
+				
+				for(String errores: inconsistencias) {
+					error+= errores + ",";
+				}
+			}
+			
+			gaud.updateauditoriacargue(auccodsx+"", codcia, actividad, fechaaud, fechafinaud, observacion, error);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return inconsistencias;
 	}
