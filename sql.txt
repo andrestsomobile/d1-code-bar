@@ -4,3 +4,5 @@ insert into permiso values(387, 1, 'pedido', 'subir_valor_unitario.jsp', 3, '387
 alter table public.producto add provalorunitario numeric;
 
 alter table public.producto add audcodigocargue numeric;
+
+alter table auditoriacargue alter column acinconsistencias type character varying(1500);
