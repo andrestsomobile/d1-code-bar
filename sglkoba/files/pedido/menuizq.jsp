@@ -73,10 +73,10 @@ if(despcodsx!=null && !despcodsx.equals("") ) {
 
 <% } %>
 
-<% if( gper.verIzquierdo(grupo, "pedido", "subir_valor_unitario.jsp") ) { %>
+<% if( gper.verIzquierdo(grupo, "registro", "subir_valor_unitario.jsp") ) { %>
 <tr > 
 	<td>&nbsp;</td>
-		<td><a href="main.jsp?app=pedido&modulo=subir_valor_unitario">  :: Cargar Valor Unitario </a> 
+		<td><a href="main.jsp?app=registro&amp;modulo=subir_valor_unitario">  :: Cargar Valor Unitario </a> 
 <% } %>
 
     <tr  >

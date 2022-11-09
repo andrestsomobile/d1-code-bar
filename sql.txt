@@ -1,5 +1,6 @@
-insert into permiso values(387, 5, 'pedido', 'subir_valor_unitario.jsp', 3, '387 PEDIDO SUBIR_VALOR_UNITARIO.JSP ADMINISTRADORES');
-
+insert into permiso values(387, 1, 'pedido', 'subir_valor_unitario.jsp', 3, '387 PEDIDO SUBIR_VALOR_UNITARIO.JSP ADMINISTRADORES');
 
 
 alter table public.producto add provalorunitario numeric;
+
+alter table public.producto add audcodigocargue numeric;

@@ -527,9 +527,13 @@
    <forward name="subir_ingreso" path="/main.jsp?app=distrinal&amp;modulo=subir_ingreso" redirect="false" />
 </action>
 
-<action path="/subir_valor_unitario" type="registro.fotografico.action.SubirValorUnitarioAction" name="fileForm" scope="request" input="/main.jsp?app=pedido&amp;modulo=subir_valor_unitario">
+<action path="/SubirValorUnitarioAction" type="registro.fotografico.action.SubirValorUnitarioAction" name="fileForm" scope="request" input="/main.jsp?app=pedido&amp;modulo=subir_valor_unitario">
    <forward name="subir_valor_unitario" path="/main.jsp?app=pedido&amp;modulo=subir_valor_unitario" redirect="false" />
 </action>
+
+<action path="/fileAction" type="pedido.action.fileAction" name="fileForm" scope="request" input="/main.jsp?app=pedido&amp;modulo=subir_unitario">
+   <forward name="subir_unitario" path="/main.jsp?app=pedido&amp;modulo=subir_unitario" redirect="false" />
+  </action>
 
 <action path="/registro_almacenamientoAction" type="registro.action.registro_almacenamientoAction" name="registro_almacenamientoForm" input="/main.jsp?app=movil&amp;modulo=default" scope="request">
    <forward name="default" path="/main.jsp?app=movil&amp;modulo=default" redirect="false" />

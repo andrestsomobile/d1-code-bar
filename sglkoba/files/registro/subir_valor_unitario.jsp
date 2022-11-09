@@ -10,7 +10,7 @@ var req;
 
 function ajaxFunction()
 {
-	var url = "servlet/FileUploadValorUnitario";
+	var url = "servlet/FileUploadValorUnitarioServlet";
 	if (window.XMLHttpRequest) // Non-IE browsers
 	{ 
 	
@@ -112,7 +112,7 @@ function Guardar()
 {
 	var archivo=document.getElementById("txtFile");
 	var codcia=document.getElementsByName("compania")[0]; 
-	location.href="subirDespachoDistrinalAction.do?ruta="+archivo.value+"&compania="+codcia.value;
+	location.href="SubirValorUnitarioAction.do?ruta="+archivo.value+"&compania="+codcia.value;
 }
 
 </script>
@@ -121,12 +121,13 @@ function Guardar()
 <div class="titulo"> Cargar Valor Unitario </div> 
 <table >
 	<tr>
+		<%@include file="compania.jsp"%> 
 		<td><a href="files/registro/MODELOVALORUNITARIO.txt" download="files/registro/MODELOVALORUNITARIO.txt">Archivo modelo de valor unitario</a>
 	</tr>
 </table>
 </html:form>
 	<iframe id="uploadFrameID" name="uploadFrame" height="0" width="0" frameborder="0" scrolling="yes"></iframe>              
-	<form id="myForm" enctype="multipart/form-data" method="post" target="uploadFrame" action="servlet/FileUploadValorUnitario" onsubmit="ajaxFunction()">
+	<form id="myForm" enctype="multipart/form-data" method="post" target="uploadFrame" action="servlet/FileUploadValorUnitarioServlet" onsubmit="ajaxFunction()">
 
  
 
@@ -194,7 +195,7 @@ function Guardar()
 <br><br><br>
 <%
 gstauditoriacargue gaud = new gstauditoriacargue();
-String actividad = "DespachoDistrinal";
+String actividad = "SubirValorUnitario";
 String fechaaud = Fecha.getFechaSinHora();
 Collection lista = gaud.getlistaTopauditoriacargueByActividad(actividad, "50"); 
 request.setAttribute("lista", lista); 
@@ -218,10 +219,7 @@ request.setAttribute("lista", lista);
 		 <td>  <%= temp.getAccodsx() %>
 		 <td>  <%= temp.getAcfechainicio()%>
 		 <td>  <%= comp.getcomnombre()%>
-		 <td>  <%= temp.getAcarchivo()%> 
-		 <td><% if(gstpermiso.getEscritura(session, "distrinal", "despacho.jsp") ) {%>
-			   <a href="javascript:validarDelete('subirDespachoDistrinalAction.do?opcion=delete&codsx=<%= temp.getAccodsx()  %>')"><html:img src="./disenno/images/substract.gif" /></a>
-			 <%} %>
+		 <td>  <%= temp.getAcarchivo()%>
 		</tr>
 	</logic:iterate>
 </table>

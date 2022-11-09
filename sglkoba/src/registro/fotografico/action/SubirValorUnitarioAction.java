@@ -45,7 +45,7 @@ public final class SubirValorUnitarioAction extends Action {
 		opcion = opcion == null || (opcion != null && opcion.equals("")) ? "cargar" : opcion;
 		
 		String mensaje = "";
-		String destino = "subir_despacho";
+		String destino = "subir_valor_unitario";
 		gstdistnal_despacho control = new gstdistnal_despacho();
 		gstauditoriacargue gaud = new gstauditoriacargue();		
 
@@ -115,16 +115,10 @@ public final class SubirValorUnitarioAction extends Action {
 		Vector<String> inconsistencias = new Vector<String>();
 		beanConnector db = new beanConnector();
 		gstproducto gpro = new gstproducto();
-		gsttransportadora gtrans = new gsttransportadora();
-		gstsucursal gsuc = new gstsucursal();
-		gstcliente gcli = new gstcliente();
 		gstauditoriacargue gaud = new gstauditoriacargue();
-		gstdistnal_despacho gdnd = new gstdistnal_despacho(db);
 
-		String actividad = "DespachoDistrinal";
+		String actividad = "SubirValorUnitario";
 		String fechaaud = Fecha.getFecha();
-		int total = 0;
-		int hechas = 0;
 		File archivoproceso = new File(ruta_archivo);
 		try {
 
@@ -135,7 +129,6 @@ public final class SubirValorUnitarioAction extends Action {
 			int rows = hoja.getRows();
 			int columns = hoja.getColumns();
 			System.out.println(rows + " " + columns);
-			total = rows-1;
 			int cantidad_columnas = 2;
 
 			for (int i = 1; i < rows; i++) { //EL ARCHIVO TIENE ENCABEZADO
@@ -145,55 +138,28 @@ public final class SubirValorUnitarioAction extends Action {
 					break;
 				}
                 int col = 0;
-                String id = celdas[col++].getContents(); 
+                String modelo = celdas[col++].getContents(); 
 				String valorUnitario = celdas[col++].getContents(); 
 
 				try {
-					/*producto pro = gpro.getproductoModelo(dndproducto);
-					transportadora tra = null;
-					if (dndtransportadora != null && !dndtransportadora.equals("")) {
-						
-						tra = gtrans.gettransportadora_by_ukey(dndtransportadora);
-						if (tra != null) {
-							dndtransportadora = tra.gettranspcodsx();
-						} else {
-							dndtransportadora = null;
-						}
-					}
-					
-					if (dndsucursal != null && !dndsucursal.equals("")) {
-						sucursal suc = gsuc.getsuccodcursal(dndsucursal);
-						if (suc != null) {
-					
-
-							if (pro != null) {  
-								gdnd.creardistnal_despacho(auccodsx+"", codcia, dndpedido, dndpetra, dndfechavencimiento, suc.getsuccodsx(), dnddireccion, pro.getprocodsx(), dndcantidad, dndvalorunit, dndvalorfactunit, tra != null ? tra.gettranspcodsx():null, null, null, "0", null, null, dndfechaalistamiento, dndfechadespacho, dndfechaentrega);
-								hechas++;
-							} else {
-								inconsistencias.add("En fila " + i + ": Material " + dndproducto + " no existe");
-							}
-						} else {
-							inconsistencias.add("En fila " + i + ": Sucursal " + dndsucursal + " no existe");
-						}
+					producto pro = gpro.getproductoByUk(codcia, modelo);
+					if (pro != null) { 
+						pro.setProvalorunitario(valorUnitario);
+						pro.setAudcodigocargue(auccodsx+"");
+						gpro.updateproducto(pro);
 					} else {
-						inconsistencias.add("En fila " + i + ": Sucursal no esta definida");
-					}*/
+						inconsistencias.add("En fila " + i + ": Modelo " + modelo + " no existe");
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
-					//inconsistencias.add("En fila " + i + ": Material " + dndproducto + " se presento error " + e.getLocalizedMessage());
+					inconsistencias.add("En fila " + i + ": Modelo " + modelo + " se presento error " + e.getLocalizedMessage());
 				}
 				
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			inconsistencias.add("Error en archivo. " + ex.getMessage());
-			hechas = 0;
 		}
-		/*if (hechas != 0) {
-			inconsistencias.add("Importacion exitosa. Se cargaron " + hechas + " de un total de " + total + " registros.");
-		} else {
-			inconsistencias.add("Se presentaron errores al cargar el archivo.");
-		}*/
 		return inconsistencias;
 	}
 

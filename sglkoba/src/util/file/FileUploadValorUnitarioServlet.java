@@ -49,6 +49,7 @@ public class FileUploadValorUnitarioServlet extends HttpServlet implements Servl
 			listener = (FileUploadListener) session.getAttribute("LISTENER");
 
 			if (listener == null) {
+				out.println("NO LISTENER");
 				return;
 			} else {
 				// Get the meta information
