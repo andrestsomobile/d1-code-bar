@@ -4,7 +4,10 @@ import java.awt.Color;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Iterator;
 
+import com.itextpdf.text.pdf.PdfImage;
+import com.itextpdf.text.pdf.parser.PdfImageObject;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -410,7 +413,33 @@ public class PDFInspeccionRecibo {
 		cell.setColspan(3);
 		cell.setBorder(Rectangle.NO_BORDER);
 		tabla.addCell(cell);
+		
+		
+		
+		documento.add(tabla);
+		
+		tabla = new PdfPTable(1); // Numero de columnas
+		tabla.setWidthPercentage(50); // Porcentaje de la pagina que ocupa
+		tabla.setHorizontalAlignment(Element.ALIGN_LEFT);// Alineacion horizontal
 
+		try {
+			String ruta = rutaContexto + File.separator + "disenno" + File.separator + "images" + File.separator + "logo.gif";
+            Image img = Image.getInstance(ruta);
+            img.scaleAbsolute(100,100);
+            for (int i=0;i<10;i++) {
+            	  cell = new PdfPCell(img,false);
+                  cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+          		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                  tabla.addCell(cell);
+				
+			}
+          
+        } catch (Exception e) {
+            cell = new PdfPCell();
+            cell.addElement(new Paragraph(""));
+            tabla.addCell(cell);
+            System.out.print(e.getMessage());
+        }
 		documento.add(tabla);
 		
 		
