@@ -129,9 +129,9 @@ public class PDFInspeccionRecibo {
             tabla.addCell(cell);
             System.out.print(e.getMessage());
         }
-
+		
 		cell = new PdfPCell();
-		Paragraph p1 = new Paragraph("INSPECCION DE RECIBO", fuenteBold_10);
+		Paragraph p1 = new Paragraph("INSPECCION DE RECIBO" , fuenteBold_10);
 		p1.setAlignment(Element.ALIGN_CENTER);
 		cell.addElement(p1);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -418,29 +418,39 @@ public class PDFInspeccionRecibo {
 		
 		documento.add(tabla);
 		
-		tabla = new PdfPTable(1); // Numero de columnas
-		tabla.setWidthPercentage(50); // Porcentaje de la pagina que ocupa
-		tabla.setHorizontalAlignment(Element.ALIGN_LEFT);// Alineacion horizontal
+		ParrafoHoja = new Paragraph();
+		agregarLineasEnBlanco(ParrafoHoja, 3);
+		documento.add(ParrafoHoja);
 
 		try {
-			String ruta = rutaContexto + File.separator + "disenno" + File.separator + "images" + File.separator + "logo.gif";
-            Image img = Image.getInstance(ruta);
-            img.scaleAbsolute(100,100);
-            for (int i=0;i<10;i++) {
-            	  cell = new PdfPCell(img,false);
-                  cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-          		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-                  tabla.addCell(cell);
+			///sglkobad1\pdf\REGFOTOGRAFICO\9407\\Firma.pn
+			String ruta = rutaContexto + File.separator + "pdf" + 
+			File.separator + "REGFOTOGRAFICO" + File.separator + 
+			lct.getlctrafcontenedor();
+			
+			File f = new File(ruta);
+			 File[] file =f.listFiles();
+			 tabla = new PdfPTable(file.length); // Numero de columnas
+			 tabla.setWidthPercentage(100); // Porcentaje de la pagina que ocupa
+			 tabla.setHorizontalAlignment(Element.ALIGN_LEFT);// Alineacion horizontal
 				
-			}
-          
+			 for (File uploadFiles : file) {
+					String ruta_arch = ruta + File.separator+ uploadFiles.getName();
+					Image img = Image.getInstance(ruta_arch);
+		            img.scaleAbsolute(100,100);
+
+	          	  	cell = new PdfPCell(img,false);
+	                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+	        		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+	                tabla.addCell(cell);
+					
+				}
+		
+
+				documento.add(tabla);
         } catch (Exception e) {
-            cell = new PdfPCell();
-            cell.addElement(new Paragraph(""));
-            tabla.addCell(cell);
             System.out.print(e.getMessage());
         }
-		documento.add(tabla);
 		
 		
 	}

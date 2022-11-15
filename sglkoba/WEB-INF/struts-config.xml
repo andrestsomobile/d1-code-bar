@@ -547,6 +547,9 @@
    <forward name="subir_despacho" path="/main.jsp?app=distrinal&amp;modulo=subir_despacho" redirect="false" />
 </action>
 
+<action path="/contenedorTraficoProducto" type="registro.fotografico.action.ContenedorTraficoProductoAction"/>
+
+
 </action-mappings>
   
 <message-resources parameter="ApplicationResources" null="true" />

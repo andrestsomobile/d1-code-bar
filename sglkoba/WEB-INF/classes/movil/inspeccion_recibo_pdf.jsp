@@ -116,6 +116,22 @@ function generarpdf(lctrafcodsx,trafcodsx) {
 	});
 }
 
+function cambioProducto(producto, contenedor, trafico) {
+	var miurl = "traficoAction.do?producto="+producto + "&contenedor="+contenedor+"&trafico="+trafico;
+
+	$.ajax({
+	    url: miurl,
+	    cache: false,
+	    type: "GET",
+	    success: function(response) { 
+			console.log(response)
+	    },
+	    error: function(xhr) {
+
+	    }
+	});
+}
+
 </script>
 
 <%
@@ -132,14 +148,23 @@ gstinspeccion_recibo ginre = new gstinspeccion_recibo();
 
 String trafcodsx = request.getParameter("trafcodsx");
 String lctrafcodsx = request.getParameter("lctrafcodsx");
+String contenedor = request.getParameter("clave");
+
 
 empresa emp = new administracion.control.gstempresa().getempresa("4");
 
 trafico traf = gtraf.gettrafico(trafcodsx);
-lote_contenedor_trafico lct = glct.getlote_contenedor_trafico(lctrafcodsx);
-lote_trafico lt = glt.getlote_trafico(lct.getlctraflote());
-contenedor_trafico ct = gcont.getcontenedor_trafico(lct.getlctrafcontenedor());
-producto pro = gprod.getproducto(lt.getltrafcodproducto());
+Collection<lote_contenedor_trafico> listCt = glct.getContenedorLoteTraficoByContenedor(contenedor, trafcodsx);
+List<producto> listPro = new ArrayList<producto>();
+
+for(Object obj: listCt) {
+	lote_contenedor_trafico lct = (lote_contenedor_trafico)obj;
+	lote_trafico lt = glt.getlote_trafico(lct.getlctraflote());
+	producto pro = gprod.getproducto(lt.getltrafcodproducto());
+	listPro.add(pro);
+}
+
+contenedor_trafico ct = gcont.getcontenedor_trafico(contenedor);
 inspeccion_recibo inre = ginre.getinspeccion_recibo(trafcodsx, lctrafcodsx);
 if (inre == null) {
 	inre = new inspeccion_recibo(trafcodsx, lctrafcodsx);
@@ -207,9 +232,13 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 		<td colspan="3">&nbsp;		
 	<tr>
 		<td>Producto
-		<td><%=pro != null ? pro.getpromodelo(): ""%>&nbsp;
-		<td>Descripci&oacute;n
-		<td><%=pro != null ? pro.getprodescripcion() : ""%>&nbsp;		
+		<td colspan="2">
+		<select id="producto" onchange="cambioProducto(this.value,'<%=contenedor %>','<%=trafcodsx %>')">
+		<option value="" onselect="">Seleccione</option>
+		<logic:iterate id="pro" name="listPro" type="producto"  >
+			<option value="<%=pro != null ? pro.getprocodsx(): ""%>"><%=pro != null ? pro.getpromodelo(): ""%></option>
+		</logic:iterate>
+		</select>	
 	<tr>
 		<td>Vencimiento
 		<td colspan="3"><input type="date" id="inrevencimiento" value="<%=inre.getInrevencimiento() != null ? inre.getInrevencimiento() : lt.getLtrafvencimiento()%>">
