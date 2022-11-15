@@ -12,6 +12,8 @@ alter table referencia_pedido add column refpvalordeclarado numeric;
 
 alter table inspeccion_recibo add column inreproducto integer;
 alter table inspeccion_recibo add column inrecontenedor integer;
+alter table inspeccion_recibo add column inretiponovedades text;
+
 
 CREATE TABLE parametro_destinatario (
     parametro_id integer NOT NULL,

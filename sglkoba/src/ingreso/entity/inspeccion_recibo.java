@@ -110,6 +110,8 @@ public class inspeccion_recibo implements java.io.Serializable {
 	
 	private String inrecontenedor;
 	
+	private String inretiponovedades;
+	
 	public inspeccion_recibo(String inretrafico, String inrelctrafico) {
 		super();
 		this.inretrafico = inretrafico;
@@ -172,6 +174,7 @@ public class inspeccion_recibo implements java.io.Serializable {
 		this.inrefechagenerado = "";
 		this.inreproducto = "";
 		this.inrecontenedor = "";
+		this.inretiponovedades = "";
 	}
 
 	public inspeccion_recibo(String inretrafico, String inrelctrafico, String inremuelle, String inreprecinto, String inrevencimiento, String inrelote, String inreestibas, String inrecajas, String inresaldo, String inrenovedades, String inrerecuperadas, String inretotalump,
@@ -179,7 +182,8 @@ public class inspeccion_recibo implements java.io.Serializable {
 			String inrecarnet_obs, String inreproteccion_cal, String inreproteccion_obs, String inrefumigacion_cal, String inrefumigacion_obs, String inremanipulacion_cal, String inremanipulacion_obs, String inreaseovehiculo_cal, String inreaseovehiculo_obs, String inresustanciasquimicas_cal,
 			String inresustanciasquimicas_obs, String inretemperatura_cal, String inretemperatura_obs, String inreestadogeneral_cal, String inreestadogeneral_obs, String inrerevisiones_cal, String inrerevisiones_obs, String inreumprecibidas_cal, String inreumprecibidas_obs,
 			String inreumprevisadas_cal, String inreumprevisadas_obs, String inretablanutricional_cal, String inretablanutricional_obs, String inreimportacioncinc_cal, String inreimportacioncinc_obs, String inrecalificacion_cal, String inrecalificacion_obs, String inrerecibido, String inreconductor,
-			String inrefechagenerado, String inreproducto, String inrecontenedor) {
+			String inrefechagenerado, String inreproducto, 
+			String inrecontenedor, String inretiponovedades) {
 		super();
 		this.inretrafico = inretrafico;
 		this.inrelctrafico = inrelctrafico;
@@ -235,6 +239,31 @@ public class inspeccion_recibo implements java.io.Serializable {
 		this.inrefechagenerado = inrefechagenerado;
 		this.inreproducto = inreproducto;
 		this.inrecontenedor = inrecontenedor;
+		this.inretiponovedades = inretiponovedades;
+	}
+
+	public String getInreproducto() {
+		return inreproducto;
+	}
+
+	public void setInreproducto(String inreproducto) {
+		this.inreproducto = inreproducto;
+	}
+
+	public String getInrecontenedor() {
+		return inrecontenedor;
+	}
+
+	public void setInrecontenedor(String inrecontenedor) {
+		this.inrecontenedor = inrecontenedor;
+	}
+
+	public String getInretiponovedades() {
+		return inretiponovedades;
+	}
+
+	public void setInretiponovedades(String inretiponovedades) {
+		this.inretiponovedades = inretiponovedades;
 	}
 
 	public String getInretrafico() {

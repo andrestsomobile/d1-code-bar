@@ -28,8 +28,8 @@ public class gstinspeccion_recibo extends GstTabla {
 		return (inspeccion_recibo) getEntidad(cad);
 	}
 	
-	public boolean eliminar(String inretrafico, String inrelctrafico) throws SQLException {
-		String elim = " delete from inspeccion_recibo WHERE inretrafico = " + inretrafico + "  and inrelctrafico= " + inrelctrafico;
+	public boolean eliminar(String inretrafico, String inrelctrafico, String inreproducto, String inrecontenedor) throws SQLException {
+		String elim = " delete from inspeccion_recibo WHERE inretrafico = " + inretrafico + "  and inreproducto= " + inreproducto + "  and inrecontenedor= " + inrecontenedor;
 		int r = db.executeUpdate(elim);
 		return r == 0 ? false : true;
 	}
@@ -40,7 +40,8 @@ public class gstinspeccion_recibo extends GstTabla {
 			String inresustanciasquimicas_obs, String inretemperatura_cal, String inretemperatura_obs, String inreestadogeneral_cal, String inreestadogeneral_obs, String inrerevisiones_cal, String inrerevisiones_obs, String inreumprecibidas_cal, String inreumprecibidas_obs,
 			String inreumprevisadas_cal, String inreumprevisadas_obs, 
 			String inretablanutricional_cal, String inretablanutricional_obs, String inreimportacioncinc_cal, String inreimportacioncinc_obs, String inrecalificacion_cal, String inrecalificacion_obs, String inrerecibido, String inreconductor,
-			String inrefechagenerado, String inreproducto, String inrecontenedor) throws SQLException {
+			String inrefechagenerado, String inreproducto, 
+			String inrecontenedor, String inretiponovedades) throws SQLException {
 		String insert = "	INSERT INTO inspeccion_recibo("
 				+ "            inretrafico, inrelctrafico, inremuelle, inreprecinto, inrevencimiento,"
 				+ "            inrelote, inreestibas, inrecajas, inresaldo, inrenovedades, inrerecuperadas,"
@@ -56,7 +57,7 @@ public class gstinspeccion_recibo extends GstTabla {
 				+ "            inreumprevisadas_cal, inreumprevisadas_obs, inretablanutricional_cal, "
 				+ "            inretablanutricional_obs, inreimportacioncinc_cal, inreimportacioncinc_obs, "
 				+ "            inrecalificacion_cal, inrecalificacion_obs, inrerecibido, inreconductor, "
-				+ "			   inreproducto, inrecontenedor," 
+				+ "			   inreproducto, inrecontenedor, inretiponovedades," 
 				+ "            inrefechagenerado) VALUES ("
 				
 				+ (inretrafico == null ? "NULL" : "'" + inretrafico + "'") 
@@ -112,6 +113,7 @@ public class gstinspeccion_recibo extends GstTabla {
 				+ "," + (inreconductor == null ? "NULL" : "'" + inreconductor + "' ") 
 				+ "," + (inreproducto == null ? "NULL" : "'" + inreproducto + "' ") 
 				+ "," + (inrecontenedor == null ? "NULL" : "'" + inrecontenedor + "' ") 
+				+ "," + (inretiponovedades == null ? "NULL" : "'" + inretiponovedades + "' ") 
 				+ "," + (inrefechagenerado == null ? "current_date" : "'" + inrefechagenerado + "' ") 
 				+ ")";
 		int resp = db.executeUpdate(insert);

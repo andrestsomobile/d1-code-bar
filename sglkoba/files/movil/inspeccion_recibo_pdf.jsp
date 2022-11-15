@@ -61,6 +61,7 @@ function generarpdf(lctrafcodsx,trafcodsx,contenedor) {
 		"inrecajas": $("input[id='inrecajas']").val(),
 		"inresaldo": $("input[id='inresaldo']").val(),
 		"inrenovedades": $("input[id='inrenovedades']").val(),
+		"inretiponovedades": $("select[id='inretiponovedades']").val(),
 		"inrerecuperadas": $("input[id='inrerecuperadas']").val(),
 		"inretotalump": $("input[id='inretotalump']").val(),
 		"inreesibasrequeridas": $("input[id='inreesibasrequeridas']").val(),
@@ -103,7 +104,7 @@ function generarpdf(lctrafcodsx,trafcodsx,contenedor) {
 		"inrerecibido": $("input[id='inrerecibido']").val(),
 		"inreconductor": $("input[id='inreconductor']").val(),
 		"inrefechagenerado": $("input[id='inrefechagenerado']").val(),
-		"inreproducto": $("input[id='producto']").val(),
+		"inreproducto": $("select[id='producto']").val(),
 		"inrecontenedor": contenedor
 
 	    },
@@ -134,6 +135,7 @@ function cambioProducto(producto, contenedor, trafico) {
 		$("input[id='inreestibas']").val(response.inreestibas),
 		$("input[id='inrecajas']").val(response.inrecajas),
 		$("input[id='inresaldo']").val(response.inresaldo),
+		$("select[id='inretiponovedades']").val(response.inretiponovedades),
 		$("input[id='inrenovedades']").val(response.inrenovedades),
 		$("input[id='inrerecuperadas']").val(response.inrerecuperadas),
 		$("input[id='inretotalump']").val(response.inretotalump),
@@ -304,8 +306,19 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 		<td>Saldo
 		<td colspan="3"><input type="number" id="inresaldo" value="">&nbsp;
 	<tr>
-		<td>Novedades A(O) S(O) F(O) D(O)
-		<td colspan="3"><input type="text" id="inrenovedades" value="">&nbsp;	
+		<td>Tipo Novedad
+		<td>
+		<select id="inretiponovedades">
+			<option value="" onselect="">Seleccione</option>
+			<option value="Averia">Averia</option>
+			<option value="Sobrante">Sobrante</option>
+			<option value="Faltante">Faltante</option>
+			<option value="Discrepancia">Discrepancia</option>
+		</select>
+		<td>Novedad
+		<td>
+		<input type="number" id="inrenovedades" value="">
+		&nbsp;	
 	<tr>
 		<td>Recuparadas
 		<td colspan="3"><input type="number" id="inrerecuperadas" value="">&nbsp;
@@ -434,7 +447,7 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 
 <div align="center">
 
-<button value="Generar PDF" onclick="generarpdf(<%=lctrafcodsx %>,<%=trafcodsx %>,'<%=contenedor %>')" style="color: blue" >Generar PDF</button>
+<button value="Generar PDF" onclick="generarpdf(<%=lctrafcodsx %>,<%=trafcodsx %>,<%=contenedor %>)" style="color: blue" >Generar PDF</button>
 </div>
 
 <br>
