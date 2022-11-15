@@ -9,3 +9,16 @@ alter table auditoriacargue alter column acinconsistencias type character varyin
 
 
 alter table referencia_pedido add column refpvalordeclarado numeric;
+
+alter table inspeccion_recibo add column inreproducto integer;
+alter table inspeccion_recibo add column inrecontenedor integer;
+
+CREATE TABLE parametro_destinatario (
+    parametro_id integer NOT NULL,
+    asunto text NOT NULL,
+    cuerpo text NOT NULL,
+    tipo_funcionalidad text NOT NULL,
+    correos text NOT NULL,
+    transportadora text NULL,
+	CONSTRAINT pk_parametro_dest PRIMARY KEY (parametro_id)
+);
