@@ -29,3 +29,6 @@ CREATE TABLE parametro_destinatario (
 insert into parametro_destinatario values (1, 'Valor Declarado', '$pedido<br>&nbsp;$productos<br>$valorDeclarado',
 										  'valor_declarado', 'andres.lopez1824@gmail.com', '');
 
+
+insert into parametro_destinatario values (2, 'Error Valor Declarado', 'La reserva $pedido no ha sido enviada, valide que el valor declarado por cada material sea correcto',
+										  'valor_declarado_error', 'andres.lopez1824@gmail.com', '');

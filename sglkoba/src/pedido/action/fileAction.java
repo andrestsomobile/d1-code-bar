@@ -144,7 +144,7 @@ public final class fileAction extends Action {
 							System.out.println("LONGITUD DE CONTENEDOR =" + contenedor.length);
 							// //////validaciones...
 							// //////////////////////////codigo capturar variables
-							// La compañia se pide por parametro
+							// La compaï¿½ia se pide por parametro
 							// String pedcompania = "1";
 							
 							String bbbodega = request.getParameter("bodega");
@@ -332,7 +332,7 @@ public final class fileAction extends Action {
 							}
 							gstpedido objetocontsucur = new gstpedido();
 							// int a=objetocontsucur.getPedidoRefPromodelo(promodelo);//var 5
-							// Feb 02 de 2012. Se valida el modelo para la compañia del pedido.
+							// Feb 02 de 2012. Se valida el modelo para la compaï¿½ia del pedido.
 							
 							int a = objetocontsucur.getPedidoRefPromodeloCia(pedcompania, promodelo);// var 5
 							boolean modelos = true;
@@ -497,7 +497,7 @@ public final class fileAction extends Action {
 									if (ped != null && ped.getpedestado().equals("TRAMITE") && estaenlista(pednumpedido)) {
 										// System.out.println("***********************************---------"+ped.getpedcodsx());
 										// String procodsx=gped.getPedidoCod(promodelo);
-										// Feb 02 de 2012. Se valida el modelo para la compañia del pedido.
+										// Feb 02 de 2012. Se valida el modelo para la compaï¿½ia del pedido.
 										String procodsx = gped.getPedidoCodCia(pedcompania, promodelo);
 										// ////////////////////referencia
 										String pedcodsx = ped.getpedcodsx();
@@ -808,33 +808,52 @@ public final class fileAction extends Action {
 				try {
 					GstParametroDestinatario paramDestinatario = new GstParametroDestinatario();
 					ParametroDestinatario param = paramDestinatario.getParametroDestinatario("valor_declarado");
+					ParametroDestinatario paramError = paramDestinatario.getParametroDestinatario("valor_declarado_error");
 					String cuerpo = param.getCuerpo();
-					String body = "<table><tr><td>Nº reserva</td><td>Valor Declarado</td></tr>"
-							+ "<tr><td>9803259327</td><td>$ 134,916,000.00</td></tr> </table>";
+					
 					
 					for (Map.Entry<String, String> entry : listPedidos.entrySet()) {
 						if(entry.getValue().equals("1")) {
-							String cuerpoPedido = cuerpo;
 							String pedido = entry.getKey();
 							String asunto = param.getAsunto().replace("$pedido", pedido);
+							String destinatarios = param.getCorreos();
+							Double valorDeclarado = 0.0;
+							boolean sendedError = false;
+							
 							pedido ped = gped.getpedido(pedcompania, pedido);
 							Collection refPedidos = grefp.getlistareferencia_pedido(ped.getpedcodsx());
 							
 							for(Object ref: refPedidos) {
 								referencia_pedido rp = (referencia_pedido) ref;
 								producto p = gstProducto.getproducto(rp.getrefpproducto());
-								cuerpoPedido = cuerpoPedido.replace("$pedido", "<b>Pedido:</b> "+pedido+"<br>");
-								cuerpoPedido = cuerpoPedido.replace("$productos", "<b>Productos:</b>" + p.getpromodelo() +"<br>");
-								cuerpoPedido = cuerpoPedido.replace("$valorDeclarado", "<b>Valor Declarado:</b>" + rp.getRefpvalordeclarado()+"<br>");
+
+								if(rp.getRefpvalordeclarado() != null && !rp.getRefpvalordeclarado().isEmpty()) {
+									Double valorD = Double.parseDouble(rp.getRefpvalordeclarado());
+
+									if(valorD > 0.0) {
+										valorDeclarado += valorD;
+									} else {
+										sendedError = true;
+									}
+								} else {
+									sendedError = true;
+								}
+								
 							}
-							
+
+							String body = "";
+							if(!sendedError) {
+								body = cuerpo.replace("$body","<table><tr><td>Nro reserva</td><td>Valor Declarado</td></tr>"
+							+ "<tr><td>"+pedido+"</td><td>$ "+String.Format("{0:C}", Convert.ToInt32(valorDeclarado) )+"</td></tr> </table>");
+							} else {
+								asunto = paramError.getAsunto().replace("$pedido", pedido);
+								body = paramError.getCuerpo().replace("$pedido", pedido);
+								destinatarios = paramError.getCorreos();
+							}
 							
 							System.out.println("enviar pedido " + pedido);
 							EnviarMail mail = new EnviarMail();
-							System.out.println("getCorreos " + param.getCorreos());
-							System.out.println("getAsunto " + param.getAsunto());
-							System.out.println("cuerpoPedido " + cuerpoPedido);
-							mail.enviarMailValor(param.getCorreos(), param.getAsunto(), cuerpoPedido);
+							mail.enviarMailValor(destinatarios, asunto, body);
 						}
 					    System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
 					}
