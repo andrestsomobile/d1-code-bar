@@ -615,6 +615,20 @@ $canvas.addEventListener("mousedown", evento => {
     haComenzadoDibujo = true;
 });
 
+$canvas.addEventListener("touchstart", evento => {
+    // En este evento solo se ha iniciado el clic, así que dibujamos un punto
+    xAnterior = xActual;
+    yAnterior = yActual;
+    xActual = obtenerXReal(evento.clientX);
+    yActual = obtenerYReal(evento.clientY);
+    contexto.beginPath();
+    contexto.fillStyle = COLOR_PINCEL;
+    contexto.fillRect(xActual, yActual, GROSOR, GROSOR);
+    contexto.closePath();
+    // Y establecemos la bandera
+    haComenzadoDibujo = true;
+});
+
 $canvas.addEventListener("mousemove", (evento) => {
     if (!haComenzadoDibujo) {
         return;
@@ -634,6 +648,30 @@ $canvas.addEventListener("mousemove", (evento) => {
     contexto.closePath();
 });
 ["mouseup", "mouseout"].forEach(nombreDeEvento => {
+    $canvas.addEventListener(nombreDeEvento, () => {
+        haComenzadoDibujo = false;
+    });
+});
+
+$canvas.addEventListener("touchmove", (evento) => {
+    if (!haComenzadoDibujo) {
+        return;
+    }
+    // El mouse se está moviendo y el usuario está presionando el botón, así que dibujamos todo
+
+    xAnterior = xActual;
+    yAnterior = yActual;
+    xActual = obtenerXReal(evento.clientX);
+    yActual = obtenerYReal(evento.clientY);
+    contexto.beginPath();
+    contexto.moveTo(xAnterior, yAnterior);
+    contexto.lineTo(xActual, yActual);
+    contexto.strokeStyle = COLOR_PINCEL;
+    contexto.lineWidth = GROSOR;
+    contexto.stroke();
+    contexto.closePath();
+});
+["touchend","touchcancel"].forEach(nombreDeEvento => {
     $canvas.addEventListener(nombreDeEvento, () => {
         haComenzadoDibujo = false;
     });

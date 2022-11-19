@@ -4,10 +4,12 @@ import java.awt.Color;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Iterator;
 
 import com.itextpdf.text.pdf.PdfImage;
 import com.itextpdf.text.pdf.parser.PdfImageObject;
+import com.lowagie.text.BadElementException;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -358,6 +360,64 @@ public class PDFInspeccionRecibo {
 		
 		
 		
+		
+		Image imgFirma = null;
+		try {
+			String ruta = rutaContexto + File.separator + "pdf" + 
+					File.separator + "FIRMARECIBIDO" + File.separator + 
+					lct.getlctrafcontenedor();
+					
+					File f = new File(ruta);
+					 File[] file =f.listFiles();
+					 for (File uploadFiles : file) {
+							String ruta_arch = ruta + File.separator+ uploadFiles.getName();
+							imgFirma = Image.getInstance(ruta_arch);
+							imgFirma.scaleAbsolute(150,70);
+							
+						}
+			cell = new PdfPCell(imgFirma,false);
+			cell.setColspan(3);
+			cell.setBorder(Rectangle.NO_BORDER);
+			tabla.addCell(cell);
+		} catch (Exception e) {
+			cell = new PdfPCell();
+			cell.setColspan(3);
+			cell.setBorder(Rectangle.NO_BORDER);
+			cell.addElement(new Paragraph(""));
+			tabla.addCell(cell);
+        }
+		
+		cell = new PdfPCell();
+		cell.setColspan(1);
+		cell.setBorder(Rectangle.NO_BORDER);
+		cell.addElement(new Paragraph(""));
+		tabla.addCell(cell);
+		
+		try {
+			String ruta = rutaContexto + File.separator + "pdf" + 
+					File.separator + "FIRMACONDUCTOR" + File.separator + 
+					lct.getlctrafcontenedor();
+					
+					File f = new File(ruta);
+					 File[] file =f.listFiles();
+					 for (File uploadFiles : file) {
+							String ruta_arch = ruta + File.separator+ uploadFiles.getName();
+							imgFirma = Image.getInstance(ruta_arch);
+							imgFirma.scaleAbsolute(150,70);
+							
+						}
+			cell = new PdfPCell(imgFirma,false);
+			cell.setColspan(3);
+			cell.setBorder(Rectangle.NO_BORDER);
+			tabla.addCell(cell);
+		} catch (Exception e) {
+			cell = new PdfPCell();
+			cell.setColspan(3);
+			cell.setBorder(Rectangle.NO_BORDER);
+			cell.addElement(new Paragraph(""));
+			tabla.addCell(cell);
+        }
+		
 		cell = new PdfPCell();
 		cell.setColspan(3);
 		cell.setBorder(Rectangle.NO_BORDER);
@@ -370,6 +430,7 @@ public class PDFInspeccionRecibo {
 		cell.addElement(new Paragraph(""));
 		tabla.addCell(cell);
 		
+
 		cell = new PdfPCell();
 		cell.setColspan(3);
 		cell.setBorder(Rectangle.NO_BORDER);
@@ -378,6 +439,8 @@ public class PDFInspeccionRecibo {
 		
 		
 		
+		
+		 
 		cell = celdaDato("RECIBIDO POR",fuenteNormal_12,Element.ALIGN_LEFT);
 		cell.setColspan(3);
 		cell.setBorder(Rectangle.NO_BORDER);
