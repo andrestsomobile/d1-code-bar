@@ -75,5 +75,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/d1-code-bar/sglkoba/WEB-INF/lib/json-20220320.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/d1-code-bar/sglkoba/WEB-INF/lib/activation-1.0.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

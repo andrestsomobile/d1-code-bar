@@ -24,3 +24,8 @@ CREATE TABLE parametro_destinatario (
     transportadora text NULL,
 	CONSTRAINT pk_parametro_dest PRIMARY KEY (parametro_id)
 );
+
+
+insert into parametro_destinatario values (1, 'Valor Declarado', '$pedido<br>&nbsp;$productos<br>$valorDeclarado',
+										  'valor_declarado', 'andres.lopez1824@gmail.com', '');
+

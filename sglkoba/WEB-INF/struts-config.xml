@@ -223,6 +223,7 @@
 <forward name="contenedor_trafico" path="/main.jsp?app=ingreso&amp;modulo=contenedor_trafico" redirect="false" />
 <forward name="contenedor_trafico_datos" path="/main.jsp?app=ingreso&amp;modulo=contenedor_trafico_datos" redirect="false" />
 </action>
+
 <action path="/lote_traficoAction" type="ingreso.action.lote_traficoAction" name="lote_traficoForm" input="/main.jsp?app=ingreso&amp;modulo=lote_trafico_datos" scope="request">
 <forward name="lote_trafico" path="/main.jsp?app=ingreso&amp;modulo=lote_trafico" redirect="false" />
 <forward name="lote_trafico_datos" path="/main.jsp?app=ingreso&amp;modulo=lote_trafico_datos" redirect="false" />
@@ -548,6 +549,7 @@
 </action>
 
 <action path="/contenedorTraficoProducto" type="registro.fotografico.action.ContenedorTraficoProductoAction"/>
+<action path="/firmaActionFile" type="ingreso.action.firmaActionFile"/>
 
 
 </action-mappings>

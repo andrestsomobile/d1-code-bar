@@ -127,7 +127,6 @@ function cambioProducto(producto, contenedor, trafico) {
 	    cache: false,
 	    type: "GET",
 	    success: function(response) { 
-			console.log(response)
 		$("input[id='inremuelle']").val(response.inremuelle),
 		$("input[id='inreprecinto']").val(response.inreprecinto),
 		$("input[id='inrevencimiento']").val(response.inrevencimiento),
@@ -288,7 +287,7 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 		<select id="producto" onchange="cambioProducto(this.value,'<%=contenedor %>','<%=trafcodsx %>')">
 		<option value="" onselect="">Seleccione</option>
 		<logic:iterate id="pro" name="listPro" type="producto"  >
-			<option value="<%=pro != null ? pro.getprocodsx(): ""%>"><%=pro != null ? pro.getpromodelo(): ""%></option>
+			<option value="<%=pro != null ? pro.getprocodsx(): ""%>"><%=pro != null ? pro.getpromodelo() + "-" + pro.getprodescripcion(): ""%></option>
 		</logic:iterate>
 		</select>	
 	<tr>
@@ -315,7 +314,7 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 			<option value="Faltante">Faltante</option>
 			<option value="Discrepancia">Discrepancia</option>
 		</select>
-		<td>Novedad
+		<td>Cantidad
 		<td>
 		<input type="number" id="inrenovedades" value="">
 		&nbsp;	
@@ -437,10 +436,24 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 
 <body>
     <p>Firmar a continuación:</p>
-    <canvas id="canvas"></canvas>
-    <br>
-    <button id="btnLimpiar">Limpiar</button>
-    <button id="btnDescargar">Firmar</button>
+    <div  style="display: flex;">
+    <div>
+
+        <canvas id="canvas" style=" border: 1px solid black;"></canvas>
+        <br>
+        <button id="btnLimpiar">Limpiar</button>
+         <button id="btnDescargar" onclick="generarFirma(<%=contenedor %>)">Firmar</button>
+         <br>
+    </div>
+    <div>
+        <canvas id="canvasDos" style=" border: 1px solid black;">
+        </canvas>
+        <br>
+        <button id="btnLimpiarDos">Limpiar</button>
+        <button id="btnDescargarDos" onclick="generarFirmaDos(<%=contenedor %>)">Firmar</button>
+        <br>
+    </div>
+</div>
     <br>
     <script src="script.js"></script>
 </body>
@@ -506,18 +519,27 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 
 <script>
 
+
 const $canvas = document.querySelector("#canvas"),
     $btnDescargar = document.querySelector("#btnDescargar"),
-    $btnLimpiar = document.querySelector("#btnLimpiar");
+    $btnLimpiar = document.querySelector("#btnLimpiar"),
+    $canvasDos=document.querySelector("#canvasDos"),
+    $btnDescargarDos = document.querySelector("#btnDescargarDos"),
+    $btnLimpiarDos = document.querySelector("#btnLimpiarDos");
 
 const contexto = $canvas.getContext("2d");
+const contextoDos = $canvasDos.getContext("2d");
 const COLOR_PINCEL = "black";
 const COLOR_FONDO = "white";
 const GROSOR = 2;
 let xAnterior = 0, yAnterior = 0, xActual = 0, yActual = 0;
+let xAnteriorDos = 0, yAnteriorDos = 0, xActualDos = 0, yActualDos = 0;
 const obtenerXReal = (clientX) => clientX - $canvas.getBoundingClientRect().left;
 const obtenerYReal = (clientY) => clientY - $canvas.getBoundingClientRect().top;
+const obtenerXRealDos = (clientX) => clientX - $canvasDos.getBoundingClientRect().left;
+const obtenerYRealDos = (clientY) => clientY - $canvasDos.getBoundingClientRect().top;
 let haComenzadoDibujo = false; // Bandera que indica si el usuario está presionando el botón del mouse sin soltarlo
+let haComenzadoDibujoDos = false;
 
 
 const limpiarCanvas = () => {
@@ -525,22 +547,57 @@ const limpiarCanvas = () => {
     contexto.fillStyle = COLOR_FONDO;
     contexto.fillRect(0, 0, $canvas.width, $canvas.height);
 };
-limpiarCanvas();
-$btnLimpiar.onclick = limpiarCanvas;
-// Escuchar clic del botón para descargar el canvas
-$btnDescargar.onclick = () => {
-    const enlace = document.createElement('a');
-    // El título
-    enlace.download = "Firma.png";
-    // Convertir la imagen a Base64 y ponerlo en el enlace
-    enlace.href = $canvas.toDataURL();
-    // Hacer click en él
-    enlace.click();
+const limpiarCanvasDos = () => {
+    // Colocar color blanco en fondo de canvas
+    contextoDos.fillStyle = COLOR_FONDO;
+    contextoDos.fillRect(0, 0, $canvasDos.width, $canvasDos.height);
 };
 
-window.obtenerImagen = () => {
-    return $canvas.toDataURL();
+limpiarCanvas();
+limpiarCanvasDos();
+$btnLimpiar.onclick = limpiarCanvas;
+$btnLimpiarDos.onclick = limpiarCanvasDos;
+// Escuchar clic del botón para descargar el canvas
+function generarFirma(trafcodsx) {
+    const enlace = document.createElement('a');
+    // Convertir la imagen a Base64 y ponerlo en el enlace
+    enlace.href = $canvas.toDataURL();
+    
+var miurl = "firmaActionFile.do?baseCode="+enlace.href+"&trafcodsx="+trafcodsx+"&mainDirectory=FIRMARECIBIDO";
+	
+	$.ajax({
+	    url: miurl,
+	    cache: false,
+	    type: "POST",
+	    success: function(response) { 
+			alert("Se ha firmado con exito");
+	    },
+	    error: function(xhr) {
+	    	alert("Se ha generado error al firmar");
+	    }
+	});
 };
+
+function generarFirmaDos(trafcodsx) {
+	  const enlace = document.createElement('b');
+    // Convertir la imagen a Base64 y ponerlo en el enlace
+     enlace.href = $canvasDos.toDataURL();
+    
+var miurl = "firmaActionFile.do?baseCode="+enlace.href+"&trafcodsx="+trafcodsx+"&mainDirectory=FIRMACONDUCTOR";
+	
+	$.ajax({
+	    url: miurl,
+	    cache: false,
+	    type: "POST",
+	    success: function(response) { 
+			alert("Se ha firmado con exito");
+	    },
+	    error: function(xhr) {
+	    	alert("Se ha generado error al firmar");
+	    }
+	});
+};
+
 
 
 // Lo demás tiene que ver con pintar sobre el canvas en los eventos del mouse
@@ -579,6 +636,44 @@ $canvas.addEventListener("mousemove", (evento) => {
 ["mouseup", "mouseout"].forEach(nombreDeEvento => {
     $canvas.addEventListener(nombreDeEvento, () => {
         haComenzadoDibujo = false;
+    });
+});
+
+$canvasDos.addEventListener("mousedown", evento => {
+    // En este evento solo se ha iniciado el clic, así que dibujamos un punto
+    xAnteriorDos = xActualDos;
+    yAnteriorDos = yActualDos;
+    xActualDos = obtenerXRealDos(evento.clientX);
+    yActualDos = obtenerYRealDos(evento.clientY);
+    contextoDos.beginPath();
+    contextoDos.fillStyle = COLOR_PINCEL;
+    contextoDos.fillRect(xActualDos, yActualDos, GROSOR, GROSOR);
+    contextoDos.closePath();
+    // Y establecemos la bandera
+    haComenzadoDibujoDos = true;
+});
+
+$canvasDos.addEventListener("mousemove", (evento) => {
+    if (!haComenzadoDibujoDos) {
+        return;
+    }
+    // El mouse se está moviendo y el usuario está presionando el botón, así que dibujamos todo
+
+    xAnteriorDos = xActualDos;
+    yAnteriorDos = yActualDos;
+    xActualDos = obtenerXRealDos(evento.clientX);
+    yActualDos = obtenerYRealDos(evento.clientY);
+    contextoDos.beginPath();
+    contextoDos.moveTo(xAnteriorDos, yAnteriorDos);
+    contextoDos.lineTo(xActualDos, yActualDos);
+    contextoDos.strokeStyle = COLOR_PINCEL;
+    contextoDos.lineWidth = GROSOR;
+    contextoDos.stroke();
+    contextoDos.closePath();
+});
+["mouseup", "mouseout"].forEach(nombreDeEvento => {
+    $canvasDos.addEventListener(nombreDeEvento, () => {
+        haComenzadoDibujoDos = false;
     });
 });
 </script>

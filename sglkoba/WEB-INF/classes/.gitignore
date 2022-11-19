@@ -8,7 +8,6 @@
 /bootstrap/
 /dataTable-AltEditor/
 /datatables/
-/db/
 /default.jsp
 /descargas.jsp
 /disenno/
@@ -30,6 +29,7 @@
 /movil_reubicacion.json
 /nacionalizacion/
 /parametros.properties
+/parametros/
 /patios/
 /pedido/
 /pruebas/
@@ -40,3 +40,5 @@
 /sap/
 /templates/
 /util/
+/db/
+/movil/
