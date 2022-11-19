@@ -809,6 +809,8 @@ public final class fileAction extends Action {
 					GstParametroDestinatario paramDestinatario = new GstParametroDestinatario();
 					ParametroDestinatario param = paramDestinatario.getParametroDestinatario("valor_declarado");
 					String cuerpo = param.getCuerpo();
+					String body = "<table><tr><td>Nº reserva</td><td>Valor Declarado</td></tr>"
+							+ "<tr><td>9803259327</td><td>$ 134,916,000.00</td></tr> </table>";
 					
 					for (Map.Entry<String, String> entry : listPedidos.entrySet()) {
 						if(entry.getValue().equals("1")) {
