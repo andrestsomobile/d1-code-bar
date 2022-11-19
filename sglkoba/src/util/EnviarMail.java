@@ -1,6 +1,9 @@
 package util;
 
 import java.io.File;
+import java.text.NumberFormat;
+import java.util.Currency;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
@@ -63,7 +66,7 @@ public class EnviarMail {
 			Session session = Session.getInstance(props, auth);
 
 			// Para obtener un log de salida más extenso
-			session.setDebug(true);
+			session.setDebug(false);
 
 			// genero el mensaje
 			MimeMessage message = new MimeMessage(session);
@@ -139,7 +142,7 @@ public class EnviarMail {
 			Session session = Session.getInstance(props, auth);
 
 			// Para obtener un log de salida más extenso
-			session.setDebug(true);
+			session.setDebug(false);
 
 			// genero el mensaje
 			MimeMessage message = new MimeMessage(session);
@@ -182,8 +185,14 @@ public class EnviarMail {
 	}
 
 	public static void main(String arg[]) {
+		double currencyAmount = 12500.00;
+		Locale locale = new Locale("es", "CO");
+		Currency currency = Currency.getInstance(locale);
+		NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);
+		
+		System.out.println(currency.getDisplayName() + ": " + numberFormat.format(currencyAmount)); 
 		EnviarMail e = new EnviarMail();
-		e.enviarMailValor("andres.lopez1824@gmail.com", "tes", "tes");
+		//e.enviarMailValor("andres.lopez1824@gmail.com", "tes", "tes");
 	}
 
 	public boolean enviarMail_Adjunto(String destinatario, String subject, String mensaje, String filename) {

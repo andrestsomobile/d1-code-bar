@@ -11,9 +11,11 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Currency;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.StringTokenizer;
 
@@ -843,8 +845,10 @@ public final class fileAction extends Action {
 
 							String body = "";
 							if(!sendedError) {
+								Locale locale = new Locale("es", "CO");
+								java.text.NumberFormat numberFormat = java.text.NumberFormat.getCurrencyInstance(locale);
 								body = cuerpo.replace("$body","<table><tr><td>Nro reserva</td><td>Valor Declarado</td></tr>"
-							+ "<tr><td>"+pedido+"</td><td>$ "+String.Format("{0:C}", Convert.ToInt32(valorDeclarado) )+"</td></tr> </table>");
+							+ "<tr><td>"+pedido+"</td><td>"+numberFormat.format(valorDeclarado)+"</td></tr> </table>");
 							} else {
 								asunto = paramError.getAsunto().replace("$pedido", pedido);
 								body = paramError.getCuerpo().replace("$pedido", pedido);
