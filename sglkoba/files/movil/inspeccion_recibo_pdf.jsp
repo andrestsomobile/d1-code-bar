@@ -219,7 +219,11 @@ for(Object obj: listCt) {
 	listPro.add(prod);
 }
 
-contenedor_trafico ct = gcont.getcontenedor_trafico(contenedor);
+contenedor_trafico ct = new contenedor_trafico();
+
+if(contenedor != null && !contenedor.isEmpty()) {
+	ct = gcont.getcontenedor_trafico(contenedor);
+}
 
 String clave = trafcodsx;
 
@@ -540,7 +544,8 @@ const obtenerXRealDos = (clientX) => clientX - $canvasDos.getBoundingClientRect(
 const obtenerYRealDos = (clientY) => clientY - $canvasDos.getBoundingClientRect().top;
 let haComenzadoDibujo = false; // Bandera que indica si el usuario está presionando el botón del mouse sin soltarlo
 let haComenzadoDibujoDos = false;
-
+let isIdle = true;
+let isIdleTwo = true;
 
 const limpiarCanvas = () => {
     // Colocar color blanco en fondo de canvas
@@ -603,6 +608,8 @@ var miurl = "firmaActionFile.do?baseCode="+enlace.href+"&trafcodsx="+trafcodsx+"
 // Lo demás tiene que ver con pintar sobre el canvas en los eventos del mouse
 $canvas.addEventListener("mousedown", evento => {
     // En este evento solo se ha iniciado el clic, así que dibujamos un punto
+    	console.log(xActual )
+	console.log(event.pageY )
     xAnterior = xActual;
     yAnterior = yActual;
     xActual = obtenerXReal(evento.clientX);
@@ -615,19 +622,6 @@ $canvas.addEventListener("mousedown", evento => {
     haComenzadoDibujo = true;
 });
 
-$canvas.addEventListener("touchstart", evento => {
-    // En este evento solo se ha iniciado el clic, así que dibujamos un punto
-    xAnterior = xActual;
-    yAnterior = yActual;
-    xActual = obtenerXReal(evento.clientX);
-    yActual = obtenerYReal(evento.clientY);
-    contexto.beginPath();
-    contexto.fillStyle = COLOR_PINCEL;
-    contexto.fillRect(xActual, yActual, GROSOR, GROSOR);
-    contexto.closePath();
-    // Y establecemos la bandera
-    haComenzadoDibujo = true;
-});
 
 $canvas.addEventListener("mousemove", (evento) => {
     if (!haComenzadoDibujo) {
@@ -648,30 +642,6 @@ $canvas.addEventListener("mousemove", (evento) => {
     contexto.closePath();
 });
 ["mouseup", "mouseout"].forEach(nombreDeEvento => {
-    $canvas.addEventListener(nombreDeEvento, () => {
-        haComenzadoDibujo = false;
-    });
-});
-
-$canvas.addEventListener("touchmove", (evento) => {
-    if (!haComenzadoDibujo) {
-        return;
-    }
-    // El mouse se está moviendo y el usuario está presionando el botón, así que dibujamos todo
-
-    xAnterior = xActual;
-    yAnterior = yActual;
-    xActual = obtenerXReal(evento.clientX);
-    yActual = obtenerYReal(evento.clientY);
-    contexto.beginPath();
-    contexto.moveTo(xAnterior, yAnterior);
-    contexto.lineTo(xActual, yActual);
-    contexto.strokeStyle = COLOR_PINCEL;
-    contexto.lineWidth = GROSOR;
-    contexto.stroke();
-    contexto.closePath();
-});
-["touchend","touchcancel"].forEach(nombreDeEvento => {
     $canvas.addEventListener(nombreDeEvento, () => {
         haComenzadoDibujo = false;
     });
@@ -714,6 +684,60 @@ $canvasDos.addEventListener("mousemove", (evento) => {
         haComenzadoDibujoDos = false;
     });
 });
+function drawstart(event) { 
+	console.log("touchstart")
+    contexto.beginPath();
+	console.log(event.pageX )
+	console.log(event.pageY )
+    contexto.moveTo((event.pageX-180) -  $canvas.offsetLeft, (event.pageY-180) -  $canvas.offsetTop);
+    isIdle = false;
+  }
+  function drawmove(event) { 
+    if (isIdle) return;
+  console.log("touchmove")
+    contexto.lineTo((event.pageX-180) -  $canvas.offsetLeft, (event.pageY-180) - $canvas.offsetTop);
+    contexto.stroke();
+  }
+
+  function drawend(event) {
+    if (isIdle) return;
+    drawmove(event);
+    isIdle = true;
+  }
+
+  function drawstartTwo(event) {
+    contextoDos.beginPath();
+    contextoDos.moveTo((event.pageX-180) - $canvasDos.offsetLeft, (event.pageY-180) -  $canvasDos.offsetTop);
+    isIdleTwo = false;
+  }
+  function drawmoveTwo(event) {
+    if (isIdleTwo) return;
+    contextoDos.lineTo((event.pageX-180) - $canvasDos.offsetLeft, (event.pageY-180) -  $canvasDos.offsetTop);
+    contextoDos.stroke();
+  }
+
+  function drawendTwo(event) {
+    if (isIdle) return;
+    drawmoveTwo(event);
+    isIdleTwo = true;
+  }
+
+
+function touchstart(event) { drawstart(event.touches[0]) }
+function touchmove(event) { drawmove(event.touches[0]); event.preventDefault(); }
+function touchend(event) { drawend(event.changedTouches[0]) }
+
+function touchstartDos(event) { drawstartTwo(event.touches[0]) }
+function touchmoveDos(event) { drawmoveTwo(event.touches[0]); event.preventDefault(); }
+function touchendDos(event) { drawendTwo(event.changedTouches[0]) }
+
+$canvas.addEventListener('touchstart', touchstart, false);
+$canvas.addEventListener('touchmove', touchmove, false);
+$canvas.addEventListener('touchend', touchend, false); 
+
+$canvasDos.addEventListener('touchstart', touchstartDos, false);
+$canvasDos.addEventListener('touchmove', touchmoveDos, false);
+$canvasDos.addEventListener('touchend', touchendDos, false);
 </script>
 
 

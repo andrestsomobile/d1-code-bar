@@ -1,6 +1,7 @@
 package ingreso.control;
 
 import java.sql.SQLException;
+import java.util.Collection;
 
 import db.GstTabla;
 import db.beanConnector;
@@ -28,8 +29,14 @@ public class gstinspeccion_recibo extends GstTabla {
 		return (inspeccion_recibo) getEntidad(cad);
 	}
 	
+	public Collection getInspeccionByContenedor(String trafico, String contenedor) {
+		String cad = "SELECT inspeccion_recibo.* FROM inspeccion_recibo WHERE inretrafico = " + trafico + " AND inrecontenedor = " + contenedor;
+		return getLista(cad);
+	}
+	
 	public boolean eliminar(String inretrafico, String inrelctrafico, String inreproducto, String inrecontenedor) throws SQLException {
 		String elim = " delete from inspeccion_recibo WHERE inretrafico = " + inretrafico + "  and inreproducto= " + inreproducto + "  and inrecontenedor= " + inrecontenedor;
+		System.out.println(elim);
 		int r = db.executeUpdate(elim);
 		return r == 0 ? false : true;
 	}
@@ -66,18 +73,18 @@ public class gstinspeccion_recibo extends GstTabla {
 				+ "," + (inreprecinto == null ? "NULL" : "'" + inreprecinto + "' ") 
 				+ "," + (inrevencimiento == null ? "NULL" : "'" + inrevencimiento + "' ") 
 				+ "," + (inrelote == null ? "NULL" : "'" + inrelote + "' ") 
-				+ "," + (inreestibas == null ? "NULL" : "'" + inreestibas + "' ") 
-				+ "," + (inrecajas == null ? "NULL" : "'" + inrecajas + "' ") 
-				+ "," + (inresaldo == null ? "NULL" : "'" + inresaldo + "' ") 
+				+ "," + (inreestibas == null || inreestibas.isEmpty() ? "NULL" : "'" + inreestibas + "' ") 
+				+ "," + (inrecajas == null || inrecajas.isEmpty() ? "NULL" : "'" + inrecajas + "' ") 
+				+ "," + (inresaldo == null || inresaldo.isEmpty() ? "NULL" : "'" + inresaldo + "' ") 
 				+ "," + (inrenovedades == null ? "NULL" : "'" + inrenovedades + "' ") 
-				+ "," + (inrerecuperadas == null ? "NULL" : "'" + inrerecuperadas + "' ") 
-				+ "," + (inretotalump == null ? "NULL" : "'" + inretotalump + "' ") 
-				+ "," + (inreesibasrequeridas == null ? "NULL" : "'" + inreesibasrequeridas + "' ") 
-				+ "," + (inrepesoestibavacia == null ? "NULL" : "'" + inrepesoestibavacia + "' ") 
-				+ "," + (inrepesototalestibasvacias == null ? "NULL" : "'" + inrepesototalestibasvacias + "' ") 
-				+ "," + (inrepesoestibapaletizada == null ? "NULL" : "'" + inrepesoestibapaletizada + "' ") 
-				+ "," + (inrepesoporump == null ? "NULL" : "'" + inrepesoporump + "' ") 
-				+ "," + (inrepesonetoproducto == null ? "NULL" : "'" + inrepesonetoproducto + "' ") 
+				+ "," + (inrerecuperadas == null || inrerecuperadas.isEmpty() ? "NULL" : "'" + inrerecuperadas + "' ") 
+				+ "," + (inretotalump == null || inretotalump.isEmpty() ? "NULL" : "'" + inretotalump + "' ") 
+				+ "," + (inreesibasrequeridas == null || inreesibasrequeridas.isEmpty() ? "NULL" : "'" + inreesibasrequeridas + "' ") 
+				+ "," + (inrepesoestibavacia == null || inrepesoestibavacia.isEmpty() ? "NULL" : "'" + inrepesoestibavacia + "' ") 
+				+ "," + (inrepesototalestibasvacias == null|| inrepesototalestibasvacias.isEmpty() ? "NULL" : "'" + inrepesototalestibasvacias + "' ") 
+				+ "," + (inrepesoestibapaletizada == null|| inrepesoestibapaletizada.isEmpty() ? "NULL" : "'" + inrepesoestibapaletizada + "' ") 
+				+ "," + (inrepesoporump == null|| inrepesoporump.isEmpty() ? "NULL" : "'" + inrepesoporump + "' ") 
+				+ "," + (inrepesonetoproducto == null|| inrepesonetoproducto.isEmpty() ? "NULL" : "'" + inrepesonetoproducto + "' ") 
 				+ "," + (inreobservaciones == null ? "NULL" : "'" + inreobservaciones + "' ") 
 				+ "," + (inrearlvigente_cal == null ? "NULL" : "'" + inrearlvigente_cal + "' ") 
 				+ "," + (inrearlvigente_obs == null ? "NULL" : "'" + inrearlvigente_obs + "' ") 
@@ -116,6 +123,7 @@ public class gstinspeccion_recibo extends GstTabla {
 				+ "," + (inretiponovedades == null ? "NULL" : "'" + inretiponovedades + "' ") 
 				+ "," + (inrefechagenerado == null ? "current_date" : "'" + inrefechagenerado + "' ") 
 				+ ")";
+		System.out.println(insert);
 		int resp = db.executeUpdate(insert);
 		return resp == 0 ? false : true;
 	}

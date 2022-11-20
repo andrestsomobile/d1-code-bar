@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.Collection;
 import java.util.Iterator;
 
 import com.itextpdf.text.pdf.PdfImage;
@@ -59,8 +60,14 @@ public class PDFInspeccionRecibo {
 	public PDFInspeccionRecibo() {
 	}
 	
+	public static void main(String[] arg) {
+		PDFInspeccionRecibo pdf = new PDFInspeccionRecibo();
+		pdf.pdf("12", "C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps", "", "", "");
+	}
 	
-	public void pdf(String lctrafcodsx, String rutaarchivo, String codusu, String rutaContexto) {
+	
+	public void pdf(String lctrafcodsx, String rutaarchivo, String codusu, String rutaContexto, 
+			String inrecontenedor) {
 		
 		Document documento = new Document();
 		String nomarch = rutaarchivo + File.separator + "InspeccionRecibo_" + lctrafcodsx + ".pdf";
@@ -70,7 +77,7 @@ public class PDFInspeccionRecibo {
 			PdfWriter pw = PdfWriter.getInstance(documento, new FileOutputStream(nomarch));
 			documento.open();
 			documento.add(new Chunk(""));
-			agregarContenido(documento, lctrafcodsx, codusu, rutaarchivo, rutaContexto);
+			agregarContenido(documento, lctrafcodsx, codusu, rutaarchivo, rutaContexto, inrecontenedor);
 		} catch (DocumentException de) {
 			System.err.println(de.getMessage());
 			de.printStackTrace();
@@ -89,8 +96,321 @@ public class PDFInspeccionRecibo {
 		for (int i = 0; i < nLineas; i++)
 			parrafo.add(new Paragraph(" "));
 	}
+	
+	private void agregarContenido(Document documento, String lctrafcodsx, 
+			String codusu, String rutaarchivo, String rutaContexto, String contenedor)
+			throws DocumentException {
+		
+		empresa emp = new administracion.control.gstempresa().getempresa("4");
 
-	private void agregarContenido(Document documento, String lctrafcodsx, String codusu, String rutaarchivo, String rutaContexto)
+
+		lote_contenedor_trafico lct = glct.getlote_contenedor_trafico(lctrafcodsx);
+		
+		contenedor_trafico ct = gcont.getcontenedor_trafico(lct.getlctrafcontenedor());
+		trafico traf = gtraf.gettrafico(ct.getctrafnumtrafico());
+		
+		
+
+		Paragraph ParrafoHoja = new Paragraph();
+		PdfPCell cell = new PdfPCell();
+
+		// Agregamos una linea en blanco
+		agregarLineasEnBlanco(ParrafoHoja, 1);
+
+		// Encabezado
+		PdfPTable tabla = new PdfPTable(7); // Numero de columnas
+		tabla.setWidthPercentage(100); // Porcentaje de la pagina que ocupa
+		tabla.setHorizontalAlignment(Element.ALIGN_JUSTIFIED_ALL);// Alineacion horizontal
+		
+		addTableValue("INSPECCION DE RECIBO", fuenteBold_12, tabla, 2);
+		
+		addTableValue("Pagina " + (documento.getPageNumber()+1) + " de "+1, fuenteBold_10, tabla, 3);
+		 
+		addTableValue("Versión: 001-2019", fuenteNormal_10, tabla, 2);
+		
+		//TODO: Revisar forma de rowspan con inspaccion recibo
+		addTableValue("", fuenteNormal_10, tabla, 2);
+		
+		//TODO: Revisar forma de rowspan con pagina
+		addTableValue("", fuenteNormal_10, tabla, 3);
+		
+		addTableValue("Fecha de emisiòn:", fuenteNormal_10, tabla, 2);
+		
+		//TODO: Revisar forma de rowspan con inspaccion recibo
+		addTableValue("", fuenteNormal_10, tabla, 2);
+		
+		//TODO: Revisar forma de rowspan con pagina
+		addTableValue("", fuenteNormal_10, tabla, 3);
+		
+		addTableValue("17 de mayo de 2019", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("Elaborado por:", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("Revisasdo por:", fuenteNormal_10, tabla, 3);
+		
+		addTableValue("Aprobado por:", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("Roberto Tibaquicha", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("Milena Mendez", fuenteNormal_10, tabla, 3);
+		
+		addTableValue("Johanna Guzmàn", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("Jefe de Bodega Importados", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("Coordinador Logìstico de Importados", fuenteNormal_10, tabla, 3);
+		
+		addTableValue("Gerente Importados", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("", fuenteNormal_10, tabla, 3);
+		
+		addTableValue("", fuenteNormal_10, tabla, 2);
+		
+		addTableValue("FECHA DE RECIBO:", fuenteBold_12, tabla, 2);
+		
+		addTableValue(Fecha.getFechaSinHora(), fuenteBold_12, tabla, 5);
+		
+		addTableValue("NUMERO DE CONTENEDOR:", fuenteBold_12, tabla, 2);
+		
+		addTableValue(ct.getctrafnumero(), fuenteBold_12, tabla, 5);
+		
+		addTableValue("NUMERO DE IMPORTACIÒN:", fuenteBold_12, tabla, 2);
+		
+		addTableValue(traf.gettrafnumdta(), fuenteBold_12, tabla, 5);
+		
+		addTableValue("TRANSPORTADORA:", fuenteBold_12, tabla, 2);
+		
+		//TODO: De donde se saca este valor
+		addTableValue("", fuenteBold_12, tabla, 5);
+		
+		addTableValue("NUMERO DE ORDEN DE RECIBO:", fuenteBold_12, tabla, 2);
+		
+		//TODO: De donde se saca este valor
+		addTableValue("", fuenteBold_12, tabla, 5);
+		
+		addTableValue("PLACA", fuenteBold_10, tabla, 1);
+		
+		addTableValue("PRODUCTO", fuenteBold_10, tabla, 1);
+		
+		addTableValue("LOTE", fuenteBold_10, tabla, 1);
+		
+		addTableValue("FECHA DE VENCIMIENTO", fuenteBold_10, tabla, 1);
+		
+		addTableValue("CANTIDAD", fuenteBold_10, tabla, 1);
+		
+		addTableValue("ESTIBAS", fuenteBold_10, tabla, 1);
+		
+		addTableValue("OBSERVACIONES", fuenteBold_10, tabla, 1);
+		
+		Collection listInre = ginre.getInspeccionByContenedor(traf.gettrafcodsx(), contenedor);
+		
+		inspeccion_recibo inre = new inspeccion_recibo();
+		for(Object obj: listInre) {
+			inre = (inspeccion_recibo) obj;
+			producto pro = gprod.getproducto(inre.getInreproducto());
+			
+			
+			//TODO: de donde se obtiene
+			addTableValue("", fuenteNormal_10, tabla, 1);
+			
+			addTableValue(pro.getprodescripcion(), fuenteNormal_10, tabla, 1);
+			
+			addTableValue(inre.getInrelote(), fuenteNormal_10, tabla, 1);
+			
+			addTableValue(inre.getInrevencimiento(), fuenteNormal_10, tabla, 1);
+			
+			addTableValue(inre.getInrecajas(), fuenteNormal_10, tabla, 1);
+			
+			addTableValue(inre.getInreestibas(), fuenteNormal_10, tabla, 1);
+			
+			addTableValue(inre.getInreobservaciones(), fuenteNormal_10, tabla, 1);
+		}
+		
+		documento.add(tabla);//fuenteNormal_10
+		
+//Firmas
+		
+	    tabla = new PdfPTable(7); // Numero de columnas
+		tabla.setWidthPercentage(100); // Porcentaje de la pagina que ocupa
+		tabla.setHorizontalAlignment(Element.ALIGN_CENTER);// Alineacion horizontal
+		
+		cell = celdaDato(inre.getInrerecibido()!= null ? inre.getInrerecibido() : "", fuenteNormal_10, Element.ALIGN_LEFT);
+		cell.setColspan(3);
+		cell.setBorder(Rectangle.NO_BORDER);
+		tabla.addCell(cell);
+		
+		cell = new PdfPCell();
+		cell.setColspan(1);
+		cell.setBorder(Rectangle.NO_BORDER);
+		cell.addElement(new Paragraph(""));
+		tabla.addCell(cell);
+
+		cell = celdaDato(inre.getInreconductor()!= null ? inre.getInreconductor() : "", fuenteNormal_10, Element.ALIGN_LEFT);
+		cell.setColspan(3);
+		cell.setBorder(Rectangle.NO_BORDER);
+		tabla.addCell(cell);
+		
+		
+		
+		
+		Image imgFirma = null;
+		try {
+			String ruta = rutaContexto + File.separator + "pdf" + 
+					File.separator + "FIRMARECIBIDO" + File.separator + 
+					lct.getlctrafcontenedor();
+					
+					File f = new File(ruta);
+					 File[] file =f.listFiles();
+					 for (File uploadFiles : file) {
+							String ruta_arch = ruta + File.separator+ uploadFiles.getName();
+							imgFirma = Image.getInstance(ruta_arch);
+							imgFirma.scaleAbsolute(150,70);
+							
+						}
+			cell = new PdfPCell(imgFirma,false);
+			cell.setColspan(3);
+			cell.setBorder(Rectangle.NO_BORDER);
+			tabla.addCell(cell);
+		} catch (Exception e) {
+			cell = new PdfPCell();
+			cell.setColspan(3);
+			cell.setBorder(Rectangle.NO_BORDER);
+			cell.addElement(new Paragraph(""));
+			tabla.addCell(cell);
+        }
+		
+		cell = new PdfPCell();
+		cell.setColspan(1);
+		cell.setBorder(Rectangle.NO_BORDER);
+		cell.addElement(new Paragraph(""));
+		tabla.addCell(cell);
+		
+		try {
+			String ruta = rutaContexto + File.separator + "pdf" + 
+					File.separator + "FIRMACONDUCTOR" + File.separator + 
+					lct.getlctrafcontenedor();
+					
+					File f = new File(ruta);
+					 File[] file =f.listFiles();
+					 for (File uploadFiles : file) {
+							String ruta_arch = ruta + File.separator+ uploadFiles.getName();
+							imgFirma = Image.getInstance(ruta_arch);
+							imgFirma.scaleAbsolute(150,70);
+							
+						}
+			cell = new PdfPCell(imgFirma,false);
+			cell.setColspan(3);
+			cell.setBorder(Rectangle.NO_BORDER);
+			tabla.addCell(cell);
+		} catch (Exception e) {
+			cell = new PdfPCell();
+			cell.setColspan(3);
+			cell.setBorder(Rectangle.NO_BORDER);
+			cell.addElement(new Paragraph(""));
+			tabla.addCell(cell);
+        }
+		
+		cell = new PdfPCell();
+		cell.setColspan(3);
+		cell.setBorder(Rectangle.NO_BORDER);
+		cell.addElement(new Paragraph("_____________________________"));
+		tabla.addCell(cell);
+		
+		cell = new PdfPCell();
+		cell.setColspan(1);
+		cell.setBorder(Rectangle.NO_BORDER);
+		cell.addElement(new Paragraph(""));
+		tabla.addCell(cell);
+		
+
+		cell = new PdfPCell();
+		cell.setColspan(3);
+		cell.setBorder(Rectangle.NO_BORDER);
+		cell.addElement(new Paragraph("_____________________________"));
+		tabla.addCell(cell);
+
+		cell = celdaDato("RECIBIDO POR",fuenteNormal_12,Element.ALIGN_LEFT);
+		cell.setColspan(3);
+		cell.setBorder(Rectangle.NO_BORDER);
+		tabla.addCell(cell);
+		
+		cell = new PdfPCell();
+		cell.setColspan(1);
+		cell.setBorder(Rectangle.NO_BORDER);
+		cell.addElement(new Paragraph(""));
+		tabla.addCell(cell);
+		
+		cell = celdaDato("CONDUCTOR " + ct.getCtrafconductor(),fuenteNormal_12,Element.ALIGN_LEFT);
+		cell.setColspan(3);
+		cell.setBorder(Rectangle.NO_BORDER);
+		tabla.addCell(cell);
+
+		cell = celdaDato("Válido como Firma",fuenteNormal_12,Element.ALIGN_LEFT);
+		cell.setColspan(3);
+		cell.setBorder(Rectangle.NO_BORDER);
+		tabla.addCell(cell);
+		
+		cell = new PdfPCell();
+		cell.setColspan(1);
+		cell.setBorder(Rectangle.NO_BORDER);
+		cell.addElement(new Paragraph(""));
+		tabla.addCell(cell);
+		
+		cell = celdaDato("Válido como Firma",fuenteNormal_12,Element.ALIGN_LEFT);
+		cell.setColspan(3);
+		cell.setBorder(Rectangle.NO_BORDER);
+		tabla.addCell(cell);
+		
+		
+		
+		documento.add(tabla);
+		
+		ParrafoHoja = new Paragraph();
+		agregarLineasEnBlanco(ParrafoHoja, 3);
+		documento.add(ParrafoHoja);
+
+		try {
+			///sglkobad1\pdf\REGFOTOGRAFICO\9407\\Firma.pn
+			String ruta = rutaContexto + File.separator + "pdf" + 
+			File.separator + "REGFOTOGRAFICO" + File.separator + 
+			lct.getlctrafcontenedor();
+			
+			File f = new File(ruta);
+			 File[] file =f.listFiles();
+			 tabla = new PdfPTable(file.length); // Numero de columnas
+			 tabla.setWidthPercentage(100); // Porcentaje de la pagina que ocupa
+			 tabla.setHorizontalAlignment(Element.ALIGN_LEFT);// Alineacion horizontal
+				
+			 for (File uploadFiles : file) {
+					String ruta_arch = ruta + File.separator+ uploadFiles.getName();
+					Image img = Image.getInstance(ruta_arch);
+		            img.scaleAbsolute(100,100);
+
+	          	  	cell = new PdfPCell(img,false);
+	                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+	        		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+	                tabla.addCell(cell);
+				}
+				documento.add(tabla);
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
+	}
+	
+	public static void addTableValue(String text, Font fuente, PdfPTable tabla, int colspan) {
+		PdfPCell cell = new PdfPCell();
+		Paragraph ParrafoHoja = new Paragraph(text, fuente);
+		ParrafoHoja.setAlignment(Element.ALIGN_LEFT);
+		cell.addElement(ParrafoHoja);
+		cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+		cell.setColspan(colspan);
+		tabla.addCell(cell);
+	}
+
+	private void agregarContenidoOld(Document documento, String lctrafcodsx, String codusu, String rutaarchivo, String rutaContexto)
 			throws DocumentException {
 		
 		empresa emp = new administracion.control.gstempresa().getempresa("4");

@@ -89,9 +89,6 @@ public class EnviarMail {
 			message.setSubject(subject);
 			message.setText(mensaje, "UTF-8", "html");
 			Transport t = session.getTransport("smtp");
-
-			System.out.println("subject " + subject);
-			System.out.println("mensaje " + mensaje);
 			// Aqui usuario y password del servidor de correo
 			// Transport.send(message);
 
@@ -167,9 +164,6 @@ public class EnviarMail {
 					+ "<br>" + "Este correo es automático y no es monitoreado por favor no responder, cualquier solicitud por favor dirigirla al Coordinador de Sistemas de SLI.";
 			message.setText(mensaje, "UTF-8", "html");
 			Transport t = session.getTransport("smtp");
-
-			System.out.println("subject " + subject);
-			System.out.println("mensaje " + mensaje);
 			// Aqui usuario y password del servidor de correo
 			// Transport.send(message);
 
@@ -179,7 +173,7 @@ public class EnviarMail {
 			return true;
 		} catch (MessagingException e) {
 			System.out.println("ERROR AL ENVIAR CORREO" + e.getMessage());
-			e.printStackTrace();
+			//e.printStackTrace();
 			return false;
 		}
 	}
