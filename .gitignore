@@ -1,0 +1,4 @@
+*.class
+*.war
+*.classpath
+.DS_Store
