@@ -65,6 +65,19 @@ public class gstauditoriacargue extends GstTabla implements java.io.Serializable
 		return r;
 	}
 	
+	public boolean updateauditoriacargue(String accodsx, String accodcia, String acactividad, String acfechainicio, String acfechafinal, 
+			String acobservacion, String error) throws SQLException {
+		boolean r = false;
+		String cad = " update auditoriacargue set  " + " accodcia ='" + accodcia + "' ," + " acactividad ='" + acactividad + "' ," + " acfechainicio ='" + acfechainicio + "' ," + " acfechafinal ='"
+				+ acfechafinal + "' ," + " acobservacion ='" + acobservacion + "' "  + "," + " acinconsistencias ='" + error + "' " + " where accodsx = '" + accodsx + "'";
+		int resp = db.executeUpdate(cad);
+		if (resp == 0)
+			r = false;
+		else
+			r = true;
+		return r;
+	}
+	
 	public boolean eliminarauditoricargue(String accodsx) throws SQLException {
 		String elim = " delete from auditoriacargue where accodsx=  '" + accodsx + "'";
 		int r = db.executeUpdate(elim);

@@ -223,6 +223,7 @@
 <forward name="contenedor_trafico" path="/main.jsp?app=ingreso&amp;modulo=contenedor_trafico" redirect="false" />
 <forward name="contenedor_trafico_datos" path="/main.jsp?app=ingreso&amp;modulo=contenedor_trafico_datos" redirect="false" />
 </action>
+
 <action path="/lote_traficoAction" type="ingreso.action.lote_traficoAction" name="lote_traficoForm" input="/main.jsp?app=ingreso&amp;modulo=lote_trafico_datos" scope="request">
 <forward name="lote_trafico" path="/main.jsp?app=ingreso&amp;modulo=lote_trafico" redirect="false" />
 <forward name="lote_trafico_datos" path="/main.jsp?app=ingreso&amp;modulo=lote_trafico_datos" redirect="false" />
@@ -527,9 +528,13 @@
    <forward name="subir_ingreso" path="/main.jsp?app=distrinal&amp;modulo=subir_ingreso" redirect="false" />
 </action>
 
-<action path="/subirDespachoDistrinalAction" type="distrinal.action.subirDespachoDistrinalAction" name="fileForm" scope="request" input="/main.jsp?app=distrinal&amp;modulo=subir_despacho">
-   <forward name="subir_despacho" path="/main.jsp?app=distrinal&amp;modulo=subir_despacho" redirect="false" />
+<action path="/SubirValorUnitarioAction" type="registro.fotografico.action.SubirValorUnitarioAction" name="fileForm" scope="request" input="/main.jsp?app=pedido&amp;modulo=subir_valor_unitario">
+   <forward name="subir_valor_unitario" path="/main.jsp?app=pedido&amp;modulo=subir_valor_unitario" redirect="false" />
 </action>
+
+<action path="/fileAction" type="pedido.action.fileAction" name="fileForm" scope="request" input="/main.jsp?app=pedido&amp;modulo=subir_unitario">
+   <forward name="subir_unitario" path="/main.jsp?app=pedido&amp;modulo=subir_unitario" redirect="false" />
+  </action>
 
 <action path="/registro_almacenamientoAction" type="registro.action.registro_almacenamientoAction" name="registro_almacenamientoForm" input="/main.jsp?app=movil&amp;modulo=default" scope="request">
    <forward name="default" path="/main.jsp?app=movil&amp;modulo=default" redirect="false" />
@@ -538,6 +543,14 @@
    <forward name="descargue" path="/main.jsp?app=movil&amp;modulo=descargue" redirect="false" />
    <forward name="descargue_qr" path="/main.jsp?app=movil&amp;modulo=descargue_qr" redirect="false" />
 </action>
+
+<action path="/subirDespachoDistrinalAction" type="distrinal.action.subirDespachoDistrinalAction" name="fileForm" scope="request" input="/main.jsp?app=distrinal&amp;modulo=subir_despacho">
+   <forward name="subir_despacho" path="/main.jsp?app=distrinal&amp;modulo=subir_despacho" redirect="false" />
+</action>
+
+<action path="/contenedorTraficoProducto" type="registro.fotografico.action.ContenedorTraficoProductoAction"/>
+<action path="/firmaActionFile" type="ingreso.action.firmaActionFile"/>
+
 
 </action-mappings>
   

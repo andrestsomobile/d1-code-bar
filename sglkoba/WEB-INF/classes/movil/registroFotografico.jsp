@@ -45,7 +45,7 @@ Collection lista = glct.getlistaVehiculosDescargando();
 	 <td>  <%= ct.getctrafiniciodescargue() %>
 	 <td>  <%= ct.getCtrafestado() %>
 	 <td>  <a href='main_movil.jsp?app=movil&modulo=registro_fotografico&clave=<%= ct.getctrafcodsx()%>&placa=<%=ct.getctrafplaca()%>'><img src="files/movil/camara.png" width="50%" height="auto" ></a> 	
-	 <td>  <a href='main_movil.jsp?app=movil&modulo=inspeccion_recibo_pdf&lctrafcodsx=<%= temp.getlctrafcodsx()%>&trafcodsx=<%=ct.getctrafnumtrafico()%>'><img src="files/movil/pdf.png" width="50%" height="auto" ></a> 	
+	 <td>  <a href='main_movil.jsp?app=movil&modulo=inspeccion_recibo_pdf&lctrafcodsx=<%= temp.getlctrafcodsx()%>&clave=<%= ct.getctrafcodsx()%>&trafcodsx=<%=ct.getctrafnumtrafico()%>'><img src="files/movil/pdf.png" width="50%" height="auto" ></a> 	
 
  &nbsp;
 
