@@ -15,6 +15,12 @@
 	    <servlet-name>FileUploadServlet</servlet-name>     
 	    <servlet-class>util.file.FileUploadServlet</servlet-class>
 	</servlet>	
+	<servlet>
+	    <description>Servlet for file uploads valor unitario</description>
+	    <display-name>File Upload Servlet Valor Unitario</display-name>
+	    <servlet-name>FileUploadValorUnitarioServlet</servlet-name>     
+	    <servlet-class>util.file.FileUploadValorUnitarioServlet</servlet-class>
+	</servlet>	
   <servlet>
     <servlet-name>action</servlet-name>
     <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
@@ -51,6 +57,10 @@
     <servlet-mapping>
 	    <servlet-name>FileUploadServlet</servlet-name>
 	    <url-pattern>/servlet/FileUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>FileUploadValorUnitarioServlet</servlet-name>
+	    <url-pattern>/servlet/FileUploadValorUnitarioServlet</url-pattern>
 	</servlet-mapping>
   <servlet-mapping>
     <servlet-name>action</servlet-name>
