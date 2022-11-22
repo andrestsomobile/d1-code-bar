@@ -11,7 +11,12 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Currency;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 import javax.servlet.ServletException;
@@ -51,10 +56,14 @@ import maestro.entity.sucursal;
 import maestro.entity.transportadora;
 import nacionalizacion.control.gstnacionalizacion_detalle;
 import nacionalizacion.entity.nacionalizacion_detalle;
+import parametros.control.GstParametroDestinatario;
+import parametros.entity.ParametroDestinatario;
 import pedido.control.gestionSaldos;
 import pedido.control.gstpedido;
 import pedido.control.gstreferencia_pedido;
 import pedido.entity.pedido;
+import pedido.entity.referencia_pedido;
+import util.EnviarMail;
 import util.Fecha;
 
 public final class fileAction extends Action {
@@ -122,6 +131,7 @@ public final class fileAction extends Action {
 			
 			// beanConnector db = new beanConnector(false);
 			gstauditoriacarguepedido gaucp = new gstauditoriacarguepedido();
+			HashMap<String, String> listPedidos = new HashMap<String, String>();
 			try {
 				while ((s = entrada.readLine()) != null) {
 					System.out.println("TRY WHILE =" + resp);
@@ -136,7 +146,7 @@ public final class fileAction extends Action {
 							System.out.println("LONGITUD DE CONTENEDOR =" + contenedor.length);
 							// //////validaciones...
 							// //////////////////////////codigo capturar variables
-							// La compañia se pide por parametro
+							// La compaï¿½ia se pide por parametro
 							// String pedcompania = "1";
 							
 							String bbbodega = request.getParameter("bodega");
@@ -236,6 +246,12 @@ public final class fileAction extends Action {
 							producto pro = null; 
 							pro = gpro.getproductoByUk(pedcompania, promodelo);
 							
+							//INICIALIZA PEDIDO SIN ERROR
+							if(listPedidos.get(pednumpedido) == null || listPedidos.get(pednumpedido).equals("0")) {
+								listPedidos.put(pednumpedido, "1");
+							}
+							
+							
 							boolean nroPed = ControlNroPedidoValidaciones(pednumpedido);// /var 0
 							if (nroPed == true) {
 								pednosub += "<br>el pedido " + pednumpedido + " Modelo " + promodelo + " presenta inconsistencias ; Observacion : Verifique El dato " + pednumpedido + "\n";
@@ -250,7 +266,7 @@ public final class fileAction extends Action {
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato " + pednumpedido,auccodsx);
-
+								listPedidos.put(pednumpedido, "0");
 							}
 							if (pedordencompra == "") {
 								pedordencompra = "Sin O.C.";// /var 1
@@ -266,6 +282,7 @@ public final class fileAction extends Action {
 								hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 								hoja.addCell(new Label(col++, renglon, "Verifique El dato " + pedfechavenc, format));
 								renglon++;
+								listPedidos.put(pednumpedido, "0");
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato " + pedfechavenc,auccodsx);
@@ -287,6 +304,7 @@ public final class fileAction extends Action {
 									hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 									hoja.addCell(new Label(col++, renglon, "Sucursal sin padre" + pedsucursal, format));
 									renglon++;
+									listPedidos.put(pednumpedido, "0");
 									rechazado _rechazado = new rechazado(pednumpedido);
 									listarechazados.add(_rechazado);
 									gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Sucursal sin padre" + pedsucursal,auccodsx);
@@ -309,13 +327,14 @@ public final class fileAction extends Action {
 								hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 								hoja.addCell(new Label(col++, renglon, "Verifique El dato el codigo de sucursal se repite o no existe " + pedsucursal, format));
 								renglon++;
+								listPedidos.put(pednumpedido, "0");
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato el codigo de sucursal se repite o no existe " + pedsucursal,auccodsx);
 							}
 							gstpedido objetocontsucur = new gstpedido();
 							// int a=objetocontsucur.getPedidoRefPromodelo(promodelo);//var 5
-							// Feb 02 de 2012. Se valida el modelo para la compañia del pedido.
+							// Feb 02 de 2012. Se valida el modelo para la compaï¿½ia del pedido.
 							
 							int a = objetocontsucur.getPedidoRefPromodeloCia(pedcompania, promodelo);// var 5
 							boolean modelos = true;
@@ -332,6 +351,7 @@ public final class fileAction extends Action {
 								hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 								hoja.addCell(new Label(col++, renglon, "Verifique El dato el codigo o modelo de producto no existe " + promodelo, format));								
 								renglon++;
+								listPedidos.put(pednumpedido, "0");
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato el codigo o modelo de producto no existe " + promodelo,auccodsx);
@@ -349,6 +369,7 @@ public final class fileAction extends Action {
 								hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 								hoja.addCell(new Label(col++, renglon, "Verifique El dato " + cantidad, format));								
 								renglon++;
+								listPedidos.put(pednumpedido, "0");
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato " + cantidad,auccodsx);
@@ -365,6 +386,7 @@ public final class fileAction extends Action {
 								hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 								hoja.addCell(new Label(col++, renglon, "Verifique El dato " + valorunit, format));								
 								renglon++;
+								listPedidos.put(pednumpedido, "0");
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato " + valorunit,auccodsx);
@@ -386,6 +408,7 @@ public final class fileAction extends Action {
 								hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 								hoja.addCell(new Label(col++, renglon, "Verifique El dato fecha alistamiento " + pedfechaalistamiento, format));								
 								renglon++;
+								listPedidos.put(pednumpedido, "0");
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato fecha de alistamiento " + pedfechaalistamiento,auccodsx);
@@ -402,6 +425,7 @@ public final class fileAction extends Action {
 								hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 								hoja.addCell(new Label(col++, renglon, "Verifique El dato fecha despacho " + pedfechadespacho, format));								
 								renglon++;
+								listPedidos.put(pednumpedido, "0");
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato fecha de despacho " + pedfechadespacho,auccodsx);
@@ -418,6 +442,7 @@ public final class fileAction extends Action {
 								hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 								hoja.addCell(new Label(col++, renglon, "Verifique El dato fecha entrega " + pedfechaentrega, format));								
 								renglon++;
+								listPedidos.put(pednumpedido, "0");
 								rechazado _rechazado = new rechazado(pednumpedido);
 								listarechazados.add(_rechazado);
 								gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Verifique El dato fecha de entrega " + pedfechaentrega,auccodsx);
@@ -441,12 +466,13 @@ public final class fileAction extends Action {
 									if (count == 0) {
 										try {
 
-											// System.out.println("antes ENSAYO******************"+count);
+											System.out.println("PEDIDO CREADO "+pednumpedido);
 											resp &= gped.crearpedido(pedcompania, pednumpedido, pedordencompra, pedguia, pedfechasistema, pedfecha, pedfechavenc, pedfechacita, pedhoracita, pedcliente, pedsucursal, peddireccion, pedciudad, peddepartamento, pedobservaciones, pedfactura, pedestado,
 													pedsubtotal, pediva, peddescuento, pedtotal, pedtipo, pedpicking, pedhora, pedzona, pedcausal_hit, pedporc_iva, pedtransportadora, pedfechaalistamiento, pedfechadespacho, pedfechaentrega);
 											pedidoscreados = pedidoscreados + pednumpedido + ",";
 											// System.out.println("despues ENSAYO******************"+count);
-										} catch (SQLException e) { // e.printStackTrace();
+										} catch (SQLException e) { 
+											e.printStackTrace();
 											// mensaje += "No se pudo Crear el pedido:  "+pednosub+ e.getLocalizedMessage();
 											// observaciones+= "\nNo se pudo Crear el pedido:  "+pednosub;
 											pednosub += "<br>el pedido " + pednumpedido + " Modelo " + promodelo + " presenta error: " + e.getLocalizedMessage() + "\n";
@@ -458,6 +484,7 @@ public final class fileAction extends Action {
 											hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 											hoja.addCell(new Label(col++, renglon, "Error: " + e.getLocalizedMessage(), format));
 											renglon++;
+											listPedidos.put(pednumpedido, "0");
 											rechazado _rechazado = new rechazado(pednumpedido);
 											listarechazados.add(_rechazado);
 											gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Error: " + e.getLocalizedMessage(),auccodsx);
@@ -472,7 +499,7 @@ public final class fileAction extends Action {
 									if (ped != null && ped.getpedestado().equals("TRAMITE") && estaenlista(pednumpedido)) {
 										// System.out.println("***********************************---------"+ped.getpedcodsx());
 										// String procodsx=gped.getPedidoCod(promodelo);
-										// Feb 02 de 2012. Se valida el modelo para la compañia del pedido.
+										// Feb 02 de 2012. Se valida el modelo para la compaï¿½ia del pedido.
 										String procodsx = gped.getPedidoCodCia(pedcompania, promodelo);
 										// ////////////////////referencia
 										String pedcodsx = ped.getpedcodsx();
@@ -553,12 +580,24 @@ public final class fileAction extends Action {
 												count = gpedestado.getPedidoCountEstado(pedcompania, pednumpedido, pedestadofin);
 												if (count == 1) {
 													try {
-														grefp.crearreferencia_pedido(pedcodsx, procodsx, ent.getEntbodega(), ent.getentposicion(), saldo_ent.toPlainString(), valorunit, total.toPlainString(), ent.getentcodsx(), nacdetalle, saldo_ent.toPlainString(), ent.getentpesoneto(), ent
-																.getentpesobruto(), neto.toPlainString(), bruto.toPlainString(), valorfacunit, totalfac.toPlainString());
+														Double uniEmpaque = Double.parseDouble(pro.getprouniempaque());
+														Double valorUnitario = 0.0;
+														Double valorDeclarado = 0.0;
+														
+														if(pro.getProvalorunitario() != null && !pro.getProvalorunitario().isEmpty()) {
+															valorUnitario = Double.parseDouble(pro.getProvalorunitario());
+															valorDeclarado = (uniEmpaque * saldo_ent.intValue()) * valorUnitario;
+														}
+														
+														grefp.crearreferenciaPedidoValorDeclarado(pedcodsx, procodsx, ent.getEntbodega(), ent.getentposicion(), saldo_ent.toPlainString(), valorunit, total.toPlainString(), ent.getentcodsx(), nacdetalle, saldo_ent.toPlainString(), ent.getentpesoneto(), ent
+																.getentpesobruto(), neto.toPlainString(), 
+																bruto.toPlainString(), valorfacunit,
+																totalfac.toPlainString(), valorDeclarado.toString());
 														procesado _procesado = new procesado(pednumpedido, promodelo, pro.getprodescripcion(), saldo_ent.intValue());
 														listaprocesados.add(_procesado);
 													} catch (SQLException e) {
 														e.printStackTrace();
+														listPedidos.put(pednumpedido, "0");
 														// mensaje += "No se pudo Crear el Referencias con Modelo:  "+refnosub+ e.getLocalizedMessage();
 														// observaciones += "\nNo se pudo Crear el Referencias con Modelo:  "+refnosub;
 													}
@@ -576,6 +615,7 @@ public final class fileAction extends Action {
 													hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 													hoja.addCell(new Label(col++, renglon, "Pedido se encuentra en estado FINALIZADO", format));
 													renglon++;
+													listPedidos.put(pednumpedido, "0");
 													rechazado _rechazado = new rechazado(pednumpedido);
 													listarechazados.add(_rechazado);
 													gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Pedido se encuentra en estado FINALIZADO",auccodsx);
@@ -618,12 +658,22 @@ public final class fileAction extends Action {
 
 												if (count == 1) {
 													try {
-														grefp.crearreferencia_pedido(pedcodsx, procodsx, ent.getEntbodega(), ent.getentposicion(), faltante.toPlainString(), valorunit, total.toPlainString(), ent.getentcodsx(), nacdetalle, faltante.toPlainString(), ent.getentpesoneto(), ent
-																.getentpesobruto(), neto.toPlainString(), bruto.toPlainString(), valorfacunit, totalfac.toPlainString());
+														Double uniEmpaque = Double.parseDouble(pro.getprouniempaque());
+														Double valorUnitario = 0.0;
+														Double valorDeclarado = 0.0;
+														
+														if(pro.getProvalorunitario() != null && !pro.getProvalorunitario().isEmpty()) {
+															valorUnitario = Double.parseDouble(pro.getProvalorunitario());
+															valorDeclarado = (uniEmpaque * faltante.intValue()) * valorUnitario;
+														}
+														
+														grefp.crearreferenciaPedidoValorDeclarado(pedcodsx, procodsx, ent.getEntbodega(), ent.getentposicion(), faltante.toPlainString(), valorunit, total.toPlainString(), ent.getentcodsx(), nacdetalle, faltante.toPlainString(), ent.getentpesoneto(), ent
+																.getentpesobruto(), neto.toPlainString(), bruto.toPlainString(), valorfacunit, totalfac.toPlainString(), valorDeclarado.toString());
 														procesado _procesado = new procesado(pednumpedido, promodelo, pro.getprodescripcion(), faltante.intValue());
 														listaprocesados.add(_procesado);
 													} catch (SQLException e) {
 														e.printStackTrace();
+														listPedidos.put(pednumpedido, "0");
 														// mensaje = "No se pudo Crear Referencias con Modelo: <br> "+refnosub+ e.getLocalizedMessage();
 														// mensaje += "No se pudo Crear Referencias con Modelo:  "+ e.getLocalizedMessage();
 
@@ -642,6 +692,7 @@ public final class fileAction extends Action {
 													hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 													hoja.addCell(new Label(col++, renglon, "Pedido se encuentra en estado FINALIZADO", format));
 													renglon++;
+													listPedidos.put(pednumpedido, "0");
 													rechazado _rechazado = new rechazado(pednumpedido);
 													listarechazados.add(_rechazado);
 													gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad+"", "RECHAZADO","Pedido se encuentra en estado FINALIZADO",auccodsx);
@@ -688,6 +739,7 @@ public final class fileAction extends Action {
 											hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 											hoja.addCell(new Label(col++, renglon, "Se respaldo un Total de " + total_respaldado.toPlainString() + ", El saldo nacionalizado no fue suficiente", format));
 											renglon++;
+											listPedidos.put(pednumpedido, "0");
 											rechazado _rechazado = new rechazado(pednumpedido);
 											listarechazados.add(_rechazado);
 											gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Se respaldo un Total de " + total_respaldado.toPlainString() + ", El saldo nacionalizado no fue suficiente",auccodsx);
@@ -707,6 +759,7 @@ public final class fileAction extends Action {
 										hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 										hoja.addCell(new Label(col++, renglon, "Pedido se encuentra en estado FINALIZADO", format));
 										renglon++;
+										listPedidos.put(pednumpedido, "0");
 										rechazado _rechazado = new rechazado(pednumpedido);
 										listarechazados.add(_rechazado);
 										gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "Pedido se encuentra en estado FINALIZADO",auccodsx);
@@ -724,6 +777,7 @@ public final class fileAction extends Action {
 									hoja.addCell(new Label(col++, renglon, "RECHAZADO", format));
 									hoja.addCell(new Label(col++, renglon, "No se pudo Crear el pedido", format));
 									renglon++;
+									listPedidos.put(pednumpedido, "0");
 									rechazado _rechazado = new rechazado(pednumpedido);
 									listarechazados.add(_rechazado);
 									gaucp.crear(usu.getusucodsx(), nombrearch, pednumpedido, promodelo,pro != null ? pro.getprodescripcion():"", cantidad, "RECHAZADO", "No se pudo Crear el pedido",auccodsx);
@@ -744,13 +798,80 @@ public final class fileAction extends Action {
 
 				// if(resp)db.commit();
 				// else db.rollback();
-				// System.out.println("CANTIDAD FILAS :"+contadorComas);
+				System.out.println("CANTIDAD FILAS FIN :"+listPedidos.size() + " " + listaprocesados.size());
+				// se borran los pedidos rechazados que se alcazaron a crear;
+				 beanConnector db = new beanConnector(false);
+				 gstpedido gped = new gstpedido(db);
+				 boolean resp_borre = true;
+
+				 gstreferencia_pedido grefp = new gstreferencia_pedido(db);
+				 gstproducto gstProducto = new gstproducto(db);
+				 
+				try {
+					GstParametroDestinatario paramDestinatario = new GstParametroDestinatario();
+					ParametroDestinatario param = paramDestinatario.getParametroDestinatario("valor_declarado");
+					ParametroDestinatario paramError = paramDestinatario.getParametroDestinatario("valor_declarado_error");
+					String cuerpo = param.getCuerpo();
+					
+					
+					for (Map.Entry<String, String> entry : listPedidos.entrySet()) {
+						if(entry.getValue().equals("1")) {
+							String pedido = entry.getKey();
+							String asunto = param.getAsunto().replace("$pedido", pedido);
+							String destinatarios = param.getCorreos();
+							Double valorDeclarado = 0.0;
+							boolean sendedError = false;
+							
+							pedido ped = gped.getpedido(pedcompania, pedido);
+							Collection refPedidos = grefp.getlistareferencia_pedido(ped.getpedcodsx());
+							
+							for(Object ref: refPedidos) {
+								referencia_pedido rp = (referencia_pedido) ref;
+								producto p = gstProducto.getproducto(rp.getrefpproducto());
+
+								if(rp.getRefpvalordeclarado() != null && !rp.getRefpvalordeclarado().isEmpty()) {
+									Double valorD = Double.parseDouble(rp.getRefpvalordeclarado());
+
+									if(valorD > 0.0) {
+										valorDeclarado += valorD;
+									} else {
+										sendedError = true;
+									}
+								} else {
+									sendedError = true;
+								}
+								
+							}
+
+							String body = "";
+							if(!sendedError) {
+								Locale locale = new Locale("es", "CO");
+								java.text.NumberFormat numberFormat = java.text.NumberFormat.getCurrencyInstance(locale);
+								body = cuerpo.replace("$body","<table><tr><td>Nro reserva</td><td>Valor Declarado</td></tr>"
+							+ "<tr><td>"+pedido+"</td><td>"+numberFormat.format(valorDeclarado)+"</td></tr> </table>");
+							} else {
+								asunto = paramError.getAsunto().replace("$pedido", pedido);
+								body = paramError.getCuerpo().replace("$pedido", pedido);
+								destinatarios = paramError.getCorreos();
+							}
+							
+							System.out.println("enviar pedido " + pedido);
+							EnviarMail mail = new EnviarMail();
+							mail.enviarMailValor(destinatarios, asunto, body);
+						}
+					    System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("Error al enviar correo" + e.getMessage());
+				}
+				
 				
 				renglon = 0;
 				 for (int y = 0; y < listaprocesados.size(); y++) {
 					if (!listarechazados.contains(new rechazado(listaprocesados.get(y).getPedido()))) { 
 						col = 0;			
-						
+						System.out.println("pedidos procesados: " +  listaprocesados.get(y).getPedido());
 						hoja1.addCell(new Label(col++, renglon, listaprocesados.get(y).getPedido(), format));
 						hoja1.addCell(new Label(col++, renglon, listaprocesados.get(y).getPromodelo(), format));
 						hoja1.addCell(new Label(col++, renglon, listaprocesados.get(y).getDescripcion(), format));
@@ -760,12 +881,7 @@ public final class fileAction extends Action {
 						gaucp.crear(usu.getusucodsx(), nombrearch, listaprocesados.get(y).getPedido(), listaprocesados.get(y).getPromodelo(), listaprocesados.get(y).getDescripcion(), listaprocesados.get(y).getCantidad()+"", "OK", "",auccodsx);
 					}
 				 }
-				 // se borran los pedidos rechazados que se alcazaron a crear;
-				 beanConnector db = new beanConnector(false);
-				 gstpedido gped = new gstpedido(db);
-				 boolean resp_borre = true;
-
-				 gstreferencia_pedido grefp = new gstreferencia_pedido(db);
+				 
 				 for (int y = 0; y < listarechazados.size(); y++) {					 
 					 pedido miped = gped.getpedido(pedcompania, listarechazados.get(y).getPedido());
 					 if (miped != null && miped.getpedestado().equalsIgnoreCase("TRAMITE")) {
@@ -778,10 +894,6 @@ public final class fileAction extends Action {
 				 	 }
 				 }
 				 db.commit();
-				 /*if (resp_borre)
-						db.commit();
-					else
-						db.rollback();*/
 				 
 				 
 				book.write();
@@ -792,7 +904,7 @@ public final class fileAction extends Action {
 			}
 			// System.out.println("cantidad de caracteres: "+comas);
 		} catch (java.io.FileNotFoundException fnfex) {
-			// System.out.println("se presento el error: "+fnfex.toString());
+			fnfex.printStackTrace();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -826,9 +938,11 @@ public final class fileAction extends Action {
 		}
 		// ////////////////////////////////////////////////////////////
 		mensaje = "Proceso Automatico Terminado... Para detalle sobre Observaciones Verifique Bloc de Errores";
+		System.out.println(mensaje);
 		ActionMessages e = getErrors(request);
 		e.add("general", new ActionMessage(mensaje, false));
 		addErrors(request, e);
+		System.out.println(destino);
 		return mapping.findForward(destino);
 	}
 

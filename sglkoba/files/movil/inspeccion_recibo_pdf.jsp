@@ -43,7 +43,7 @@
 	
 <script type="text/javascript">
 
-function generarpdf(lctrafcodsx,trafcodsx) { 
+function generarpdf(lctrafcodsx,trafcodsx,contenedor) { 
 	
 	var miurl = "traficoAction.do?opcion=generaPdfInspeccionRecibo&lctrafcodsx="+lctrafcodsx+"&trafcodsx="+trafcodsx;
 	
@@ -61,6 +61,7 @@ function generarpdf(lctrafcodsx,trafcodsx) {
 		"inrecajas": $("input[id='inrecajas']").val(),
 		"inresaldo": $("input[id='inresaldo']").val(),
 		"inrenovedades": $("input[id='inrenovedades']").val(),
+		"inretiponovedades": $("select[id='inretiponovedades']").val(),
 		"inrerecuperadas": $("input[id='inrerecuperadas']").val(),
 		"inretotalump": $("input[id='inretotalump']").val(),
 		"inreesibasrequeridas": $("input[id='inreesibasrequeridas']").val(),
@@ -102,7 +103,9 @@ function generarpdf(lctrafcodsx,trafcodsx) {
 		"inrecalificacion_obs": $("input[id='inrecalificacion_obs']").val(),
 		"inrerecibido": $("input[id='inrerecibido']").val(),
 		"inreconductor": $("input[id='inreconductor']").val(),
-		"inrefechagenerado": $("input[id='inrefechagenerado']").val()
+		"inrefechagenerado": $("input[id='inrefechagenerado']").val(),
+		"inreproducto": $("select[id='producto']").val(),
+		"inrecontenedor": contenedor
 
 	    },
 	    cache: false,
@@ -116,7 +119,74 @@ function generarpdf(lctrafcodsx,trafcodsx) {
 	});
 }
 
+function cambioProducto(producto, contenedor, trafico) {
+	var miurl = "contenedorTraficoProducto.do?producto="+producto + "&contenedor="+contenedor+"&trafico="+trafico;
+
+	$.ajax({
+	    url: miurl,
+	    cache: false,
+	    type: "GET",
+	    success: function(response) { 
+		$("input[id='inremuelle']").val(response.inremuelle),
+		$("input[id='inreprecinto']").val(response.inreprecinto),
+		$("input[id='inrevencimiento']").val(response.inrevencimiento),
+		$("input[id='inrelote']").val(response.inrelote),
+		$("input[id='inreestibas']").val(response.inreestibas),
+		$("input[id='inrecajas']").val(response.inrecajas),
+		$("input[id='inresaldo']").val(response.inresaldo),
+		$("select[id='inretiponovedades']").val(response.inretiponovedades),
+		$("input[id='inrenovedades']").val(response.inrenovedades),
+		$("input[id='inrerecuperadas']").val(response.inrerecuperadas),
+		$("input[id='inretotalump']").val(response.inretotalump),
+		$("input[id='inreesibasrequeridas']").val(response.inreesibasrequeridas),
+		$("input[id='inrepesoestibavacia']").val(response.inrepesoestibavacia),
+		$("input[id='inrepesototalestibasvacias']").val(response.inrepesototalestibasvacias),
+		$("input[id='inrepesoestibapaletizada']").val(response.inrepesoestibapaletizada),
+		$("input[id='inrepesoporump']").val(response.inrepesoporump),
+		$("input[id='inrepesonetoproducto']").val(response.inrepesonetoproducto),
+		$("input[id='inreobservaciones']").val(response.inreobservaciones),
+		$("input[id='inrearlvigente_cal']").val(response.inrearlvigente_cal),
+		$("input[id='inrearlvigente_obs']").val(response.inrearlvigente_obs),
+		$("input[id='inrecarnet_cal']").val(response.inrecarnet_cal),
+		$("input[id='inrecarnet_obs']").val(response.inrecarnet_obs),
+		$("input[id='inreproteccion_cal']").val(response.inreproteccion_cal),
+		$("input[id='inreproteccion_obs']").val(response.inreproteccion_obs),
+		$("input[id='inrefumigacion_cal']").val(response.inrefumigacion_cal),
+		$("input[id='inrefumigacion_obs']").val(response.inrefumigacion_obs),
+		$("input[id='inremanipulacion_cal']").val(response.inremanipulacion_cal),
+		$("input[id='inremanipulacion_obs']").val(response.inremanipulacion_obs),
+		$("input[id='inreaseovehiculo_cal']").val(response.inreaseovehiculo_cal),
+		$("input[id='inreaseovehiculo_obs']").val(response.inreaseovehiculo_obs),
+		$("input[id='inresustanciasquimicas_cal']").val(response.inresustanciasquimicas_cal),
+		$("input[id='inresustanciasquimicas_obs']").val(response.inresustanciasquimicas_obs),
+		$("input[id='inretemperatura_cal']").val(response.inretemperatura_cal),
+		$("input[id='inretemperatura_obs']").val(response.inretemperatura_obs),
+		$("input[id='inreestadogeneral_cal']").val(response.inreestadogeneral_cal),
+		$("input[id='inreestadogeneral_obs']").val(response.inreestadogeneral_obs),
+		$("input[id='inrerevisiones_cal']").val(response.inrerevisiones_cal),
+		$("input[id='inrerevisiones_obs']").val(response.inrerevisiones_obs),
+		$("input[id='inreumprecibidas_cal']").val(response.inreumprecibidas_cal),
+		$("input[id='inreumprecibidas_obs']").val(response.inreumprecibidas_obs),
+		$("input[id='inreumprevisadas_cal']").val(response.inreumprevisadas_cal),
+		$("input[id='inreumprevisadas_obs']").val(response.inreumprevisadas_obs),
+		$("input[id='inretablanutricional_cal']").val(response.inretablanutricional_cal),
+		$("input[id='inretablanutricional_obs']").val(response.inretablanutricional_obs),
+		$("input[id='inreimportacioncinc_cal']").val(response.inreimportacioncinc_cal),
+		$("input[id='inreimportacioncinc_obs']").val(response.inreimportacioncinc_obs),
+		$("input[id='inrecalificacion_cal']").val(response.inrecalificacion_cal),
+		$("input[id='inrecalificacion_obs']").val(response.inrecalificacion_obs),
+		$("input[id='inrerecibido']").val(response.inrerecibido),
+		$("input[id='inreconductor']").val(response.inreconductor),
+		$("input[id='inrefechagenerado']").val(response.inrefechagenerado)
+	    },
+	    error: function(xhr) {
+
+	    }
+	});
+}
+
 </script>
+
 
 <%
 gsttrafico gtraf = new gsttrafico();
@@ -132,17 +202,27 @@ gstinspeccion_recibo ginre = new gstinspeccion_recibo();
 
 String trafcodsx = request.getParameter("trafcodsx");
 String lctrafcodsx = request.getParameter("lctrafcodsx");
+String contenedor = request.getParameter("clave");
+
 
 empresa emp = new administracion.control.gstempresa().getempresa("4");
 
 trafico traf = gtraf.gettrafico(trafcodsx);
-lote_contenedor_trafico lct = glct.getlote_contenedor_trafico(lctrafcodsx);
-lote_trafico lt = glt.getlote_trafico(lct.getlctraflote());
-contenedor_trafico ct = gcont.getcontenedor_trafico(lct.getlctrafcontenedor());
-producto pro = gprod.getproducto(lt.getltrafcodproducto());
-inspeccion_recibo inre = ginre.getinspeccion_recibo(trafcodsx, lctrafcodsx);
-if (inre == null) {
-	inre = new inspeccion_recibo(trafcodsx, lctrafcodsx);
+Collection<lote_contenedor_trafico> listCt = glct.getContenedorLoteTraficoByContenedor(contenedor, trafcodsx);
+List<producto> listPro = new ArrayList<producto>();
+request.setAttribute("listPro", listPro); 
+
+for(Object obj: listCt) {
+	lote_contenedor_trafico lct = (lote_contenedor_trafico)obj;
+	lote_trafico lt = glt.getlote_trafico(lct.getlctraflote());
+	producto prod = gprod.getproducto(lt.getltrafcodproducto());
+	listPro.add(prod);
+}
+
+contenedor_trafico ct = new contenedor_trafico();
+
+if(contenedor != null && !contenedor.isEmpty()) {
+	ct = gcont.getcontenedor_trafico(contenedor);
 }
 
 String clave = trafcodsx;
@@ -171,13 +251,13 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 
 	<tr>
 		<td>Muelle #
-		<td colspan="3"><input type="text" name="inremuelle" id="inremuelle" value="<%=inre.getInremuelle() != null ? inre.getInremuelle() : ""%>">&nbsp;
+		<td colspan="3"><input type="text" name="inremuelle" id="inremuelle" value="">&nbsp;
 
 	<tr>
 		<td>Fecha
 		<td><%=ct.getctrafiniciodescargue() != null ? ct.getctrafiniciodescargue():""%>&nbsp;
 		<td>No. Precinto
-		<td><input type="text" id="inreprecinto" value="<%=inre.getInreprecinto() != null ? inre.getInreprecinto() : ""%>">&nbsp;
+		<td><input type="text" id="inreprecinto" value="">&nbsp;
 	<tr>
 		<td>Hora Inicio
 		<td><%=ct.getctrafiniciodescargue() != null ? ct.getctrafiniciodescargue():""%>&nbsp;
@@ -207,53 +287,68 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 		<td colspan="3">&nbsp;		
 	<tr>
 		<td>Producto
-		<td><%=pro != null ? pro.getpromodelo(): ""%>&nbsp;
-		<td>Descripci&oacute;n
-		<td><%=pro != null ? pro.getprodescripcion() : ""%>&nbsp;		
+		<td colspan="2">
+		<select id="producto" onchange="cambioProducto(this.value,'<%=contenedor %>','<%=trafcodsx %>')">
+		<option value="" onselect="">Seleccione</option>
+		<logic:iterate id="pro" name="listPro" type="producto"  >
+			<option value="<%=pro != null ? pro.getprocodsx(): ""%>"><%=pro != null ? pro.getpromodelo() + "-" + pro.getprodescripcion(): ""%></option>
+		</logic:iterate>
+		</select>	
 	<tr>
 		<td>Vencimiento
-		<td colspan="3"><input type="date" id="inrevencimiento" value="<%=inre.getInrevencimiento() != null ? inre.getInrevencimiento() : lt.getLtrafvencimiento()%>">
+		<td colspan="3"><input type="date" id="inrevencimiento" value="">
 	<tr>
 		<td>Lote
-		<td colspan="3"><input type="text" id="inrelote" value="<%=inre.getInrelote() != null ? inre.getInrelote() : lt.getLtraflote()%>">
+		<td colspan="3"><input type="text" id="inrelote" value="">
 	<tr>
 		<td>Estibas
-		<td><input type="number" id="inreestibas" value="<%=inre.getInreestibas() != null ? inre.getInreestibas() : ""%>">&nbsp;
+		<td><input type="number" id="inreestibas" value="">&nbsp;
 		<td>Cajas
-		<td><input type="number" id="inrecajas" value="<%=inre.getInrecajas() != null ? inre.getInrecajas() : lct.getlctrafcantidad()%>">
+		<td><input type="number" id="inrecajas" value="">
 	<tr>
 		<td>Saldo
-		<td colspan="3"><input type="number" id="inresaldo" value="<%=inre.getInresaldo() != null ? inre.getInresaldo() : ""%>">&nbsp;
+		<td colspan="3"><input type="number" id="inresaldo" value="">&nbsp;
 	<tr>
-		<td>Novedades A(O) S(O) F(O) D(O)
-		<td colspan="3"><input type="text" id="inrenovedades" value="<%=inre.getInrenovedades() != null ? inre.getInrenovedades() : ""%>">&nbsp;	
+		<td>Tipo Novedad
+		<td>
+		<select id="inretiponovedades">
+			<option value="" onselect="">Seleccione</option>
+			<option value="Averia">Averia</option>
+			<option value="Sobrante">Sobrante</option>
+			<option value="Faltante">Faltante</option>
+			<option value="Discrepancia">Discrepancia</option>
+		</select>
+		<td>Cantidad
+		<td>
+		<input type="number" id="inrenovedades" value="">
+		&nbsp;	
 	<tr>
 		<td>Recuparadas
-		<td colspan="3"><input type="number" id="inrerecuperadas" value="<%=inre.getInrerecuperadas() != null ? inre.getInrerecuperadas() : ""%>">&nbsp;
+		<td colspan="3"><input type="number" id="inrerecuperadas" value="">&nbsp;
 	<tr>
 		<td>TOTAL UMP
-		<td colspan="3"><input type="number" id="inretotalump" value="<%=inre.getInretotalump() != null ? inre.getInretotalump() : lct.getlctrafcantidad()%>">&nbsp;
+		<td colspan="3"><input type="number" id="inretotalump" value="">&nbsp;
 	<tr>
 		<td>Estibas Requeridas
-		<td colspan="3"><input type="number" id="inreesibasrequeridas" value="<%=inre.getInreesibasrequeridas() != null ? inre.getInreesibasrequeridas() : ""%>">&nbsp;
+		<td colspan="3"><input type="number" id="inreesibasrequeridas" value="">&nbsp;
 	<tr>
 		<td>Peso Estiba Vacia	
-		<td colspan="3"><input type="number" id="inrepesoestibavacia" value="<%=inre.getInrepesoestibavacia()!= null ? inre.getInrepesoestibavacia() : ""%>">&nbsp;					
+		<td colspan="3"><input type="number" id="inrepesoestibavacia" value="">&nbsp;					
 	<tr>
 		<td>Peso Total Estibas Vacias
-		<td colspan="3"><input type="number" id="inrepesototalestibasvacias" value="<%=inre.getInrepesototalestibasvacias() != null ? inre.getInrepesototalestibasvacias() : ""%>">&nbsp;
+		<td colspan="3"><input type="number" id="inrepesototalestibasvacias" value="">&nbsp;
 	<tr>
 		<td>Peso estiba Paletizada
-		<td colspan="3"><input type="number" id="inrepesoestibapaletizada" value="<%=inre.getInrepesoestibapaletizada() != null ? inre.getInrepesoestibapaletizada() : ""%>">&nbsp;				
+		<td colspan="3"><input type="number" id="inrepesoestibapaletizada" value="">&nbsp;				
 	<tr>
 		<td>Peso por UMP
-		<td colspan="3"><input type="number" id="inrepesoporump" value="<%=inre.getInrepesoporump()!= null ? inre.getInrepesoporump() : ""%>">&nbsp;	
+		<td colspan="3"><input type="number" id="inrepesoporump" value="">&nbsp;	
 	<tr>
 		<td>PESO NETO PRODUCTO
-		<td colspan="3"><input type="number" id="inrepesonetoproducto" value="<%=inre.getInrepesonetoproducto() != null ? inre.getInrepesonetoproducto() : ""%>">&nbsp;				
+		<td colspan="3"><input type="number" id="inrepesonetoproducto" value="">&nbsp;				
 	<tr>
 		<td>OBSERVACIONES
-		<td colspan="3"><input type="text" id="inreobservaciones" value="<%=inre.getInreobservaciones() != null ? inre.getInreobservaciones() : ""%>">&nbsp;			
+		<td colspan="3"><input type="text" id="inreobservaciones" value="">&nbsp;			
 </table>
 
 <br>
@@ -269,64 +364,64 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 		<td>OBSERVACIONES
 	<tr>
 		<td>El personal de descargue cuenta con ARL vigente
-		<td><input type="text" id="inrearlvigente_cal" value="<%=inre.getInrearlvigente_cal() != null ? inre.getInrearlvigente_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inrearlvigente_obs" value="<%=inre.getInrearlvigente_obs() != null ? inre.getInrearlvigente_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inrearlvigente_cal" value="">&nbsp;
+		<td><input type="text" id="inrearlvigente_obs" value="">&nbsp;
 	<tr>
 		<td>El personal de descargue cuenta con Carné de manipulación de ...
-		<td><input type="text" id="inrecarnet_cal" value="<%=inre.getInrecarnet_cal() != null ? inre.getInrecarnet_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inrecarnet_obs" value="<%=inre.getInrecarnet_obs() != null ? inre.getInrecarnet_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inrecarnet_cal" value="">&nbsp;
+		<td><input type="text" id="inrecarnet_obs" value="">&nbsp;
 	<tr>
 		<td>El personal de descargue usa los elementos de protección personal
-		<td><input type="text" id="inreproteccion_cal" value="<%=inre.getInreproteccion_cal() != null ? inre.getInreproteccion_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inreproteccion_obs" value="<%=inre.getInreproteccion_obs() != null ? inre.getInreproteccion_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inreproteccion_cal" value="">&nbsp;
+		<td><input type="text" id="inreproteccion_obs" value="">&nbsp;
 	<tr>
 		<td>El vehículo cuenta con certificado de fumigación no menor a...
-		<td><input type="text" id="inrefumigacion_cal" value="<%=inre.getInrefumigacion_cal() != null ? inre.getInrefumigacion_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inrefumigacion_obs" value="<%=inre.getInrefumigacion_obs() != null ? inre.getInrefumigacion_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inrefumigacion_cal" value="">&nbsp;
+		<td><input type="text" id="inrefumigacion_obs" value="">&nbsp;
 	<tr>
 		<td>El personal de descargue cuenta con Carné de manipulación de alimentos vigente
-		<td><input type="text" id="inremanipulacion_cal" value="<%=inre.getInremanipulacion_cal() != null ? inre.getInremanipulacion_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inremanipulacion_obs" value="<%=inre.getInremanipulacion_obs() != null ? inre.getInremanipulacion_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inremanipulacion_cal" value="">&nbsp;
+		<td><input type="text" id="inremanipulacion_obs" value="">&nbsp;
 	<tr>
 		<td>El piso, techo y paredes del vehículo se encuentran limpias y en buen estado
-		<td><input type="text" id="inreaseovehiculo_cal" value="<%=inre.getInreaseovehiculo_cal() != null ? inre.getInreaseovehiculo_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inreaseovehiculo_obs" value="<%=inre.getInreaseovehiculo_obs() != null ? inre.getInreaseovehiculo_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inreaseovehiculo_cal" value="">&nbsp;
+		<td><input type="text" id="inreaseovehiculo_obs" value="">&nbsp;
 	<tr>
 		<td>El vehículo contiene materiales extraños o sustancias químicas 
-		<td><input type="text" id="inresustanciasquimicas_cal" value="<%=inre.getInresustanciasquimicas_cal() != null ? inre.getInresustanciasquimicas_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inresustanciasquimicas_obs" value="<%=inre.getInresustanciasquimicas_obs() != null ? inre.getInresustanciasquimicas_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inresustanciasquimicas_cal" value="">&nbsp;
+		<td><input type="text" id="inresustanciasquimicas_obs" value="">&nbsp;
 	<tr>
 		<td>Si el vehículo tiene thermoking registra la temperatura de llegada
-		<td><input type="text" id="inretemperatura_cal" value="<%=inre.getInretemperatura_cal() != null ? inre.getInretemperatura_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inretemperatura_obs" value="<%=inre.getInretemperatura_obs() != null ? inre.getInretemperatura_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inretemperatura_cal" value="">&nbsp;
+		<td><input type="text" id="inretemperatura_obs" value="">&nbsp;
 	<tr>
 		<td>Estado General del producto
-		<td><input type="text" id="inreestadogeneral_cal" value="<%=inre.getInreestadogeneral_cal() != null ? inre.getInreestadogeneral_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inreestadogeneral_obs" value="<%=inre.getInreestadogeneral_obs() != null ? inre.getInreestadogeneral_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inreestadogeneral_cal" value="">&nbsp;
+		<td><input type="text" id="inreestadogeneral_obs" value="">&nbsp;
 	<tr>
 		<td>Revisiones aleatorias efectuadas
-		<td><input type="text" id="inrerevisiones_cal" value="<%=inre.getInrerevisiones_cal()!= null ? inre.getInrerevisiones_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inrerevisiones_obs" value="<%=inre.getInrerevisiones_obs() != null ? inre.getInrerevisiones_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inrerevisiones_cal" value="">&nbsp;
+		<td><input type="text" id="inrerevisiones_obs" value="">&nbsp;
 	<tr>
 		<td>*UMP Recibidas
-		<td><input type="text" id="inreumprecibidas_cal" value="<%=inre.getInreumprecibidas_cal()!= null ? inre.getInreumprecibidas_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inreumprecibidas_obs" value="<%=inre.getInreumprecibidas_obs() != null ? inre.getInreumprecibidas_cal() : ""%>">&nbsp;
+		<td><input type="text" id="inreumprecibidas_cal" value="">&nbsp;
+		<td><input type="text" id="inreumprecibidas_obs" value="">&nbsp;
 	<tr>
 		<td>*UMP Revisadas
-		<td><input type="text" id="inreumprevisadas_cal" value="<%=inre.getInreumprevisadas_cal()!= null ? inre.getInreumprevisadas_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inreumprevisadas_obs" value="<%=inre.getInreumprevisadas_obs() != null ? inre.getInreumprevisadas_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inreumprevisadas_cal" value="">&nbsp;
+		<td><input type="text" id="inreumprevisadas_obs" value="">&nbsp;
 	<tr>
 		<td>*Tabla Nutricional
-		<td><input type="text" id="inretablanutricional_cal" value="<%=inre.getInretablanutricional_cal()!= null ? inre.getInretablanutricional_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inretablanutricional_obs" value="<%=inre.getInretablanutricional_obs() != null ? inre.getInretablanutricional_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inretablanutricional_cal" value="">&nbsp;
+		<td><input type="text" id="inretablanutricional_obs" value="">&nbsp;
 	<tr>
 		<td>*Información Importación CINC
-		<td><input type="text" id="inreimportacioncinc_cal" value="<%=inre.getInreimportacioncinc_cal()!= null ? inre.getInreimportacioncinc_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inreimportacioncinc_obs" value="<%=inre.getInreimportacioncinc_obs() != null ? inre.getInreimportacioncinc_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inreimportacioncinc_cal" value="">&nbsp;
+		<td><input type="text" id="inreimportacioncinc_obs" value="">&nbsp;
 	<tr>
 		<td>Calificación/cumplimiento: SI Cumple; NO Cumple
-		<td><input type="text" id="inrecalificacion_cal" value="<%=inre.getInrecalificacion_cal()!= null ? inre.getInrecalificacion_cal() : ""%>">&nbsp;
-		<td><input type="text" id="inrecalificacion_obs" value="<%=inre.getInrecalificacion_obs() != null ? inre.getInrecalificacion_obs() : ""%>">&nbsp;
+		<td><input type="text" id="inrecalificacion_cal" value="">&nbsp;
+		<td><input type="text" id="inrecalificacion_obs" value="">&nbsp;
 	
 </table>		
 <br>
@@ -334,19 +429,42 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 <br>
 <table align="center" border="0" width="80%">
 	<tr>
-		<td align="center"><input type="text" id="inrerecibido" value="<%=inre.getInrerecibido()!= null ? inre.getInrerecibido() : ""%>">&nbsp;<br>----------------------------<BR>
+		<td align="center"><input type="text" id="inrerecibido" value="">&nbsp;<br>----------------------------<BR>
 		RECIBIDO POR</td>
-		<td align="center"><input type="text" id="inreconductor" value="<%=inre.getInreconductor()!= null ? inre.getInreconductor() : ""%>">&nbsp;<br>----------------------------<BR>
+		<td align="center"><input type="text" id="inreconductor" value="">&nbsp;<br>----------------------------<BR>
 		Conductor&nbsp;<%=ct.getCtrafconductor()%>
 	</tr>
 </table>
 
 </form>
 
+<body>
+    <p>Firmar a continuación:</p>
+    <div  style="display: flex;">
+    <div>
+
+        <canvas id="canvas" style=" border: 1px solid black;"></canvas>
+        <br>
+        <button id="btnLimpiar">Limpiar</button>
+         <button id="btnDescargar" onclick="generarFirma(<%=contenedor %>)">Firmar</button>
+         <br>
+    </div>
+    <div>
+        <canvas id="canvasDos" style=" border: 1px solid black;">
+        </canvas>
+        <br>
+        <button id="btnLimpiarDos">Limpiar</button>
+        <button id="btnDescargarDos" onclick="generarFirmaDos(<%=contenedor %>)">Firmar</button>
+        <br>
+    </div>
+</div>
+    <br>
+    <script src="script.js"></script>
+</body>
 
 <div align="center">
 
-<button value="Generar PDF" onclick="generarpdf(<%=lctrafcodsx %>,<%=trafcodsx %>)" style="color: blue" >Generar PDF</button>
+<button value="Generar PDF" onclick="generarpdf(<%=lctrafcodsx %>,<%=trafcodsx %>,<%=contenedor %>)" style="color: blue" >Generar PDF</button>
 </div>
 
 <br>
@@ -402,6 +520,227 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 	%>
 	 </table>
 </div>
+
+<script>
+
+
+const $canvas = document.querySelector("#canvas"),
+    $btnDescargar = document.querySelector("#btnDescargar"),
+    $btnLimpiar = document.querySelector("#btnLimpiar"),
+    $canvasDos=document.querySelector("#canvasDos"),
+    $btnDescargarDos = document.querySelector("#btnDescargarDos"),
+    $btnLimpiarDos = document.querySelector("#btnLimpiarDos");
+
+const contexto = $canvas.getContext("2d");
+const contextoDos = $canvasDos.getContext("2d");
+const COLOR_PINCEL = "black";
+const COLOR_FONDO = "white";
+const GROSOR = 2;
+let xAnterior = 0, yAnterior = 0, xActual = 0, yActual = 0;
+let xAnteriorDos = 0, yAnteriorDos = 0, xActualDos = 0, yActualDos = 0;
+const obtenerXReal = (clientX) => clientX - $canvas.getBoundingClientRect().left;
+const obtenerYReal = (clientY) => clientY - $canvas.getBoundingClientRect().top;
+const obtenerXRealDos = (clientX) => clientX - $canvasDos.getBoundingClientRect().left;
+const obtenerYRealDos = (clientY) => clientY - $canvasDos.getBoundingClientRect().top;
+let haComenzadoDibujo = false; // Bandera que indica si el usuario está presionando el botón del mouse sin soltarlo
+let haComenzadoDibujoDos = false;
+let isIdle = true;
+let isIdleTwo = true;
+
+const limpiarCanvas = () => {
+    // Colocar color blanco en fondo de canvas
+    contexto.fillStyle = COLOR_FONDO;
+    contexto.fillRect(0, 0, $canvas.width, $canvas.height);
+};
+const limpiarCanvasDos = () => {
+    // Colocar color blanco en fondo de canvas
+    contextoDos.fillStyle = COLOR_FONDO;
+    contextoDos.fillRect(0, 0, $canvasDos.width, $canvasDos.height);
+};
+
+limpiarCanvas();
+limpiarCanvasDos();
+$btnLimpiar.onclick = limpiarCanvas;
+$btnLimpiarDos.onclick = limpiarCanvasDos;
+// Escuchar clic del botón para descargar el canvas
+function generarFirma(trafcodsx) {
+    const enlace = document.createElement('a');
+    // Convertir la imagen a Base64 y ponerlo en el enlace
+    enlace.href = $canvas.toDataURL();
+    
+var miurl = "firmaActionFile.do?baseCode="+enlace.href+"&trafcodsx="+trafcodsx+"&mainDirectory=FIRMARECIBIDO";
+	
+	$.ajax({
+	    url: miurl,
+	    cache: false,
+	    type: "POST",
+	    success: function(response) { 
+			alert("Se ha firmado con exito");
+	    },
+	    error: function(xhr) {
+	    	alert("Se ha generado error al firmar");
+	    }
+	});
+};
+
+function generarFirmaDos(trafcodsx) {
+	  const enlace = document.createElement('b');
+    // Convertir la imagen a Base64 y ponerlo en el enlace
+     enlace.href = $canvasDos.toDataURL();
+    
+var miurl = "firmaActionFile.do?baseCode="+enlace.href+"&trafcodsx="+trafcodsx+"&mainDirectory=FIRMACONDUCTOR";
+	
+	$.ajax({
+	    url: miurl,
+	    cache: false,
+	    type: "POST",
+	    success: function(response) { 
+			alert("Se ha firmado con exito");
+	    },
+	    error: function(xhr) {
+	    	alert("Se ha generado error al firmar");
+	    }
+	});
+};
+
+
+
+// Lo demás tiene que ver con pintar sobre el canvas en los eventos del mouse
+$canvas.addEventListener("mousedown", evento => {
+    // En este evento solo se ha iniciado el clic, así que dibujamos un punto
+    	console.log(xActual )
+	console.log(event.pageY )
+    xAnterior = xActual;
+    yAnterior = yActual;
+    xActual = obtenerXReal(evento.clientX);
+    yActual = obtenerYReal(evento.clientY);
+    contexto.beginPath();
+    contexto.fillStyle = COLOR_PINCEL;
+    contexto.fillRect(xActual, yActual, GROSOR, GROSOR);
+    contexto.closePath();
+    // Y establecemos la bandera
+    haComenzadoDibujo = true;
+});
+
+
+$canvas.addEventListener("mousemove", (evento) => {
+    if (!haComenzadoDibujo) {
+        return;
+    }
+    // El mouse se está moviendo y el usuario está presionando el botón, así que dibujamos todo
+
+    xAnterior = xActual;
+    yAnterior = yActual;
+    xActual = obtenerXReal(evento.clientX);
+    yActual = obtenerYReal(evento.clientY);
+    contexto.beginPath();
+    contexto.moveTo(xAnterior, yAnterior);
+    contexto.lineTo(xActual, yActual);
+    contexto.strokeStyle = COLOR_PINCEL;
+    contexto.lineWidth = GROSOR;
+    contexto.stroke();
+    contexto.closePath();
+});
+["mouseup", "mouseout"].forEach(nombreDeEvento => {
+    $canvas.addEventListener(nombreDeEvento, () => {
+        haComenzadoDibujo = false;
+    });
+});
+
+$canvasDos.addEventListener("mousedown", evento => {
+    // En este evento solo se ha iniciado el clic, así que dibujamos un punto
+    xAnteriorDos = xActualDos;
+    yAnteriorDos = yActualDos;
+    xActualDos = obtenerXRealDos(evento.clientX);
+    yActualDos = obtenerYRealDos(evento.clientY);
+    contextoDos.beginPath();
+    contextoDos.fillStyle = COLOR_PINCEL;
+    contextoDos.fillRect(xActualDos, yActualDos, GROSOR, GROSOR);
+    contextoDos.closePath();
+    // Y establecemos la bandera
+    haComenzadoDibujoDos = true;
+});
+
+$canvasDos.addEventListener("mousemove", (evento) => {
+    if (!haComenzadoDibujoDos) {
+        return;
+    }
+    // El mouse se está moviendo y el usuario está presionando el botón, así que dibujamos todo
+
+    xAnteriorDos = xActualDos;
+    yAnteriorDos = yActualDos;
+    xActualDos = obtenerXRealDos(evento.clientX);
+    yActualDos = obtenerYRealDos(evento.clientY);
+    contextoDos.beginPath();
+    contextoDos.moveTo(xAnteriorDos, yAnteriorDos);
+    contextoDos.lineTo(xActualDos, yActualDos);
+    contextoDos.strokeStyle = COLOR_PINCEL;
+    contextoDos.lineWidth = GROSOR;
+    contextoDos.stroke();
+    contextoDos.closePath();
+});
+["mouseup", "mouseout"].forEach(nombreDeEvento => {
+    $canvasDos.addEventListener(nombreDeEvento, () => {
+        haComenzadoDibujoDos = false;
+    });
+});
+function drawstart(event) { 
+	console.log("touchstart")
+    contexto.beginPath();
+	console.log(event.pageX )
+	console.log(event.pageY )
+    contexto.moveTo((event.pageX-180) -  $canvas.offsetLeft, (event.pageY-180) -  $canvas.offsetTop);
+    isIdle = false;
+  }
+  function drawmove(event) { 
+    if (isIdle) return;
+  console.log("touchmove")
+    contexto.lineTo((event.pageX-180) -  $canvas.offsetLeft, (event.pageY-180) - $canvas.offsetTop);
+    contexto.stroke();
+  }
+
+  function drawend(event) {
+    if (isIdle) return;
+    drawmove(event);
+    isIdle = true;
+  }
+
+  function drawstartTwo(event) {
+    contextoDos.beginPath();
+    contextoDos.moveTo((event.pageX-180) - $canvasDos.offsetLeft, (event.pageY-180) -  $canvasDos.offsetTop);
+    isIdleTwo = false;
+  }
+  function drawmoveTwo(event) {
+    if (isIdleTwo) return;
+    contextoDos.lineTo((event.pageX-180) - $canvasDos.offsetLeft, (event.pageY-180) -  $canvasDos.offsetTop);
+    contextoDos.stroke();
+  }
+
+  function drawendTwo(event) {
+    if (isIdle) return;
+    drawmoveTwo(event);
+    isIdleTwo = true;
+  }
+
+
+function touchstart(event) { drawstart(event.touches[0]) }
+function touchmove(event) { drawmove(event.touches[0]); event.preventDefault(); }
+function touchend(event) { drawend(event.changedTouches[0]) }
+
+function touchstartDos(event) { drawstartTwo(event.touches[0]) }
+function touchmoveDos(event) { drawmoveTwo(event.touches[0]); event.preventDefault(); }
+function touchendDos(event) { drawendTwo(event.changedTouches[0]) }
+
+$canvas.addEventListener('touchstart', touchstart, false);
+$canvas.addEventListener('touchmove', touchmove, false);
+$canvas.addEventListener('touchend', touchend, false); 
+
+$canvasDos.addEventListener('touchstart', touchstartDos, false);
+$canvasDos.addEventListener('touchmove', touchmoveDos, false);
+$canvasDos.addEventListener('touchend', touchendDos, false);
+</script>
+
+
 
 </html>
 
