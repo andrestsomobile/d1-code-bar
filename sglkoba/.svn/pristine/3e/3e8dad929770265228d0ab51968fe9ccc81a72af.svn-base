@@ -1,24 +1,0 @@
-package averias.form;   import javax.servlet.http.HttpServletRequest;    import org.apache.struts.action.ActionErrors;    import org.apache.struts.action.ActionForm;   import org.apache.struts.action.ActionMapping;   import averias.control.*;   import averias.entity.*;import org.apache.struts.action.ActionMessage;  /*************************************************************CLASE GENERADA CON generator V3.0 By pablito*******/public class reparacion_detalleForm  extends ActionForm { 
-private String repdcodsx;private String repdreparacion;private String repdproducto;private String repdaveria;private String repdcant_pleg;private String repdcant_prod;private String repdbodega;private String repdposicion; private String opcion;  private String repdtiposaldo;  private String repdbodega_dest; private String repdposicion_dest;
- public void setopcion(String newopcion) { this.opcion = newopcion; }
- public String getopcion() { return this.opcion; }
-public String getrepdcodsx() {return repdcodsx;}public String getrepdreparacion() {return repdreparacion;}public String getrepdproducto() {return repdproducto;}public String getrepdaveria() {return repdaveria;}public String getrepdcant_pleg() {return repdcant_pleg;}public String getrepdcant_prod() {return repdcant_prod;}public String getrepdbodega() {return repdbodega;}public String getrepdposicion() {return repdposicion;}public void setrepdcodsx(String new_repdcodsx) {this.repdcodsx =  new_repdcodsx;}public void setrepdreparacion(String new_repdreparacion) {this.repdreparacion =  new_repdreparacion;}public void setrepdproducto(String new_repdproducto) {this.repdproducto =  new_repdproducto;}public void setrepdaveria(String new_repdaveria) {this.repdaveria =  new_repdaveria;}public void setrepdcant_pleg(String new_repdcant_pleg) {this.repdcant_pleg =  new_repdcant_pleg;}public void setrepdcant_prod(String new_repdcant_prod) {this.repdcant_prod =  new_repdcant_prod;}public void setrepdbodega(String new_repdbodega) {this.repdbodega =  new_repdbodega;}public void setrepdposicion(String new_repdposicion) {this.repdposicion =  new_repdposicion;} public void reset(ActionMapping mapping, HttpServletRequest request) {  	}  public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) { 
-ActionErrors errors = new ActionErrors(); 
- gstreparacion_detalle greparacion_detalle= new gstreparacion_detalle(); 
- opcion = opcion==null ? "crear" : opcion; 
- if(opcion.equals("set") || opcion.equals("delete")  || opcion.equals("agregar_total") ) return null; 
- if(opcion.equals("crear")   ) { 
- //@todo COMPLETAR EL CREAR, SOLO LLAVES UNICAS O REPETIDAS 
-} 
-
-//valido campos requeridos:   if(repdreparacion.equals("")) errors.add("repdreparacion", new ActionMessage("El repdreparacion no puede ser vacio", false) );     if(repdproducto.equals("")) errors.add("repdproducto", new ActionMessage("El repdproducto no puede ser vacio", false) );     if(repdaveria.equals("")) errors.add("repdaveria", new ActionMessage("El repdaveria no puede ser vacio", false) );     if(repdcant_pleg.equals("")) errors.add("repdcant_pleg", new ActionMessage("El repdcant_pleg no puede ser vacio", false) );     if(repdcant_prod.equals("")) errors.add("repdcant_prod", new ActionMessage("El repdcant_prod no puede ser vacio", false) );     if(repdbodega.equals("")) errors.add("repdbodega", new ActionMessage("El repdbodega no puede ser vacio", false) );     if(repdposicion.equals("")) errors.add("repdposicion", new ActionMessage("El repdposicion no puede ser vacio", false) );  
-
-  if(!errors.isEmpty()) errors.add("general", new ActionMessage("No se pudo crear , revise", false) );  
- return errors; 
- } 
-
- public void llenar (reparacion_detalle entity ) { 
- 
-
-this.repdcodsx =  entity.getrepdcodsx(); this.repdreparacion =  entity.getrepdreparacion(); this.repdproducto =  entity.getrepdproducto(); this.repdaveria =  entity.getrepdaveria(); this.repdcant_pleg =  entity.getrepdcant_pleg(); this.repdcant_prod =  entity.getrepdcant_prod(); this.repdbodega =  entity.getrepdbodega(); this.repdposicion =  entity.getrepdposicion();this.repdtiposaldo = entity.getRepdtiposaldo();this.repdposicion_dest =entity.getRepdposicion_dest();this.repdbodega_dest =  entity.getRepdbodega_dest(); }public String getRepdtiposaldo() {	return repdtiposaldo;}public void setRepdtiposaldo(String repdtiposaldo) {	this.repdtiposaldo = repdtiposaldo;}public String getRepdbodega_dest() {	return repdbodega_dest;}public void setRepdbodega_dest(String repdbodega_dest) {	this.repdbodega_dest = repdbodega_dest;}public String getRepdposicion_dest() {	return repdposicion_dest;}public void setRepdposicion_dest(String repdposicion_dest) {	this.repdposicion_dest = repdposicion_dest;}
-}
