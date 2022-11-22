@@ -27,16 +27,17 @@ public class EnviarMail {
 
 	public boolean enviarMailValor(String destinatario, String subject, String mensaje) {
 
-		// String host = "smtp.office365.com";
-		// String puerto = "587";
-		// String usuario = "avisos.logim@koba-group.com";
-		// String from = "avisos.logim@koba-group.com";
-		// String pass = "Akoba3020..";
-		String host = "mail.sli.com.co";
+		String host = "smtp.office365.com";
+		String puerto = "587";
+		String usuario = "avisos.logim@koba-group.com";
+		String from = "avisos.logim@koba-group.com";
+		String pass = "Akoba3020..";
+		
+		/*String host = "mail.sli.com.co";
 		String puerto = "25";
 		String usuario = "aviso@sli.com.co";
 		String from = "aviso@sli.com.co";
-		String pass = "U6sz9tBzo9M";
+		String pass = "U6sz9tBzo9M";*/
 
 		try {
 			Properties props = new Properties();
@@ -152,7 +153,6 @@ public class EnviarMail {
 			// message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinatario));
 			StringTokenizer stk = new StringTokenizer(destinatario, ",");
 
-			System.out.println("destinatario " + destinatario);
 
 			int i = 0;
 			while (stk.hasMoreElements()) {
