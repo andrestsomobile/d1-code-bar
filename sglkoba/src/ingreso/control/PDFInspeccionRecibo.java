@@ -183,12 +183,12 @@ public class PDFInspeccionRecibo {
 		addTableValue("TRANSPORTADORA:", fuenteBold_12, tabla, 2);
 		
 		//TODO: De donde se saca este valor
-		addTableValue("", fuenteBold_12, tabla, 5);
+		addTableValue("TODO", fuenteBold_12, tabla, 5);
 		
 		addTableValue("NUMERO DE ORDEN DE RECIBO:", fuenteBold_12, tabla, 2);
 		
 		//TODO: De donde se saca este valor
-		addTableValue("", fuenteBold_12, tabla, 5);
+		addTableValue("TODO", fuenteBold_12, tabla, 5);
 		
 		addTableValue("PLACA", fuenteBold_10, tabla, 1);
 		
@@ -213,7 +213,7 @@ public class PDFInspeccionRecibo {
 			
 			
 			//TODO: de donde se obtiene
-			addTableValue("", fuenteNormal_10, tabla, 1);
+			addTableValue("TODO", fuenteNormal_10, tabla, 1);
 			
 			addTableValue(pro.getprodescripcion(), fuenteNormal_10, tabla, 1);
 			
