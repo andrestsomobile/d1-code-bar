@@ -1,0 +1,48 @@
+insert into permiso values(387, 1, 'pedido', 'subir_valor_unitario.jsp', 3, '387 PEDIDO SUBIR_VALOR_UNITARIO.JSP ADMINISTRADORES');
+
+
+alter table public.producto add provalorunitario numeric;
+
+alter table public.producto add audcodigocargue numeric;
+
+alter table auditoriacargue alter column acinconsistencias type character varying(1500);
+
+
+alter table referencia_pedido add column refpvalordeclarado numeric;
+
+alter table inspeccion_recibo add column inreproducto integer;
+alter table inspeccion_recibo add column inrecontenedor integer;
+alter table inspeccion_recibo add column inretiponovedades text;
+
+
+CREATE TABLE parametro_destinatario (
+    parametro_id integer NOT NULL,
+    asunto text NOT NULL,
+    cuerpo text NOT NULL,
+    tipo_funcionalidad text NOT NULL,
+    correos text NOT NULL,
+    transportadora text NULL,
+	CONSTRAINT pk_parametro_dest PRIMARY KEY (parametro_id)
+);
+
+
+
+insert into parametro_destinatario 
+values (1, 'Valor Declarado Pedido $pedido', 
+'Buen Dia estimados transportador, <br>
+ adjunto valor declarado del pedido en asunto <br> $body 
+<br> Agradezco de antemano la atencion prestada y quedo atenta a sus comentarios. <br><br>
+Cordialmente, <br><br><br><br><br>
+<p>Aviso de confidencialidad: Este mensaje es para el uso exclusivo de la persona o entidad a la que se encuentra dirigido y 
+puede contener informaci&oacute;n privilegiada o confidencial. 
+Si usted ha recibido por error esta comunicaci&oacute;n, s&iacute;rvase informarnos v&iacute;a e-mail, 
+borrar el mensaje y abstenerse de divulgar su contenido.Confidentiality notice: This message is intended only for the use of the individual 
+or entity to which it is addressed and may contain information that is privileged 
+or confidential. If you receive this communication by error, 
+please notify us immediately by e-mail, delete the e-mail 
+and do not disclose its content to any person.</p>',
+'valor_declarado', 'andres.lopez1824@gmail.com', '');
+
+
+insert into parametro_destinatario values (2, 'Error Valor Declarado', 'La reserva $pedido no ha sido enviada, valide que el valor declarado por cada material sea correcto',
+										  'valor_declarado_error', 'andres.lopez1824@gmail.com', '');
