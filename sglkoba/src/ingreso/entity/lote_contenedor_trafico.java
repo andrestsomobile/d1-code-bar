@@ -20,6 +20,15 @@ public class lote_contenedor_trafico implements java.io.Serializable {
 		this.lctrafcantidad = lctrafcantidad;
 		this.lctrafingreso = lctrafingreso;
 	}
+	
+	
+
+	public lote_contenedor_trafico(String lctrafcodsx) {
+		super();
+		this.lctrafcodsx = lctrafcodsx;
+	}
+
+
 
 	public String getlctrafcodsx() {
 		return lctrafcodsx;

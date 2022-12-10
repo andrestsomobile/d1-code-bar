@@ -8,6 +8,7 @@
 /bootstrap/
 /dataTable-AltEditor/
 /datatables/
+/db/
 /default.jsp
 /descargas.jsp
 /disenno/
@@ -40,5 +41,3 @@
 /sap/
 /templates/
 /util/
-/db/
-/movil/

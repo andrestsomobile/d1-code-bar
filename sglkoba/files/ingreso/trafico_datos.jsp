@@ -54,7 +54,9 @@
 			<td>Compania
 			<td><%
     Collection lista = new gstcompania().getlistacompania();
+	Collection transportadoras = new gsttransportadora().getlistatransportadora();		
     request.setAttribute("lista", lista);
+    request.setAttribute("transportadoras", transportadoras);
     %> <html:select property="trafcompania">
 				<html:options collection="lista" property="comcodsx"
 					labelProperty="comnombre" />
@@ -118,7 +120,12 @@
 				href="javascript:show_calendar('traficoForm.traffechadescargue');">
 			<img src="./disenno/images/calendar.gif" class="lupita"> </a>
 		
-			<html:hidden property="traftransportadora" />
+		<tr>
+		<td>Transportadora
+		<td><html:select property="traftransportadora">
+				<html:options collection="transportadoras" property="transpcodsx"
+					labelProperty="transpnombre" />
+			</html:select>	
 	
 		<tr>
 		
@@ -159,9 +166,16 @@
 			
 
 		<tr align="center"> 
-		    <td colspan="6">     
+		    <td colspan="4">     
 			    <% if(traf_form!=null ) {  %>
 			    	<a href="main.jsp?app=ingreso&modulo=subirAdjuntoTrafico&clave=<%=traf_form.gettrafcodsx() %>">Cargar Documentos Trafico </a>
+			    	
+			    <% } %>  
+			    
+		    <td colspan="2">     
+			    <% if(traf_form!=null ) {  %>
+			    	
+			    	<a href="traficoAction.do?opcion=correo&codsx=<%=traf_form.gettrafcodsx() %>">Enviar Correo </a>
 			    <% } %>  
 			    			
 		<tr align="center">

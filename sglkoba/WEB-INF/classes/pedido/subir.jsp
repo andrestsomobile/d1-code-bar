@@ -112,7 +112,7 @@ function Guardar()
 	var codbod="7"; //document.getElementsByName("bodega")[0]; 
 	//alert(archivo.value);
 	//window.location="fileAction.do?ruta="archivo.value;
-	location.href="fileAction.do?ruta="+archivo.value+"&compania="+codcia.value+"&bodega="+codbod;
+	location.href="fileAction.do?ruta="+encodeURIComponent(archivo.value)+"&compania="+codcia.value+"&bodega="+codbod;
 }
 </script>
 

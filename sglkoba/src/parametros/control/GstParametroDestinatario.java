@@ -20,5 +20,11 @@ public class GstParametroDestinatario extends GstTabla {
 		String consulta = " SELECT * FROM parametro_destinatario WHERE tipo_funcionalidad = '" + funcionalidad + "'";
 		return (ParametroDestinatario) getEntidad(consulta);
 	}
+	
+	public ParametroDestinatario getParametroDestinatarioTransportadora(String funcionalidad, String transportadora) {
+
+		String consulta = " SELECT * FROM parametro_destinatario WHERE tipo_funcionalidad = '" + funcionalidad + "' AND transportadora = '" + transportadora + "'";
+		return (ParametroDestinatario) getEntidad(consulta);
+	}
 
 }

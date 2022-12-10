@@ -34,7 +34,7 @@ function ajaxFunction()
 		if (req) 
 		{
 			req.onreadystatechange = processStateChange;
-			req.open("GET", url, true);
+			req.open("GET", encodeURIComponent(url), true);
 			req.send();
 		}
 	}
@@ -112,7 +112,7 @@ function Guardar()
 {
 	var archivo=document.getElementById("txtFile");
 	var codcia=document.getElementsByName("compania")[0]; 
-	location.href="SubirValorUnitarioAction.do?ruta="+archivo.value+"&compania="+codcia.value;
+	location.href="SubirValorUnitarioAction.do?ruta="+encodeURIComponent(archivo.value)+"&compania="+codcia.value;
 }
 
 </script>

@@ -72,15 +72,16 @@ public final class fileAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
+		
 		String ruta_llego = request.getParameter("ruta");
 		File f = new File(ruta_llego);
 		// String ruta="/home/ricardo/uploads/"+f.getName();
 		// String ruta="c://TMP/"+f.getName();
 		HttpSession se = request.getSession(true);
 		usuario usu = (usuario) se.getAttribute("usuario");
-		String nombrearch = f.getName();
+		String nombrearch = f.getName().replace(" ", "_");
 		nombrearch = nombrearch.substring(nombrearch.lastIndexOf("\\") + 1, nombrearch.length());
-		String ruta = (String) se.getAttribute("ruta_upload") + nombrearch;// ruta donde quedo subido el archivo
+		String ruta = (String) se.getAttribute("ruta_upload") + nombrearch;
 		System.out.println("***********************ruta_llego:" + ruta_llego);
 		System.out.println("***********************ruta:" + ruta);
 		String mensaje = "";
@@ -943,6 +944,11 @@ public final class fileAction extends Action {
 		e.add("general", new ActionMessage(mensaje, false));
 		addErrors(request, e);
 		System.out.println(destino);
+		System.out.println(request.getRequestURI());
+		System.out.println(request.getServletPath());
+		System.out.println(request.getContextPath());
+		System.out.println(request.getRemoteAddr());
+		//response.sendRedirect(request.getContextPath()+"/main.jsp?app=pedido&modulo=subir");
 		return mapping.findForward(destino);
 	}
 

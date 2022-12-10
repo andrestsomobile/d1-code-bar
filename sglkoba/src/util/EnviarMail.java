@@ -9,6 +9,7 @@ import java.util.StringTokenizer;
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
@@ -27,17 +28,17 @@ public class EnviarMail {
 
 	public boolean enviarMailValor(String destinatario, String subject, String mensaje) {
 
-		String host = "smtp.office365.com";
+		/*String host = "smtp.office365.com";
 		String puerto = "587";
 		String usuario = "avisos.logim@koba-group.com";
 		String from = "avisos.logim@koba-group.com";
-		String pass = "Akoba3020..";
+		String pass = "Akoba3020..";*/
 		
-		/*String host = "mail.sli.com.co";
+		String host = "mail.sli.com.co";
 		String puerto = "25";
 		String usuario = "aviso@sli.com.co";
 		String from = "aviso@sli.com.co";
-		String pass = "U6sz9tBzo9M";*/
+		String pass = "U6sz9tBzo9M";
 
 		try {
 			Properties props = new Properties();
@@ -78,14 +79,11 @@ public class EnviarMail {
 			// A quien va dirigido
 			// message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinatario));
 			// message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinatario));
-			StringTokenizer stk = new StringTokenizer(destinatario, ",");
 
 			System.out.println("destinatario " + destinatario);
-
-			int i = 0;
-			while (stk.hasMoreElements()) {
-				message.addRecipient(Message.RecipientType.TO, new InternetAddress(stk.nextToken().trim()));
-			}
+			
+			
+			message.addRecipients(Message.RecipientType.TO, destinatario);
 			// asunto y texto del mensaje
 			message.setSubject(subject);
 			message.setText(mensaje, "UTF-8", "html");
@@ -98,7 +96,6 @@ public class EnviarMail {
 			t.close();
 			return true;
 		} catch (MessagingException e) {
-			System.out.println("ERROR AL ENVIAR CORREO" + e.getMessage());
 			e.printStackTrace();
 			return false;
 		}
@@ -172,8 +169,7 @@ public class EnviarMail {
 			t.close();
 			return true;
 		} catch (MessagingException e) {
-			System.out.println("ERROR AL ENVIAR CORREO" + e.getMessage());
-			//e.printStackTrace();
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -186,7 +182,7 @@ public class EnviarMail {
 		
 		System.out.println(currency.getDisplayName() + ": " + numberFormat.format(currencyAmount)); 
 		EnviarMail e = new EnviarMail();
-		//e.enviarMailValor("andres.lopez1824@gmail.com", "tes", "tes");
+		e.enviarMailValor("andres.lopez1824@gmail.com,elizagari@gmail.com,sistemas@sli.com.co", "tes", "tes");
 	}
 
 	public boolean enviarMail_Adjunto(String destinatario, String subject, String mensaje, String filename) {
@@ -308,34 +304,28 @@ public class EnviarMail {
 			message.setFrom(new InternetAddress(from));
 
 			// A quien va dirigido
-			// message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinatario));
-			// message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinatario));
-			StringTokenizer stk = new StringTokenizer(destinatario, ",");
-			int i = 0;
-			while (stk.hasMoreElements()) {
-				message.addRecipient(Message.RecipientType.TO, new InternetAddress(stk.nextToken().trim()));
-			}
+			message.addRecipients(Message.RecipientType.TO, destinatario);
+
 			// asunto y texto del mensaje
 			message.setSubject(subject);
 			// message.setText(mensaje);
 
 			MimeBodyPart mbp1 = new MimeBodyPart();
-			mbp1.setText(mensaje + "\n" + "\n" + "Este correo es automático y no es monitoreado por favor no responder, cualquier solicitud por favor dirigirla al coordinador de sistemas.");
-
+			message.setText(mensaje, "UTF-8", "html");
+			mbp1.setText(mensaje, "UTF-8", "html");
 			// create the second message part
-			MimeBodyPart mbp2 = new MimeBodyPart();
-
-			// attach the file to the message
-			File file = new File(filename[0]);
-			FileDataSource fds = new FileDataSource(file);
-			mbp2.setDataHandler(new DataHandler(fds));
-			mbp2.setFileName(fds.getName());
-
-			// create the Multipart and add its parts to it
 			Multipart mp = new MimeMultipart();
 			mp.addBodyPart(mbp1);
-			mp.addBodyPart(mbp2);
-
+			// attach the file to the message
+			
+			for(String f: filename) {
+				File file = new File(f);
+				
+				if(file.exists() && !file.isDirectory()) {
+					System.out.println(file.getAbsolutePath());
+					addAttachment(mp, f, file.getName());
+				}
+			}
 			// add the Multipart to the message
 			message.setContent(mp);
 
@@ -350,6 +340,15 @@ public class EnviarMail {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	private static void addAttachment(Multipart multipart, String filename, String name) throws MessagingException
+	{
+		FileDataSource source = new FileDataSource(filename);
+	    BodyPart messageBodyPart = new MimeBodyPart();        
+	    messageBodyPart.setDataHandler(new DataHandler(source));
+	    messageBodyPart.setFileName(name);
+	    multipart.addBodyPart(messageBodyPart);
 	}
 
 	class sistemas extends javax.mail.Authenticator {

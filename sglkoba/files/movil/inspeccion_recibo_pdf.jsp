@@ -106,12 +106,11 @@ function generarpdf(lctrafcodsx,trafcodsx,contenedor) {
 		"inrefechagenerado": $("input[id='inrefechagenerado']").val(),
 		"inreproducto": $("select[id='producto']").val(),
 		"inrecontenedor": contenedor
-
 	    },
 	    cache: false,
 	    type: "POST",
 	    success: function(response) { 
-			alert("Se ha generado el PDF de la inspección, ya puede descargalo");
+			alert("se ha guardado correctamente");
 	    },
 	    error: function(xhr) {
 
@@ -464,11 +463,11 @@ String ruta_pdf = Propiedades.getProperties("ruta_pdf");
 
 <div align="center">
 
-<button value="Generar PDF" onclick="generarpdf(<%=lctrafcodsx %>,<%=trafcodsx %>,<%=contenedor %>)" style="color: blue" >Generar PDF</button>
+<button value="Guardar" onclick="generarpdf(<%=lctrafcodsx %>,<%=trafcodsx %>,<%=contenedor %>)" style="color: blue" >Guardar</button>
 </div>
 
 <br>
-<div align="center">
+<div align="center" style="display:none">
 	<table border="1" cellpadding="0" cellspacing="0" class="lista-home">
 	   <caption> INSPECCION Version 2022-09-15: <%=request.getParameter("clave")%> </caption>
 	    <tr>

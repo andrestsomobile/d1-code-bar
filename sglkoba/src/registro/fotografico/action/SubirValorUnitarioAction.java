@@ -63,8 +63,8 @@ public final class SubirValorUnitarioAction extends Action {
 			String ruta_llego = request.getParameter("ruta");
 			File f = new File(ruta_llego);
 			HttpSession se = request.getSession(true);
-			String nombrearch = f.getName();
-			nombrearch = nombrearch.substring(nombrearch.lastIndexOf("\\") + 1, nombrearch.length());
+			String nombrearch = f.getName().replace(" ", "_");
+			nombrearch = nombrearch.replaceAll(" ", "").substring(nombrearch.lastIndexOf("\\") + 1, nombrearch.length());
 			String ruta = (String) se.getAttribute("ruta_upload") + nombrearch;// ruta donde quedo subido el archivo
 			System.out.println("***********************ruta_llego:" + ruta_llego);
 			System.out.println("***********************ruta:" + ruta);

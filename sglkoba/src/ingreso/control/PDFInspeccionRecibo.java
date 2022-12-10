@@ -62,15 +62,15 @@ public class PDFInspeccionRecibo {
 	
 	public static void main(String[] arg) {
 		PDFInspeccionRecibo pdf = new PDFInspeccionRecibo();
-		pdf.pdf("12", "C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps", "", "", "");
+		pdf.pdf("3686", "C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps/sglkobad1\\pdf\\TRAFICO\\3686", "", "", "9413");
 	}
 	
 	
-	public void pdf(String lctrafcodsx, String rutaarchivo, String codusu, String rutaContexto, 
+	public boolean pdf(String lctrafcodsx, String rutaarchivo, String codusu, String rutaContexto, 
 			String inrecontenedor) {
 		
 		Document documento = new Document();
-		String nomarch = rutaarchivo + File.separator + "InspeccionRecibo_" + lctrafcodsx + ".pdf";
+		String nomarch = rutaarchivo + File.separator + "InspeccionRecibo_" + lctrafcodsx + "_" + inrecontenedor  + ".pdf";
 		File f = new File(nomarch);
 		f.delete();
 		try {
@@ -82,13 +82,17 @@ public class PDFInspeccionRecibo {
 			System.err.println(de.getMessage());
 			de.printStackTrace();
 			System.out.print(de.getMessage());
+			return false;
 		} catch (IOException ioe) {
 			System.err.println(ioe.getMessage());
 			ioe.printStackTrace();
 			System.out.print(ioe.getMessage());
+			return false;
 		} finally {
 			documento.close();
 		}
+		
+		return true;
 	}
 	
 
@@ -100,10 +104,6 @@ public class PDFInspeccionRecibo {
 	private void agregarContenido(Document documento, String lctrafcodsx, 
 			String codusu, String rutaarchivo, String rutaContexto, String contenedor)
 			throws DocumentException {
-		
-		empresa emp = new administracion.control.gstempresa().getempresa("4");
-
-
 		lote_contenedor_trafico lct = glct.getlote_contenedor_trafico(lctrafcodsx);
 		
 		contenedor_trafico ct = gcont.getcontenedor_trafico(lct.getlctrafcontenedor());
@@ -162,12 +162,6 @@ public class PDFInspeccionRecibo {
 		
 		addTableValue("Gerente Importados", fuenteNormal_10, tabla, 2);
 		
-		addTableValue("", fuenteNormal_10, tabla, 2);
-		
-		addTableValue("", fuenteNormal_10, tabla, 3);
-		
-		addTableValue("", fuenteNormal_10, tabla, 2);
-		
 		addTableValue("FECHA DE RECIBO:", fuenteBold_12, tabla, 2);
 		
 		addTableValue(Fecha.getFechaSinHora(), fuenteBold_12, tabla, 5);
@@ -181,14 +175,12 @@ public class PDFInspeccionRecibo {
 		addTableValue(traf.gettrafnumdta(), fuenteBold_12, tabla, 5);
 		
 		addTableValue("TRANSPORTADORA:", fuenteBold_12, tabla, 2);
-		
-		//TODO: De donde se saca este valor
-		addTableValue("TODO", fuenteBold_12, tabla, 5);
+		addTableValue(traf.gettraftransportadora() != null ? gtransp.gettransportadora(traf.gettraftransportadora()).gettranspnombre(): "", fuenteBold_12, tabla, 5);
 		
 		addTableValue("NUMERO DE ORDEN DE RECIBO:", fuenteBold_12, tabla, 2);
 		
 		//TODO: De donde se saca este valor
-		addTableValue("TODO", fuenteBold_12, tabla, 5);
+		addTableValue("", fuenteBold_12, tabla, 5);
 		
 		addTableValue("PLACA", fuenteBold_10, tabla, 1);
 		
@@ -213,7 +205,7 @@ public class PDFInspeccionRecibo {
 			
 			
 			//TODO: de donde se obtiene
-			addTableValue("TODO", fuenteNormal_10, tabla, 1);
+			addTableValue(ct.getctrafplaca(), fuenteNormal_10, tabla, 1);
 			
 			addTableValue(pro.getprodescripcion(), fuenteNormal_10, tabla, 1);
 			

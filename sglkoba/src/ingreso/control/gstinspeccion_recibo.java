@@ -29,6 +29,11 @@ public class gstinspeccion_recibo extends GstTabla {
 		return (inspeccion_recibo) getEntidad(cad);
 	}
 	
+	public Collection getInspeccionByTrafico(String trafico) {
+		String cad = "SELECT inspeccion_recibo.* FROM inspeccion_recibo WHERE inretrafico = " + trafico;
+		return getLista(cad);
+	}
+	
 	public Collection getInspeccionByContenedor(String trafico, String contenedor) {
 		String cad = "SELECT inspeccion_recibo.* FROM inspeccion_recibo WHERE inretrafico = " + trafico + " AND inrecontenedor = " + contenedor;
 		return getLista(cad);
