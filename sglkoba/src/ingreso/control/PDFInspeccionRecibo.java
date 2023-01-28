@@ -1,12 +1,21 @@
 package ingreso.control;
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Locale;
+
+import javax.imageio.ImageIO;
 
 import com.itextpdf.text.pdf.PdfImage;
 import com.itextpdf.text.pdf.parser.PdfImageObject;
@@ -19,8 +28,10 @@ import com.lowagie.text.Font;
 import com.lowagie.text.Image;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.Rectangle;
+import com.lowagie.text.pdf.PdfImportedPage;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfWriter;
 
 import administracion.entity.empresa;
@@ -62,37 +73,45 @@ public class PDFInspeccionRecibo {
 	
 	public static void main(String[] arg) {
 		PDFInspeccionRecibo pdf = new PDFInspeccionRecibo();
-		pdf.pdf("3686", "C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps/sglkobad1\\pdf\\TRAFICO\\3686", "", "", "9413");
+		Object res = pdf.pdf("3686", "C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps/sglkobad1\\pdf\\TRAFICO\\3686", "", "", "9413");
+		System.out.print(res);
 	}
 	
 	
-	public boolean pdf(String lctrafcodsx, String rutaarchivo, String codusu, String rutaContexto, 
+	public HashMap<String, String> pdf(String lctrafcodsx, String rutaarchivo, String codusu, String rutaContexto, 
 			String inrecontenedor) {
 		
 		Document documento = new Document();
+	
 		String nomarch = rutaarchivo + File.separator + "InspeccionRecibo_" + lctrafcodsx + "_" + inrecontenedor  + ".pdf";
 		File f = new File(nomarch);
 		f.delete();
+		PdfWriter pw = null;
+		HashMap<String, String> map = null;
 		try {
-			PdfWriter pw = PdfWriter.getInstance(documento, new FileOutputStream(nomarch));
+			FileOutputStream fout = new FileOutputStream(nomarch);
+			pw = PdfWriter.getInstance(documento, fout);
+			
 			documento.open();
 			documento.add(new Chunk(""));
-			agregarContenido(documento, lctrafcodsx, codusu, rutaarchivo, rutaContexto, inrecontenedor);
+			map = agregarContenido(documento, lctrafcodsx, codusu, rutaarchivo, rutaContexto, inrecontenedor);
+			
 		} catch (DocumentException de) {
 			System.err.println(de.getMessage());
 			de.printStackTrace();
 			System.out.print(de.getMessage());
-			return false;
+			return null;
 		} catch (IOException ioe) {
 			System.err.println(ioe.getMessage());
 			ioe.printStackTrace();
 			System.out.print(ioe.getMessage());
-			return false;
+			return null;
 		} finally {
+			//pw.close();
 			documento.close();
 		}
 		
-		return true;
+		return map;
 	}
 	
 
@@ -101,11 +120,12 @@ public class PDFInspeccionRecibo {
 			parrafo.add(new Paragraph(" "));
 	}
 	
-	private void agregarContenido(Document documento, String lctrafcodsx, 
+	private HashMap<String, String> agregarContenido(Document documento, String lctrafcodsx, 
 			String codusu, String rutaarchivo, String rutaContexto, String contenedor)
 			throws DocumentException {
 		lote_contenedor_trafico lct = glct.getlote_contenedor_trafico(lctrafcodsx);
-		
+		HashMap<String, String> map = new HashMap<String, String>();
+		String table = "";
 		contenedor_trafico ct = gcont.getcontenedor_trafico(lct.getlctrafcontenedor());
 		trafico traf = gtraf.gettrafico(ct.getctrafnumtrafico());
 		
@@ -142,7 +162,12 @@ public class PDFInspeccionRecibo {
 		//TODO: Revisar forma de rowspan con pagina
 		addTableValue("", fuenteNormal_10, tabla, 3);
 		
-		addTableValue("17 de mayo de 2019", fuenteNormal_10, tabla, 2);
+		Date d = new Date();
+		Locale esLocale = new Locale("es", "ES");//para trabajar en español
+		SimpleDateFormat sd = new SimpleDateFormat("d 'de' MMMM 'de' yyyy", esLocale);
+		String fechaEmision = sd.format(d);
+		
+		addTableValue(fechaEmision, fuenteNormal_10, tabla, 2);
 		
 		addTableValue("Elaborado por:", fuenteNormal_10, tabla, 2);
 		
@@ -175,12 +200,15 @@ public class PDFInspeccionRecibo {
 		addTableValue(traf.gettrafnumdta(), fuenteBold_12, tabla, 5);
 		
 		addTableValue("TRANSPORTADORA:", fuenteBold_12, tabla, 2);
-		addTableValue(traf.gettraftransportadora() != null ? gtransp.gettransportadora(traf.gettraftransportadora()).gettranspnombre(): "", fuenteBold_12, tabla, 5);
+		String transportadora = traf.gettraftransportadora() != null ? gtransp.gettransportadora(traf.gettraftransportadora()).gettranspnombre(): "";
+		addTableValue(transportadora, fuenteBold_12, tabla, 5);
 		
 		addTableValue("NUMERO DE ORDEN DE RECIBO:", fuenteBold_12, tabla, 2);
 		
 		//TODO: De donde se saca este valor
-		addTableValue("", fuenteBold_12, tabla, 5);
+		String precinto = "";
+		String orden = "";
+		addTableValue(orden, fuenteBold_12, tabla, 5);
 		
 		addTableValue("PLACA", fuenteBold_10, tabla, 1);
 		
@@ -198,28 +226,51 @@ public class PDFInspeccionRecibo {
 		
 		Collection listInre = ginre.getInspeccionByContenedor(traf.gettrafcodsx(), contenedor);
 		
+		String productos = "";
+		String asunto = traf.gettrafnumdta() + " ";
 		inspeccion_recibo inre = new inspeccion_recibo();
 		for(Object obj: listInre) {
+			productos += "<tr>";
 			inre = (inspeccion_recibo) obj;
 			producto pro = gprod.getproducto(inre.getInreproducto());
 			
+			String placa = ct.getctrafplaca();
+			String producto = pro.getprodescripcion();
+			String lote = inre.getInrelote();
+			String fechaVencimiento = inre.getInrevencimiento();
+			String cantidad = inre.getInrecajas();
+			String estibas = inre.getInreestibas();
+			String observacion = inre.getInreobservaciones();
 			
+			asunto += producto + " ";
+			productos += "<td>"+placa+"</td>";
+			productos += "<td>"+producto+"</td>";
+			productos += "<td>"+lote+"</td>";
+			productos += "<td>"+fechaVencimiento+"</td>";
+			productos += "<td>"+cantidad+"</td>";
+			productos += "<td>"+estibas+"</td>";
+			productos += "<td>"+observacion+"</td>";
 			//TODO: de donde se obtiene
-			addTableValue(ct.getctrafplaca(), fuenteNormal_10, tabla, 1);
+			addTableValue(placa, fuenteNormal_10, tabla, 1);
 			
-			addTableValue(pro.getprodescripcion(), fuenteNormal_10, tabla, 1);
+			addTableValue(producto, fuenteNormal_10, tabla, 1);
 			
-			addTableValue(inre.getInrelote(), fuenteNormal_10, tabla, 1);
+			addTableValue(lote, fuenteNormal_10, tabla, 1);
 			
-			addTableValue(inre.getInrevencimiento(), fuenteNormal_10, tabla, 1);
+			addTableValue(fechaVencimiento, fuenteNormal_10, tabla, 1);
 			
-			addTableValue(inre.getInrecajas(), fuenteNormal_10, tabla, 1);
+			addTableValue(cantidad, fuenteNormal_10, tabla, 1);
 			
-			addTableValue(inre.getInreestibas(), fuenteNormal_10, tabla, 1);
+			addTableValue(estibas, fuenteNormal_10, tabla, 1);
 			
-			addTableValue(inre.getInreobservaciones(), fuenteNormal_10, tabla, 1);
+			addTableValue(observacion, fuenteNormal_10, tabla, 1);
+			
+			productos += "</tr>";
 		}
 		
+		table = getTableEmailBody(fechaEmision, Fecha.getFechaSinHora(), ct.getctrafnumero(), traf.gettrafnumdta(), precinto, transportadora, orden, productos);
+		map.put("table", table);
+		map.put("asunto", asunto);
 		documento.add(tabla);//fuenteNormal_10
 		
 //Firmas
@@ -389,6 +440,98 @@ public class PDFInspeccionRecibo {
         } catch (Exception e) {
             System.out.print(e.getMessage());
         }
+		
+		return map;
+	}
+	
+	public static String getTableEmailBody(String fechaEmision, String fechaRecibo, String contenedor,
+			String importacion, String precinto, String transportadora, String orden, String productos) {
+		String table = "<table border=\"1\">\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td rowspan=\"3\" colspan=\"2\"><b>INFORME DE RECIBO</b></td>\r\n"
+				+ "<td rowspan=\"3\"  colspan=\"2\">P&aacute;gina 1 de 1</td>\r\n"
+				+ "<td  colspan=\"3\">Versi&oacute;n: 001-2019</td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"3\">Fecha de emisi&oacute;n:</td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"3\">"+fechaEmision+"</td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\">Elaborado por:</td>\r\n"
+				+ "<td colspan=\"2\">Revisado por:</td>\r\n"
+				+ "<td colspan=\"3\">Aprobado por:</td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\">Roberto Tibaquicha</td>\r\n"
+				+ "<td colspan=\"2\">Milena Mendez</td>\r\n"
+				+ "<td colspan=\"3\">Johanna Guzm&aacute;n</td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\">Coordinador Log&iacute;stico Importados</td>\r\n"
+				+ "<td colspan=\"2\">Subgerente Log&iacute;stico Importados</td>\r\n"
+				+ "<td colspan=\"3\">Directora de Importados</td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td></td>\r\n"
+				+ "<td></td>\r\n"
+				+ "<td></td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\"><b>FECHA DE RECIBO:</b></td>\r\n"
+				+ "<td colspan=\"2\"><b>"+fechaRecibo+"</b></td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\"><b>NUMERO DE CONTENEDOR:</b></td>\r\n"
+				+ "<td colspan=\"2\"><b>"+contenedor+"</b></td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\"><b>NUMERO DE IMPORTACI&Oacute;N:</b></td>\r\n"
+				+ "<td colspan=\"2\"><b>"+importacion+"</b></td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\"><b>PRECINTOS</b></td>\r\n"
+				+ "<td colspan=\"2\"><b>"+precinto+"</b></td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\"><b>TRANSPORTADORA:</b></td>\r\n"
+				+ "<td colspan=\"2\"><b>"+transportadora+"</b></td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td colspan=\"2\"><b>NUMERO DE ORDEN DE RECIBO:</b></td>\r\n"
+				+ "<td colspan=\"2\"><b>"+orden+"</b></td>\r\n"
+				+ "</tr>\r\n"
+				+ "\r\n"
+				+ "\r\n"
+				+ "\r\n"
+				+ "<tr>\r\n"
+				+ "<td><b>PLACA</b></td>\r\n"
+				+ "<td><b>PRODUCTO</b></td>\r\n"
+				+ "<td><b>LOTE</b></td>\r\n"
+				+ "<td><b>FECHA VENCIMIENTO</b></td>\r\n"
+				+ "<td><b>CANTIDAD</b></td>\r\n"
+				+ "<td><b>ESTIBAS</b></td>\r\n"
+				+ "<td><b>OBSERVACIONES</b></td>\r\n"
+				+ "</tr>\r\n"
+				+ productos
+				+ "</table>";
+		
+		return table;
 	}
 	
 	public static void addTableValue(String text, Font fuente, PdfPTable tabla, int colspan) {

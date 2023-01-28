@@ -1,11 +1,13 @@
 package util;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.StringTokenizer;
+import java.util.UUID;
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
@@ -313,6 +315,8 @@ public class EnviarMail {
 			MimeBodyPart mbp1 = new MimeBodyPart();
 			message.setText(mensaje, "UTF-8", "html");
 			mbp1.setText(mensaje, "UTF-8", "html");
+
+			
 			// create the second message part
 			Multipart mp = new MimeMultipart();
 			mp.addBodyPart(mbp1);
@@ -337,6 +341,96 @@ public class EnviarMail {
 			t.close();
 			return true;
 		} catch (MessagingException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public boolean enviarMail_AdjuntosImgBack(String destinatario, String subject, String mensaje, String[] filename, String img) {
+		String host = "mail.sli.com.co";
+		String puerto = "25";
+		String usuario = "aviso@sli.com.co";
+		String from = "aviso@sli.com.co";
+		String pass = "U6sz9tBzo9M";
+		try {
+			Properties props = new Properties();
+
+			// Nombre del host de correo, es smtp.gmail.com
+			props.setProperty("mail.smtp.host", host);
+
+			// TLS si está disponible
+			props.setProperty("mail.smtp.starttls.enable", "false");
+
+			// Puerto de gmail para envio de correos
+			props.setProperty("mail.smtp.port", puerto);
+
+			// Nombre del usuario
+			props.setProperty("mail.smtp.user", usuario);
+
+			// Si requiere o no usuario y password para conectarse.
+			props.setProperty("mail.smtp.auth", "true");
+
+			// Session session = Session.getDefaultInstance(props);
+			sistemas auth = new sistemas();
+			Session session = Session.getInstance(props, auth);
+
+			// Para obtener un log de salida más extenso
+			session.setDebug(false);
+
+			// genero el mensaje
+			MimeMessage message = new MimeMessage(session);
+
+			// Quien envia el correo
+			message.setFrom(new InternetAddress(from));
+
+			// A quien va dirigido
+			message.addRecipients(Message.RecipientType.TO, destinatario);
+
+			// asunto y texto del mensaje
+			message.setSubject(subject);
+			// message.setText(mensaje);
+
+			MimeBodyPart mbp1 = new MimeBodyPart();
+			message.setText(mensaje, "UTF-8", "html");
+			mbp1.setText(mensaje, "UTF-8", "html");
+			
+			System.out.println("img " + img);
+			MimeBodyPart imagePart = new MimeBodyPart();
+			String cid = UUID.randomUUID().toString();
+			imagePart.attachFile(new File(img));
+			imagePart.setContentID("<" + cid + ">");
+			imagePart.setDisposition(MimeBodyPart.INLINE);
+
+			
+			// create the second message part
+			Multipart mp = new MimeMultipart();
+			mp.addBodyPart(mbp1);
+			
+			mp.addBodyPart(imagePart);
+			// attach the file to the message
+			
+			for(String f: filename) {
+				File file = new File(f);
+				
+				if(file.exists() && !file.isDirectory()) {
+					System.out.println(file.getAbsolutePath());
+					addAttachment(mp, f, file.getName());
+				}
+			}
+			// add the Multipart to the message
+			message.setContent(mp);
+
+			Transport t = session.getTransport("smtp");
+
+			// Aqui usuario y password del servidor de correo
+			t.connect(host, from, pass);
+			t.sendMessage(message, message.getAllRecipients());
+			t.close();
+			return true;
+		} catch (MessagingException e) {
+			e.printStackTrace();
+			return false;
+		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
 		}

@@ -809,21 +809,31 @@ public final class fileAction extends Action {
 				 gstproducto gstProducto = new gstproducto(db);
 				 
 				try {
+					//pedtransportadora
 					GstParametroDestinatario paramDestinatario = new GstParametroDestinatario();
-					ParametroDestinatario param = paramDestinatario.getParametroDestinatario("valor_declarado");
+					
 					ParametroDestinatario paramError = paramDestinatario.getParametroDestinatario("valor_declarado_error");
-					String cuerpo = param.getCuerpo();
+					
 					
 					
 					for (Map.Entry<String, String> entry : listPedidos.entrySet()) {
 						if(entry.getValue().equals("1")) {
+							boolean sendedError = false;
+							boolean sendedEmailError = false;
 							String pedido = entry.getKey();
+							pedido ped = gped.getpedido(pedcompania, pedido);
+							ParametroDestinatario param = paramDestinatario.getParametroDestinatarioTransportadora("valor_declarado", ped.getPedtransportadora());
+							
+							if(param == null) {
+								sendedEmailError = true;
+							}
+							
+							String cuerpo = param.getCuerpo();
 							String asunto = param.getAsunto().replace("$pedido", pedido);
 							String destinatarios = param.getCorreos();
 							Double valorDeclarado = 0.0;
-							boolean sendedError = false;
 							
-							pedido ped = gped.getpedido(pedcompania, pedido);
+							
 							Collection refPedidos = grefp.getlistareferencia_pedido(ped.getpedcodsx());
 							
 							for(Object ref: refPedidos) {
@@ -845,7 +855,11 @@ public final class fileAction extends Action {
 							}
 
 							String body = "";
-							if(!sendedError) {
+							if(sendedEmailError) {
+								asunto = paramError.getAsunto().replace("$pedido", pedido);
+								body = paramError.getCuerpo().replace("$pedido", pedido + ", no tiene trasportadora parametrizada, ");
+								destinatarios = paramError.getCorreos();
+							} else if(!sendedError) {
 								Locale locale = new Locale("es", "CO");
 								java.text.NumberFormat numberFormat = java.text.NumberFormat.getCurrencyInstance(locale);
 								body = cuerpo.replace("$body","<table><tr><td>Nro reserva</td><td>Valor Declarado</td></tr>"
