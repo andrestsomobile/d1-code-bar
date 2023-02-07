@@ -43,6 +43,14 @@ if(trafcodsx!=null && !trafcodsx.equals("") ) {
 		<td><a href="main.jsp?app=ingreso&modulo=proforma">  :: Proforma </a> 
 <% } %>
 
+
+<% if( gper.verIzquierdo(grupo, "ingreso", "actualizar_posiciones.jsp") ) { %>
+<tr > 
+	<td>&nbsp;</td>
+		<td> <a href="main.jsp?app=ingreso&modulo=actualizar_posiciones&trafcodsx=<%= trafcodsx %>"> :: Actualizar Posiciones </a>
+<% } %>
+
+
 <% if( gper.verIzquierdo(grupo, "ingreso", "ingreso.jsp") ) { %>
 	<tr > 
 	<td>&nbsp;</td>

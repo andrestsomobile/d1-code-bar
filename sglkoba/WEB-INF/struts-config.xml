@@ -230,6 +230,15 @@
 				path="/main.jsp?app=ingreso&amp;modulo=subirPosiciones"
 				redirect="false" />
 		</action>
+		
+		<action path="/actualizarPosicionesAction"
+			type="ingreso.action.actualizarPosicionesAction" name="fileForm"
+			scope="request"
+			input="/main.jsp?app=ingreso&amp;modulo=actualizar_posiciones">
+			<forward name="actualizarPosiciones"
+				path="/main.jsp?app=ingreso&amp;modulo=actualizar_posiciones"
+				redirect="false" />
+		</action>
 
 		<action path="/companiaAction"
 			type="maestro.action.companiaAction" name="companiaForm"

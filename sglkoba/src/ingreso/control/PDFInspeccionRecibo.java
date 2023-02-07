@@ -73,8 +73,15 @@ public class PDFInspeccionRecibo {
 	
 	public static void main(String[] arg) {
 		PDFInspeccionRecibo pdf = new PDFInspeccionRecibo();
-		Object res = pdf.pdf("3686", "C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps/sglkobad1\\pdf\\TRAFICO\\3686", "", "", "9413");
-		System.out.print(res);
+		//Object res = pdf.pdf("3686", "C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps/sglkobad1\\pdf\\TRAFICO\\3686", "", "", "9413");
+		//System.out.print(res);
+		
+		String sr = "Precintos/Numero de Orden de Recibo/sdf";
+		String[] r = sr.split("/");
+		
+		for(String f: r) {
+			System.out.println(f);
+		}
 	}
 	
 	
@@ -167,6 +174,19 @@ public class PDFInspeccionRecibo {
 		SimpleDateFormat sd = new SimpleDateFormat("d 'de' MMMM 'de' yyyy", esLocale);
 		String fechaEmision = sd.format(d);
 		
+		String observaciones = traf.gettrafobservaciones();
+		String precinto = "";
+		String orden = "";
+		
+		if(observaciones != null && !observaciones.isEmpty()) {
+			String[] objRc = observaciones.split("/");
+			
+			if(objRc != null && objRc.length > 1) {
+				precinto = objRc[0];
+				orden = objRc[1];
+			}
+		}
+		
 		addTableValue(fechaEmision, fuenteNormal_10, tabla, 2);
 		
 		addTableValue("Elaborado por:", fuenteNormal_10, tabla, 2);
@@ -199,15 +219,16 @@ public class PDFInspeccionRecibo {
 		
 		addTableValue(traf.gettrafnumdta(), fuenteBold_12, tabla, 5);
 		
+		addTableValue("PRECINTOS:", fuenteBold_12, tabla, 2);
+		
+		addTableValue(precinto, fuenteBold_12, tabla, 5);
+		
 		addTableValue("TRANSPORTADORA:", fuenteBold_12, tabla, 2);
 		String transportadora = traf.gettraftransportadora() != null ? gtransp.gettransportadora(traf.gettraftransportadora()).gettranspnombre(): "";
 		addTableValue(transportadora, fuenteBold_12, tabla, 5);
 		
 		addTableValue("NUMERO DE ORDEN DE RECIBO:", fuenteBold_12, tabla, 2);
 		
-		//TODO: De donde se saca este valor
-		String precinto = "";
-		String orden = "";
 		addTableValue(orden, fuenteBold_12, tabla, 5);
 		
 		addTableValue("PLACA", fuenteBold_10, tabla, 1);
@@ -294,9 +315,6 @@ public class PDFInspeccionRecibo {
 		cell.setColspan(3);
 		cell.setBorder(Rectangle.NO_BORDER);
 		tabla.addCell(cell);
-		
-		
-		
 		
 		Image imgFirma = null;
 		try {
@@ -480,7 +498,7 @@ public class PDFInspeccionRecibo {
 				+ "<td colspan=\"3\">Directora de Importados</td>\r\n"
 				+ "</tr>\r\n"
 				+ "\r\n"
-				+ "<tr>\r\n"
+				+ "<tr  height=\"20\">\r\n"
 				+ "<td></td>\r\n"
 				+ "<td></td>\r\n"
 				+ "<td></td>\r\n"
