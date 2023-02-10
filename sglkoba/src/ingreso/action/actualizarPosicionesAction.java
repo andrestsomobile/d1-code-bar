@@ -131,11 +131,8 @@ public final class actualizarPosicionesAction extends Action {
 						bodega bod_actual = gbod.getbodega_by_ukey(bodegaactual);
 						bodega bod_nueva = gbod.getbodega_by_ukey(bodeganueva);
 						if (bod_actual != null) {
-							entrada ent = gent.getentrada(ing.getingcodsx(), pro.getprocodsx(), bod_actual.getbodcodsx(), posicionactual);/// OJO se esta validando siempre con la bodega 1
+							entrada ent = gent.getentradaActualizarPosicion(ing.getingcodsx(), pro.getprocodsx(), bod_actual.getbodcodsx(), posicionactual);/// OJO se esta validando siempre con la bodega 1
 							if (ent != null) { 
-								
-								
-								
 								
 								if (bod_nueva != null) {
 									if (gcbod.es_posicion_valida(bod_nueva.getbodcodsx(), posicionnueva)) {  /// OJO se esta validando siempre con la bodega 1
@@ -187,7 +184,11 @@ public final class actualizarPosicionesAction extends Action {
 		String reestado = "FINALIZADO"; // una reubicacion se crea finalizada y se puede activar, pero validando que no este
 		String mensaje = null;
 		String reentradaor = entor.getentcodsx();
-		String retipo = "SINNACIONALIZADO";
+		String retipo = "NACIONALIZADO";
+		
+		if(Integer.parseInt(entor.getentsaldosinnac()) > 0) {
+			retipo = "SINNACIONALIZAR";
+		}
 		
 		String reentradafin = null;
 
@@ -252,7 +253,7 @@ public final class actualizarPosicionesAction extends Action {
 					System.out.println("saldosinnac_dest " + saldosinnac_dest);
 					// miro si la entrada existe o no para crearla o actualizarla
 
-					entrada existe = gent.getentrada(reingreso, entor.getentcodproducto(), bodegafin, posicionfin);
+					entrada existe = gent.getentradaActualizarPosicion(reingreso, entor.getentcodproducto(), bodegafin, posicionfin);
 					if (existe != null) {
 						// le sumo al saldo nac / nnac y los saldos en peso:
 						existe.setentsaldonac(Math.sumar_bigdecimal(saldonac_dest.toPlainString(), existe.getentsaldonac()) + "");
